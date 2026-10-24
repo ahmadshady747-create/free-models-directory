@@ -93,6 +93,9 @@ for (const api of apis) {
   if (api.status === 'موثق جزئيا' && !api.verification_source?.startsWith('https://')) problems.push(`${api.id}: partially verified but no https verification_source`);
   if (api.status !== 'قيد التحقق' && api.status !== 'موثق جزئيا' && api.status !== 'موثق') problems.push(`${api.id}: unknown verification status ${api.status}`);
   if (api.live_try && !api.live_try.endpoint?.startsWith('https://')) problems.push(`${api.id}: live_try endpoint is not https`);
+  const keyKinds = ['keys_page', 'console', 'signup', 'official_site'];
+  if (!keyKinds.includes(api.key_url_kind)) problems.push(`${api.id}: unknown key_url_kind ${api.key_url_kind}`);
+  if (!api.key_url?.startsWith('https://')) problems.push(`${api.id}: key_url is not https: ${api.key_url}`);
   if (typeof api.offer_temporary !== 'boolean') problems.push(`${api.id}: offer_temporary must be boolean`);
   if (api.offer_expires_at !== null && !/^\d{4}-\d{2}-\d{2}$/.test(api.offer_expires_at || '')) problems.push(`${api.id}: offer_expires_at must be null or an ISO date`);
   if (!Array.isArray(api.playgrounds)) problems.push(`${api.id}: playgrounds must be an array`);

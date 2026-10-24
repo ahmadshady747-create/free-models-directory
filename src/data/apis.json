@@ -54,7 +54,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://huggingface.co/docs/inference-providers/pricing",
-    "verification_note": "نتيجة سلبية موثقة يجب أن يقررها صاحب المشروع: توثيق Inference Providers يقول إن المستخدمين المجانيين ليس لهم رصيد شهري مشمول (Included Monthly Credits: Free Users: None)، وإن الاستخدام المجاني يتطلب شراء رصيد أو الترقية إلى PRO (2 دولار شهريا، مدفوع وليس مجانيا)؛ وأسعار Spaces (CPU Basic FREE وZeroGPU FREE) تخص عتاد Spaces وليست Inference Providers ولا يجوز خلطهما. البطاقة بقيت بلا زر حذف صامت، بانتظار قرار صاحب المشروع بحذفها أو نقلها إلى قسم غير مجاني."
+    "verification_note": "نتيجة سلبية موثقة يجب أن يقررها صاحب المشروع: توثيق Inference Providers يقول إن المستخدمين المجانيين ليس لهم رصيد شهري مشمول (Included Monthly Credits: Free Users: None)، وإن الاستخدام المجاني يتطلب شراء رصيد أو الترقية إلى PRO (2 دولار شهريا، مدفوع وليس مجانيا)؛ وأسعار Spaces (CPU Basic FREE وZeroGPU FREE) تخص عتاد Spaces وليست Inference Providers ولا يجوز خلطهما. البطاقة بقيت بلا زر حذف صامت، بانتظار قرار صاحب المشروع بحذفها أو نقلها إلى قسم غير مجاني.",
+    "key_url": "https://huggingface.co/settings/tokens",
+    "key_url_kind": "keys_page",
+    "key_url_note": "يفتح صفحة رموز الوصول (Access Tokens) في إعدادات حسابك على Hugging Face."
   },
   {
     "auth": "مفتاح API",
@@ -111,7 +114,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://groq.com/pricing",
-    "verification_note": "غير موثّق كطبقة مجانية: صفحة الأسعار المفتوحة أظهرت نصا تسويقيا عاما بلا طبقة مجانية ولا أرقام، وجدول حدود المعدل في التوثيق يصف خطة Developer الأساسية وليس طبقة مجانية، لذلك لا يجوز استنتاج أي رقم مجاني منه."
+    "verification_note": "غير موثّق كطبقة مجانية: صفحة الأسعار المفتوحة أظهرت نصا تسويقيا عاما بلا طبقة مجانية ولا أرقام، وجدول حدود المعدل في التوثيق يصف خطة Developer الأساسية وليس طبقة مجانية، لذلك لا يجوز استنتاج أي رقم مجاني منه.",
+    "key_url": "https://console.groq.com/keys",
+    "key_url_kind": "keys_page",
+    "key_url_note": "يفتح صفحة مفاتيح API في وحدة تحكم Groq."
   },
   {
     "auth": "غير مؤكد",
@@ -184,7 +190,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://gen.pollinations.ai/docs",
-    "verification_note": "نوعي فقط، بلا رقم: الصفحتان المفتوحتان تقولان Free to start, scales with you ومكافأة Quest صغيرة لمفتاح أول، بنظام Quest Pollen مقابل Paid Pollen ونموذج إحضار Pollen الخاص بك؛ ولم يرد مقدار يومي أو أسبوعي أو ساعي ولا حد طلبات. ملاحظة: المفاتيح صالحة افتراضيا 7 أيام حسب التوثيق، وهذا عمر مفتاح وليس تاريخ انتهاء عرض مجاني، ولا عدّاد له."
+    "verification_note": "نوعي فقط، بلا رقم: الصفحتان المفتوحتان تقولان Free to start, scales with you ومكافأة Quest صغيرة لمفتاح أول، بنظام Quest Pollen مقابل Paid Pollen ونموذج إحضار Pollen الخاص بك؛ ولم يرد مقدار يومي أو أسبوعي أو ساعي ولا حد طلبات. ملاحظة: المفاتيح صالحة افتراضيا 7 أيام حسب التوثيق، وهذا عمر مفتاح وليس تاريخ انتهاء عرض مجاني، ولا عدّاد له.",
+    "key_url": "https://enter.pollinations.ai",
+    "key_url_kind": "signup",
+    "key_url_note": "يفتح صفحة الدخول إلى Pollinations؛ الاستخدام الأساسي لا يحتاج مفتاحاً، والمفتاح اختياري لحدود أعلى."
   },
   {
     "auth": "مفتاح API",
@@ -246,7 +255,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://replicate.com/pricing",
-    "verification_note": "لا طبقة مجانية مذكورة في صفحة الأسعار المفتوحة: أسعار عتاد بالثانية فقط، ومنها T4 وL40S وA100 80GB وH100؛ ولم يرد حد مجاني ولا شرط بطاقة ولا CORS ولا نماذج مجانية."
+    "verification_note": "لا طبقة مجانية مذكورة في صفحة الأسعار المفتوحة: أسعار عتاد بالثانية فقط، ومنها T4 وL40S وA100 80GB وH100؛ ولم يرد حد مجاني ولا شرط بطاقة ولا CORS ولا نماذج مجانية.",
+    "key_url": "https://replicate.com/account/api-tokens",
+    "key_url_kind": "keys_page",
+    "key_url_note": "يفتح صفحة رموز API في حسابك على Replicate."
   },
   {
     "auth": "مفتاح API",
@@ -331,7 +343,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://docs.dev.runwayml.com/guides/pricing/",
-    "verification_note": "تصحيح تصنيف: الحساب الاستهلاكي Free forever بسعر 0 دولار يشمل 125 رصيدا لمرة واحدة لا تنتهي حسب الأسئلة الشائعة، لكن صفحة تسعير واجهة المطورين المفتوحة لا تذكر رصيدا مجانيا عاما (شراء الرصيد 0.01 دولار للرصيد)، ورصيد 600 عند التسجيل في dev.runway.com خاص بشخصيات Characters كما ورد، وليس إثباتا لرصيد مجاني عام لتوليد الفيديو. لذلك بقيت الطبقة المجانية لواجهة المطورين غير مؤكدة، وأُزيلت علامة العرض المؤقت لأن الـ 125 رصيدا مذكور أنها لا تنتهي."
+    "verification_note": "تصحيح تصنيف: الحساب الاستهلاكي Free forever بسعر 0 دولار يشمل 125 رصيدا لمرة واحدة لا تنتهي حسب الأسئلة الشائعة، لكن صفحة تسعير واجهة المطورين المفتوحة لا تذكر رصيدا مجانيا عاما (شراء الرصيد 0.01 دولار للرصيد)، ورصيد 600 عند التسجيل في dev.runway.com خاص بشخصيات Characters كما ورد، وليس إثباتا لرصيد مجاني عام لتوليد الفيديو. لذلك بقيت الطبقة المجانية لواجهة المطورين غير مؤكدة، وأُزيلت علامة العرض المؤقت لأن الـ 125 رصيدا مذكور أنها لا تنتهي.",
+    "key_url": "https://dev.runwayml.com/",
+    "key_url_kind": "console",
+    "key_url_note": "يفتح بوابة مطوري Runway؛ تُنشأ المفاتيح من تبويب Manage فيها."
   },
   {
     "auth": "مفتاح API",
@@ -397,7 +412,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://docs.agents.lumalabs.ai/guides/pricing/",
-    "verification_note": "لا طبقة مجانية مذكورة لواجهة البرمجة في صفحة التسعير المفتوحة (دفع لكل توليد، بلا حد أدنى وبلا عقد)؛ والتطبيق الاستهلاكي فقط يقول جرّب المنصة مجانا قبل اختيار خطة، دون مبلغ ولا مدة ولا نطاق. لذلك بقيت الطبقة المجانية لواجهة API غير مؤكدة، وأُزيلت علامة العرض المؤقت لعدم وجود عرض مؤقت مؤكد لواجهة API."
+    "verification_note": "لا طبقة مجانية مذكورة لواجهة البرمجة في صفحة التسعير المفتوحة (دفع لكل توليد، بلا حد أدنى وبلا عقد)؛ والتطبيق الاستهلاكي فقط يقول جرّب المنصة مجانا قبل اختيار خطة، دون مبلغ ولا مدة ولا نطاق. لذلك بقيت الطبقة المجانية لواجهة API غير مؤكدة، وأُزيلت علامة العرض المؤقت لعدم وجود عرض مؤقت مؤكد لواجهة API.",
+    "key_url": "https://platform.lumalabs.ai/",
+    "key_url_kind": "console",
+    "key_url_note": "يفتح منصة Luma؛ المفتاح يُؤخذ منها بحسب توثيقها الرسمي."
   },
   {
     "auth": "مفتاح API",
@@ -461,7 +479,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://elevenlabs.io/pricing",
-    "verification_note": "غير موثّق لسبب تقني وليس حكما على المزود: أداة الفتح رفضت النطاق elevenlabs.io بسياسة حظر، ولم يُكرر الطلب؛ والرقم المتداول 10000 رصيد في مقتطفات ثانوية لم يُعتمد لأنه لم يظهر في صفحة رسمية مفتوحة. يحتاج هذا المزود إلى فحص من جهة قادرة على فتح النطاق مباشرة."
+    "verification_note": "غير موثّق لسبب تقني وليس حكما على المزود: أداة الفتح رفضت النطاق elevenlabs.io بسياسة حظر، ولم يُكرر الطلب؛ والرقم المتداول 10000 رصيد في مقتطفات ثانوية لم يُعتمد لأنه لم يظهر في صفحة رسمية مفتوحة. يحتاج هذا المزود إلى فحص من جهة قادرة على فتح النطاق مباشرة.",
+    "key_url": "https://elevenlabs.io/app/settings/api-keys",
+    "key_url_kind": "keys_page",
+    "key_url_note": "يفتح صفحة مفاتيح API في إعدادات حسابك على ElevenLabs."
   },
   {
     "auth": "مفتاح API",
@@ -507,7 +528,10 @@
     "playground_status": "browser-blocked",
     "playground_block_reason": "محظور من المتصفح بتوجيه من المزود: توثيق AssemblyAI يضع المفتاح على الخادم، ولا يرى عميل الجوال المفتاح أبداً. لذلك لا يوجد زر توليد في المتصفح هنا، ولا وسيط خادم أُضيف دون موافقة صريحة من صاحب المشروع.",
     "verification_source": "https://www.assemblyai.com/pricing",
-    "verification_note": "صفحة الأسعار الرسمية تقول Start free ثم الدفع حسب الاستخدام دون التزامات، والمدونة الرسمية تقول Free tier, no credit card بالساعات أعلاه؛ وتوجيه المفتاح إلى الخادم مؤكد لمنتج Voice Agent فقط (رمز مؤقت أحادي الاستخدام عبر GET /v1/token من الخادم)، وليس تأكيدا عاما لكل واجهات AssemblyAI ولا نص CORS."
+    "verification_note": "صفحة الأسعار الرسمية تقول Start free ثم الدفع حسب الاستخدام دون التزامات، والمدونة الرسمية تقول Free tier, no credit card بالساعات أعلاه؛ وتوجيه المفتاح إلى الخادم مؤكد لمنتج Voice Agent فقط (رمز مؤقت أحادي الاستخدام عبر GET /v1/token من الخادم)، وليس تأكيدا عاما لكل واجهات AssemblyAI ولا نص CORS.",
+    "key_url": "https://www.assemblyai.com/dashboard/home",
+    "key_url_kind": "console",
+    "key_url_note": "يفتح لوحة تحكم AssemblyAI؛ المفاتيح في قسم API Keys في الشريط الجانبي."
   },
   {
     "auth": "مفتاح API",
@@ -565,7 +589,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://cohere.com/pricing",
-    "verification_note": "صفحة الأسعار الرسمية وصفحة حدود المعدل تؤكدان مفاتيح تجربة مجانية محدودة بالرقم أعلاه؛ شرط البطاقة وحالة CORS غير مثبتين من الصفحتين المفتوحتين، ولا تاريخ انتهاء مؤكد."
+    "verification_note": "صفحة الأسعار الرسمية وصفحة حدود المعدل تؤكدان مفاتيح تجربة مجانية محدودة بالرقم أعلاه؛ شرط البطاقة وحالة CORS غير مثبتين من الصفحتين المفتوحتين، ولا تاريخ انتهاء مؤكد.",
+    "key_url": "https://dashboard.cohere.com/api-keys",
+    "key_url_kind": "keys_page",
+    "key_url_note": "يفتح صفحة مفاتيح API في لوحة تحكم Cohere."
   },
   {
     "auth": "مفتاح API",
@@ -647,7 +674,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://www.mongodb.com/docs/voyageai/management/billing/",
-    "verification_note": "Voyage AI الآن ضمن توثيق MongoDB: الحسابات بلا وسيلة دفع على الطبقة المجانية افتراضيا، وإضافة وسيلة دفع تنقل الحساب إلى Usage Tier 1. نقاط النهاية الحالية ai.mongodb.com (مثال: https://eu.ai.mongodb.com/v1/embeddings)، وليست api.voyageai.com القديمة، لذلك راجع التوثيق الحالي قبل الاستدعاء. حالة CORS غير مؤكدة."
+    "verification_note": "Voyage AI الآن ضمن توثيق MongoDB: الحسابات بلا وسيلة دفع على الطبقة المجانية افتراضيا، وإضافة وسيلة دفع تنقل الحساب إلى Usage Tier 1. نقاط النهاية الحالية ai.mongodb.com (مثال: https://eu.ai.mongodb.com/v1/embeddings)، وليست api.voyageai.com القديمة، لذلك راجع التوثيق الحالي قبل الاستدعاء. حالة CORS غير مؤكدة.",
+    "key_url": "https://dash.voyageai.com/",
+    "key_url_kind": "console",
+    "key_url_note": "يفتح لوحة تحكم Voyage؛ المفاتيح في قسم API keys فيها."
   },
   {
     "auth": "مفتاح API",
@@ -736,7 +766,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://www.clarifai.com/pricing",
-    "verification_note": "صفحة الأسعار الرسمية تعرض Pay As You Go وHybrid-Cloud Enterprise وخطة Community في جدول المقارنة، وعبارة تجربة مجانية 14 يوما دون نطاق أو مبلغ؛ و14 يوما مدة تجربة وليست تاريخ انتهاء تقويميا. CORS مقيّد حسب توثيق المصادقة."
+    "verification_note": "صفحة الأسعار الرسمية تعرض Pay As You Go وHybrid-Cloud Enterprise وخطة Community في جدول المقارنة، وعبارة تجربة مجانية 14 يوما دون نطاق أو مبلغ؛ و14 يوما مدة تجربة وليست تاريخ انتهاء تقويميا. CORS مقيّد حسب توثيق المصادقة.",
+    "key_url": "https://clarifai.com/",
+    "key_url_kind": "console",
+    "key_url_note": "يفتح بوابة Clarifai؛ رموز الوصول الشخصية (PAT) تُنشأ من إعدادات الأمان في حسابك."
   },
   {
     "auth": "مفتاح API",
@@ -813,7 +846,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://roboflow.com/pricing",
-    "verification_note": "صفحة الأسعار الرسمية تعلن Free Tier بسعر 0 دولار بالحد أعلاه؛ شرط البطاقة لبدء الطبقة المجانية غير مؤكد من الصفحة المفتوحة، والأرصدة المدفوعة عند الطلب تتطلب بطاقة مرتبطة وتنتهي بعد سنة، وهذا لا ينطبق بالضرورة على الطبقة المجانية."
+    "verification_note": "صفحة الأسعار الرسمية تعلن Free Tier بسعر 0 دولار بالحد أعلاه؛ شرط البطاقة لبدء الطبقة المجانية غير مؤكد من الصفحة المفتوحة، والأرصدة المدفوعة عند الطلب تتطلب بطاقة مرتبطة وتنتهي بعد سنة، وهذا لا ينطبق بالضرورة على الطبقة المجانية.",
+    "key_url": "https://app.roboflow.com/settings/api",
+    "key_url_kind": "keys_page",
+    "key_url_note": "يفتح صفحة مفاتيح API في إعدادات مساحة عملك على Roboflow."
   },
   {
     "auth": "غير مؤكد",
@@ -858,7 +894,10 @@
     "playground_status": "not-suitable",
     "playground_block_reason": "غير مناسب لساحة مفاتيح في المتصفح: لم يُعثر على توثيق مطور عام لواجهة REST بمفتاح لـ Tabnine، فالمنتج يعمل عبر إضافات المحررات، وأي صيغة هنا ستكون تخميناً.",
     "verification_source": "https://www.tabnine.com/pricing",
-    "verification_note": "غير موثّق: النص المسترجع من رابط التسعير الرسمي كان صفحة تواصل لشركة Tricentis، بلا محتوى تسعير لـ Tabnine وبلا ذكر لخطة مجانية أو حدود؛ ولم تُفتح صفحة توثيق مطور رسمية في هذه الجولة، فلا يوجد رابط توثيق مؤكد هنا."
+    "verification_note": "غير موثّق: النص المسترجع من رابط التسعير الرسمي كان صفحة تواصل لشركة Tricentis، بلا محتوى تسعير لـ Tabnine وبلا ذكر لخطة مجانية أو حدود؛ ولم تُفتح صفحة توثيق مطور رسمية في هذه الجولة، فلا يوجد رابط توثيق مؤكد هنا.",
+    "key_url": "https://tabnine.com",
+    "key_url_kind": "official_site",
+    "key_url_note": "لا صفحة مفاتيح API عامة مثبتة لـ Tabnine، فهو يعمل عبر إضافات بيئات التطوير وتسجيل الدخول — الزر يفتح صفحته الرسمية فقط."
   },
   {
     "auth": "غير مؤكد",
@@ -903,7 +942,10 @@
     "playground_status": "not-suitable",
     "playground_block_reason": "غير مناسب لساحة مفاتيح في المتصفح: Cody Gateway يعمل للمشتركين في Sourcegraph Enterprise عبر مفتاح ترخيص وإعدادات مثيل ذاتي، وليس عبر مفتاح API عام لزائر.",
     "verification_source": "https://sourcegraph.com/blog/changes-to-cody-free-pro-and-enterprise-starter-plans",
-    "verification_note": "منتج مجاني موقوف حاليا: الإعلان الرسمي المفتوح يقول إن Cody Free وCody Pro لن يعودا متاحين اعتبارا من 23 يوليو 2025، وإن التسجيلات الجديدة توقفت في 25 يونيو 2025، وإن الوصول القائم استمر حتى 23 يوليو 2025 فقط؛ وCody Enterprise ما زال مدعوما وهو خيار مؤسسي مدفوع وليس خطة مجانية عامة. الأرقام القديمة من توثيق أرشيفي لا تُعرض كحدود حالية لأنها أُلغيت بالإعلان الأحدث."
+    "verification_note": "منتج مجاني موقوف حاليا: الإعلان الرسمي المفتوح يقول إن Cody Free وCody Pro لن يعودا متاحين اعتبارا من 23 يوليو 2025، وإن التسجيلات الجديدة توقفت في 25 يونيو 2025، وإن الوصول القائم استمر حتى 23 يوليو 2025 فقط؛ وCody Enterprise ما زال مدعوما وهو خيار مؤسسي مدفوع وليس خطة مجانية عامة. الأرقام القديمة من توثيق أرشيفي لا تُعرض كحدود حالية لأنها أُلغيت بالإعلان الأحدث.",
+    "key_url": "https://sourcegraph.com",
+    "key_url_kind": "official_site",
+    "key_url_note": "Cody المجاني والاحترافي أُوقفا في 2025-07-23، ولا صفحة مفاتيح عامة له — الزر يفتح صفحة Sourcegraph الرسمية فقط."
   },
   {
     "auth": "مفتاح API",
@@ -948,7 +990,10 @@
     "playground_status": "browser-blocked",
     "playground_block_reason": "محظور من المتصفح بتوجيه من المزود: توثيق DeepL الرسمي يقول إنه لا يمكن إرسال الطلبات إلى DeepL API من المتصفح، لأن الطلبات من تطبيقات الواجهة الأمامية ستكشف بيانات الاعتماد على الويب. لذلك لا يوجد زر توليد هنا، ولا وسيط خادم أُضيف دون موافقة صريحة من صاحب المشروع.",
     "verification_source": "https://support.deepl.com/hc/en-us/articles/360021200939-DeepL-API-plans",
-    "verification_note": "صفحة دعم DeepL الرسمية تؤكد خطة Developer التجريبية بالحد أعلاه؛ صفحة الأسعار المرتبطة لم تُظهر أرقاما في النص المسترجع، لذلك اعتمدت صفحة الدعم وحدها. التوثيق الرسمي يقول إنه لا يمكن إرسال الطلبات من المتصفح لأن ذلك سيكشف بيانات الاعتماد على الويب."
+    "verification_note": "صفحة دعم DeepL الرسمية تؤكد خطة Developer التجريبية بالحد أعلاه؛ صفحة الأسعار المرتبطة لم تُظهر أرقاما في النص المسترجع، لذلك اعتمدت صفحة الدعم وحدها. التوثيق الرسمي يقول إنه لا يمكن إرسال الطلبات من المتصفح لأن ذلك سيكشف بيانات الاعتماد على الويب.",
+    "key_url": "https://www.deepl.com/your-account/keys",
+    "key_url_kind": "keys_page",
+    "key_url_note": "يفتح تبويب مفاتيح API في حساب DeepL."
   },
   {
     "auth": "مفتاح API",
@@ -1018,7 +1063,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://cloud.google.com/translate",
-    "verification_note": "صفحة المنتج/التسعير الرسمية تؤكد الحد أعلاه؛ رصيد 300 دولار للعملاء الجدد هو رصيد Google Cloud عام وليس حد الترجمة المجاني الشهري، ولم يرد له تاريخ انتهاء في النص المفتوح. شرط البطاقة وحالة CORS غير مثبتين من الصفحة المفتوحة."
+    "verification_note": "صفحة المنتج/التسعير الرسمية تؤكد الحد أعلاه؛ رصيد 300 دولار للعملاء الجدد هو رصيد Google Cloud عام وليس حد الترجمة المجاني الشهري، ولم يرد له تاريخ انتهاء في النص المفتوح. شرط البطاقة وحالة CORS غير مثبتين من الصفحة المفتوحة.",
+    "key_url": "https://console.cloud.google.com/apis/credentials",
+    "key_url_kind": "keys_page",
+    "key_url_note": "يفتح صفحة بيانات الاعتماد في Google Cloud، ومنها تُنشأ مفاتيح API."
   },
   {
     "auth": "مفتاح API",
@@ -1078,7 +1126,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://ai.google.dev/pricing",
-    "verification_note": "صفحة الأسعار الرسمية تعلن طبقة مجانية برموز مجانية لنماذج مؤهلة فقط، وأن محتوى الطبقة المجانية يُستخدم لتحسين المنتجات؛ والحدود العددية الدقيقة لم تثبتها الصفحة نفسها، لذلك بقيت غير مؤكدة، وشرط البطاقة وحالة CORS غير مثبتين من هذه الصفحة."
+    "verification_note": "صفحة الأسعار الرسمية تعلن طبقة مجانية برموز مجانية لنماذج مؤهلة فقط، وأن محتوى الطبقة المجانية يُستخدم لتحسين المنتجات؛ والحدود العددية الدقيقة لم تثبتها الصفحة نفسها، لذلك بقيت غير مؤكدة، وشرط البطاقة وحالة CORS غير مثبتين من هذه الصفحة.",
+    "key_url": "https://aistudio.google.com/app/apikey",
+    "key_url_kind": "keys_page",
+    "key_url_note": "يفتح صفحة مفاتيح API في Google AI Studio."
   },
   {
     "auth": "مفتاح API",
@@ -1136,7 +1187,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://openrouter.ai/pricing",
-    "verification_note": "صفحة الأسعار الرسمية تعلن أكثر من 25 نموذجا مجانيا و4 مزودين مجانيين، وحد 50 طلبا في اليوم و20 طلبا في الدقيقة للنماذج المجانية، وارتفاع الحد اليومي إلى 1000 بعد شراء 10 دولارات على الأقل؛ وشرط البطاقة وحالة CORS ومعرّفات النماذج المجانية الدقيقة غير مثبتة من هذه الصفحة، لذلك بقيت غير مؤكدة."
+    "verification_note": "صفحة الأسعار الرسمية تعلن أكثر من 25 نموذجا مجانيا و4 مزودين مجانيين، وحد 50 طلبا في اليوم و20 طلبا في الدقيقة للنماذج المجانية، وارتفاع الحد اليومي إلى 1000 بعد شراء 10 دولارات على الأقل؛ وشرط البطاقة وحالة CORS ومعرّفات النماذج المجانية الدقيقة غير مثبتة من هذه الصفحة، لذلك بقيت غير مؤكدة.",
+    "key_url": "https://openrouter.ai/keys",
+    "key_url_kind": "keys_page",
+    "key_url_note": "يفتح صفحة المفاتيح في OpenRouter."
   },
   {
     "auth": "مفتاح API",
@@ -1204,7 +1258,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://together.ai/pricing",
-    "verification_note": "لا طبقة مجانية ولا رصيد تجريبي مذكور في صفحة الأسعار المفتوحة: النماذج بسعر 0.00 دولار أسعار وليست إعلانا لطبقة مجانية، دون حد مجاني أو نطاق أو شرط بطاقة، لذلك لا يجوز استنتاج قائمة نماذج مجانية من أسعار صفرية."
+    "verification_note": "لا طبقة مجانية ولا رصيد تجريبي مذكور في صفحة الأسعار المفتوحة: النماذج بسعر 0.00 دولار أسعار وليست إعلانا لطبقة مجانية، دون حد مجاني أو نطاق أو شرط بطاقة، لذلك لا يجوز استنتاج قائمة نماذج مجانية من أسعار صفرية.",
+    "key_url": "https://api.together.ai/settings/api-keys",
+    "key_url_kind": "keys_page",
+    "key_url_note": "يفتح صفحة مفاتيح API في إعدادات Together."
   },
   {
     "auth": "مفتاح API",
@@ -1262,7 +1319,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://fireworks.ai/pricing",
-    "verification_note": "لا طبقة مجانية عامة لـ Serverless Inference في صفحة الأسعار المفتوحة: المسار العام دفع لكل رمز برصيد مسبق بعد إضافة وسيلة دفع. عرض مؤقت واحد مؤكد وهو للتدريب فقط وليس للاستدلال العام: نموذج Muse Glimmer 30B SFT مجاني عبر الواجهة وواجهة Serverless Training API حتى 30 نوفمبر، ودون بطاقة لذلك العرض؛ ولم تذكر الصفحة السنة بجانب 30 نوفمبر، لذلك لم يُحوّل إلى تاريخ ISO ولا إلى عدّاد، وسُجل كملاحظة مؤرخة فقط."
+    "verification_note": "لا طبقة مجانية عامة لـ Serverless Inference في صفحة الأسعار المفتوحة: المسار العام دفع لكل رمز برصيد مسبق بعد إضافة وسيلة دفع. عرض مؤقت واحد مؤكد وهو للتدريب فقط وليس للاستدلال العام: نموذج Muse Glimmer 30B SFT مجاني عبر الواجهة وواجهة Serverless Training API حتى 30 نوفمبر، ودون بطاقة لذلك العرض؛ ولم تذكر الصفحة السنة بجانب 30 نوفمبر، لذلك لم يُحوّل إلى تاريخ ISO ولا إلى عدّاد، وسُجل كملاحظة مؤرخة فقط.",
+    "key_url": "https://app.fireworks.ai/api-keys",
+    "key_url_kind": "keys_page",
+    "key_url_note": "يفتح صفحة مفاتيح API في لوحة تحكم Fireworks."
   },
   {
     "id": "mistral-ai",
@@ -1318,7 +1378,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://mistral.ai/pricing",
-    "verification_note": "غير موثّق كـ API مجاني: الصفحة الرسمية المفتوحة كانت لمنتج Vibe الاستهلاكي (خطة مجانية برسائل وبحث وجلسات برمجة محدودة)، وليست صفحة أسعار API، لذلك لم يُعتمد منها أي حد أو نموذج API."
+    "verification_note": "غير موثّق كـ API مجاني: الصفحة الرسمية المفتوحة كانت لمنتج Vibe الاستهلاكي (خطة مجانية برسائل وبحث وجلسات برمجة محدودة)، وليست صفحة أسعار API، لذلك لم يُعتمد منها أي حد أو نموذج API.",
+    "key_url": "https://console.mistral.ai/api-keys",
+    "key_url_kind": "keys_page",
+    "key_url_note": "يفتح صفحة مفاتيح API في وحدة تحكم Mistral."
   },
   {
     "id": "perplexity-ai",
@@ -1375,7 +1438,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://docs.perplexity.ai/docs/getting-started/pricing",
-    "verification_note": "لا طبقة مجانية مذكورة في صفحتي التوثيق المفتوحتين: التسعير حسب الاستخدام والأرصدة تُشترى من وحدة تحكم API، وTier 0 عند 0 دولار عتبة شراء تراكمية وليست رصيدا مجانيا؛ وصفحة perplexity.ai/pricing أعادت 404 في هذه الجولة ولم تُستخدم."
+    "verification_note": "لا طبقة مجانية مذكورة في صفحتي التوثيق المفتوحتين: التسعير حسب الاستخدام والأرصدة تُشترى من وحدة تحكم API، وTier 0 عند 0 دولار عتبة شراء تراكمية وليست رصيدا مجانيا؛ وصفحة perplexity.ai/pricing أعادت 404 في هذه الجولة ولم تُستخدم.",
+    "key_url": "https://www.perplexity.ai/settings/api",
+    "key_url_kind": "keys_page",
+    "key_url_note": "يفتح صفحة API في إعدادات حساب Perplexity."
   },
   {
     "id": "stability-ai",
@@ -1439,7 +1505,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://platform.stability.ai/pricing",
-    "verification_note": "غير موثّق كرصيد مجاني: صفحة الأسعار المفتوحة تذكر أسعار أرصدة مدفوعة فقط، منها أن 1 رصيد يساوي 0.01 دولار، ولم يظهر فيها رصيد مجاني ولا طبقة مجانية في النص المسترجع؛ والرقم المتداول 25 رصيدا مجانيا لم يُعتمد."
+    "verification_note": "غير موثّق كرصيد مجاني: صفحة الأسعار المفتوحة تذكر أسعار أرصدة مدفوعة فقط، منها أن 1 رصيد يساوي 0.01 دولار، ولم يظهر فيها رصيد مجاني ولا طبقة مجانية في النص المسترجع؛ والرقم المتداول 25 رصيدا مجانيا لم يُعتمد.",
+    "key_url": "https://platform.stability.ai/account/keys",
+    "key_url_kind": "keys_page",
+    "key_url_note": "يفتح صفحة مفاتيح API في حساب منصة Stability."
   },
   {
     "id": "ideogram-ai",
@@ -1503,7 +1572,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://ideogram.ai/pricing",
-    "verification_note": "نوعي فقط، بلا رقم: صفحة الأسعار المفتوحة تقول إنه لا خصومات ولا تجارب مجانية لخطط الاشتراك، وإن الحسابات المجانية المؤهلة تحصل على أرصدة أسبوعية عند تسجيل الدخول عبر Google أو Apple أو Microsoft، بمبلغ متفاوت غير مذكور رقما؛ ولم يُؤكد أن الأرصدة الأسبوعية قابلة للاستخدام عبر API، ولا قائمة نماذج API مجانية."
+    "verification_note": "نوعي فقط، بلا رقم: صفحة الأسعار المفتوحة تقول إنه لا خصومات ولا تجارب مجانية لخطط الاشتراك، وإن الحسابات المجانية المؤهلة تحصل على أرصدة أسبوعية عند تسجيل الدخول عبر Google أو Apple أو Microsoft، بمبلغ متفاوت غير مذكور رقما؛ ولم يُؤكد أن الأرصدة الأسبوعية قابلة للاستخدام عبر API، ولا قائمة نماذج API مجانية.",
+    "key_url": "https://developer.ideogram.ai/",
+    "key_url_kind": "console",
+    "key_url_note": "يفتح بوابة مطوري Ideogram؛ المفاتيح في قسم API Keys فيها."
   },
   {
     "id": "pika-ai",
@@ -1548,7 +1620,10 @@
     "playground_status": "browser-blocked",
     "playground_block_reason": "محظور من المتصفح بتوجيه من المزود نفسه: توثيق Pika يقول صراحة لا تعرّض المفتاح في المتصفح أو أي كود عميل، واستدعِ الواجهة من الخادم فقط. لذلك لا يوجد زر توليد في المتصفح هنا، ولا وسيط خادم أُضيف دون موافقة صريحة من صاحب المشروع.",
     "verification_source": "https://pika.art/pricing",
-    "verification_note": "حساب مجاني بلا رصيد شهري: جدول المقارنة المفتوح يقول Free بسعر 0 دولار وMonthly credits: 0 · packs only؛ وعرض Pika API Club عضوية مدفوعة (10 دولارات شهريا مع رصيد 10 دولارات للشهر الأول)، وليست طبقة مجانية مستقلة. صفحات هذه الجولة لم تنص على CORS ولا على توجيه المفتاح إلى الخادم، لذلك بقي سبب حظر المتصفح كما كان من عمل سابق دون تغيير، ولم يُعتمد أي نص جديد بشأنه."
+    "verification_note": "حساب مجاني بلا رصيد شهري: جدول المقارنة المفتوح يقول Free بسعر 0 دولار وMonthly credits: 0 · packs only؛ وعرض Pika API Club عضوية مدفوعة (10 دولارات شهريا مع رصيد 10 دولارات للشهر الأول)، وليست طبقة مجانية مستقلة. صفحات هذه الجولة لم تنص على CORS ولا على توجيه المفتاح إلى الخادم، لذلك بقي سبب حظر المتصفح كما كان من عمل سابق دون تغيير، ولم يُعتمد أي نص جديد بشأنه.",
+    "key_url": "https://dev.pika.art/",
+    "key_url_kind": "console",
+    "key_url_note": "يفتح بوابة مطوري Pika؛ المفاتيح تُدار منها."
   },
   {
     "id": "hailuo-ai",
@@ -1608,7 +1683,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://platform.minimax.io/docs/pricing/overview",
-    "verification_note": "لا طبقة مجانية مذكورة في صفحة تسعير منصة MiniMax للمطورين المفتوحة: الدفع حسب الاستخدام من رصيد الحساب؛ والإعفاءات الواردة (أول 5 صور لكل مهمة لنماذج H3، وأول صورتين لنموذج H3-Max، وإدخال الصوت مجاني) إعفاءات داخل تسعير مدفوع وليست توليدا مجانيا. وصلاحية حزم الفيديو المدفوعة شهرا واحدا ليست عرضا مجانيا مؤقتا."
+    "verification_note": "لا طبقة مجانية مذكورة في صفحة تسعير منصة MiniMax للمطورين المفتوحة: الدفع حسب الاستخدام من رصيد الحساب؛ والإعفاءات الواردة (أول 5 صور لكل مهمة لنماذج H3، وأول صورتين لنموذج H3-Max، وإدخال الصوت مجاني) إعفاءات داخل تسعير مدفوع وليست توليدا مجانيا. وصلاحية حزم الفيديو المدفوعة شهرا واحدا ليست عرضا مجانيا مؤقتا.",
+    "key_url": "https://platform.minimax.io/",
+    "key_url_kind": "console",
+    "key_url_note": "يفتح منصة MiniMax المفتوحة؛ المفاتيح في إدارة الحساب ثم API Keys."
   },
   {
     "id": "deepgram",
@@ -1695,7 +1773,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://deepgram.com/pricing",
-    "verification_note": "صفحة الأسعار الرسمية تقول No minimums. No expiration. No credit card required، وإن الرصيد متاح حتى استنفاذه ولا ينتهي بعد 12 شهرا كغيره من الطبقات المجانية؛ وعرض مؤقت منفصل في الصفحة نفسها (وليس الرصيد المجاني): مقابل كل دولار يُنفق على Flux TTS يُضاف دولار رصيد حتى 500 دولار، وينتهي في 31 ديسمبر 2026، وهو عرض مطابقة مدفوع وليس تاريخ انتهاء للرصيد المجاني، لذلك لم يُحوّل إلى عدّاد للبطاقة."
+    "verification_note": "صفحة الأسعار الرسمية تقول No minimums. No expiration. No credit card required، وإن الرصيد متاح حتى استنفاذه ولا ينتهي بعد 12 شهرا كغيره من الطبقات المجانية؛ وعرض مؤقت منفصل في الصفحة نفسها (وليس الرصيد المجاني): مقابل كل دولار يُنفق على Flux TTS يُضاف دولار رصيد حتى 500 دولار، وينتهي في 31 ديسمبر 2026، وهو عرض مطابقة مدفوع وليس تاريخ انتهاء للرصيد المجاني، لذلك لم يُحوّل إلى عدّاد للبطاقة.",
+    "key_url": "https://console.deepgram.com/",
+    "key_url_kind": "console",
+    "key_url_note": "يفتح وحدة تحكم Deepgram؛ المفاتيح في قسم API Keys داخل مشروعك."
   },
   {
     "id": "playht",
@@ -1740,7 +1821,10 @@
     "playground_status": "needs-confirmation",
     "playground_block_reason": "يحتاج تأكيداً رسمياً أخيراً: المضيف api.play.ht ومسار التحويل /api/v1/convert مؤكدان من المرجع الرسمي، لكن endpoint توليد أصوات PlayHT نفسها غير مؤكد من الصفحة المفتوحة (معاملات فقط دون URL كامل)، والتوثيق مؤرخ 2025-09-09 ولا يذكر طبقة مجانية، ولم تُفتح صفحة تسعير حالية، لذلك لا يوجد زر توليد قبل ذلك التأكيد.",
     "verification_source": "https://docs.play.ht/v2.2/reference/api-convert-tts-standard-premium-voices",
-    "verification_note": "المضيف والمسار مؤكدان جزئيا، لكن الطبقة المجانية والملعب غير مؤكدين: المضيف api.play.ht مؤكد من صفحات مرجعية مفتوحة، ومسار التحويل POST https://api.play.ht/api/v1/convert للأصوات القياسية والمميزة مؤكد، واستطلاع المهمة GET https://api.play.ht/api/v2/tts/ مؤكد بالصيغة الظاهرة دون لاحقة معرّف المهمة الكاملة في النص المسترجع؛ أما endpoint توليد أصوات PlayHT نفسها فغير مؤكد لأن صفحته المفتوحة عرضت المعاملات فقط دون طريقة HTTP ولا عنوان URL كامل، والتوثيق المفتوح مؤرخ 2025-09-09 ولا يذكر طبقة مجانية ولا أسعارا، ولم تُفتح صفحة تسعير حالية. لذلك بقي بلا زر توليد."
+    "verification_note": "المضيف والمسار مؤكدان جزئيا، لكن الطبقة المجانية والملعب غير مؤكدين: المضيف api.play.ht مؤكد من صفحات مرجعية مفتوحة، ومسار التحويل POST https://api.play.ht/api/v1/convert للأصوات القياسية والمميزة مؤكد، واستطلاع المهمة GET https://api.play.ht/api/v2/tts/ مؤكد بالصيغة الظاهرة دون لاحقة معرّف المهمة الكاملة في النص المسترجع؛ أما endpoint توليد أصوات PlayHT نفسها فغير مؤكد لأن صفحته المفتوحة عرضت المعاملات فقط دون طريقة HTTP ولا عنوان URL كامل، والتوثيق المفتوح مؤرخ 2025-09-09 ولا يذكر طبقة مجانية ولا أسعارا، ولم تُفتح صفحة تسعير حالية. لذلك بقي بلا زر توليد.",
+    "key_url": "https://playht.co/app/api-keys",
+    "key_url_kind": "keys_page",
+    "key_url_note": "يفتح صفحة مفاتيح API في لوحة تحكم PlayHT."
   },
   {
     "id": "jina-ai",
@@ -1797,7 +1881,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://jina.ai/embeddings",
-    "verification_note": "غير موثّق لسبب تقني: فتح صفحة jina.ai/embeddings فشل بحظر نطاق في أداة الفتح، ولم تُفتح صفحة رسمية؛ والمقتطفات الثانوية المتضاربة بين مليون و10 ملايين رمز لم تُستخدم."
+    "verification_note": "غير موثّق لسبب تقني: فتح صفحة jina.ai/embeddings فشل بحظر نطاق في أداة الفتح، ولم تُفتح صفحة رسمية؛ والمقتطفات الثانوية المتضاربة بين مليون و10 ملايين رمز لم تُستخدم.",
+    "key_url": "https://jina.ai/api-dashboard",
+    "key_url_kind": "console",
+    "key_url_note": "يفتح لوحة تحكم Jina API؛ مفتاحك يظهر فيها بعد تسجيل الدخول."
   },
   {
     "id": "mixedbread-ai",
@@ -1842,7 +1929,10 @@
     "playground_status": "needs-confirmation",
     "playground_block_reason": "يحتاج تأكيداً رسمياً أخيراً: المنتج الحالي المؤكد هو Mixedbread Search القائم على Stores بقاعدة https://api.mixedbread.com/ وترويسة Bearer، لكن نقطة التضمين القديمة mxbai-embed لم تُؤكد سارية في المرجع المفتوح، وصفحة الأسعار لم تُفتح لتأكيد حد مجاني لكل رمز، لذلك لا يوجد زر توليد قبل ذلك التأكيد.",
     "verification_source": "https://www.mixedbread.ai/api-reference",
-    "verification_note": "المنتج الحالي المؤكد هو Mixedbread Search القائم على Stores، وليس نقطة تضمين قديمة: قاعدة API المؤكدة https://api.mixedbread.com/ بمثال POST https://api.mixedbread.com/v1/stores وترويسة Authorization: Bearer؛ وخطة مجانية أُطلقت في 3 ديسمبر 2025 حتى 1000 ملف متجر مع الميزات الأساسية، لكن صفحة الأسعار نفسها لم تُفتح ولم يُؤكد سعر لكل مليون رمز؛ ونقطة mxbai-embed القديمة لم تُؤكد في مقدمة المرجع المفتوح، لذلك لا يجوز افتراض أنها سارية. ملاحظة في سجل التغييرات أن مفاتيح البحث فقط مفيدة لتطبيقات العميل لم تُعامل كإذن CORS عام."
+    "verification_note": "المنتج الحالي المؤكد هو Mixedbread Search القائم على Stores، وليس نقطة تضمين قديمة: قاعدة API المؤكدة https://api.mixedbread.com/ بمثال POST https://api.mixedbread.com/v1/stores وترويسة Authorization: Bearer؛ وخطة مجانية أُطلقت في 3 ديسمبر 2025 حتى 1000 ملف متجر مع الميزات الأساسية، لكن صفحة الأسعار نفسها لم تُفتح ولم يُؤكد سعر لكل مليون رمز؛ ونقطة mxbai-embed القديمة لم تُؤكد في مقدمة المرجع المفتوح، لذلك لا يجوز افتراض أنها سارية. ملاحظة في سجل التغييرات أن مفاتيح البحث فقط مفيدة لتطبيقات العميل لم تُعامل كإذن CORS عام.",
+    "key_url": "https://platform.mixedbread.com/platform?next=api-keys",
+    "key_url_kind": "keys_page",
+    "key_url_note": "يفتح صفحة مفاتيح API في منصة Mixedbread."
   },
   {
     "id": "google-vision",
@@ -1912,7 +2002,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://cloud.google.com/vision/pricing",
-    "verification_note": "صفحة الأسعار الرسمية تشمل ميزات منها كشف التسميات والنصوص والمستندات والبحث الآمن والوجوه والمعالم والشعارات وخصائص الصورة وتلميحات القص واكتشاف الويب وتحديد الأجسام؛ شرط البطاقة/الفوترة وحالة CORS غير مثبتين من الصفحة المفتوحة."
+    "verification_note": "صفحة الأسعار الرسمية تشمل ميزات منها كشف التسميات والنصوص والمستندات والبحث الآمن والوجوه والمعالم والشعارات وخصائص الصورة وتلميحات القص واكتشاف الويب وتحديد الأجسام؛ شرط البطاقة/الفوترة وحالة CORS غير مثبتين من الصفحة المفتوحة.",
+    "key_url": "https://console.cloud.google.com/apis/credentials",
+    "key_url_kind": "keys_page",
+    "key_url_note": "يفتح صفحة بيانات الاعتماد في Google Cloud، ومنها تُنشأ مفاتيح API."
   },
   {
     "id": "amazon-rekognition",
@@ -1957,7 +2050,10 @@
     "playground_status": "not-suitable",
     "playground_block_reason": "غير مناسب لساحة مفاتيح في المتصفح: Rekognition خدمة AWS تُستدعى عبر SDK مع توقيع SigV4 وبيانات اعتماد IAM، وليست واجهة مفتاح Bearer بسيط، وإدخال بيانات AWS في متصفح زائر سيكشفها.",
     "verification_source": "https://aws.amazon.com/rekognition/pricing",
-    "verification_note": "غير موثّق: لم تظهر صفحة أسعار رسمية على aws.amazon.com في نتائج البحث الكاملة ولم تُفتح، ولم يُخمّن أي رابط؛ والمقتطفات الثانوية المتضاربة بين 5000 و1000 صورة شهريا لم تُستخدم. يبقى الملعب غير مناسب لأنه خدمة AWS بتوقيع SigV4 وليست مفتاح Bearer بسيطا."
+    "verification_note": "غير موثّق: لم تظهر صفحة أسعار رسمية على aws.amazon.com في نتائج البحث الكاملة ولم تُفتح، ولم يُخمّن أي رابط؛ والمقتطفات الثانوية المتضاربة بين 5000 و1000 صورة شهريا لم تُستخدم. يبقى الملعب غير مناسب لأنه خدمة AWS بتوقيع SigV4 وليست مفتاح Bearer بسيطا.",
+    "key_url": "https://aws.amazon.com/rekognition",
+    "key_url_kind": "official_site",
+    "key_url_note": "Rekognition يُستخدم عبر IAM وSigV4 في AWS، لا عبر مفتاح API عام — الزر يفتح صفحته الرسمية فقط."
   },
   {
     "id": "codeium-windsurf",
@@ -2002,7 +2098,10 @@
     "playground_status": "not-suitable",
     "playground_block_reason": "غير مناسب لساحة مفاتيح في المتصفح: لم يُعثر على توثيق رسمي عام لواجهة REST بمفتاح لـ Windsurf، وما وُجد هو بروتوكول gRPC مهندَس عكسياً لإضافة المحرر، وهو ليس توثيقاً رسمياً ولا يصلح لموقع عام.",
     "verification_source": "https://windsurf.com/pricing",
-    "verification_note": "غير موثّق: لم تُفتح صفحة تسعير رسمية مستقلة لـ Windsurf في هذه الجولة، ونتائج البحث أعادت مصادر ثانوية فقط متضاربة في الأرقام، وهذا التناقض نفسه يمنع اعتماد أي رقم؛ ولم يثبت من مصدر رسمي مفتوح وجود واجهة مفتاح عام بسيطة للمتصفح."
+    "verification_note": "غير موثّق: لم تُفتح صفحة تسعير رسمية مستقلة لـ Windsurf في هذه الجولة، ونتائج البحث أعادت مصادر ثانوية فقط متضاربة في الأرقام، وهذا التناقض نفسه يمنع اعتماد أي رقم؛ ولم يثبت من مصدر رسمي مفتوح وجود واجهة مفتاح عام بسيطة للمتصفح.",
+    "key_url": "https://windsurf.com",
+    "key_url_kind": "official_site",
+    "key_url_note": "Windsurf يعمل عبر بيئة التطوير وتسجيل الدخول، ولا صفحة مفاتيح API عامة مثبتة له — الزر يفتح صفحته الرسمية فقط."
   },
   {
     "id": "amazon-q",
@@ -2047,7 +2146,10 @@
     "playground_status": "not-suitable",
     "playground_block_reason": "غير مناسب لساحة مفاتيح في المتصفح: Amazon Q Developer يعمل عبر IDE ووحدة تحكم AWS وCLI بمصادقة IAM، وليس بمفتاح API عام لزائر.",
     "verification_source": "https://aws.amazon.com/q/developer/pricing/",
-    "verification_note": "صفحة الأسعار الرسمية تنص حرفيا على طبقة مجانية دائمة Perpetual Free Tier؛ الرقم المتداول 50 طلبا وكيلا شهريا لم يظهر بهذه الصيغة في الصفحتين المفتوحتين ولم يُعتمد، واعتمدت 50 تفاعل دردشة كما وردت رسميا. الملعب يبقى غير مناسب لأنه IDE/CLI بمصادقة IAM."
+    "verification_note": "صفحة الأسعار الرسمية تنص حرفيا على طبقة مجانية دائمة Perpetual Free Tier؛ الرقم المتداول 50 طلبا وكيلا شهريا لم يظهر بهذه الصيغة في الصفحتين المفتوحتين ولم يُعتمد، واعتمدت 50 تفاعل دردشة كما وردت رسميا. الملعب يبقى غير مناسب لأنه IDE/CLI بمصادقة IAM.",
+    "key_url": "https://aws.amazon.com/q/developer",
+    "key_url_kind": "official_site",
+    "key_url_note": "Amazon Q يعمل عبر بيئة التطوير وAWS Builder ID، لا عبر مفتاح API عام — الزر يفتح صفحته الرسمية فقط."
   },
   {
     "id": "microsoft-translator",
@@ -2122,7 +2224,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://azure.microsoft.com/pricing/details/cognitive-services/translator",
-    "verification_note": "صفحة الأسعار الرسمية تعلن خطة F0 - Free بالحد أعلاه؛ شرط البطاقة الخاص بـ F0 وحالة CORS غير مثبتين من الصفحة المفتوحة، والخدمة تتطلب حساب Azure وليست مفتاحا بسيطا بمستوى ملعب المتصفح وحده."
+    "verification_note": "صفحة الأسعار الرسمية تعلن خطة F0 - Free بالحد أعلاه؛ شرط البطاقة الخاص بـ F0 وحالة CORS غير مثبتين من الصفحة المفتوحة، والخدمة تتطلب حساب Azure وليست مفتاحا بسيطا بمستوى ملعب المتصفح وحده.",
+    "key_url": "https://portal.azure.com/",
+    "key_url_kind": "console",
+    "key_url_note": "يفتح بوابة Azure؛ أنشئ مورد Translator ثم خذ المفتاح من صفحة Keys and Endpoint فيه."
   },
   {
     "id": "libretranslate",
@@ -2198,7 +2303,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "http://docs.libretranslate.com/",
-    "verification_note": "مجاني للاستضافة الذاتية فقط وليس عرضا مستضافا مجانيا: التوثيق الرسمي يقول إنه برمجية حرة مفتوحة المصدر للاستضافة الذاتية، بمثال خادم محلي على المنفذ 5000 وبلا حد أحرف مذكور؛ والاستضافة المدارة بتكلفة شهرية صغيرة وتتطلب مفتاحا من البوابة، دون مبلغ شهري ولا خطة مجانية مستضافة في الصفحة المفتوحة."
+    "verification_note": "مجاني للاستضافة الذاتية فقط وليس عرضا مستضافا مجانيا: التوثيق الرسمي يقول إنه برمجية حرة مفتوحة المصدر للاستضافة الذاتية، بمثال خادم محلي على المنفذ 5000 وبلا حد أحرف مذكور؛ والاستضافة المدارة بتكلفة شهرية صغيرة وتتطلب مفتاحا من البوابة، دون مبلغ شهري ولا خطة مجانية مستضافة في الصفحة المفتوحة.",
+    "key_url": "https://libretranslate.com",
+    "key_url_kind": "official_site",
+    "key_url_note": "LibreTranslate مفتوح المصدر ويُستضاف ذاتياً، ولا صفحة مفاتيح مستضافة عامة مثبتة له — الزر يفتح موقعه الرسمي فقط."
   },
   {
     "id": "anthropic-api",
@@ -2257,7 +2365,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://claude.com/pricing",
-    "verification_note": "غير موثّق كـ API مجاني: الصفحة المفتوحة صفحة خطط اشتراك للدردشة وليست جدول أسعار API؛ خطة Free للدردشة بسعر 0 دولار، وخطة Max المدفوعة تشمل 100 إلى 200 دولار شهريا رصيد API، وهذا رصيد مرتبط بخطة مدفوعة وليس رصيدا مجانيا للمستخدمين الجدد. الرقم المتداول 5 دولارات لم يظهر في صفحة رسمية مفتوحة ولم يُعتمد."
+    "verification_note": "غير موثّق كـ API مجاني: الصفحة المفتوحة صفحة خطط اشتراك للدردشة وليست جدول أسعار API؛ خطة Free للدردشة بسعر 0 دولار، وخطة Max المدفوعة تشمل 100 إلى 200 دولار شهريا رصيد API، وهذا رصيد مرتبط بخطة مدفوعة وليس رصيدا مجانيا للمستخدمين الجدد. الرقم المتداول 5 دولارات لم يظهر في صفحة رسمية مفتوحة ولم يُعتمد.",
+    "key_url": "https://console.anthropic.com/settings/keys",
+    "key_url_kind": "keys_page",
+    "key_url_note": "يفتح صفحة المفاتيح في إعدادات وحدة تحكم Anthropic."
   },
   {
     "id": "llama-api",
@@ -2314,7 +2425,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://www.llama.com/docs/how-to-guides/",
-    "verification_note": "غير موثّق كعرض API مجاني مؤكد: صفحة Meta Model API المفتوحة أدلة حول هندسة المطالبات والضبط الدقيق والتكميم والتقطير والاستخدام المسؤول، دون سعر ولا رصيد مجاني ولا معرّف نموذج للاستدعاء ولا حد مجاني؛ وادعاء 20 دولارا رصيدا مجانيا عند التسجيل ظهر في مصادر ثانوية فقط ولم يُعتمد، وأوزان Llama المفتوحة القابلة للتنزيل ليست بذاتها واجهة API مستضافة مجانية بمفتاح عام."
+    "verification_note": "غير موثّق كعرض API مجاني مؤكد: صفحة Meta Model API المفتوحة أدلة حول هندسة المطالبات والضبط الدقيق والتكميم والتقطير والاستخدام المسؤول، دون سعر ولا رصيد مجاني ولا معرّف نموذج للاستدعاء ولا حد مجاني؛ وادعاء 20 دولارا رصيدا مجانيا عند التسجيل ظهر في مصادر ثانوية فقط ولم يُعتمد، وأوزان Llama المفتوحة القابلة للتنزيل ليست بذاتها واجهة API مستضافة مجانية بمفتاح عام.",
+    "key_url": "https://llama.developer.meta.com/",
+    "key_url_kind": "console",
+    "key_url_note": "يفتح منصة مطوري Llama لدى Meta؛ المفاتيح في لوحة API dashboard ثم API keys."
   },
   {
     "id": "deepinfra",
@@ -2371,7 +2485,10 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://deepinfra.com/pricing",
-    "verification_note": "لا طبقة مجانية في الصفحة الرسمية المفتوحة: النص يقول you only pay for what you use وبلا عقود طويلة ولا تكاليف مقدمة، ولا كلمة خطة مجانية ولا رصيد تجريبي في النص الكامل؛ وشرط الدفع المؤكد: يجب إضافة بطاقة أو دفع مسبق وإلا لا يمكن استخدام الخدمات. لذلك لا يُدرج كمجاني رغم أنه API بمفتاح عام ومتوافق مع OpenAI."
+    "verification_note": "لا طبقة مجانية في الصفحة الرسمية المفتوحة: النص يقول you only pay for what you use وبلا عقود طويلة ولا تكاليف مقدمة، ولا كلمة خطة مجانية ولا رصيد تجريبي في النص الكامل؛ وشرط الدفع المؤكد: يجب إضافة بطاقة أو دفع مسبق وإلا لا يمكن استخدام الخدمات. لذلك لا يُدرج كمجاني رغم أنه API بمفتاح عام ومتوافق مع OpenAI.",
+    "key_url": "https://deepinfra.com/dash/api_keys",
+    "key_url_kind": "keys_page",
+    "key_url_note": "يفتح صفحة مفاتيح API في لوحة تحكم DeepInfra."
   },
   {
     "id": "hyperbolic",
@@ -2428,6 +2545,9 @@
     "playground_status": "implemented",
     "playground_block_reason": null,
     "verification_source": "https://www.hyperbolic.ai/docs/inference/overview",
-    "verification_note": "لا استخدام API مجانيا رغم وجود اسم الطبقة المجانية: صفحة الاستدلال الرسمية تقول إن الحسابات الشخصية على الطبقة المجانية لا يمكنها استخدام الاستدلال، وإن الترقية تتطلب إيداعا لمرة واحدة بقيمة 5 دولارات أو أكثر دون اشتراك؛ وصفحة الفوترة تقول إن الاستدلال يُرفض حتى إضافة أموال، وإن الأرصدة المشتراة لا تنتهي. قاعدة الاستدلال الحالية https://api.hyperbolic.ai/inference/v1، والعنوان القديم api.hyperbolic.xyz/v1 يعيد 404 حسب الصفحة نفسها."
+    "verification_note": "لا استخدام API مجانيا رغم وجود اسم الطبقة المجانية: صفحة الاستدلال الرسمية تقول إن الحسابات الشخصية على الطبقة المجانية لا يمكنها استخدام الاستدلال، وإن الترقية تتطلب إيداعا لمرة واحدة بقيمة 5 دولارات أو أكثر دون اشتراك؛ وصفحة الفوترة تقول إن الاستدلال يُرفض حتى إضافة أموال، وإن الأرصدة المشتراة لا تنتهي. قاعدة الاستدلال الحالية https://api.hyperbolic.ai/inference/v1، والعنوان القديم api.hyperbolic.xyz/v1 يعيد 404 حسب الصفحة نفسها.",
+    "key_url": "https://app.hyperbolic.xyz/",
+    "key_url_kind": "console",
+    "key_url_note": "يفتح بوابة Hyperbolic؛ المفتاح يُولّد من قسم Settings فيها."
   }
 ]
