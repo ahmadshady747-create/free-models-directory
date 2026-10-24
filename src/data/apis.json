@@ -1,0 +1,2433 @@
+[
+  {
+    "auth": "مفتاح API",
+    "card_required": "غير معلن",
+    "category": "chat-text",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "بوابة استدلال إلى نماذج مفتوحة من عدة مزودين؛ نتيجة سلبية موثقة: التوثيق الرسمي يقول إن المستخدمين المجانيين ليس لهم رصيد شهري مشمول، والاستخدام يتطلب شراء رصيد أو PRO مدفوعا، لذلك لا تُدرج كطبقة مجانية حتى يثبت خلاف ذلك، وبقيت البطاقة بقرار صريح لا بحذف صامت.",
+    "docs": "https://huggingface.co/docs/inference-providers",
+    "example_curl": "curl https://router.huggingface.co/v1/chat/completions -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"model\": \"MODEL_NAME\", \"messages\": [{\"role\": \"user\", \"content\": \"مرحبا\"}]}'",
+    "example_fetch": "fetch('https://router.huggingface.co/v1/chat/completions', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ model: 'MODEL_NAME', messages: [{ role: 'user', content: 'مرحبا' }] }) })",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "free_type": "غير مؤكد",
+    "https": true,
+    "id": "huggingface-inference",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "نماذج مفتوحة عبر Inference Providers",
+        "type": "text"
+      }
+    ],
+    "name": "Hugging Face Inference Providers",
+    "pricing": "https://huggingface.co/pricing",
+    "provider": "Hugging Face",
+    "signup": "غير مؤكد",
+    "status": "قيد التحقق",
+    "tags": [
+      "نماذج مفتوحة",
+      "محادثة"
+    ],
+    "training_use": "غير معلن",
+    "website": "https://huggingface.co",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "chat",
+        "endpoint": "https://router.huggingface.co/v1/chat/completions",
+        "format": "openai-chat",
+        "auth": "bearer",
+        "label": "توليد نص / محادثة",
+        "prompt_label": "رسالتك",
+        "model_input": true,
+        "fields": []
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://huggingface.co/docs/inference-providers/pricing",
+    "verification_note": "نتيجة سلبية موثقة يجب أن يقررها صاحب المشروع: توثيق Inference Providers يقول إن المستخدمين المجانيين ليس لهم رصيد شهري مشمول (Included Monthly Credits: Free Users: None)، وإن الاستخدام المجاني يتطلب شراء رصيد أو الترقية إلى PRO (2 دولار شهريا، مدفوع وليس مجانيا)؛ وأسعار Spaces (CPU Basic FREE وZeroGPU FREE) تخص عتاد Spaces وليست Inference Providers ولا يجوز خلطهما. البطاقة بقيت بلا زر حذف صامت، بانتظار قرار صاحب المشروع بحذفها أو نقلها إلى قسم غير مجاني."
+  },
+  {
+    "auth": "مفتاح API",
+    "card_required": "غير معلن",
+    "category": "chat-text",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "استدلال سريع للنماذج اللغوية، بانتظار التحقق من النماذج والحدود المشمولة مجانا.",
+    "docs": "https://console.groq.com/docs",
+    "example_curl": "curl https://api.groq.com/openai/v1/chat/completions -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"model\": \"MODEL_NAME\", \"messages\": [{\"role\": \"user\", \"content\": \"مرحبا\"}]}'",
+    "example_fetch": "fetch('https://api.groq.com/openai/v1/chat/completions', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ model: 'MODEL_NAME', messages: [{ role: 'user', content: 'مرحبا' }] }) })",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "free_type": "غير مؤكد",
+    "https": true,
+    "id": "groq",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "نماذج لغوية عبر Groq",
+        "type": "text"
+      }
+    ],
+    "name": "Groq",
+    "pricing": "https://groq.com/pricing",
+    "provider": "Groq",
+    "signup": "غير مؤكد",
+    "status": "قيد التحقق",
+    "tags": [
+      "محادثة",
+      "سرعة"
+    ],
+    "training_use": "غير معلن",
+    "website": "https://groq.com",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "chat",
+        "endpoint": "https://api.groq.com/openai/v1/chat/completions",
+        "format": "openai-chat",
+        "auth": "bearer",
+        "label": "توليد نص / محادثة",
+        "prompt_label": "رسالتك",
+        "model_input": true,
+        "fields": []
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://groq.com/pricing",
+    "verification_note": "غير موثّق كطبقة مجانية: صفحة الأسعار المفتوحة أظهرت نصا تسويقيا عاما بلا طبقة مجانية ولا أرقام، وجدول حدود المعدل في التوثيق يصف خطة Developer الأساسية وليس طبقة مجانية، لذلك لا يجوز استنتاج أي رقم مجاني منه."
+  },
+  {
+    "auth": "غير مؤكد",
+    "card_required": "غير معلن",
+    "category": "image",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "توليد نصوص وصور وصوت عبر API، لكن تقارير حديثة تشير إلى تقييد الاستخدام دون مفتاح، لذلك كل حدوده هنا غير مؤكد حتى التحقق الرسمي.",
+    "docs": "https://pollinations.ai",
+    "example_curl": "# راجع التوثيق الرسمي الحالي قبل الاستدعاء، فقد تغيرت نقاط النهاية وشروط المفتاح مؤخرا\ncurl \"https://gen.pollinations.ai/image/PROMPT\" -H \"Authorization: Bearer YOUR_KEY\"",
+    "example_fetch": "// راجع التوثيق الرسمي الحالي قبل الاستدعاء\nfetch('https://gen.pollinations.ai/image/PROMPT', { headers: { 'Authorization': 'Bearer YOUR_KEY' } })",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "free_type": "غير مؤكد",
+    "https": true,
+    "id": "pollinations",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "media": [
+      "image"
+    ],
+    "models": [
+      {
+        "name": "Flux لصور",
+        "type": "image"
+      },
+      {
+        "name": "نماذج نصية عبر Pollinations",
+        "type": "text"
+      }
+    ],
+    "name": "Pollinations",
+    "pricing": "https://pollinations.ai",
+    "provider": "Pollinations",
+    "signup": "غير مؤكد",
+    "status": "قيد التحقق",
+    "tags": [
+      "صور",
+      "بدون تحقق بعد"
+    ],
+    "training_use": "غير معلن",
+    "website": "https://pollinations.ai",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "chat",
+        "endpoint": "https://gen.pollinations.ai/v1/chat/completions",
+        "format": "pollinations-chat",
+        "auth": "bearer",
+        "label": "توليد نص / محادثة",
+        "prompt_label": "رسالتك",
+        "model_input": true,
+        "fields": [],
+        "note": "استخدم مفتاح تطبيق يبدأ بـ pk_ للعملاء العامة فقط، ولا تدخل أبداً المفتاح السري الذي يبدأ بـ sk_ في المتصفح."
+      },
+      {
+        "kind": "image",
+        "endpoint": "https://gen.pollinations.ai/image/",
+        "format": "pollinations-image",
+        "auth": "bearer",
+        "label": "توليد صورة",
+        "prompt_label": "وصف الصورة",
+        "model_input": false,
+        "fields": [],
+        "note": "توليد الفيديو في Pollinations غير موثّق التدفق (مباشر أم مهمة غير متزامنة) في المواصفة، لذلك لم يُنفذ ملعب فيديو لهذا المزود."
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://gen.pollinations.ai/docs",
+    "verification_note": "نوعي فقط، بلا رقم: الصفحتان المفتوحتان تقولان Free to start, scales with you ومكافأة Quest صغيرة لمفتاح أول، بنظام Quest Pollen مقابل Paid Pollen ونموذج إحضار Pollen الخاص بك؛ ولم يرد مقدار يومي أو أسبوعي أو ساعي ولا حد طلبات. ملاحظة: المفاتيح صالحة افتراضيا 7 أيام حسب التوثيق، وهذا عمر مفتاح وليس تاريخ انتهاء عرض مجاني، ولا عدّاد له."
+  },
+  {
+    "auth": "مفتاح API",
+    "card_required": "غير معلن",
+    "category": "image",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "تشغيل نماذج مفتوحة للصور والصوت والفيديو عبر API، بانتظار التحقق من أي نموذج مشمول مجانا فعلا.",
+    "docs": "https://replicate.com/docs",
+    "example_curl": "curl -s -X POST https://api.replicate.com/v1/predictions -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"version\": \"MODEL_VERSION\", \"input\": {\"prompt\": \"صورة\"}}'",
+    "example_fetch": "fetch('https://api.replicate.com/v1/predictions', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ version: 'MODEL_VERSION', input: { prompt: 'صورة' } }) })",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "free_type": "غير مؤكد",
+    "https": true,
+    "id": "replicate",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "media": [
+      "image"
+    ],
+    "models": [
+      {
+        "name": "نماذج صور عبر Replicate",
+        "type": "image"
+      }
+    ],
+    "name": "Replicate",
+    "pricing": "https://replicate.com/pricing",
+    "provider": "Replicate",
+    "signup": "غير مؤكد",
+    "status": "قيد التحقق",
+    "tags": [
+      "صور",
+      "نماذج مفتوحة"
+    ],
+    "training_use": "غير معلن",
+    "website": "https://replicate.com",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "prediction",
+        "endpoint": "https://api.replicate.com/v1/predictions",
+        "format": "replicate-prediction",
+        "auth": "bearer",
+        "label": "توليد عبر نموذج (صورة/فيديو/صوت حسب النموذج)",
+        "prompt_label": "الوصف (prompt)",
+        "model_input": true,
+        "fields": [],
+        "poll_endpoint": "https://api.replicate.com/v1/predictions/{id}",
+        "poll_interval_ms": 5000,
+        "max_poll_ms": 900000,
+        "cancel_endpoint": "https://api.replicate.com/v1/predictions/{id}/cancel",
+        "note": "في حقل معرّف النموذج أدخل معرّف إصدار النموذج version كما في توثيق Replicate، فالتنبؤ يتطلب version وليس اسم نموذج عاماً."
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://replicate.com/pricing",
+    "verification_note": "لا طبقة مجانية مذكورة في صفحة الأسعار المفتوحة: أسعار عتاد بالثانية فقط، ومنها T4 وL40S وA100 80GB وH100؛ ولم يرد حد مجاني ولا شرط بطاقة ولا CORS ولا نماذج مجانية."
+  },
+  {
+    "auth": "مفتاح API",
+    "card_required": "غير معلن",
+    "category": "video",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "نماذج توليد فيديو؛ الحساب الاستهلاكي المجاني مؤكد جزئيا بـ 125 رصيدا لمرة واحدة لا تنتهي، لكن الطبقة المجانية لواجهة المطورين غير مؤكدة من صفحة تسعيرها، لذلك بقيت البطاقة قيد التحقق لواجهة API.",
+    "docs": "https://runwayml.com/docs",
+    "example_curl": "# راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\ncurl https://api.runwayml.com/v1 -H \"Authorization: Bearer YOUR_KEY\"",
+    "example_fetch": "// راجع التوثيق الرسمي للمثال الدقيق\nfetch('https://api.runwayml.com/v1', { headers: { 'Authorization': 'Bearer YOUR_KEY' } })",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "free_type": "غير مؤكد",
+    "https": true,
+    "id": "runway",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "media": [
+      "video"
+    ],
+    "models": [
+      {
+        "name": "نماذج فيديو عبر Runway",
+        "type": "video"
+      }
+    ],
+    "name": "Runway",
+    "pricing": "https://runwayml.com/pricing",
+    "provider": "Runway",
+    "signup": "غير مؤكد",
+    "status": "قيد التحقق",
+    "tags": [
+      "فيديو"
+    ],
+    "training_use": "غير معلن",
+    "website": "https://runwayml.com",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "video",
+        "endpoint": "https://api.dev.runwayml.com/v1/text_to_video",
+        "format": "runway-task",
+        "auth": "bearer",
+        "label": "توليد فيديو",
+        "prompt_label": "وصف الفيديو (promptText)",
+        "model_input": true,
+        "fields": [
+          {
+            "key": "prompt_image",
+            "label": "رابط صورة البداية (اختياري — إذا أدخلته يُستخدم image_to_video بدل text_to_video)",
+            "placeholder": "https://.../image.jpg",
+            "required": false
+          },
+          {
+            "key": "ratio",
+            "label": "نسبة الأبعاد (مثال: 1280:720)",
+            "placeholder": "1280:720",
+            "required": false
+          },
+          {
+            "key": "duration",
+            "label": "المدة بالثواني (مثال: 5)",
+            "placeholder": "5",
+            "required": false
+          },
+          {
+            "key": "version",
+            "label": "ترويسة إصدار Runway X-Runway-Version (افتراضياً 2024-11-06 من توثيق الإصدارات الرسمي؛ غيّرها إذا رفض المزود الإصدار)",
+            "placeholder": "2024-11-06",
+            "required": false
+          }
+        ],
+        "poll_endpoint": "https://api.dev.runwayml.com/v1/tasks/{id}",
+        "poll_interval_ms": 10000,
+        "max_poll_ms": 900000,
+        "note": "الاستطلاع كل 10 ثوانٍ على الأقل (أكثر من الحد الأدنى 5 ثوانٍ في المواصفة)، بمهلة قصوى 15 دقيقة وزر إيقاف."
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://docs.dev.runwayml.com/guides/pricing/",
+    "verification_note": "تصحيح تصنيف: الحساب الاستهلاكي Free forever بسعر 0 دولار يشمل 125 رصيدا لمرة واحدة لا تنتهي حسب الأسئلة الشائعة، لكن صفحة تسعير واجهة المطورين المفتوحة لا تذكر رصيدا مجانيا عاما (شراء الرصيد 0.01 دولار للرصيد)، ورصيد 600 عند التسجيل في dev.runway.com خاص بشخصيات Characters كما ورد، وليس إثباتا لرصيد مجاني عام لتوليد الفيديو. لذلك بقيت الطبقة المجانية لواجهة المطورين غير مؤكدة، وأُزيلت علامة العرض المؤقت لأن الـ 125 رصيدا مذكور أنها لا تنتهي."
+  },
+  {
+    "auth": "مفتاح API",
+    "card_required": "غير معلن",
+    "category": "video",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "نماذج توليد فيديو من نص أو صورة؛ لا طبقة مجانية مؤكدة لواجهة البرمجة في صفحة تسعيرها (دفع لكل توليد)، والمحاولة المجانية للتطبيق الاستهلاكي غير محددة الرقم، لذلك بقيت البطاقة قيد التحقق.",
+    "docs": "https://lumalabs.ai/docs",
+    "example_curl": "# راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\ncurl https://api.lumalabs.ai -H \"Authorization: Bearer YOUR_KEY\"",
+    "example_fetch": "// راجع التوثيق الرسمي للمثال الدقيق\nfetch('https://api.lumalabs.ai', { headers: { 'Authorization': 'Bearer YOUR_KEY' } })",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "free_type": "غير مؤكد",
+    "https": true,
+    "id": "luma-ai",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "media": [
+      "video"
+    ],
+    "models": [
+      {
+        "name": "نماذج فيديو عبر Luma",
+        "type": "video"
+      }
+    ],
+    "name": "Luma AI",
+    "pricing": "https://lumalabs.ai/pricing",
+    "provider": "Luma AI",
+    "signup": "غير مؤكد",
+    "status": "قيد التحقق",
+    "tags": [
+      "فيديو"
+    ],
+    "training_use": "غير معلن",
+    "website": "https://lumalabs.ai",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "video",
+        "endpoint": "https://api.lumalabs.ai/dream-machine/v1/generations",
+        "format": "luma-generation",
+        "auth": "bearer",
+        "label": "توليد فيديو (Dream Machine)",
+        "prompt_label": "وصف الفيديو",
+        "model_input": true,
+        "fields": [
+          {
+            "key": "aspect_ratio",
+            "label": "نسبة الأبعاد (مثال: 16:9)",
+            "placeholder": "16:9",
+            "required": false
+          }
+        ],
+        "poll_endpoint": "https://api.lumalabs.ai/dream-machine/v1/generations/{id}",
+        "poll_interval_ms": 5000,
+        "max_poll_ms": 900000
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://docs.agents.lumalabs.ai/guides/pricing/",
+    "verification_note": "لا طبقة مجانية مذكورة لواجهة البرمجة في صفحة التسعير المفتوحة (دفع لكل توليد، بلا حد أدنى وبلا عقد)؛ والتطبيق الاستهلاكي فقط يقول جرّب المنصة مجانا قبل اختيار خطة، دون مبلغ ولا مدة ولا نطاق. لذلك بقيت الطبقة المجانية لواجهة API غير مؤكدة، وأُزيلت علامة العرض المؤقت لعدم وجود عرض مؤقت مؤكد لواجهة API."
+  },
+  {
+    "auth": "مفتاح API",
+    "card_required": "غير معلن",
+    "category": "audio",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "تحويل نص إلى كلام واستنساخ صوت، بانتظار التحقق من حد الأحرف المجاني الحالي.",
+    "docs": "https://elevenlabs.io/docs",
+    "example_curl": "curl https://api.elevenlabs.io/v1/text-to-speech/VOICE_ID -H \"xi-api-key: YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"text\": \"مرحبا\", \"model_id\": \"MODEL_ID\"}'",
+    "example_fetch": "fetch('https://api.elevenlabs.io/v1/text-to-speech/VOICE_ID', { method: 'POST', headers: { 'xi-api-key': 'YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ text: 'مرحبا', model_id: 'MODEL_ID' }) })",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "free_type": "غير مؤكد",
+    "https": true,
+    "id": "elevenlabs",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "media": [
+      "audio"
+    ],
+    "models": [
+      {
+        "name": "نماذج تحويل نص إلى كلام",
+        "type": "audio"
+      }
+    ],
+    "name": "ElevenLabs",
+    "pricing": "https://elevenlabs.io/pricing",
+    "provider": "ElevenLabs",
+    "signup": "غير مؤكد",
+    "status": "قيد التحقق",
+    "tags": [
+      "صوت",
+      "كلام"
+    ],
+    "training_use": "غير معلن",
+    "website": "https://elevenlabs.io",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "audio",
+        "endpoint": "https://api.elevenlabs.io/v1/text-to-speech/{voice_id}",
+        "format": "elevenlabs-tts",
+        "auth": "xi-api-key",
+        "label": "تحويل نص إلى كلام",
+        "prompt_label": "النص المراد تحويله إلى كلام",
+        "model_input": true,
+        "fields": [
+          {
+            "key": "voice_id",
+            "label": "معرّف الصوت Voice ID (من حسابك لدى المزود)",
+            "placeholder": "مثال: معرّف صوت من حسابك",
+            "required": true
+          }
+        ]
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://elevenlabs.io/pricing",
+    "verification_note": "غير موثّق لسبب تقني وليس حكما على المزود: أداة الفتح رفضت النطاق elevenlabs.io بسياسة حظر، ولم يُكرر الطلب؛ والرقم المتداول 10000 رصيد في مقتطفات ثانوية لم يُعتمد لأنه لم يظهر في صفحة رسمية مفتوحة. يحتاج هذا المزود إلى فحص من جهة قادرة على فتح النطاق مباشرة."
+  },
+  {
+    "auth": "مفتاح API",
+    "card_required": "لا، حسب صفحة الأسعار والمدونة الرسميتين",
+    "category": "audio",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "تحويل كلام إلى نص وتحليل صوتي، بانتظار التحقق من حد الساعات أو الرصيد المجاني الحالي.",
+    "docs": "https://assemblyai.com/docs",
+    "example_curl": "curl https://api.assemblyai.com/v2/transcript -H \"Authorization: YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"audio_url\": \"https://example.com/audio.mp3\"}'",
+    "example_fetch": "fetch('https://api.assemblyai.com/v2/transcript', { method: 'POST', headers: { 'Authorization': 'YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ audio_url: 'https://example.com/audio.mp3' }) })",
+    "free_limit": "333 ساعة بث و185 ساعة مسجلة مسبقا حسب مدونة الشركة الرسمية؛ والمبلغ بالدولار للرصيد المجاني غير مؤكد في الصفحات المفتوحة لأنه لم يُذكر",
+    "free_limit_scope": "للحسابات الجديدة، عند البدء",
+    "free_type": "طبقة مجانية للبدء (دون بطاقة)",
+    "https": true,
+    "id": "assemblyai",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "2026-10-24",
+    "live_try": null,
+    "media": [
+      "audio"
+    ],
+    "models": [
+      {
+        "name": "نماذج تحويل كلام إلى نص",
+        "type": "audio"
+      }
+    ],
+    "name": "AssemblyAI",
+    "pricing": "https://assemblyai.com/pricing",
+    "provider": "AssemblyAI",
+    "signup": "غير مؤكد",
+    "status": "موثق جزئيا",
+    "tags": [
+      "صوت",
+      "نسخ"
+    ],
+    "training_use": "غير معلن",
+    "website": "https://assemblyai.com",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [],
+    "playground_status": "browser-blocked",
+    "playground_block_reason": "محظور من المتصفح بتوجيه من المزود: توثيق AssemblyAI يضع المفتاح على الخادم، ولا يرى عميل الجوال المفتاح أبداً. لذلك لا يوجد زر توليد في المتصفح هنا، ولا وسيط خادم أُضيف دون موافقة صريحة من صاحب المشروع.",
+    "verification_source": "https://www.assemblyai.com/pricing",
+    "verification_note": "صفحة الأسعار الرسمية تقول Start free ثم الدفع حسب الاستخدام دون التزامات، والمدونة الرسمية تقول Free tier, no credit card بالساعات أعلاه؛ وتوجيه المفتاح إلى الخادم مؤكد لمنتج Voice Agent فقط (رمز مؤقت أحادي الاستخدام عبر GET /v1/token من الخادم)، وليس تأكيدا عاما لكل واجهات AssemblyAI ولا نص CORS."
+  },
+  {
+    "auth": "مفتاح API",
+    "card_required": "غير معلن",
+    "category": "embeddings",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "نماذج تضمين وتصنيف وإعادة ترتيب للبحث الدلالي، بانتظار التحقق من حدود كل نموذج.",
+    "docs": "https://cohere.com/docs",
+    "example_curl": "curl https://api.cohere.com/v1/embed -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"texts\": [\"مرحبا\"], \"model\": \"MODEL_NAME\"}'",
+    "example_fetch": "fetch('https://api.cohere.com/v1/embed', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ texts: ['مرحبا'], model: 'MODEL_NAME' }) })",
+    "free_limit": "1000 استدعاء API شهريا لمفاتيح التجربة، مع حدود معدل: محادثة 20 في الدقيقة، تضمين 2000 مدخل في الدقيقة، تضمين صور 5 في الدقيقة، إعادة ترتيب 10 في الدقيقة",
+    "free_limit_scope": "لمفاتيح التجربة (Trial keys)",
+    "free_type": "مفتاح تجريبي مجاني محدود",
+    "https": true,
+    "id": "cohere",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "2026-10-24",
+    "live_try": null,
+    "media": [
+      "embeddings"
+    ],
+    "models": [
+      {
+        "name": "نماذج تضمين عبر Cohere",
+        "type": "embeddings"
+      }
+    ],
+    "name": "Cohere",
+    "pricing": "https://cohere.com/pricing",
+    "provider": "Cohere",
+    "signup": "غير مؤكد",
+    "status": "موثق جزئيا",
+    "tags": [
+      "تضمين",
+      "بحث"
+    ],
+    "training_use": "غير معلن",
+    "website": "https://cohere.com",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "embeddings",
+        "endpoint": "https://api.cohere.com/v1/embed",
+        "format": "cohere-embed",
+        "auth": "bearer",
+        "label": "تضمين نصي (Embeddings)",
+        "prompt_label": "النص المراد تضمينه",
+        "model_input": true,
+        "fields": [],
+        "note": "يُعرض بُعد المتجه وأول بضعة أرقام فقط، لا المتجه كاملاً."
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://cohere.com/pricing",
+    "verification_note": "صفحة الأسعار الرسمية وصفحة حدود المعدل تؤكدان مفاتيح تجربة مجانية محدودة بالرقم أعلاه؛ شرط البطاقة وحالة CORS غير مثبتين من الصفحتين المفتوحتين، ولا تاريخ انتهاء مؤكد."
+  },
+  {
+    "auth": "مفتاح API",
+    "card_required": "غير معلن",
+    "category": "embeddings",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "نماذج تضمين متخصصة للبحث، أصبحت ضمن MongoDB؛ طبقتها المجانية موثقة جزئيا من جدول الفوترة الرسمي، لكن فترة التجديد وحالة CORS غير مؤكدتين.",
+    "docs": "https://voyageai.com/docs",
+    "example_curl": "curl https://api.voyageai.com/v1/embeddings -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"input\": [\"مرحبا\"], \"model\": \"MODEL_NAME\"}'",
+    "example_fetch": "fetch('https://api.voyageai.com/v1/embeddings', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ input: ['مرحبا'], model: 'MODEL_NAME' }) })",
+    "free_limit": "200 مليون رمز مجاني لمعظم النماذج، و50 مليون رمز للنماذج المتخصصة voyage-finance-2 وvoyage-law-2 وvoyage-code-2",
+    "free_limit_scope": "غير مؤكد: الصفحة المفتوحة لم تذكر فترة تجديد شهرية ولا تاريخ انتهاء",
+    "free_type": "طبقة مجانية",
+    "https": true,
+    "id": "voyage-ai",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "2026-10-24",
+    "live_try": null,
+    "media": [
+      "embeddings"
+    ],
+    "models": [
+      {
+        "name": "voyage-4-large",
+        "type": "embeddings"
+      },
+      {
+        "name": "voyage-4",
+        "type": "embeddings"
+      },
+      {
+        "name": "voyage-4-lite",
+        "type": "embeddings"
+      },
+      {
+        "name": "voyage-code-4",
+        "type": "embeddings"
+      },
+      {
+        "name": "voyage-finance-2",
+        "type": "embeddings"
+      },
+      {
+        "name": "voyage-law-2",
+        "type": "embeddings"
+      },
+      {
+        "name": "voyage-code-2",
+        "type": "embeddings"
+      }
+    ],
+    "name": "Voyage AI",
+    "pricing": "https://voyageai.com/pricing",
+    "provider": "Voyage AI",
+    "signup": "غير مؤكد",
+    "status": "موثق جزئيا",
+    "tags": [
+      "تضمين",
+      "بحث"
+    ],
+    "training_use": "غير معلن",
+    "website": "https://voyageai.com",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "embeddings",
+        "endpoint": "https://api.voyageai.com/v1/embeddings",
+        "format": "voyage-embed",
+        "auth": "bearer",
+        "label": "تضمين نصي (Embeddings)",
+        "prompt_label": "النص المراد تضمينه",
+        "model_input": true,
+        "fields": [],
+        "note": "يُعرض بُعد المتجه وأول بضعة أرقام فقط، لا المتجه كاملاً."
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://www.mongodb.com/docs/voyageai/management/billing/",
+    "verification_note": "Voyage AI الآن ضمن توثيق MongoDB: الحسابات بلا وسيلة دفع على الطبقة المجانية افتراضيا، وإضافة وسيلة دفع تنقل الحساب إلى Usage Tier 1. نقاط النهاية الحالية ai.mongodb.com (مثال: https://eu.ai.mongodb.com/v1/embeddings)، وليست api.voyageai.com القديمة، لذلك راجع التوثيق الحالي قبل الاستدعاء. حالة CORS غير مؤكدة."
+  },
+  {
+    "auth": "مفتاح API",
+    "card_required": "غير معلن",
+    "category": "vision",
+    "commercial": "غير معلن",
+    "cors": "مقيّد — ترويسة Access-Control-Allow-Origin مقصورة على أصول مسموحة مسبقا حسب توثيق المصادقة، ويُنصح بوكيل خلفي أو أصل معتمد",
+    "description_ar": "نماذج رؤية للتعرف على عناصر الصور وتصنيفها، بانتظار التحقق من الحد المجاني الحالي.",
+    "docs": "https://clarifai.com/docs",
+    "example_curl": "# راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\ncurl https://api.clarifai.com/v2/models -H \"Authorization: Key YOUR_KEY\"",
+    "example_fetch": "// راجع التوثيق الرسمي للمثال الدقيق\nfetch('https://api.clarifai.com/v2/models', { headers: { 'Authorization': 'Key YOUR_KEY' } })",
+    "free_limit": "طلبات شهرية محدودة دون رقم مذكور في النص المفتوح من صفحة الأسعار، بحد 1 طلب في الثانية؛ والرقم المتداول 1000 عملية لم يظهر في الصفحة المفتوحة ولم يُعتمد",
+    "free_limit_scope": "خطة Community، شهريا",
+    "free_type": "خطة مجتمع محدودة، مع تجربة مجانية 14 يوما معروضة أعلى صفحة الأسعار",
+    "https": true,
+    "id": "clarifai",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "2026-10-24",
+    "live_try": null,
+    "media": [
+      "image"
+    ],
+    "models": [
+      {
+        "name": "نماذج رؤية عبر Clarifai",
+        "type": "image"
+      }
+    ],
+    "name": "Clarifai",
+    "pricing": "https://clarifai.com/pricing",
+    "provider": "Clarifai",
+    "signup": "غير مؤكد",
+    "status": "موثق جزئيا",
+    "tags": [
+      "رؤية",
+      "صور"
+    ],
+    "training_use": "غير معلن",
+    "website": "https://clarifai.com",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "vision",
+        "endpoint": "https://api.clarifai.com/v2/users/{user_id}/apps/{app_id}/models/{model_id}/outputs",
+        "format": "clarifai-vision",
+        "auth": "clarifai-key",
+        "label": "تحليل صورة (رؤية)",
+        "prompt_label": "لا ينطبق — أدخل رابط الصورة في الحقول أدناه",
+        "model_input": false,
+        "fields": [
+          {
+            "key": "user_id",
+            "label": "معرّف المستخدم user_id",
+            "placeholder": "مثال: clarifai",
+            "required": true
+          },
+          {
+            "key": "app_id",
+            "label": "معرّف التطبيق app_id",
+            "placeholder": "مثال: main",
+            "required": true
+          },
+          {
+            "key": "model_id",
+            "label": "معرّف النموذج model_id",
+            "placeholder": "مثال: general-image-recognition",
+            "required": true
+          },
+          {
+            "key": "version_id",
+            "label": "معرّف الإصدار version_id (اختياري — اتركه فارغاً لاستخدام أحدث إصدار)",
+            "placeholder": "",
+            "required": false
+          },
+          {
+            "key": "image_url",
+            "label": "رابط الصورة العامة",
+            "placeholder": "https://samples.clarifai.com/metro-north.jpg",
+            "required": true
+          }
+        ],
+        "note": "مؤكد جزئياً في هذه المهمة: ترويسة Authorization: Key، ونمط المسار users/apps/models من توثيق Clarifai، ونموذج المثال clarifai/main/general-image-recognition، وشكل المخرجات concepts/regions. إذا أدخلت version_id يُستخدم مسار versions/{id}/outputs."
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://www.clarifai.com/pricing",
+    "verification_note": "صفحة الأسعار الرسمية تعرض Pay As You Go وHybrid-Cloud Enterprise وخطة Community في جدول المقارنة، وعبارة تجربة مجانية 14 يوما دون نطاق أو مبلغ؛ و14 يوما مدة تجربة وليست تاريخ انتهاء تقويميا. CORS مقيّد حسب توثيق المصادقة."
+  },
+  {
+    "auth": "مفتاح API",
+    "card_required": "غير معلن",
+    "category": "vision",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "نماذج كشف أجسام وتصنيف صور عبر API للاستدلال، بانتظار التحقق من الحد المجاني الحالي.",
+    "docs": "https://roboflow.com/docs",
+    "example_curl": "# راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\ncurl https://detect.roboflow.com/MODEL/VERSION?api_key=YOUR_KEY -F file=@image.jpg",
+    "example_fetch": "// راجع التوثيق الرسمي للمثال الدقيق\nfetch('https://detect.roboflow.com/MODEL/VERSION?api_key=YOUR_KEY')",
+    "free_limit": "10 أرصدة شهريا، وُصفت بأنها تكفي لتدريب نحو 30 نموذجا أو تشغيل 80000 استدلال",
+    "free_limit_scope": "شهريا",
+    "free_type": "طبقة مجانية",
+    "https": true,
+    "id": "roboflow",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "2026-10-24",
+    "live_try": null,
+    "media": [
+      "image"
+    ],
+    "models": [
+      {
+        "name": "نماذج رؤية عبر Roboflow",
+        "type": "image"
+      }
+    ],
+    "name": "Roboflow",
+    "pricing": "https://roboflow.com/pricing",
+    "provider": "Roboflow",
+    "signup": "غير مؤكد",
+    "status": "موثق جزئيا",
+    "tags": [
+      "رؤية",
+      "كشف"
+    ],
+    "training_use": "غير معلن",
+    "website": "https://roboflow.com",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "vision",
+        "endpoint": "https://detect.roboflow.com/{project_id}/{version}",
+        "format": "roboflow-detect",
+        "auth": "query-apikey",
+        "label": "كشف أجسام في صورة",
+        "prompt_label": "لا ينطبق — أدخل رابط الصورة في الحقول أدناه",
+        "model_input": false,
+        "fields": [
+          {
+            "key": "project_id",
+            "label": "معرّف المشروع project_id (مشروعك لدى Roboflow)",
+            "placeholder": "مثال: counting-screws",
+            "required": true
+          },
+          {
+            "key": "version",
+            "label": "إصدار المشروع version",
+            "placeholder": "مثال: 3",
+            "required": true
+          },
+          {
+            "key": "image_url",
+            "label": "رابط الصورة العامة",
+            "placeholder": "https://...",
+            "required": true
+          }
+        ],
+        "note": "ملاحظة أمان: Roboflow نفسه يتطلب المفتاح في معامل الاستعلام api_key حسب توثيقه، لذلك يُرسل المفتاح في رابط طلب Roboflow فقط، ولا يُرسل أبداً إلى خادم هذا الموقع، ولا يوضع في رابط صفحة الموقع، ولا يُسجَّل."
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://roboflow.com/pricing",
+    "verification_note": "صفحة الأسعار الرسمية تعلن Free Tier بسعر 0 دولار بالحد أعلاه؛ شرط البطاقة لبدء الطبقة المجانية غير مؤكد من الصفحة المفتوحة، والأرصدة المدفوعة عند الطلب تتطلب بطاقة مرتبطة وتنتهي بعد سنة، وهذا لا ينطبق بالضرورة على الطبقة المجانية."
+  },
+  {
+    "auth": "غير مؤكد",
+    "card_required": "غير معلن",
+    "category": "code",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "إكمال كود ومساعد برمجة، بانتظار التحقق من وجود API عام مجاني أو أن العرض المجاني مقصور على إضافات المحرر.",
+    "docs": "https://tabnine.com/docs",
+    "example_curl": "# راجع التوثيق الرسمي، فهذه البطاقة قيد التحقق وقد لا يكون لها API عام مجاني\ncurl https://api.tabnine.com -H \"Authorization: Bearer YOUR_KEY\"",
+    "example_fetch": "// راجع التوثيق الرسمي\nfetch('https://api.tabnine.com', { headers: { 'Authorization': 'Bearer YOUR_KEY' } })",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "free_type": "غير مؤكد",
+    "https": true,
+    "id": "tabnine",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "media": [
+      "code"
+    ],
+    "models": [
+      {
+        "name": "نماذج إكمال كود",
+        "type": "code"
+      }
+    ],
+    "name": "Tabnine",
+    "pricing": "https://tabnine.com/pricing",
+    "provider": "Tabnine",
+    "signup": "غير مؤكد",
+    "status": "قيد التحقق",
+    "tags": [
+      "كود"
+    ],
+    "training_use": "غير معلن",
+    "website": "https://tabnine.com",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [],
+    "playground_status": "not-suitable",
+    "playground_block_reason": "غير مناسب لساحة مفاتيح في المتصفح: لم يُعثر على توثيق مطور عام لواجهة REST بمفتاح لـ Tabnine، فالمنتج يعمل عبر إضافات المحررات، وأي صيغة هنا ستكون تخميناً.",
+    "verification_source": "https://www.tabnine.com/pricing",
+    "verification_note": "غير موثّق: النص المسترجع من رابط التسعير الرسمي كان صفحة تواصل لشركة Tricentis، بلا محتوى تسعير لـ Tabnine وبلا ذكر لخطة مجانية أو حدود؛ ولم تُفتح صفحة توثيق مطور رسمية في هذه الجولة، فلا يوجد رابط توثيق مؤكد هنا."
+  },
+  {
+    "auth": "غير مؤكد",
+    "card_required": "غير معلن",
+    "category": "code",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "مساعد كود؛ إعلان رسمي يقول إن Cody Free وCody Pro أُوقفا في 23 يوليو 2025، وإن Enterprise المؤسسي المدفوع ما زال مدعوما، لذلك لا يمكن إدراجه كعرض مجاني سارٍ، وبقيت البطاقة قيد التحقق بانتظار قرار صاحب المشروع بشأنها.",
+    "docs": "https://sourcegraph.com/docs",
+    "example_curl": "# راجع التوثيق الرسمي، فهذه البطاقة قيد التحقق\ncurl https://sourcegraph.com -H \"Authorization: Bearer YOUR_KEY\"",
+    "example_fetch": "// راجع التوثيق الرسمي\nfetch('https://sourcegraph.com', { headers: { 'Authorization': 'Bearer YOUR_KEY' } })",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "free_type": "غير مؤكد",
+    "https": true,
+    "id": "sourcegraph-cody",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "media": [
+      "code"
+    ],
+    "models": [
+      {
+        "name": "نماذج كود عبر Cody",
+        "type": "code"
+      }
+    ],
+    "name": "Sourcegraph Cody",
+    "pricing": "https://sourcegraph.com/pricing",
+    "provider": "Sourcegraph",
+    "signup": "غير مؤكد",
+    "status": "قيد التحقق",
+    "tags": [
+      "كود"
+    ],
+    "training_use": "غير معلن",
+    "website": "https://sourcegraph.com",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [],
+    "playground_status": "not-suitable",
+    "playground_block_reason": "غير مناسب لساحة مفاتيح في المتصفح: Cody Gateway يعمل للمشتركين في Sourcegraph Enterprise عبر مفتاح ترخيص وإعدادات مثيل ذاتي، وليس عبر مفتاح API عام لزائر.",
+    "verification_source": "https://sourcegraph.com/blog/changes-to-cody-free-pro-and-enterprise-starter-plans",
+    "verification_note": "منتج مجاني موقوف حاليا: الإعلان الرسمي المفتوح يقول إن Cody Free وCody Pro لن يعودا متاحين اعتبارا من 23 يوليو 2025، وإن التسجيلات الجديدة توقفت في 25 يونيو 2025، وإن الوصول القائم استمر حتى 23 يوليو 2025 فقط؛ وCody Enterprise ما زال مدعوما وهو خيار مؤسسي مدفوع وليس خطة مجانية عامة. الأرقام القديمة من توثيق أرشيفي لا تُعرض كحدود حالية لأنها أُلغيت بالإعلان الأحدث."
+  },
+  {
+    "auth": "مفتاح API",
+    "card_required": "غير معلن",
+    "category": "nlp",
+    "commercial": "غير معلن",
+    "cors": "محظور من المتصفح حسب التوثيق الرسمي",
+    "description_ar": "ترجمة آلية عبر API بخطة Developer تجريبية موثقة جزئيا؛ الخطة القديمة API Free لم تعد قابلة للشراء، والاستدعاء من المتصفح محظور رسميا، لذلك لا يوجد ملعب متصفح.",
+    "docs": "https://deepl.com/docs-api",
+    "example_curl": "curl https://api-free.deepl.com/v2/translate -H \"Authorization: DeepL-Auth-Key YOUR_KEY\" -d \"text=مرحبا\" -d \"target_lang=EN\"",
+    "example_fetch": "fetch('https://api-free.deepl.com/v2/translate', { method: 'POST', headers: { 'Authorization': 'DeepL-Auth-Key YOUR_KEY' }, body: new URLSearchParams({ text: 'مرحبا', target_lang: 'EN' }) })",
+    "free_limit": "1000000 حرف ترجمة إجمالا في خطة Developer، ولا يُعاد ضبطه عند بلوغه، ويتطلب الترقية إلى Growth؛ وخطة DeepL API Free القديمة (500000 حرف شهريا) لم تعد قابلة للشراء حسب الصفحة نفسها، فلا تُدرج كخطة جديدة متاحة؛ وخطة Developer لا تشمل ترجمة الكلام إلى نص",
+    "free_limit_scope": "إجمالي، لمرة واحدة، غير متجدد",
+    "free_type": "تجربة مجانية بخطة Developer (رصيد إجمالي لا يتجدد، وليست طبقة شهرية)",
+    "https": true,
+    "id": "deepl",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "2026-10-24",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "نماذج ترجمة عبر DeepL",
+        "type": "text"
+      }
+    ],
+    "name": "DeepL API",
+    "pricing": "https://deepl.com/pricing",
+    "provider": "DeepL",
+    "signup": "غير مؤكد",
+    "status": "موثق جزئيا",
+    "tags": [
+      "ترجمة"
+    ],
+    "training_use": "غير معلن",
+    "website": "https://deepl.com",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [],
+    "playground_status": "browser-blocked",
+    "playground_block_reason": "محظور من المتصفح بتوجيه من المزود: توثيق DeepL الرسمي يقول إنه لا يمكن إرسال الطلبات إلى DeepL API من المتصفح، لأن الطلبات من تطبيقات الواجهة الأمامية ستكشف بيانات الاعتماد على الويب. لذلك لا يوجد زر توليد هنا، ولا وسيط خادم أُضيف دون موافقة صريحة من صاحب المشروع.",
+    "verification_source": "https://support.deepl.com/hc/en-us/articles/360021200939-DeepL-API-plans",
+    "verification_note": "صفحة دعم DeepL الرسمية تؤكد خطة Developer التجريبية بالحد أعلاه؛ صفحة الأسعار المرتبطة لم تُظهر أرقاما في النص المسترجع، لذلك اعتمدت صفحة الدعم وحدها. التوثيق الرسمي يقول إنه لا يمكن إرسال الطلبات من المتصفح لأن ذلك سيكشف بيانات الاعتماد على الويب."
+  },
+  {
+    "auth": "مفتاح API",
+    "card_required": "غير معلن",
+    "category": "nlp",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "ترجمة آلية عبر API، بانتظار التحقق من وجود طبقة مجانية دائمة أو رصيد تجريبي فقط.",
+    "docs": "https://cloud.google.com/translate/docs",
+    "example_curl": "# راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\ncurl https://translation.googleapis.com/language/translate/v2?key=YOUR_KEY -d \"q=مرحبا\" -d \"target=en\"",
+    "example_fetch": "// راجع التوثيق الرسمي للمثال الدقيق\nfetch('https://translation.googleapis.com/language/translate/v2?key=YOUR_KEY', { method: 'POST', body: JSON.stringify({ q: 'مرحبا', target: 'en' }) })",
+    "free_limit": "أول 500000 حرف شهريا مجانا للترجمة العصبية NMT (Basic وAdvanced معا)، وأول 500000 حرف شهريا مجانا للترجمة المخصصة؛ ولا حد مجانيا في الجدول المفتوح لترجمة المستندات وTranslation LLM والترجمة التكيفية",
+    "free_limit_scope": "شهريا",
+    "free_type": "طبقة مجانية دائمة شهريا",
+    "https": true,
+    "id": "google-translate-api",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "2026-10-24",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "نماذج ترجمة عبر Google",
+        "type": "text"
+      }
+    ],
+    "name": "Google Cloud Translation API",
+    "pricing": "https://cloud.google.com/translate/pricing",
+    "provider": "Google Cloud",
+    "signup": "غير مؤكد",
+    "status": "موثق جزئيا",
+    "tags": [
+      "ترجمة"
+    ],
+    "training_use": "غير معلن",
+    "website": "https://cloud.google.com",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "translate",
+        "endpoint": "https://translation.googleapis.com/language/translate/v2",
+        "format": "google-translate",
+        "auth": "goog-api-key",
+        "label": "ترجمة نصية",
+        "prompt_label": "النص المراد ترجمته",
+        "model_input": false,
+        "fields": [
+          {
+            "key": "target",
+            "label": "لغة الهدف (مثال: en)",
+            "placeholder": "en",
+            "required": true
+          },
+          {
+            "key": "source",
+            "label": "لغة المصدر (اختياري، مثال: ar)",
+            "placeholder": "",
+            "required": false
+          }
+        ],
+        "note": "المفتاح يُرسل بترويسة x-goog-api-key وليس في رابط الطلب."
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://cloud.google.com/translate",
+    "verification_note": "صفحة المنتج/التسعير الرسمية تؤكد الحد أعلاه؛ رصيد 300 دولار للعملاء الجدد هو رصيد Google Cloud عام وليس حد الترجمة المجاني الشهري، ولم يرد له تاريخ انتهاء في النص المفتوح. شرط البطاقة وحالة CORS غير مثبتين من الصفحة المفتوحة."
+  },
+  {
+    "auth": "مفتاح API",
+    "card_required": "غير معلن",
+    "category": "multimodal",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "نماذج Gemini متعددة الوسائط عبر API، بانتظار التحقق من النماذج والحدود المشمولة مجانا.",
+    "docs": "https://ai.google.dev/docs",
+    "example_curl": "curl \"https://generativelanguage.googleapis.com/v1beta/models/MODEL:generateContent?key=YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"contents\": [{\"parts\": [{\"text\": \"مرحبا\"}]}]}'",
+    "example_fetch": "fetch('https://generativelanguage.googleapis.com/v1beta/models/MODEL:generateContent?key=YOUR_KEY', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ contents: [{ parts: [{ text: 'مرحبا' }] }] }) })",
+    "free_limit": "رموز إدخال وإخراج مجانية لنماذج مؤهلة فقط، وبعض النماذج غير متاحة في الطبقة المجانية؛ والحدود العددية الدقيقة تظهر في وحدة تحكم AI Studio وليست في صفحة الأسعار نفسها",
+    "free_limit_scope": "غير مؤكد",
+    "free_type": "طبقة مجانية دائمة",
+    "https": true,
+    "id": "google-ai-studio",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "2026-10-24",
+    "live_try": null,
+    "media": [
+      "text",
+      "image",
+      "audio"
+    ],
+    "models": [
+      {
+        "name": "Gemini عبر Google AI Studio",
+        "type": "text"
+      }
+    ],
+    "name": "Google AI Studio (Gemini API)",
+    "pricing": "https://ai.google.dev/pricing",
+    "provider": "Google",
+    "signup": "غير مؤكد",
+    "status": "موثق جزئيا",
+    "tags": [
+      "متعدد الوسائط",
+      "محادثة"
+    ],
+    "training_use": "نعم، في الطبقة المجانية",
+    "website": "https://ai.google.dev",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "chat",
+        "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+        "format": "gemini-generate",
+        "auth": "goog-api-key",
+        "label": "توليد نص / محادثة (Gemini)",
+        "prompt_label": "رسالتك",
+        "model_input": true,
+        "fields": [],
+        "note": "المفتاح يُرسل بترويسة x-goog-api-key وليس في رابط الطلب، ومعرّف النموذج جزء من مسار الرابط نفسه."
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://ai.google.dev/pricing",
+    "verification_note": "صفحة الأسعار الرسمية تعلن طبقة مجانية برموز مجانية لنماذج مؤهلة فقط، وأن محتوى الطبقة المجانية يُستخدم لتحسين المنتجات؛ والحدود العددية الدقيقة لم تثبتها الصفحة نفسها، لذلك بقيت غير مؤكدة، وشرط البطاقة وحالة CORS غير مثبتين من هذه الصفحة."
+  },
+  {
+    "auth": "مفتاح API",
+    "card_required": "غير معلن",
+    "category": "multimodal",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "بوابة نماذج متعددة، بعضها مجاني حسب النموذج، بانتظار التحقق من قائمة النماذج المجانية الحالية.",
+    "docs": "https://openrouter.ai/docs",
+    "example_curl": "curl https://openrouter.ai/api/v1/chat/completions -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"model\": \"MODEL_NAME\", \"messages\": [{\"role\": \"user\", \"content\": \"مرحبا\"}]}'",
+    "example_fetch": "fetch('https://openrouter.ai/api/v1/chat/completions', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ model: 'MODEL_NAME', messages: [{ role: 'user', content: 'مرحبا' }] }) })",
+    "free_limit": "50 طلبا في اليوم للنماذج المجانية، بحد 20 طلبا في الدقيقة، ويرتفع الحد اليومي إلى 1000 طلب بعد شراء رصيد بقيمة 10 دولارات على الأقل",
+    "free_limit_scope": "غير مؤكد",
+    "free_type": "طبقة مجانية دائمة",
+    "https": true,
+    "id": "openrouter",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "2026-10-24",
+    "live_try": null,
+    "media": [
+      "text",
+      "image"
+    ],
+    "models": [
+      {
+        "name": "نماذج متعددة عبر OpenRouter",
+        "type": "text"
+      }
+    ],
+    "name": "OpenRouter",
+    "pricing": "https://openrouter.ai/pricing",
+    "provider": "OpenRouter",
+    "signup": "غير مؤكد",
+    "status": "موثق جزئيا",
+    "tags": [
+      "متعدد الوسائط",
+      "بوابة"
+    ],
+    "training_use": "لا، لا يدرّب OpenRouter على بيانات العملاء حسب صفحة الأسعار الرسمية",
+    "website": "https://openrouter.ai",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "chat",
+        "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+        "format": "openai-chat",
+        "auth": "bearer",
+        "label": "توليد نص / محادثة",
+        "prompt_label": "رسالتك",
+        "model_input": true,
+        "fields": []
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://openrouter.ai/pricing",
+    "verification_note": "صفحة الأسعار الرسمية تعلن أكثر من 25 نموذجا مجانيا و4 مزودين مجانيين، وحد 50 طلبا في اليوم و20 طلبا في الدقيقة للنماذج المجانية، وارتفاع الحد اليومي إلى 1000 بعد شراء 10 دولارات على الأقل؛ وشرط البطاقة وحالة CORS ومعرّفات النماذج المجانية الدقيقة غير مثبتة من هذه الصفحة، لذلك بقيت غير مؤكدة."
+  },
+  {
+    "auth": "مفتاح API",
+    "card_required": "غير معلن",
+    "category": "open-hosted",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "استضافة نماذج مفتوحة المصدر للاستدلال، بانتظار التحقق من النماذج والرصيد المجاني الحالي.",
+    "docs": "https://together.ai/docs",
+    "example_curl": "curl https://api.together.xyz/v1/chat/completions -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"model\": \"MODEL_NAME\", \"messages\": [{\"role\": \"user\", \"content\": \"مرحبا\"}]}'",
+    "example_fetch": "fetch('https://api.together.xyz/v1/chat/completions', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ model: 'MODEL_NAME', messages: [{ role: 'user', content: 'مرحبا' }] }) })",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "free_type": "غير مؤكد",
+    "https": true,
+    "id": "together-ai",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "media": [
+      "text",
+      "image"
+    ],
+    "models": [
+      {
+        "name": "نماذج مفتوحة عبر Together",
+        "type": "text"
+      }
+    ],
+    "name": "Together AI",
+    "pricing": "https://together.ai/pricing",
+    "provider": "Together AI",
+    "signup": "غير مؤكد",
+    "status": "قيد التحقق",
+    "tags": [
+      "نماذج مفتوحة",
+      "استضافة"
+    ],
+    "training_use": "غير معلن",
+    "website": "https://together.ai",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "chat",
+        "endpoint": "https://api.together.xyz/v1/chat/completions",
+        "format": "openai-chat",
+        "auth": "bearer",
+        "label": "توليد نص / محادثة",
+        "prompt_label": "رسالتك",
+        "model_input": true,
+        "fields": []
+      },
+      {
+        "kind": "image",
+        "endpoint": "https://api.together.xyz/v1/images/generations",
+        "format": "openai-image",
+        "auth": "bearer",
+        "label": "توليد صورة",
+        "prompt_label": "وصف الصورة",
+        "model_input": true,
+        "fields": []
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://together.ai/pricing",
+    "verification_note": "لا طبقة مجانية ولا رصيد تجريبي مذكور في صفحة الأسعار المفتوحة: النماذج بسعر 0.00 دولار أسعار وليست إعلانا لطبقة مجانية، دون حد مجاني أو نطاق أو شرط بطاقة، لذلك لا يجوز استنتاج قائمة نماذج مجانية من أسعار صفرية."
+  },
+  {
+    "auth": "مفتاح API",
+    "card_required": "غير معلن",
+    "category": "open-hosted",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "استدلال سريع لنماذج مفتوحة المصدر، بانتظار التحقق من النماذج والرصيد المجاني الحالي.",
+    "docs": "https://fireworks.ai/docs",
+    "example_curl": "curl https://api.fireworks.ai/inference/v1/chat/completions -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"model\": \"MODEL_NAME\", \"messages\": [{\"role\": \"user\", \"content\": \"مرحبا\"}]}'",
+    "example_fetch": "fetch('https://api.fireworks.ai/inference/v1/chat/completions', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ model: 'MODEL_NAME', messages: [{ role: 'user', content: 'مرحبا' }] }) })",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "free_type": "غير مؤكد",
+    "https": true,
+    "id": "fireworks-ai",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "media": [
+      "text",
+      "image"
+    ],
+    "models": [
+      {
+        "name": "نماذج مفتوحة عبر Fireworks",
+        "type": "text"
+      }
+    ],
+    "name": "Fireworks AI",
+    "pricing": "https://fireworks.ai/pricing",
+    "provider": "Fireworks AI",
+    "signup": "غير مؤكد",
+    "status": "قيد التحقق",
+    "tags": [
+      "نماذج مفتوحة",
+      "استضافة"
+    ],
+    "training_use": "غير معلن",
+    "website": "https://fireworks.ai",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "chat",
+        "endpoint": "https://api.fireworks.ai/inference/v1/chat/completions",
+        "format": "openai-chat",
+        "auth": "bearer",
+        "label": "توليد نص / محادثة",
+        "prompt_label": "رسالتك",
+        "model_input": true,
+        "fields": []
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://fireworks.ai/pricing",
+    "verification_note": "لا طبقة مجانية عامة لـ Serverless Inference في صفحة الأسعار المفتوحة: المسار العام دفع لكل رمز برصيد مسبق بعد إضافة وسيلة دفع. عرض مؤقت واحد مؤكد وهو للتدريب فقط وليس للاستدلال العام: نموذج Muse Glimmer 30B SFT مجاني عبر الواجهة وواجهة Serverless Training API حتى 30 نوفمبر، ودون بطاقة لذلك العرض؛ ولم تذكر الصفحة السنة بجانب 30 نوفمبر، لذلك لم يُحوّل إلى تاريخ ISO ولا إلى عدّاد، وسُجل كملاحظة مؤرخة فقط."
+  },
+  {
+    "id": "mistral-ai",
+    "name": "Mistral AI",
+    "provider": "Mistral AI",
+    "category": "chat-text",
+    "media": [
+      "text"
+    ],
+    "website": "https://mistral.ai",
+    "docs": "https://docs.mistral.ai",
+    "pricing": "https://mistral.ai/pricing",
+    "description_ar": "منصة نماذج لغوية للمحادثة، بانتظار التحقق من النماذج المشمولة مجانا.",
+    "models": [
+      {
+        "name": "نماذج محادثة عبر Mistral AI",
+        "type": "text"
+      }
+    ],
+    "tags": [
+      "محادثة"
+    ],
+    "free_type": "غير مؤكد",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "auth": "مفتاح API",
+    "signup": "غير مؤكد",
+    "card_required": "غير معلن",
+    "cors": "غير مؤكد",
+    "https": true,
+    "training_use": "غير معلن",
+    "commercial": "غير معلن",
+    "status": "قيد التحقق",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "example_curl": "curl https://api.mistral.ai/v1/chat/completions -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"model\": \"MODEL_NAME\", \"messages\": [{\"role\": \"user\", \"content\": \"مرحبا\"}]}'",
+    "example_fetch": "fetch('https://api.mistral.ai/v1/chat/completions', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ model: 'MODEL_NAME', messages: [{ role: 'user', content: 'مرحبا' }] }) })",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "chat",
+        "endpoint": "https://api.mistral.ai/v1/chat/completions",
+        "format": "openai-chat",
+        "auth": "bearer",
+        "label": "توليد نص / محادثة",
+        "prompt_label": "رسالتك",
+        "model_input": true,
+        "fields": []
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://mistral.ai/pricing",
+    "verification_note": "غير موثّق كـ API مجاني: الصفحة الرسمية المفتوحة كانت لمنتج Vibe الاستهلاكي (خطة مجانية برسائل وبحث وجلسات برمجة محدودة)، وليست صفحة أسعار API، لذلك لم يُعتمد منها أي حد أو نموذج API."
+  },
+  {
+    "id": "perplexity-ai",
+    "name": "Perplexity Sonar API",
+    "provider": "Perplexity",
+    "category": "chat-text",
+    "media": [
+      "text"
+    ],
+    "website": "https://www.perplexity.ai",
+    "docs": "https://docs.perplexity.ai",
+    "pricing": "https://www.perplexity.ai/pricing",
+    "description_ar": "واجهة نماذج بحث ومحادثة، بانتظار التحقق من النماذج المشمولة مجانا.",
+    "models": [
+      {
+        "name": "نماذج Sonar",
+        "type": "text"
+      }
+    ],
+    "tags": [
+      "بحث",
+      "محادثة"
+    ],
+    "free_type": "غير مؤكد",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "auth": "مفتاح API",
+    "signup": "غير مؤكد",
+    "card_required": "غير معلن",
+    "cors": "غير مؤكد",
+    "https": true,
+    "training_use": "غير معلن",
+    "commercial": "غير معلن",
+    "status": "قيد التحقق",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "example_curl": "curl https://api.perplexity.ai/chat/completions -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"model\": \"MODEL_NAME\", \"messages\": [{\"role\": \"user\", \"content\": \"مرحبا\"}]}'",
+    "example_fetch": "fetch('https://api.perplexity.ai/chat/completions', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ model: 'MODEL_NAME', messages: [{ role: 'user', content: 'مرحبا' }] }) })",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "chat",
+        "endpoint": "https://api.perplexity.ai/chat/completions",
+        "format": "openai-chat",
+        "auth": "bearer",
+        "label": "توليد نص / محادثة",
+        "prompt_label": "رسالتك",
+        "model_input": true,
+        "fields": []
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://docs.perplexity.ai/docs/getting-started/pricing",
+    "verification_note": "لا طبقة مجانية مذكورة في صفحتي التوثيق المفتوحتين: التسعير حسب الاستخدام والأرصدة تُشترى من وحدة تحكم API، وTier 0 عند 0 دولار عتبة شراء تراكمية وليست رصيدا مجانيا؛ وصفحة perplexity.ai/pricing أعادت 404 في هذه الجولة ولم تُستخدم."
+  },
+  {
+    "id": "stability-ai",
+    "name": "Stability AI",
+    "provider": "Stability AI",
+    "category": "image",
+    "media": [
+      "image"
+    ],
+    "website": "https://stability.ai",
+    "docs": "https://platform.stability.ai/docs",
+    "pricing": "https://stability.ai/pricing",
+    "description_ar": "منصة توليد صور، بانتظار التحقق من النماذج المشمولة مجانا. مُصنف كعرض مؤقت لمراجعته من التوثيق الرسمي؛ تاريخ انتهائه غير مؤكد.",
+    "models": [
+      {
+        "name": "نماذج توليد صور عبر Stability AI",
+        "type": "image"
+      }
+    ],
+    "tags": [
+      "صور"
+    ],
+    "free_type": "غير مؤكد",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "auth": "مفتاح API",
+    "signup": "غير مؤكد",
+    "card_required": "غير معلن",
+    "cors": "غير مؤكد",
+    "https": true,
+    "training_use": "غير معلن",
+    "commercial": "غير معلن",
+    "status": "قيد التحقق",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "example_curl": "# راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\ncurl https://api.stability.ai -H \"Authorization: Bearer YOUR_KEY\"",
+    "example_fetch": "// راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\nfetch('https://api.stability.ai', { headers: { 'Authorization': 'Bearer YOUR_KEY' } })",
+    "offer_temporary": true,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "image",
+        "endpoint": "https://api.stability.ai/v2beta/stable-image/generate/core",
+        "format": "stability-image",
+        "auth": "bearer",
+        "label": "توليد صورة (Stable Image Core)",
+        "prompt_label": "وصف الصورة",
+        "model_input": false,
+        "fields": [
+          {
+            "key": "aspect_ratio",
+            "label": "نسبة الأبعاد (اختياري، مثال: 16:9)",
+            "placeholder": "16:9",
+            "required": false
+          }
+        ],
+        "note": "مؤكد في هذه المهمة من قاعدة معارف Stability الرسمية: نقطة /v2beta/stable-image/generate/core بصيغة multipart وحقول prompt وoutput_format، وترويسة Bearer، والاستجابة ملف صورة ثنائي."
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://platform.stability.ai/pricing",
+    "verification_note": "غير موثّق كرصيد مجاني: صفحة الأسعار المفتوحة تذكر أسعار أرصدة مدفوعة فقط، منها أن 1 رصيد يساوي 0.01 دولار، ولم يظهر فيها رصيد مجاني ولا طبقة مجانية في النص المسترجع؛ والرقم المتداول 25 رصيدا مجانيا لم يُعتمد."
+  },
+  {
+    "id": "ideogram-ai",
+    "name": "Ideogram",
+    "provider": "Ideogram",
+    "category": "image",
+    "media": [
+      "image"
+    ],
+    "website": "https://ideogram.ai",
+    "docs": "https://developer.ideogram.ai",
+    "pricing": "https://ideogram.ai/pricing",
+    "description_ar": "منصة توليد صور، بانتظار التحقق من النماذج المشمولة مجانا. مُصنف كعرض مؤقت لمراجعته من التوثيق الرسمي؛ تاريخ انتهائه غير مؤكد.",
+    "models": [
+      {
+        "name": "نماذج توليد صور عبر Ideogram",
+        "type": "image"
+      }
+    ],
+    "tags": [
+      "صور"
+    ],
+    "free_type": "غير مؤكد",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "auth": "مفتاح API",
+    "signup": "غير مؤكد",
+    "card_required": "غير معلن",
+    "cors": "غير مؤكد",
+    "https": true,
+    "training_use": "غير معلن",
+    "commercial": "غير معلن",
+    "status": "قيد التحقق",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "example_curl": "# راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\ncurl https://api.ideogram.ai -H \"Authorization: Bearer YOUR_KEY\"",
+    "example_fetch": "// راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\nfetch('https://api.ideogram.ai', { headers: { 'Authorization': 'Bearer YOUR_KEY' } })",
+    "offer_temporary": true,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "image",
+        "endpoint": "https://api.ideogram.ai/v1/ideogram-v4/generate",
+        "format": "ideogram-image",
+        "auth": "apikey",
+        "label": "توليد صورة (Ideogram v4)",
+        "prompt_label": "وصف الصورة",
+        "model_input": false,
+        "fields": [
+          {
+            "key": "aspect_ratio",
+            "label": "نسبة الأبعاد (اختياري، مثال: 16:9)",
+            "placeholder": "16:9",
+            "required": false
+          }
+        ],
+        "note": "المصادقة هنا بترويسة Api-Key وليست Bearer، كما في توثيق Ideogram."
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://ideogram.ai/pricing",
+    "verification_note": "نوعي فقط، بلا رقم: صفحة الأسعار المفتوحة تقول إنه لا خصومات ولا تجارب مجانية لخطط الاشتراك، وإن الحسابات المجانية المؤهلة تحصل على أرصدة أسبوعية عند تسجيل الدخول عبر Google أو Apple أو Microsoft، بمبلغ متفاوت غير مذكور رقما؛ ولم يُؤكد أن الأرصدة الأسبوعية قابلة للاستخدام عبر API، ولا قائمة نماذج API مجانية."
+  },
+  {
+    "id": "pika-ai",
+    "name": "Pika",
+    "provider": "Pika",
+    "category": "video",
+    "media": [
+      "video"
+    ],
+    "website": "https://pika.art",
+    "docs": "https://docs.pika.art",
+    "pricing": "https://pika.art/pricing",
+    "description_ar": "منصة توليد فيديو، بانتظار التحقق من النماذج المشمولة مجانا. مُصنف كعرض مؤقت لمراجعته من التوثيق الرسمي؛ تاريخ انتهائه غير مؤكد.",
+    "models": [
+      {
+        "name": "نماذج توليد فيديو عبر Pika",
+        "type": "video"
+      }
+    ],
+    "tags": [
+      "فيديو"
+    ],
+    "free_type": "غير مؤكد",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "auth": "مفتاح API",
+    "signup": "غير مؤكد",
+    "card_required": "غير معلن",
+    "cors": "غير مؤكد",
+    "https": true,
+    "training_use": "غير معلن",
+    "commercial": "غير معلن",
+    "status": "قيد التحقق",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "example_curl": "# راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\ncurl https://api.pika.art -H \"Authorization: Bearer YOUR_KEY\"",
+    "example_fetch": "// راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\nfetch('https://api.pika.art', { headers: { 'Authorization': 'Bearer YOUR_KEY' } })",
+    "offer_temporary": true,
+    "offer_expires_at": null,
+    "playgrounds": [],
+    "playground_status": "browser-blocked",
+    "playground_block_reason": "محظور من المتصفح بتوجيه من المزود نفسه: توثيق Pika يقول صراحة لا تعرّض المفتاح في المتصفح أو أي كود عميل، واستدعِ الواجهة من الخادم فقط. لذلك لا يوجد زر توليد في المتصفح هنا، ولا وسيط خادم أُضيف دون موافقة صريحة من صاحب المشروع.",
+    "verification_source": "https://pika.art/pricing",
+    "verification_note": "حساب مجاني بلا رصيد شهري: جدول المقارنة المفتوح يقول Free بسعر 0 دولار وMonthly credits: 0 · packs only؛ وعرض Pika API Club عضوية مدفوعة (10 دولارات شهريا مع رصيد 10 دولارات للشهر الأول)، وليست طبقة مجانية مستقلة. صفحات هذه الجولة لم تنص على CORS ولا على توجيه المفتاح إلى الخادم، لذلك بقي سبب حظر المتصفح كما كان من عمل سابق دون تغيير، ولم يُعتمد أي نص جديد بشأنه."
+  },
+  {
+    "id": "hailuo-ai",
+    "name": "Hailuo AI",
+    "provider": "Hailuo / MiniMax",
+    "category": "video",
+    "media": [
+      "video"
+    ],
+    "website": "https://hailuoai.video",
+    "docs": "https://hailuoai.video",
+    "pricing": "https://platform.minimax.io/docs/pricing/overview",
+    "description_ar": "منصة توليد فيديو، بانتظار التحقق من النماذج المشمولة مجانا. مُصنف كعرض مؤقت لمراجعته من التوثيق الرسمي؛ تاريخ انتهائه غير مؤكد.",
+    "models": [
+      {
+        "name": "نماذج توليد فيديو عبر Hailuo",
+        "type": "video"
+      }
+    ],
+    "tags": [
+      "فيديو"
+    ],
+    "free_type": "غير مؤكد",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "auth": "مفتاح API",
+    "signup": "غير مؤكد",
+    "card_required": "غير معلن",
+    "cors": "غير مؤكد",
+    "https": true,
+    "training_use": "غير معلن",
+    "commercial": "غير معلن",
+    "status": "قيد التحقق",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "example_curl": "# راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\ncurl https://hailuoai.video -H \"Authorization: Bearer YOUR_KEY\"",
+    "example_fetch": "// راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\nfetch('https://hailuoai.video', { headers: { 'Authorization': 'Bearer YOUR_KEY' } })",
+    "offer_temporary": true,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "video",
+        "endpoint": "https://api.minimax.io/v2/video_generation",
+        "format": "minimax-video",
+        "auth": "bearer",
+        "label": "توليد فيديو (MiniMax V2)",
+        "prompt_label": "وصف الفيديو",
+        "model_input": true,
+        "fields": [],
+        "poll_endpoint": "https://api.minimax.io/v2/query/video_generation/{id}",
+        "poll_interval_ms": 10000,
+        "max_poll_ms": 900000,
+        "note": "الاستطلاع كل 10 ثوانٍ تقريباً كما في المواصفة، بمهلة قصوى 15 دقيقة وزر إيقاف. أمثلة نماذج من التوثيق: MiniMax-Hailuo-2.3 وMiniMax-Hailuo-02 — أدخل المعرف من توثيق MiniMax الحالي."
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://platform.minimax.io/docs/pricing/overview",
+    "verification_note": "لا طبقة مجانية مذكورة في صفحة تسعير منصة MiniMax للمطورين المفتوحة: الدفع حسب الاستخدام من رصيد الحساب؛ والإعفاءات الواردة (أول 5 صور لكل مهمة لنماذج H3، وأول صورتين لنموذج H3-Max، وإدخال الصوت مجاني) إعفاءات داخل تسعير مدفوع وليست توليدا مجانيا. وصلاحية حزم الفيديو المدفوعة شهرا واحدا ليست عرضا مجانيا مؤقتا."
+  },
+  {
+    "id": "deepgram",
+    "name": "Deepgram",
+    "provider": "Deepgram",
+    "category": "audio",
+    "media": [
+      "audio"
+    ],
+    "website": "https://deepgram.com",
+    "docs": "https://developers.deepgram.com",
+    "pricing": "https://deepgram.com/pricing",
+    "description_ar": "منصة تحويل كلام إلى نص وخدمات صوت، بانتظار التحقق من النماذج المشمولة مجانا.",
+    "models": [
+      {
+        "name": "نماذج صوت عبر Deepgram",
+        "type": "audio"
+      }
+    ],
+    "tags": [
+      "صوت"
+    ],
+    "free_type": "رصيد تجريبي لمرة واحدة عند إنشاء الحساب (وليس طبقة شهرية متجددة)",
+    "free_limit": "200 دولار رصيدا مجانيا، بما يعادل تقريبا 43000 دقيقة (أكثر من 700 ساعة) نسخا بنموذج Nova حسب الأسئلة الشائعة في صفحة الأسعار",
+    "free_limit_scope": "للحسابات الجديدة، لمرة واحدة",
+    "auth": "مفتاح API",
+    "signup": "غير مؤكد",
+    "card_required": "لا، حسب صفحة الأسعار الرسمية",
+    "cors": "غير مؤكد",
+    "https": true,
+    "training_use": "غير معلن",
+    "commercial": "غير معلن",
+    "status": "موثق جزئيا",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "2026-10-24",
+    "live_try": null,
+    "example_curl": "# راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\ncurl https://api.deepgram.com -H \"Authorization: Bearer YOUR_KEY\"",
+    "example_fetch": "// راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\nfetch('https://api.deepgram.com', { headers: { 'Authorization': 'Bearer YOUR_KEY' } })",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "transcribe",
+        "endpoint": "https://api.deepgram.com/v1/listen",
+        "format": "deepgram-listen",
+        "auth": "token",
+        "label": "تحويل كلام إلى نص (مسجل)",
+        "prompt_label": "لا ينطبق — أدخل رابط الصوت في الحقول أدناه",
+        "model_input": false,
+        "fields": [
+          {
+            "key": "audio_url",
+            "label": "رابط ملف الصوت",
+            "placeholder": "https://...",
+            "required": true
+          },
+          {
+            "key": "model",
+            "label": "النموذج (مثال: nova-3)",
+            "placeholder": "nova-3",
+            "required": false
+          }
+        ],
+        "note": "لا يشمل البث المباشر WebSocket، فهو نمط منفصل غير منفذ في المحول الأول."
+      },
+      {
+        "kind": "audio",
+        "endpoint": "https://api.deepgram.com/v1/speak",
+        "format": "deepgram-speak",
+        "auth": "token",
+        "label": "تحويل نص إلى كلام",
+        "prompt_label": "النص المراد تحويله إلى كلام",
+        "model_input": false,
+        "fields": [
+          {
+            "key": "model",
+            "label": "النموذج (مثال: aura-2-thalia-en)",
+            "placeholder": "aura-2-thalia-en",
+            "required": false
+          }
+        ]
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://deepgram.com/pricing",
+    "verification_note": "صفحة الأسعار الرسمية تقول No minimums. No expiration. No credit card required، وإن الرصيد متاح حتى استنفاذه ولا ينتهي بعد 12 شهرا كغيره من الطبقات المجانية؛ وعرض مؤقت منفصل في الصفحة نفسها (وليس الرصيد المجاني): مقابل كل دولار يُنفق على Flux TTS يُضاف دولار رصيد حتى 500 دولار، وينتهي في 31 ديسمبر 2026، وهو عرض مطابقة مدفوع وليس تاريخ انتهاء للرصيد المجاني، لذلك لم يُحوّل إلى عدّاد للبطاقة."
+  },
+  {
+    "id": "playht",
+    "name": "PlayHT",
+    "provider": "PlayHT",
+    "category": "audio",
+    "media": [
+      "audio"
+    ],
+    "website": "https://play.ht",
+    "docs": "https://docs.play.ht",
+    "pricing": "https://play.ht/pricing",
+    "description_ar": "منصة تحويل نص إلى كلام، بانتظار التحقق من النماذج المشمولة مجانا.",
+    "models": [
+      {
+        "name": "نماذج صوت عبر PlayHT",
+        "type": "audio"
+      }
+    ],
+    "tags": [
+      "صوت"
+    ],
+    "free_type": "غير مؤكد",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "auth": "مفتاح API",
+    "signup": "غير مؤكد",
+    "card_required": "غير معلن",
+    "cors": "غير مؤكد",
+    "https": true,
+    "training_use": "غير معلن",
+    "commercial": "غير معلن",
+    "status": "قيد التحقق",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "example_curl": "# راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\ncurl https://api.play.ht -H \"Authorization: Bearer YOUR_KEY\"",
+    "example_fetch": "// راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\nfetch('https://api.play.ht', { headers: { 'Authorization': 'Bearer YOUR_KEY' } })",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [],
+    "playground_status": "needs-confirmation",
+    "playground_block_reason": "يحتاج تأكيداً رسمياً أخيراً: المضيف api.play.ht ومسار التحويل /api/v1/convert مؤكدان من المرجع الرسمي، لكن endpoint توليد أصوات PlayHT نفسها غير مؤكد من الصفحة المفتوحة (معاملات فقط دون URL كامل)، والتوثيق مؤرخ 2025-09-09 ولا يذكر طبقة مجانية، ولم تُفتح صفحة تسعير حالية، لذلك لا يوجد زر توليد قبل ذلك التأكيد.",
+    "verification_source": "https://docs.play.ht/v2.2/reference/api-convert-tts-standard-premium-voices",
+    "verification_note": "المضيف والمسار مؤكدان جزئيا، لكن الطبقة المجانية والملعب غير مؤكدين: المضيف api.play.ht مؤكد من صفحات مرجعية مفتوحة، ومسار التحويل POST https://api.play.ht/api/v1/convert للأصوات القياسية والمميزة مؤكد، واستطلاع المهمة GET https://api.play.ht/api/v2/tts/ مؤكد بالصيغة الظاهرة دون لاحقة معرّف المهمة الكاملة في النص المسترجع؛ أما endpoint توليد أصوات PlayHT نفسها فغير مؤكد لأن صفحته المفتوحة عرضت المعاملات فقط دون طريقة HTTP ولا عنوان URL كامل، والتوثيق المفتوح مؤرخ 2025-09-09 ولا يذكر طبقة مجانية ولا أسعارا، ولم تُفتح صفحة تسعير حالية. لذلك بقي بلا زر توليد."
+  },
+  {
+    "id": "jina-ai",
+    "name": "Jina AI",
+    "provider": "Jina AI",
+    "category": "embeddings",
+    "media": [
+      "embeddings"
+    ],
+    "website": "https://jina.ai",
+    "docs": "https://docs.jina.ai",
+    "pricing": "https://jina.ai/pricing",
+    "description_ar": "منصة نماذج تضمين وبحث دلالي، بانتظار التحقق من النماذج المشمولة مجانا.",
+    "models": [
+      {
+        "name": "نماذج تضمين عبر Jina AI",
+        "type": "embeddings"
+      }
+    ],
+    "tags": [
+      "تضمين"
+    ],
+    "free_type": "غير مؤكد",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "auth": "مفتاح API",
+    "signup": "غير مؤكد",
+    "card_required": "غير معلن",
+    "cors": "غير مؤكد",
+    "https": true,
+    "training_use": "غير معلن",
+    "commercial": "غير معلن",
+    "status": "قيد التحقق",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "example_curl": "# راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\ncurl https://api.jina.ai -H \"Authorization: Bearer YOUR_KEY\"",
+    "example_fetch": "// راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\nfetch('https://api.jina.ai', { headers: { 'Authorization': 'Bearer YOUR_KEY' } })",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "embeddings",
+        "endpoint": "https://api.jina.ai/v1/embeddings",
+        "format": "jina-embed",
+        "auth": "bearer",
+        "label": "تضمين نصي (Embeddings)",
+        "prompt_label": "النص المراد تضمينه",
+        "model_input": true,
+        "fields": [],
+        "note": "يُعرض بُعد المتجه وأول بضعة أرقام فقط، لا المتجه كاملاً."
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://jina.ai/embeddings",
+    "verification_note": "غير موثّق لسبب تقني: فتح صفحة jina.ai/embeddings فشل بحظر نطاق في أداة الفتح، ولم تُفتح صفحة رسمية؛ والمقتطفات الثانوية المتضاربة بين مليون و10 ملايين رمز لم تُستخدم."
+  },
+  {
+    "id": "mixedbread-ai",
+    "name": "Mixedbread AI",
+    "provider": "Mixedbread AI",
+    "category": "embeddings",
+    "media": [
+      "embeddings"
+    ],
+    "website": "https://www.mixedbread.ai",
+    "docs": "https://docs.mixedbread.ai",
+    "pricing": "https://www.mixedbread.ai/pricing",
+    "description_ar": "منصة نماذج تضمين وبحث دلالي، بانتظار التحقق من النماذج المشمولة مجانا.",
+    "models": [
+      {
+        "name": "نماذج تضمين عبر Mixedbread AI",
+        "type": "embeddings"
+      }
+    ],
+    "tags": [
+      "تضمين"
+    ],
+    "free_type": "غير مؤكد",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "auth": "مفتاح API",
+    "signup": "غير مؤكد",
+    "card_required": "غير معلن",
+    "cors": "غير مؤكد",
+    "https": true,
+    "training_use": "غير معلن",
+    "commercial": "غير معلن",
+    "status": "قيد التحقق",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "example_curl": "# راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\ncurl https://api.mixedbread.ai -H \"Authorization: Bearer YOUR_KEY\"",
+    "example_fetch": "// راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\nfetch('https://api.mixedbread.ai', { headers: { 'Authorization': 'Bearer YOUR_KEY' } })",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [],
+    "playground_status": "needs-confirmation",
+    "playground_block_reason": "يحتاج تأكيداً رسمياً أخيراً: المنتج الحالي المؤكد هو Mixedbread Search القائم على Stores بقاعدة https://api.mixedbread.com/ وترويسة Bearer، لكن نقطة التضمين القديمة mxbai-embed لم تُؤكد سارية في المرجع المفتوح، وصفحة الأسعار لم تُفتح لتأكيد حد مجاني لكل رمز، لذلك لا يوجد زر توليد قبل ذلك التأكيد.",
+    "verification_source": "https://www.mixedbread.ai/api-reference",
+    "verification_note": "المنتج الحالي المؤكد هو Mixedbread Search القائم على Stores، وليس نقطة تضمين قديمة: قاعدة API المؤكدة https://api.mixedbread.com/ بمثال POST https://api.mixedbread.com/v1/stores وترويسة Authorization: Bearer؛ وخطة مجانية أُطلقت في 3 ديسمبر 2025 حتى 1000 ملف متجر مع الميزات الأساسية، لكن صفحة الأسعار نفسها لم تُفتح ولم يُؤكد سعر لكل مليون رمز؛ ونقطة mxbai-embed القديمة لم تُؤكد في مقدمة المرجع المفتوح، لذلك لا يجوز افتراض أنها سارية. ملاحظة في سجل التغييرات أن مفاتيح البحث فقط مفيدة لتطبيقات العميل لم تُعامل كإذن CORS عام."
+  },
+  {
+    "id": "google-vision",
+    "name": "Google Cloud Vision API",
+    "provider": "Google Cloud",
+    "category": "vision",
+    "media": [
+      "image"
+    ],
+    "website": "https://cloud.google.com/vision",
+    "docs": "https://cloud.google.com/vision/docs",
+    "pricing": "https://cloud.google.com/vision/pricing",
+    "description_ar": "خدمة تحليل صور ورؤية حاسوبية، بانتظار التحقق من النماذج المشمولة مجانا.",
+    "models": [
+      {
+        "name": "نماذج رؤية عبر Google Vision",
+        "type": "image"
+      }
+    ],
+    "tags": [
+      "رؤية"
+    ],
+    "free_type": "مخصص مجاني شهري متكرر لكل ميزة (وليس خطة مجانية منفصلة ولا رصيدا تجريبيا)",
+    "free_limit": "أول 1000 وحدة مجانا كل شهر لكل ميزة، حيث تُحسب الميزة الواحدة على صورة واحدة وحدة فوترة واحدة",
+    "free_limit_scope": "شهريا، لكل ميزة على حدة",
+    "auth": "مفتاح API",
+    "signup": "غير مؤكد",
+    "card_required": "غير معلن",
+    "cors": "غير مؤكد",
+    "https": true,
+    "training_use": "غير معلن",
+    "commercial": "غير معلن",
+    "status": "موثق جزئيا",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "2026-10-24",
+    "live_try": null,
+    "example_curl": "# راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\ncurl https://vision.googleapis.com -H \"Authorization: Bearer YOUR_KEY\"",
+    "example_fetch": "// راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\nfetch('https://vision.googleapis.com', { headers: { 'Authorization': 'Bearer YOUR_KEY' } })",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "vision",
+        "endpoint": "https://vision.googleapis.com/v1/images:annotate",
+        "format": "google-vision",
+        "auth": "goog-api-key",
+        "label": "تحليل صورة (رؤية)",
+        "prompt_label": "لا ينطبق — أدخل رابط الصورة في الحقول أدناه",
+        "model_input": false,
+        "fields": [
+          {
+            "key": "image_url",
+            "label": "رابط الصورة العامة",
+            "placeholder": "https://...",
+            "required": true
+          },
+          {
+            "key": "feature",
+            "label": "نوع الميزة (مثال: LABEL_DETECTION أو OBJECT_LOCALIZATION أو TEXT_DETECTION)",
+            "placeholder": "LABEL_DETECTION",
+            "required": true
+          }
+        ],
+        "note": "المفتاح يُرسل بترويسة x-goog-api-key وليس في رابط الطلب، والميزة هي محدد النموذج هنا وليس اسم نموذج."
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://cloud.google.com/vision/pricing",
+    "verification_note": "صفحة الأسعار الرسمية تشمل ميزات منها كشف التسميات والنصوص والمستندات والبحث الآمن والوجوه والمعالم والشعارات وخصائص الصورة وتلميحات القص واكتشاف الويب وتحديد الأجسام؛ شرط البطاقة/الفوترة وحالة CORS غير مثبتين من الصفحة المفتوحة."
+  },
+  {
+    "id": "amazon-rekognition",
+    "name": "Amazon Rekognition",
+    "provider": "Amazon Web Services",
+    "category": "vision",
+    "media": [
+      "image"
+    ],
+    "website": "https://aws.amazon.com/rekognition",
+    "docs": "https://docs.aws.amazon.com/rekognition",
+    "pricing": "https://aws.amazon.com/rekognition/pricing",
+    "description_ar": "خدمة تحليل صور ورؤية حاسوبية، بانتظار التحقق من النماذج المشمولة مجانا.",
+    "models": [
+      {
+        "name": "نماذج رؤية عبر Rekognition",
+        "type": "image"
+      }
+    ],
+    "tags": [
+      "رؤية"
+    ],
+    "free_type": "غير مؤكد",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "auth": "مفتاح API",
+    "signup": "غير مؤكد",
+    "card_required": "غير معلن",
+    "cors": "غير مؤكد",
+    "https": true,
+    "training_use": "غير معلن",
+    "commercial": "غير معلن",
+    "status": "قيد التحقق",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "example_curl": "# راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\ncurl https://rekognition.us-east-1.amazonaws.com -H \"Authorization: Bearer YOUR_KEY\"",
+    "example_fetch": "// راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\nfetch('https://rekognition.us-east-1.amazonaws.com', { headers: { 'Authorization': 'Bearer YOUR_KEY' } })",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [],
+    "playground_status": "not-suitable",
+    "playground_block_reason": "غير مناسب لساحة مفاتيح في المتصفح: Rekognition خدمة AWS تُستدعى عبر SDK مع توقيع SigV4 وبيانات اعتماد IAM، وليست واجهة مفتاح Bearer بسيط، وإدخال بيانات AWS في متصفح زائر سيكشفها.",
+    "verification_source": "https://aws.amazon.com/rekognition/pricing",
+    "verification_note": "غير موثّق: لم تظهر صفحة أسعار رسمية على aws.amazon.com في نتائج البحث الكاملة ولم تُفتح، ولم يُخمّن أي رابط؛ والمقتطفات الثانوية المتضاربة بين 5000 و1000 صورة شهريا لم تُستخدم. يبقى الملعب غير مناسب لأنه خدمة AWS بتوقيع SigV4 وليست مفتاح Bearer بسيطا."
+  },
+  {
+    "id": "codeium-windsurf",
+    "name": "Windsurf (Codeium)",
+    "provider": "Windsurf / Codeium",
+    "category": "code",
+    "media": [
+      "code"
+    ],
+    "website": "https://windsurf.com",
+    "docs": "https://docs.windsurf.com",
+    "pricing": "https://windsurf.com/pricing",
+    "description_ar": "منصة توليد كود ومراجعته، بانتظار التحقق من النماذج المشمولة مجانا.",
+    "models": [
+      {
+        "name": "نماذج كود عبر Windsurf",
+        "type": "code"
+      }
+    ],
+    "tags": [
+      "كود"
+    ],
+    "free_type": "غير مؤكد",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "auth": "مفتاح API",
+    "signup": "غير مؤكد",
+    "card_required": "غير معلن",
+    "cors": "غير مؤكد",
+    "https": true,
+    "training_use": "غير معلن",
+    "commercial": "غير معلن",
+    "status": "قيد التحقق",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "example_curl": "# راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\ncurl https://api.windsurf.com -H \"Authorization: Bearer YOUR_KEY\"",
+    "example_fetch": "// راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\nfetch('https://api.windsurf.com', { headers: { 'Authorization': 'Bearer YOUR_KEY' } })",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [],
+    "playground_status": "not-suitable",
+    "playground_block_reason": "غير مناسب لساحة مفاتيح في المتصفح: لم يُعثر على توثيق رسمي عام لواجهة REST بمفتاح لـ Windsurf، وما وُجد هو بروتوكول gRPC مهندَس عكسياً لإضافة المحرر، وهو ليس توثيقاً رسمياً ولا يصلح لموقع عام.",
+    "verification_source": "https://windsurf.com/pricing",
+    "verification_note": "غير موثّق: لم تُفتح صفحة تسعير رسمية مستقلة لـ Windsurf في هذه الجولة، ونتائج البحث أعادت مصادر ثانوية فقط متضاربة في الأرقام، وهذا التناقض نفسه يمنع اعتماد أي رقم؛ ولم يثبت من مصدر رسمي مفتوح وجود واجهة مفتاح عام بسيطة للمتصفح."
+  },
+  {
+    "id": "amazon-q",
+    "name": "Amazon Q Developer",
+    "provider": "Amazon Web Services",
+    "category": "code",
+    "media": [
+      "code"
+    ],
+    "website": "https://aws.amazon.com/q/developer",
+    "docs": "https://docs.aws.amazon.com/amazonq",
+    "pricing": "https://aws.amazon.com/q/developer/pricing",
+    "description_ar": "مساعد توليد كود ومراجعته، بانتظار التحقق من النماذج المشمولة مجانا.",
+    "models": [
+      {
+        "name": "نماذج كود عبر Amazon Q",
+        "type": "code"
+      }
+    ],
+    "tags": [
+      "كود"
+    ],
+    "free_type": "طبقة مجانية دائمة (داخل بيئة التطوير فقط، وليست واجهة مفتاح عام للمتصفح)",
+    "free_limit": "50 تفاعل دردشة شهريا داخل بيئة التطوير، و10 مهام توليد أكواد بواسطة وكلاء Q Developer، و1000 سطر شهريا مقدما إلى وكيل تحويل الأكواد، و25 استعلاما نصيا شهريا حول حساب AWS، و20 طلب تحليل وصول شبكي يوميا؛ وإكمالات سطر الأوامر والاقتراحات التلقائية وتشخيص الأخطاء الشائعة مشمولة دون رقم حد في الصفحة المفتوحة",
+    "free_limit_scope": "شهريا داخل بيئة التطوير (باستثناء تحليل الوصول الشبكي: يوميا)",
+    "auth": "مفتاح API",
+    "signup": "غير مؤكد",
+    "card_required": "غير معلن",
+    "cors": "غير مؤكد",
+    "https": true,
+    "training_use": "غير معلن",
+    "commercial": "غير معلن",
+    "status": "موثق جزئيا",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "2026-10-24",
+    "live_try": null,
+    "example_curl": "# راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\ncurl https://q.us-east-1.amazonaws.com -H \"Authorization: Bearer YOUR_KEY\"",
+    "example_fetch": "// راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\nfetch('https://q.us-east-1.amazonaws.com', { headers: { 'Authorization': 'Bearer YOUR_KEY' } })",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [],
+    "playground_status": "not-suitable",
+    "playground_block_reason": "غير مناسب لساحة مفاتيح في المتصفح: Amazon Q Developer يعمل عبر IDE ووحدة تحكم AWS وCLI بمصادقة IAM، وليس بمفتاح API عام لزائر.",
+    "verification_source": "https://aws.amazon.com/q/developer/pricing/",
+    "verification_note": "صفحة الأسعار الرسمية تنص حرفيا على طبقة مجانية دائمة Perpetual Free Tier؛ الرقم المتداول 50 طلبا وكيلا شهريا لم يظهر بهذه الصيغة في الصفحتين المفتوحتين ولم يُعتمد، واعتمدت 50 تفاعل دردشة كما وردت رسميا. الملعب يبقى غير مناسب لأنه IDE/CLI بمصادقة IAM."
+  },
+  {
+    "id": "microsoft-translator",
+    "name": "Microsoft Translator API",
+    "provider": "Microsoft",
+    "category": "nlp",
+    "media": [
+      "text"
+    ],
+    "website": "https://www.microsoft.com/en-us/translator",
+    "docs": "https://learn.microsoft.com/azure/ai-services/translator",
+    "pricing": "https://azure.microsoft.com/pricing/details/ai-services/translator",
+    "description_ar": "خدمة ترجمة آلية، بانتظار التحقق من النماذج المشمولة مجانا.",
+    "models": [
+      {
+        "name": "نماذج ترجمة عبر Microsoft Translator",
+        "type": "text"
+      }
+    ],
+    "tags": [
+      "ترجمة"
+    ],
+    "free_type": "طبقة مجانية (خطة F0)",
+    "free_limit": "2 مليون حرف شهريا مجانا، لأي مزيج من الترجمة القياسية والتدريب على الترجمة المخصصة، وتشمل الترجمة النصية وكشف اللغة والقاموس ثنائي اللغة والنقل الصوتي",
+    "free_limit_scope": "شهريا",
+    "auth": "مفتاح API",
+    "signup": "غير مؤكد",
+    "card_required": "غير معلن",
+    "cors": "غير مؤكد",
+    "https": true,
+    "training_use": "غير معلن",
+    "commercial": "غير معلن",
+    "status": "موثق جزئيا",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "2026-10-24",
+    "live_try": null,
+    "example_curl": "# راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\ncurl https://api.cognitive.microsofttranslator.com -H \"Authorization: Bearer YOUR_KEY\"",
+    "example_fetch": "// راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\nfetch('https://api.cognitive.microsofttranslator.com', { headers: { 'Authorization': 'Bearer YOUR_KEY' } })",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "translate",
+        "endpoint": "https://api.cognitive.microsofttranslator.com/translator/text/v3.0/translate",
+        "format": "ms-translator",
+        "auth": "ocp",
+        "label": "ترجمة نصية",
+        "prompt_label": "النص المراد ترجمته",
+        "model_input": false,
+        "fields": [
+          {
+            "key": "to",
+            "label": "لغة الهدف (مثال: ar)",
+            "placeholder": "ar",
+            "required": true
+          },
+          {
+            "key": "from",
+            "label": "لغة المصدر (اختياري)",
+            "placeholder": "",
+            "required": false
+          },
+          {
+            "key": "region",
+            "label": "المنطقة (مطلوبة للنقطة المخصصة، واختيارية للمورد العام global)",
+            "placeholder": "",
+            "required": false
+          }
+        ]
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://azure.microsoft.com/pricing/details/cognitive-services/translator",
+    "verification_note": "صفحة الأسعار الرسمية تعلن خطة F0 - Free بالحد أعلاه؛ شرط البطاقة الخاص بـ F0 وحالة CORS غير مثبتين من الصفحة المفتوحة، والخدمة تتطلب حساب Azure وليست مفتاحا بسيطا بمستوى ملعب المتصفح وحده."
+  },
+  {
+    "id": "libretranslate",
+    "name": "LibreTranslate",
+    "provider": "LibreTranslate",
+    "category": "nlp",
+    "media": [
+      "text"
+    ],
+    "website": "https://libretranslate.com",
+    "docs": "https://docs.libretranslate.com",
+    "pricing": "https://libretranslate.com",
+    "description_ar": "خدمة ترجمة مفتوحة المصدر عبر API، بانتظار التحقق من النماذج المشمولة مجانا.",
+    "models": [
+      {
+        "name": "نماذج ترجمة عبر LibreTranslate",
+        "type": "text"
+      }
+    ],
+    "tags": [
+      "ترجمة"
+    ],
+    "free_type": "غير مؤكد",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "auth": "مفتاح API",
+    "signup": "غير مؤكد",
+    "card_required": "غير معلن",
+    "cors": "غير مؤكد",
+    "https": true,
+    "training_use": "غير معلن",
+    "commercial": "غير معلن",
+    "status": "قيد التحقق",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "example_curl": "# راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\ncurl https://libretranslate.com -H \"Authorization: Bearer YOUR_KEY\"",
+    "example_fetch": "// راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\nfetch('https://libretranslate.com', { headers: { 'Authorization': 'Bearer YOUR_KEY' } })",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "translate",
+        "endpoint": "https://libretranslate.com/translate",
+        "format": "libre-translate",
+        "auth": "body-apikey",
+        "label": "ترجمة نصية",
+        "prompt_label": "النص المراد ترجمته",
+        "model_input": false,
+        "fields": [
+          {
+            "key": "instance",
+            "label": "عنوان المثيل (اتركه كما هو للخدمة الرسمية، أو أدخل مثيلك الذاتي)",
+            "placeholder": "https://libretranslate.com",
+            "required": true
+          },
+          {
+            "key": "source",
+            "label": "لغة المصدر (مثال: en أو auto)",
+            "placeholder": "en",
+            "required": true
+          },
+          {
+            "key": "target",
+            "label": "لغة الهدف (مثال: es)",
+            "placeholder": "es",
+            "required": true
+          }
+        ],
+        "note": "المفتاح هنا اختياري: إذا كان المثيل لا يشترط مفتاحاً، اترك حقل المفتاح فارغاً وسيُرسل الطلب دون api_key."
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "http://docs.libretranslate.com/",
+    "verification_note": "مجاني للاستضافة الذاتية فقط وليس عرضا مستضافا مجانيا: التوثيق الرسمي يقول إنه برمجية حرة مفتوحة المصدر للاستضافة الذاتية، بمثال خادم محلي على المنفذ 5000 وبلا حد أحرف مذكور؛ والاستضافة المدارة بتكلفة شهرية صغيرة وتتطلب مفتاحا من البوابة، دون مبلغ شهري ولا خطة مجانية مستضافة في الصفحة المفتوحة."
+  },
+  {
+    "id": "anthropic-api",
+    "name": "Anthropic Claude API",
+    "provider": "Anthropic",
+    "category": "multimodal",
+    "media": [
+      "text",
+      "image"
+    ],
+    "website": "https://www.anthropic.com",
+    "docs": "https://docs.anthropic.com",
+    "pricing": "https://www.anthropic.com/pricing",
+    "description_ar": "واجهة نماذج محادثة متعددة الوسائط، بانتظار التحقق من النماذج المشمولة مجانا.",
+    "models": [
+      {
+        "name": "نماذج Claude عبر Anthropic API",
+        "type": "text"
+      }
+    ],
+    "tags": [
+      "محادثة",
+      "متعدد الوسائط"
+    ],
+    "free_type": "غير مؤكد",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "auth": "مفتاح API",
+    "signup": "غير مؤكد",
+    "card_required": "غير معلن",
+    "cors": "غير مؤكد",
+    "https": true,
+    "training_use": "غير معلن",
+    "commercial": "غير معلن",
+    "status": "قيد التحقق",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "example_curl": "# راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\ncurl https://api.anthropic.com -H \"Authorization: Bearer YOUR_KEY\"",
+    "example_fetch": "// راجع التوثيق الرسمي للمثال الدقيق، فهذه بطاقة قيد التحقق\nfetch('https://api.anthropic.com', { headers: { 'Authorization': 'Bearer YOUR_KEY' } })",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "chat",
+        "endpoint": "https://api.anthropic.com/v1/messages",
+        "format": "anthropic-messages",
+        "auth": "x-api-key",
+        "label": "توليد نص / محادثة (Claude)",
+        "prompt_label": "رسالتك",
+        "model_input": true,
+        "fields": [],
+        "note": "ترويسة الإصدار anthropic-version: 2023-06-01 مطلوبة، وحقل max_tokens مطلوب ولا يجوز حذفه."
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://claude.com/pricing",
+    "verification_note": "غير موثّق كـ API مجاني: الصفحة المفتوحة صفحة خطط اشتراك للدردشة وليست جدول أسعار API؛ خطة Free للدردشة بسعر 0 دولار، وخطة Max المدفوعة تشمل 100 إلى 200 دولار شهريا رصيد API، وهذا رصيد مرتبط بخطة مدفوعة وليس رصيدا مجانيا للمستخدمين الجدد. الرقم المتداول 5 دولارات لم يظهر في صفحة رسمية مفتوحة ولم يُعتمد."
+  },
+  {
+    "id": "llama-api",
+    "name": "Meta Llama API",
+    "provider": "Meta",
+    "category": "multimodal",
+    "media": [
+      "text",
+      "image"
+    ],
+    "website": "https://www.llama.com",
+    "docs": "https://www.llama.com/docs",
+    "pricing": "https://www.llama.com/pricing",
+    "description_ar": "واجهة نماذج Llama متعددة الوسائط، بانتظار التحقق من النماذج المشمولة مجانا.",
+    "models": [
+      {
+        "name": "نماذج Llama عبر Meta Llama API",
+        "type": "text"
+      }
+    ],
+    "tags": [
+      "محادثة"
+    ],
+    "free_type": "غير مؤكد",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "auth": "مفتاح API",
+    "signup": "غير مؤكد",
+    "card_required": "غير معلن",
+    "cors": "غير مؤكد",
+    "https": true,
+    "training_use": "غير معلن",
+    "commercial": "غير معلن",
+    "status": "قيد التحقق",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "example_curl": "curl https://api.llama.com/v1/chat/completions -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"model\": \"MODEL_NAME\", \"messages\": [{\"role\": \"user\", \"content\": \"مرحبا\"}]}'",
+    "example_fetch": "fetch('https://api.llama.com/v1/chat/completions', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ model: 'MODEL_NAME', messages: [{ role: 'user', content: 'مرحبا' }] }) })",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "chat",
+        "endpoint": "https://api.llama.com/v1/chat/completions",
+        "format": "openai-chat",
+        "auth": "bearer",
+        "label": "توليد نص / محادثة",
+        "prompt_label": "رسالتك",
+        "model_input": true,
+        "fields": []
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://www.llama.com/docs/how-to-guides/",
+    "verification_note": "غير موثّق كعرض API مجاني مؤكد: صفحة Meta Model API المفتوحة أدلة حول هندسة المطالبات والضبط الدقيق والتكميم والتقطير والاستخدام المسؤول، دون سعر ولا رصيد مجاني ولا معرّف نموذج للاستدعاء ولا حد مجاني؛ وادعاء 20 دولارا رصيدا مجانيا عند التسجيل ظهر في مصادر ثانوية فقط ولم يُعتمد، وأوزان Llama المفتوحة القابلة للتنزيل ليست بذاتها واجهة API مستضافة مجانية بمفتاح عام."
+  },
+  {
+    "id": "deepinfra",
+    "name": "DeepInfra",
+    "provider": "DeepInfra",
+    "category": "open-hosted",
+    "media": [
+      "text",
+      "image"
+    ],
+    "website": "https://deepinfra.com",
+    "docs": "https://deepinfra.com/docs",
+    "pricing": "https://deepinfra.com/pricing",
+    "description_ar": "منصة استضافة نماذج مفتوحة عبر استدلال، بانتظار التحقق من النماذج المشمولة مجانا.",
+    "models": [
+      {
+        "name": "نماذج مفتوحة عبر DeepInfra",
+        "type": "text"
+      }
+    ],
+    "tags": [
+      "نماذج مفتوحة"
+    ],
+    "free_type": "غير مؤكد",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "auth": "مفتاح API",
+    "signup": "غير مؤكد",
+    "card_required": "نعم، بطاقة أو دفع مسبق حسب صفحة الأسعار الرسمية",
+    "cors": "غير مؤكد",
+    "https": true,
+    "training_use": "غير معلن",
+    "commercial": "غير معلن",
+    "status": "قيد التحقق",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "example_curl": "curl https://api.deepinfra.com/v1/openai/chat/completions -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"model\": \"MODEL_NAME\", \"messages\": [{\"role\": \"user\", \"content\": \"مرحبا\"}]}'",
+    "example_fetch": "fetch('https://api.deepinfra.com/v1/openai/chat/completions', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ model: 'MODEL_NAME', messages: [{ role: 'user', content: 'مرحبا' }] }) })",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "chat",
+        "endpoint": "https://api.deepinfra.com/v1/openai/chat/completions",
+        "format": "openai-chat",
+        "auth": "bearer",
+        "label": "توليد نص / محادثة",
+        "prompt_label": "رسالتك",
+        "model_input": true,
+        "fields": []
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://deepinfra.com/pricing",
+    "verification_note": "لا طبقة مجانية في الصفحة الرسمية المفتوحة: النص يقول you only pay for what you use وبلا عقود طويلة ولا تكاليف مقدمة، ولا كلمة خطة مجانية ولا رصيد تجريبي في النص الكامل؛ وشرط الدفع المؤكد: يجب إضافة بطاقة أو دفع مسبق وإلا لا يمكن استخدام الخدمات. لذلك لا يُدرج كمجاني رغم أنه API بمفتاح عام ومتوافق مع OpenAI."
+  },
+  {
+    "id": "hyperbolic",
+    "name": "Hyperbolic",
+    "provider": "Hyperbolic",
+    "category": "open-hosted",
+    "media": [
+      "text",
+      "image"
+    ],
+    "website": "https://hyperbolic.xyz",
+    "docs": "https://www.hyperbolic.ai/docs/inference/overview",
+    "pricing": "https://hyperbolic.xyz/pricing",
+    "description_ar": "منصة استضافة نماذج مفتوحة عبر استدلال، بانتظار التحقق من النماذج المشمولة مجانا.",
+    "models": [
+      {
+        "name": "نماذج مفتوحة عبر Hyperbolic",
+        "type": "text"
+      }
+    ],
+    "tags": [
+      "نماذج مفتوحة"
+    ],
+    "free_type": "غير مؤكد",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "غير مؤكد",
+    "auth": "مفتاح API",
+    "signup": "غير مؤكد",
+    "card_required": "غير معلن",
+    "cors": "غير مؤكد",
+    "https": true,
+    "training_use": "غير معلن",
+    "commercial": "غير معلن",
+    "status": "قيد التحقق",
+    "last_checked": "2026-10-24",
+    "last_price_checked": "غير مؤكد",
+    "live_try": null,
+    "example_curl": "curl https://api.hyperbolic.xyz/v1/chat/completions -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"model\": \"MODEL_NAME\", \"messages\": [{\"role\": \"user\", \"content\": \"مرحبا\"}]}'",
+    "example_fetch": "fetch('https://api.hyperbolic.xyz/v1/chat/completions', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ model: 'MODEL_NAME', messages: [{ role: 'user', content: 'مرحبا' }] }) })",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [
+      {
+        "kind": "chat",
+        "endpoint": "https://api.hyperbolic.xyz/v1/chat/completions",
+        "format": "openai-chat",
+        "auth": "bearer",
+        "label": "توليد نص / محادثة",
+        "prompt_label": "رسالتك",
+        "model_input": true,
+        "fields": []
+      }
+    ],
+    "playground_status": "implemented",
+    "playground_block_reason": null,
+    "verification_source": "https://www.hyperbolic.ai/docs/inference/overview",
+    "verification_note": "لا استخدام API مجانيا رغم وجود اسم الطبقة المجانية: صفحة الاستدلال الرسمية تقول إن الحسابات الشخصية على الطبقة المجانية لا يمكنها استخدام الاستدلال، وإن الترقية تتطلب إيداعا لمرة واحدة بقيمة 5 دولارات أو أكثر دون اشتراك؛ وصفحة الفوترة تقول إن الاستدلال يُرفض حتى إضافة أموال، وإن الأرصدة المشتراة لا تنتهي. قاعدة الاستدلال الحالية https://api.hyperbolic.ai/inference/v1، والعنوان القديم api.hyperbolic.xyz/v1 يعيد 404 حسب الصفحة نفسها."
+  }
+]

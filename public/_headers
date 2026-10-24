@@ -1,0 +1,20 @@
+# Security headers for Cloudflare Pages. This file is NOT active locally:
+# Cloudflare Pages parses it only at deploy time, and the site is not
+# published yet. CSP is now safe to add because all executable scripts
+# moved to external same-origin files (theme.js, countdown.js, filters.js,
+# live-try.js, copy-report.js, playground.js); the only remaining <script>
+# tags are application/ld+json data blocks, which are not executed.
+# connect-src https: is required for the browser-only playground, which
+# calls providers directly from the visitor's browser. No server proxy.
+# img-src/media-src https: is required for provider-hosted generated
+# images and videos displayed in the playground.
+# CSP cannot be live-tested locally (no headers are served by `astro build`
+# output alone); it takes effect only after a Cloudflare Pages deploy,
+# and must be re-checked in the browser then for theme, countdown,
+# filters, and playground before being treated as fully verified.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  X-Frame-Options: DENY
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https: data:; media-src 'self' https:; connect-src 'self' https:; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'

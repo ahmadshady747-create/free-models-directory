@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+const title = 'الخصوصية — دليل APIs لنماذج الذكاء الاصطناعي';
+const description = 'سياسة خصوصية موقع ثابت بلا خادم خلفي: لا تحليلات ولا إعلانات طرف ثالث ولا حسابات ولا تخزين لمفاتيح الزوار على أي خادم.';
+---
+<Base title={title} description={description} canonical="/privacy/">
+<h1 class="text-3xl font-bold">الخصوصية</h1>
+<p class="mt-3 text-slate-500">هذا الموقع ثابت بالكامل، بلا خادم خلفي، وبلا قاعدة بيانات، وبلا حسابات مستخدمين.</p>
+<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<h2 class="font-bold text-lg">ما لا يجمعه الموقع</h2>
+<ul class="mt-2 list-disc space-y-1 ps-5 text-sm">
+<li>لا توجد تحليلات زيارات ولا إعلانات طرف ثالث ولا سكربتات طرف ثالث، لذلك لا يوجد طرف خارجي يقرأ صفحاتك من داخل هذا الموقع.</li>
+<li>لا يجمع الموقع أسماء ولا بريدا ولا أرقام هواتف ولا أي بيانات تعريف شخصية، لأنه لا يوجد نموذج يجمعها أصلا.</li>
+<li>لا يوجد ملف تعريف ارتباط للتتبع. السمة الداكنة فقط تُحفظ في متصفحك أنت عبر localStorage بمفتاح ai-api-theme.</li>
+</ul>
+</section>
+<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<h2 class="font-bold text-lg">مفتاحك في الملعب</h2>
+<p class="mt-2 text-sm">مفتاحك يخرج من متصفحك مباشرة إلى المزود الذي اخترته فقط، ولا يمر عبر أي خادم لهذا الموقع، ولا يُرسل في أي رابط خاص بهذا الموقع، ولا يُسجل في أي سجل لدينا، لأن الخادم الوسيط غير موجود أصلا.</p>
+<p class="mt-2 text-sm font-bold text-amber-800 dark:text-amber-200">تنبيه صريح: المفتاح في المتصفح ليس سرا محميا تماما، فأي شخص يصل إلى جهازك أو إلى أدوات مطور المتصفح فيه يمكنه رؤيته، وأي سكربت في الصفحة يمكنه قراءته نظريا، لذلك لا توجد سكربتات طرف ثالث هنا أصلا. استخدم مفتاحا مخصصا للتجربة بحدود محدودة حيث يتيح المزود ذلك، ولا تستخدم مفتاحا إنتاجيا على جهاز مشترك، وامسح المفتاح بعد الانتهاء.</p>
+<p class="mt-2 text-sm">التذكر الاختياري للمفتاح في localStorage يبقى في جهازك أنت فقط، وليس لدينا، وهو غير مفعّل افتراضيا، ويمكنك إيقافه ومسح المفتاح في أي وقت من زر المسح في الملعب.</p>
+<p class="mt-2 text-sm">الاستثناء الوحيد الذي تفرضه وثائق المزود نفسه: مفتاح Roboflow يُرسل في معامل استعلام طلب Roboflow فقط، ولا يُرسل إلى خادم هذا الموقع أبدا.</p>
+</section>
+<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<h2 class="font-bold text-lg">الروابط الخارجية وبلاغات الزوار</h2>
+<p class="mt-2 text-sm">روابط الموقع الرسمي والتوثيق وصفحة الأسعار تذهب إلى مواقع المزودين أنفسهم، وتخضع لسياساتهم عند فتحها. بلاغات الزوار عن أخطاء أو تحديثات تُرسل عبر GitHub Issues فقط بعد ربط الموقع بمستودع GitHub حقيقي، وهو غير مفعّل بعد، لذلك لا يظهر أي رابط GitHub معطل حاليا، بل نص بلاغ جاهز للنسخ. لا تضع أي مفتاح API حقيقي في أي بلاغ أبدا.</p>
+</section>
+<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<h2 class="font-bold text-lg">ترويسات الأمان</h2>
+<p class="mt-2 text-sm">عند النشر على Cloudflare Pages، سيُطبق ملف _headers ترويسات X-Content-Type-Options وReferrer-Policy وPermissions-Policy وX-Frame-Options. ترويسة Content-Security-Policy مؤجلة عمدا حتى تُنقل السكربتات المضمنة إلى ملفات خارجية وتُختبر معها، حتى لا تكسر الموقع، وهذا التأجيل موثق في ملف أفضل الممارسات.</p>
+</section>
+</Base>

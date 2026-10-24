@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+const { title, description, canonical } = Astro.props;
+---
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{title}</title>
+<meta name="description" content={description} />
+{canonical && <link rel="canonical" href={canonical} />}
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta name="theme-color" content="#2563eb" />
+<script is:inline src="/theme.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:rounded-full focus:bg-blue-600 focus:px-4 focus:py-2 focus:text-white">تخطّ إلى المحتوى الرئيسي</a>
+<header class="sticky top-0 z-10 border-b border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
+<div class="mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-4 py-3">
+<a href="/" class="flex items-center gap-2 font-bold text-lg"><span class="grid h-9 w-9 place-items-center rounded-lg bg-blue-600 text-white">ذ</span><span>دليل النماذج المجانية</span></a>
+<nav aria-label="التنقل الرئيسي" class="flex flex-wrap items-center gap-4 text-sm ms-auto">
+<a class="hover:text-blue-600" href="/apis/">كل النماذج</a>
+<a class="hover:text-blue-600" href="/methodology/">المنهجية</a>
+<a class="hover:text-blue-600" href="/changelog/">سجل التغييرات اليومي</a>
+<a class="hover:text-blue-600" href="/privacy/">الخصوصية</a>
+</nav>
+<button id="theme-toggle" type="button" class="rounded-full border border-slate-300 px-3 py-1 text-sm dark:border-slate-700">الوضع الداكن</button>
+</div>
+</header>
+<main id="main-content" tabindex="-1" class="mx-auto max-w-6xl px-4 py-8">
+<slot />
+</main>
+<footer class="mx-auto max-w-6xl px-4 pb-10 text-sm text-slate-500 dark:text-slate-400">
+<p>هذا الدليل لا يوزع مفاتيح ولا يخزنها ولا يمرر طلباتك عبر خادم وسيط. خذ مفتاحك من المزود الرسمي فقط، وتحقق من صفحة الأسعار الرسمية قبل الاعتماد على أي حد مجاني.</p>
+<p class="mt-2">نسخة تجريبية محلية، ليست للنشر بعد: 13 إدخالا موثقا جزئيا من صفحات رسمية مفتوحة، و27 إدخالا ما زالت قيد التحقق وحدودها غير مؤكد. صفحة <a class="text-blue-600" href="/privacy/">الخصوصية</a> تشرح أن الموقع بلا خادم خلفي وبلا تحليلات ولا يخزن مفاتيح الزوار.</p>
+</footer>
+</body>
+</html>

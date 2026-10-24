@@ -1,0 +1,170 @@
+---
+import Base from '../../layouts/Base.astro';
+import apis from '../../data/apis.json';
+import categories from '../../data/categories.json';
+import site from '../../data/site.json';
+import { buildReportBody, buildReportUrl } from '../../lib/report-url.mjs';
+export async function getStaticPaths() {
+  return apis.map((api) => ({ params: { id: api.id }, props: { api } }));
+}
+const { api } = Astro.props;
+const reportUrl = buildReportUrl(site.github_repo_url, api.provider, api.id);
+const reportBody = buildReportBody(api.provider, api.id);
+const cat = categories.categories.find((c) => c.id === api.category);
+const alternatives = apis.filter((a) => a.category === api.category && a.id !== api.id);
+const now = new Date();
+const expDays = api.offer_expires_at ? Math.ceil((new Date(api.offer_expires_at).getTime() - now.getTime()) / 86400000) : null;
+function detailTimerText() {
+  if (!api.offer_temporary) return null;
+  if (expDays === null) return 'تاريخ انتهاء غير مؤكد — لا عدّاد حتى يُوثق تاريخ انتهاء عام من المصدر الرسمي';
+  if (expDays < 0) return 'انتهى هذا العرض';
+  if (expDays === 0) return 'ينتهي اليوم';
+  return `ينتهي خلال ${expDays} يوم`;
+}
+const title = `${api.name} — API لنموذج ذكاء اصطناعي | دليل APIs`;
+const description = `${api.description_ar} نوع المجانية: ${api.free_type}. الحد المجاني: ${api.free_limit}. الحالة: ${api.status}.`;
+const jsonLd = { '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: api.name, description, applicationCategory: 'DeveloperApplication', operatingSystem: 'Web', url: api.website };
+---
+<Base title={title} description={description} canonical={`/apis/${api.id}/`}>
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+<a href="/" class="text-sm text-blue-600">← العودة إلى الدليل</a>
+<h1 class="mt-3 text-3xl font-bold">{api.name}</h1>
+<p class="mt-1 text-slate-500">{api.provider} · {cat?.label}</p>
+{api.free_type === 'رصيد تجريبي مؤقت' && <p class="mt-4 rounded-xl bg-amber-100 p-3 text-sm font-bold text-amber-900 dark:bg-amber-900 dark:text-amber-100">تحذير: هذه المجانية رصيد تجريبي ينتهي، وليست طبقة مجانية دائمة.</p>}
+{api.status === 'قيد التحقق' && <p class="mt-4 rounded-xl bg-amber-100 p-3 text-sm font-bold text-amber-900 dark:bg-amber-900 dark:text-amber-100">بطاقة قيد التحقق: لا تعتمد على أي رقم هنا حتى يُفحص من التوثيق الرسمي. الحدود الحالية غير مؤكد.</p>}
+{api.status === 'موثق جزئيا' && <p class="mt-4 rounded-xl bg-emerald-100 p-3 text-sm font-bold text-emerald-900 dark:bg-emerald-900 dark:text-emerald-100">موثق جزئيا: نوع المجانية والحد المذكور أدناه موثقان من صفحة الأسعار الرسمية بتاريخ آخر تحقق، لكن شرط البطاقة وحالة CORS ومعرّفات النماذج الدقيقة ما زالت غير مؤكدة حيث لم تثبتها الصفحة نفسها. تحقق دائما من صفحة الأسعار الرسمية قبل الاعتماد على أي حد.</p>}
+{api.offer_temporary && (
+<p class={`mt-4 rounded-xl p-3 text-sm font-bold ${expDays !== null && expDays < 0 ? 'bg-slate-200 text-slate-600 dark:bg-slate-800 dark:text-slate-300' : 'bg-amber-100 text-amber-900 dark:bg-amber-900 dark:text-amber-100'}`}>⏳ عرض مؤقت: <span class="countdown" data-expires={api.offer_expires_at || ''}>{detailTimerText()}</span>{expDays !== null && expDays >= 0 && expDays < 7 && ' — ينتهي قريباً، تحقق من صفحة الأسعار الرسمية قبل الاعتماد عليه.'}</p>
+)}
+
+<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<h2 class="font-bold text-lg">ملخص سريع</h2>
+<ul class="mt-2 space-y-1 text-sm">
+<li>نوع المجانية: <strong>{api.free_type}</strong></li>
+<li>الحد المجاني: <strong>{api.free_limit}</strong> — النطاق: {api.free_limit_scope}</li>
+<li>المصادقة: {api.auth} · التسجيل: {api.signup} · بطاقة بنكية: <strong>{api.card_required}</strong></li>
+<li>CORS: {api.cors} · HTTPS: {api.https ? 'نعم' : 'غير مؤكد'}</li>
+<li>استخدام المدخلات للتدريب: {api.training_use} · الاستخدام التجاري: {api.commercial}</li>
+<li>الحالة: <strong>{api.status}</strong> · آخر تحقق: {api.last_checked} · آخر تحقق سعري: {api.last_price_checked}</li>
+{api.verification_source && <li>مصدر التحقق: <a class="text-blue-600" href={api.verification_source} rel="noopener" target="_blank">{api.verification_source}</a>{api.verification_note && <> — {api.verification_note}</>}</li>}
+</ul>
+</section>
+
+<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<h2 class="font-bold text-lg">النماذج المشمولة</h2>
+<ul class="mt-2 list-disc ps-5 text-sm">
+{api.models.map((m) => <li>{m.name} — {m.type}</li>)}
+</ul>
+<p class="mt-2 text-sm">{api.description_ar}</p>
+</section>
+
+<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<h2 class="font-bold text-lg">الطبقة المجانية والروابط الرسمية</h2>
+<p class="mt-2 text-sm">تحقق دائما من صفحة الأسعار الرسمية قبل الاعتماد على أي حد، فحدود نماذج الذكاء الاصطناعي تتغير بسرعة.</p>
+<div class="mt-3 flex flex-wrap gap-2 text-sm">
+<a class="rounded-full bg-blue-600 px-4 py-1 text-white" href={api.website} rel="noopener" target="_blank">الموقع الرسمي</a>
+<a class="rounded-full border border-slate-300 px-4 py-1 dark:border-slate-700" href={api.docs} rel="noopener" target="_blank">التوثيق الرسمي</a>
+<a class="rounded-full border border-slate-300 px-4 py-1 dark:border-slate-700" href={api.pricing} rel="noopener" target="_blank">صفحة الأسعار الرسمية</a>
+</div>
+</section>
+
+<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<h2 class="font-bold text-lg">مثال طلب</h2>
+<p class="mt-1 text-sm text-slate-500">YOUR_KEY عنصر نائب فقط، لا تضع مفتاحا حقيقيا في أي مثال منسوخ إلى مكان عام.</p>
+<h3 class="mt-3 font-bold">curl</h3>
+<pre class="mt-1 overflow-x-auto rounded-xl bg-slate-950 p-3 text-xs text-slate-100" dir="ltr">{api.example_curl}</pre>
+<h3 class="mt-3 font-bold">fetch</h3>
+<pre class="mt-1 overflow-x-auto rounded-xl bg-slate-950 p-3 text-xs text-slate-100" dir="ltr">{api.example_fetch}</pre>
+</section>
+
+{api.live_try ? (
+<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<h2 class="font-bold text-lg">تجربة حية من متصفحك</h2>
+<p class="mt-1 text-sm">تعمل هذه التجربة مباشرة من متصفحك إلى المزود، ولا تمر عبر خادم هذا الموقع، ولا يُرسل أي مفتاح إلى خادمنا.</p>
+<button id="live-try" type="button" data-endpoint={api.live_try.endpoint} class="mt-3 rounded-full bg-blue-600 px-4 py-1 text-sm text-white">جرّب الآن</button>
+<pre id="live-result" class="mt-3 hidden overflow-x-auto rounded-xl bg-slate-950 p-3 text-xs text-slate-100" dir="ltr"></pre>
+<script is:inline src="/live-try.js" defer></script>
+</section>
+) : (
+<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<h2 class="font-bold text-lg">تجربة حية</h2>
+<p class="mt-1 text-sm">لا توجد نقطة عامة موثقة تدعم CORS لهذا الإدخال حتى الآن، لذلك لا نعرض زر تجربة وهميا. عندما تُوثق نقطة عامة، ستظهر هنا وتعمل من متصفحك فقط.</p>
+</section>
+)}
+
+{api.playground_status === 'implemented' && api.playgrounds.length > 0 ? (
+<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<h2 class="font-bold text-lg">ملعب التجربة — بمفتاحك الخاص</h2>
+<p class="mt-1 text-sm font-bold text-amber-800 dark:text-amber-200">⚠️ أمان المفتاح: مفتاحك يخرج من متصفحك مباشرة إلى المزود فقط، ولا يمر عبر خادم هذا الموقع أبدا، ولا يُرسل في أي رابط خاص بهذا الموقع، ولا يُسجَّل في أي سجل لدينا. لا يوجد خادم وسيط هنا أصلا. الاستخدام يُحسب على حصتك الخاصة، وقد يكلفك مالا بعد نفاد الطبقة المجانية. لا تستخدم مفتاحك على جهاز مشترك دون مسحه بعد الانتهاء.</p>
+<p class="mt-1 text-sm">اكتب معرّف النموذج من توثيق المزود الرسمي حيث يُطلب، فأسماء النماذج في هذه البطاقة التجريبية عامة ولم تُوثق بعد كمعرّفات API دقيقة إلا حيث يُذكر خلاف ذلك. إذا فشل الطلب بسبب CORS، ستظهر رسالة صريحة بذلك، وهي ليست بالضرورة خطأ في المفتاح.</p>
+{api.playgrounds.map((pg) => (
+<div class="playground mt-4 rounded-2xl border border-slate-200 p-3 dark:border-slate-700" data-provider={api.id} data-kind={pg.kind} data-endpoint={pg.endpoint} data-format={pg.format} data-auth={pg.auth} data-poll-endpoint={pg.poll_endpoint || ''} data-poll-interval={pg.poll_interval_ms || ''} data-max-poll={pg.max_poll_ms || ''}>
+<h3 class="font-bold">{pg.label}</h3>
+<p class="text-sm text-slate-500" dir="ltr">{pg.endpoint}</p>
+{pg.note && <p class="mt-1 text-sm text-amber-800 dark:text-amber-200">{pg.note}</p>}
+<label class="mt-2 block text-sm">مفتاحك الخاص (من المزود الرسمي فقط)
+<div class="flex gap-2">
+<input class="pg-key w-full rounded-full border border-slate-300 px-3 py-2 dark:border-slate-700 dark:bg-slate-950" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="الصق مفتاحك هنا — لن يغادر متصفحك إلا إلى المزود" />
+<button type="button" class="pg-show rounded-full border border-slate-300 px-3 py-1 text-sm dark:border-slate-700">إظهار</button>
+<button type="button" class="pg-clear rounded-full border border-slate-300 px-3 py-1 text-sm dark:border-slate-700">مسح</button>
+</div>
+</label>
+<label class="mt-2 flex items-center gap-2 text-sm"><input class="pg-remember" type="checkbox" /> تذكّر في هذا المتصفح فقط (localStorage) — غير مفعّل افتراضيا، ويُحفظ المفتاح في جهازك أنت فقط، لا لدينا</label>
+{pg.model_input && (<label class="mt-2 block text-sm">معرّف النموذج (من توثيق المزود)<input class="pg-model w-full rounded-full border border-slate-300 px-3 py-2 dark:border-slate-700 dark:bg-slate-950" type="text" autocomplete="off" placeholder="مثال: معرّف النموذج كما في توثيق المزود" /></label>)}
+{pg.fields.map((f) => (
+<label class="mt-2 block text-sm">{f.label}<input class="pg-field w-full rounded-full border border-slate-300 px-3 py-2 dark:border-slate-700 dark:bg-slate-950" type="text" autocomplete="off" data-field={f.key} required={f.required} placeholder={f.placeholder} /></label>
+))}
+{pg.kind !== 'vision' && pg.kind !== 'transcribe' && (<label class="mt-2 block text-sm">{pg.prompt_label}<textarea class="pg-prompt w-full rounded-2xl border border-slate-300 px-3 py-2 dark:border-slate-700 dark:bg-slate-950" rows="3" placeholder="اكتب هنا…"></textarea></label>)}
+<div class="mt-3 flex gap-2">
+<button type="button" class="pg-run rounded-full bg-blue-600 px-4 py-1 text-sm text-white">توليد</button>
+<button type="button" class="pg-stop hidden rounded-full border border-slate-300 px-4 py-1 text-sm dark:border-slate-700">إيقاف الاستطلاع</button>
+</div>
+<p class="pg-status mt-2 hidden text-sm"></p>
+<p class="pg-error mt-2 hidden rounded-xl bg-red-100 p-3 text-sm text-red-900 dark:bg-red-900 dark:text-red-100"></p>
+<pre class="pg-output mt-2 hidden overflow-x-auto rounded-xl bg-slate-950 p-3 text-xs text-slate-100" dir="ltr"></pre>
+<div class="pg-media mt-2 hidden"></div>
+</div>
+))}
+<script is:inline src="/playground.js"></script>
+</section>
+) : (
+<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<h2 class="font-bold text-lg">ملعب التجربة — بمفتاحك الخاص</h2>
+{api.playground_status === 'browser-blocked' && <p class="mt-1 text-sm font-bold text-red-800 dark:text-red-200">لا يوجد زر توليد في المتصفح لهذا المزود، بتوجيه من المزود نفسه — وليس عطلاً في الموقع.</p>}
+{api.playground_status === 'not-suitable' && <p class="mt-1 text-sm font-bold text-red-800 dark:text-red-200">هذا المزود غير مناسب لساحة مفاتيح في المتصفح، فلا يوجد زر توليد له هنا.</p>}
+{api.playground_status === 'needs-confirmation' && <p class="mt-1 text-sm font-bold text-amber-800 dark:text-amber-200">صيغة هذا المزود تحتاج تأكيداً رسمياً أخيراً قبل كتابة المحول، لذلك لا يوجد زر توليد قد يفشل هنا.</p>}
+{!api.playground_status && <p class="mt-1 text-sm">صيغة هذا المزود غير موثقة بعد، لذلك لا نعرض زر توليد قد يفشل.</p>}
+{api.playground_block_reason && <p class="mt-1 text-sm">{api.playground_block_reason}</p>}
+<p class="mt-1 text-sm">يبقى هذا المزود في الدليل كمعلومة فقط، مع روابطه الرسمية أعلاه. لا تضع مفتاحك في أي مكان آخر في هذه الصفحة، ولا في الروابط أو الأمثلة المنسوخة.</p>
+</section>
+)}
+
+{alternatives.length > 0 && (
+<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<h2 class="font-bold text-lg">بدائل من نفس الفئة</h2>
+<ul class="mt-2 space-y-2 text-sm">
+{alternatives.map((a) => <li><a class="text-blue-600" href={`/apis/${a.id}/`}>{a.name}</a> — {a.provider} · {a.status}</li>)}
+</ul>
+</section>
+)}
+
+<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<h2 class="font-bold text-lg">إبلاغ عن خطأ أو تحديث</h2>
+<p class="mt-1 text-sm">إذا أُوقف نموذج، أو تغير حد أو سعر، أو تعطّل رابط، أرسل بلاغا وسيُراجع ضمن التحديث اليومي الذي ينفذه Muse بعد التحقق من المصدر الرسمي. لا تضع أي مفتاح API حقيقي في البلاغ أبدا.</p>
+{reportUrl ? (
+<div class="mt-3">
+<p class="text-sm">سيفتح الرابط Issue جديدة معبأة مسبقا بالعنوان والوسم <code dir="ltr">visitor-report</code> ونموذج البلاغ. أكمل الحقول التالية قبل الإرسال: الحد القديم والجديد، ورابط المصدر الرسمي.</p>
+<a class="mt-3 inline-block rounded-full bg-blue-600 px-4 py-1 text-sm text-white" href={reportUrl} rel="noopener" target="_blank">الإبلاغ عن خطأ أو تحديث</a>
+</div>
+) : (
+<div class="mt-3">
+<p class="text-sm font-bold text-amber-800 dark:text-amber-200">قناة الإبلاغ عبر GitHub غير مفعّلة بعد، لأن الموقع لم يُربط بمستودع GitHub حقيقي، ولن نربطك برابط معطّل. انسخ نص البلاغ الجاهز أدناه، وسيُفعَّل زر GitHub تلقائيا عند الإطلاق بمجرد ضبط رابط المستودع الحقيقي، وستُعالج البلاغات ضمن التحديث اليومي الذي ينفذه Muse بعد التحقق من المصدر الرسمي.</p>
+<pre id="report-text" class="mt-3 overflow-x-auto whitespace-pre-wrap rounded-xl bg-slate-950 p-3 text-xs text-slate-100" dir="ltr">{reportBody}</pre>
+<button id="copy-report" type="button" class="mt-3 rounded-full bg-blue-600 px-4 py-1 text-sm text-white">نسخ نص البلاغ</button>
+<p id="copy-report-status" class="mt-2 hidden text-sm"></p>
+<script is:inline src="/copy-report.js" defer></script>
+</div>
+)}
+</section>
+<script is:inline src="/countdown.js" defer></script>
+</Base>

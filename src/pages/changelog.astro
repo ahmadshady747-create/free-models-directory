@@ -1,0 +1,47 @@
+---
+import Base from '../layouts/Base.astro';
+import changelog from '../data/changelog.json';
+import { entryDays, entryEndDate, getLastUpdated, getLatestNoChangeRun, isNoChange } from '../lib/changelog.mjs';
+const title = 'سجل التغييرات اليومي — دليل APIs لنماذج الذكاء الاصطناعي';
+const description = 'سجل يومي مؤرخ لزيادة أو حذف أو تعديل إدخالات الدليل، مع الحد القديم والجديد والمصدر الرسمي، وأيام عدم التغيير المتتالية مدمجة في سطر واحد.';
+const lastUpdated = getLastUpdated(changelog);
+const noChangeRun = getLatestNoChangeRun(changelog);
+const consecutiveDays = noChangeRun ? entryDays(noChangeRun) : 0;
+// Newest first for reading; the data file itself stays chronological.
+const timeline = [...changelog].reverse();
+function noChangeLine(e) {
+  const end = entryEndDate(e);
+  const days = entryDays(e);
+  if (end !== e.date) {
+    return `من ${e.date} إلى ${end}: فحص يومي منتظم — استقرار كامل في حدود جميع المزودين (${days} يوم متتالي)`;
+  }
+  return `في ${e.date}: فحص يومي منتظم — لا تغييرات مسجلة`;
+}
+---
+<Base title={title} description={description} canonical="/changelog/">
+<h1 class="text-3xl font-bold">سجل التغييرات اليومي</h1>
+<p class="mt-2 text-slate-500">كل تغيير يُسجل بتاريخه ونوعه والحد القديم والجديد والمصدر الرسمي. لا يُحذف إدخال قديم عند تغير جديد. هذا السجل مصدره ملف <code dir="ltr">src/data/changelog.json</code>، ويُحدَّث يوميا ضمن صيانة Muse، دون أي إدخال يومي مطلوب من صاحب الموقع. أيام عدم التغيير المتتالية لا تُضخَّم بإدخالات مكررة: يُمدَّد إدخال واحد بحقلي <code dir="ltr">date_end</code> و<code dir="ltr">consecutive_days</code>، والإدخالات القديمة بلا هذين الحقلين ما زالت تُعرض سليمة كيوم واحد.</p>
+
+<section class="mt-6 rounded-3xl bg-green-600 p-4 text-white">
+<p class="font-bold">آخر فحص آلي شامل: {lastUpdated} — تم الفحص لمدة {consecutiveDays} يوم متتالي دون تغييرات غير مسجلة</p>
+<p class="mt-1 text-sm">إذا كان الرقم صفرا، فهذا يعني أن أحدث إدخال في السجل هو تغيير حقيقي وليس تأكيد عدم تغيير، لا أن الفحص متوقف. تاريخ آخر تحديث يُحسب من أحدث تاريخ في السجل، بما فيه نهاية أي سلسلة عدم تغيير مدمجة.</p>
+</section>
+
+<div class="mt-6 space-y-4">
+{timeline.map((e) => isNoChange(e) ? (
+<article class="rounded-3xl border border-green-200 bg-green-50 p-4 dark:border-green-800 dark:bg-green-950/40">
+<p class="text-sm text-slate-500">{e.date}{entryEndDate(e) !== e.date ? ` إلى ${entryEndDate(e)}` : ''} · تأكيد عدم تغيير</p>
+<p class="mt-1 font-bold">{noChangeLine(e)}</p>
+<p class="mt-1 text-sm">المصدر: {e.source}</p>
+</article>
+) : (
+<article class="rounded-3xl border border-blue-300 bg-white p-4 shadow-sm dark:border-blue-700 dark:bg-slate-900">
+<p class="text-sm text-slate-500">{e.date} · {e.type}</p>
+<h2 class="font-bold">{e.provider} — {e.model}</h2>
+<p class="mt-1 text-sm">الحد القديم: {e.old_limit}</p>
+<p class="text-sm">الحد الجديد: {e.new_limit}</p>
+<p class="mt-1 text-sm">المصدر: {e.source}</p>
+</article>
+))}
+</div>
+</Base>

@@ -1,0 +1,1 @@
+{"dependencies":{"astro":"^5.0.0"},"devDependencies":{"@tailwindcss/vite":"^4.0.0","tailwindcss":"^4.0.0","typescript":"^5.9.0"},"name":"ai-api-directory","private":true,"scripts":{"build":"astro build","dev":"astro dev","health-check":"node scripts/health-check.mjs","preview":"astro preview"},"type":"module","version":"0.1.0"}
