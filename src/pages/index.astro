@@ -55,7 +55,7 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebApplication', na
       <li>الحد المجاني: <strong>{api.free_limit}</strong></li>
       <li>الحالة: <strong>{api.status}</strong></li>
     </ul>
-    <p class="mt-2 text-sm">{hasPlayground ? 'ملعب تجربة متاح من المتصفح.' : 'بدون ملعب متصفح — صفحة التفاصيل تشرح السبب.'}</p>
+    <p class="mt-2 text-sm">{hasPlayground ? 'بيئة تنفيذ النماذج متاحة من المتصفح.' : 'بدون بيئة تنفيذ النماذج في المتصفح — صفحة التفاصيل تشرح السبب.'}</p>
     <a class="btn-primary mt-4 w-full" href={`/apis/${api.id}/`}>{hasPlayground ? 'فتح التفاصيل والتجربة' : 'فتح التفاصيل'}</a>
     {api.key_url && <a class="mt-2 flex min-h-12 items-center justify-center text-sm font-bold text-blue-600" href={api.key_url} rel="noopener" target="_blank">{api.key_url_kind === 'official_site' ? 'صفحة المزود الرسمية ↗' : 'احصل على المفتاح ↗'}</a>}
   </article>

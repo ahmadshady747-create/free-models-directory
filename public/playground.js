@@ -1,4 +1,9 @@
-/* Key-testing playground — browser only, no server proxy.
+/* Model Execution Runtime — browser only, no server proxy.
+   Before a provider request is sent, public/runtime.js (WebAssembly,
+   with a JavaScript fallback) analyses the text prompt locally:
+   characters, words, an estimated token count (estimate only, never
+   a provider token count), and a cleaned prompt with ASCII control
+   characters stripped. The cleaned prompt is what is sent.
    The visitor's key goes from this browser directly to the provider only.
    It is never sent to this site's server (there is none), never put in
    this site's page URL, and never logged. By default it lives only in
@@ -258,6 +263,33 @@
     return { state: "processing" };
   }
 
+  // JavaScript twin of the WebAssembly formulas in public/runtime.js.
+  // Used only if runtime.js itself failed to load. The token figure
+  // here is an ESTIMATE (ceil(characters / 4)), never a provider count.
+  function jsRuntimeAnalyse(text) {
+    var chars = Array.from(text).length;
+    var trimmed = text.trim();
+    var words = trimmed ? trimmed.split(/\s+/).length : 0;
+    var tokens = chars === 0 ? 0 : Math.ceil(chars / 4);
+    var cleaned = text.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, "");
+    return { chars: chars, words: words, tokens: tokens, cleaned: cleaned, removed: chars - Array.from(cleaned).length, engine: "js-fallback" };
+  }
+
+  async function runtimeAnalyse(block, prompt) {
+    var result;
+    if (window.__modelRuntime && window.__modelRuntime.analyse) {
+      result = await window.__modelRuntime.analyse(prompt);
+    } else {
+      result = jsRuntimeAnalyse(prompt);
+    }
+    var statsEl = $(".pg-runtime", block);
+    if (statsEl) {
+      statsEl.textContent = "بيئة تنفيذ النماذج: " + result.chars + " حرفاً · " + result.words + " كلمة · تقدير " + result.tokens + " رمزاً (تقديري، وليس رمز المزود) · أُزيل " + result.removed + " حرف تحكم · " + (result.engine === "wasm" ? "WebAssembly" : "بديل JavaScript");
+      statsEl.classList.remove("hidden");
+    }
+    return result;
+  }
+
   function init() {
     $$(".playground").forEach(function (block) {
       var keyInput = $(".pg-key", block), remember = $(".pg-remember", block);
@@ -306,6 +338,17 @@
         if ((format === "openai-chat" || format === "anthropic-messages" || format === "gemini-generate" || format === "openai-image" || format === "cohere-embed" || format === "voyage-embed" || format === "jina-embed" || format === "replicate-prediction" || format === "runway-task" || format === "luma-generation" || format === "minimax-video") && !model && format !== "replicate-prediction") {
           // Replicate uses model as version, also required; handled below.
           status.textContent = "أدخل معرّف النموذج من توثيق المزود."; return;
+        }
+        // Model Execution Runtime: analyse the text prompt locally
+        // (WebAssembly, JavaScript fallback) and send the cleaned prompt.
+        // A runtime failure must never block the provider request, so
+        // the original prompt is kept if analysis throws.
+        if (promptEl) {
+          try {
+            var rt = await runtimeAnalyse(block, prompt);
+            prompt = rt.cleaned;
+            promptEl.value = rt.cleaned;
+          } catch (e) {}
         }
         runBtn.disabled = true;
         var runLabel = runBtn.textContent;
@@ -453,7 +496,7 @@
             await pollJob(block, { headers: headers, pollEndpoint: block.dataset.pollEndpoint, pollInterval: block.dataset.pollInterval || "10000", maxPoll: block.dataset.maxPoll || "900000", jobId: mmId, pollCtx: { id: mmId }, parsePoll: parseMinimax });
             runBtn.disabled = false; return;
           } else {
-            status.textContent = "صيغة هذا المزود غير مدعومة في الملعب بعد."; runBtn.disabled = false; return;
+            status.textContent = "صيغة هذا المزود غير مدعومة في بيئة تنفيذ النماذج بعد."; runBtn.disabled = false; return;
           }
 
           var res = await doFetch(url, { method: method, headers: headers, body: body });
