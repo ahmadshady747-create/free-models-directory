@@ -308,6 +308,8 @@
           status.textContent = "أدخل معرّف النموذج من توثيق المزود."; return;
         }
         runBtn.disabled = true;
+        var runLabel = runBtn.textContent;
+        runBtn.textContent = "جارٍ التوليد…";
         status.textContent = "جارٍ الاتصال مباشرة بالمزود من متصفحك…";
         try {
           var headers = authHeaders(block, key, fields);
@@ -472,6 +474,7 @@
           status.textContent = "لم يكتمل التوليد.";
         } finally {
           runBtn.disabled = false;
+          runBtn.textContent = runLabel;
         }
       });
     });

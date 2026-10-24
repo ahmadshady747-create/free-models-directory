@@ -23,10 +23,10 @@ const description = 'سياسة خصوصية موقع ثابت بلا خادم �
 </section>
 <section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
 <h2 class="font-bold text-lg">الروابط الخارجية وبلاغات الزوار</h2>
-<p class="mt-2 text-sm">روابط الموقع الرسمي والتوثيق وصفحة الأسعار تذهب إلى مواقع المزودين أنفسهم، وتخضع لسياساتهم عند فتحها. بلاغات الزوار عن أخطاء أو تحديثات تُرسل عبر GitHub Issues فقط بعد ربط الموقع بمستودع GitHub حقيقي، وهو غير مفعّل بعد، لذلك لا يظهر أي رابط GitHub معطل حاليا، بل نص بلاغ جاهز للنسخ. لا تضع أي مفتاح API حقيقي في أي بلاغ أبدا.</p>
+<p class="mt-2 text-sm">روابط الموقع الرسمي والتوثيق وصفحة الأسعار تذهب إلى مواقع المزودين أنفسهم، وتخضع لسياساتهم عند فتحها. بلاغات الزوار عن أخطاء أو تحديثات تُرسل عبر GitHub Issues في مستودع المشروع العام، عبر زر الإبلاغ في صفحة التفاصيل. لا تضع أي مفتاح API حقيقي في أي بلاغ أبدا.</p>
 </section>
 <section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
 <h2 class="font-bold text-lg">ترويسات الأمان</h2>
-<p class="mt-2 text-sm">عند النشر على Cloudflare Pages، سيُطبق ملف _headers ترويسات X-Content-Type-Options وReferrer-Policy وPermissions-Policy وX-Frame-Options. ترويسة Content-Security-Policy مؤجلة عمدا حتى تُنقل السكربتات المضمنة إلى ملفات خارجية وتُختبر معها، حتى لا تكسر الموقع، وهذا التأجيل موثق في ملف أفضل الممارسات.</p>
+<p class="mt-2 text-sm">على Cloudflare Pages، يُطبق ملف _headers ترويسات X-Content-Type-Options وReferrer-Policy وPermissions-Policy وX-Frame-Options وContent-Security-Policy، وكل السكربتات التنفيذية في ملفات خارجية حتى تبقى هذه الترويسة صالحة.</p>
 </section>
 </Base>

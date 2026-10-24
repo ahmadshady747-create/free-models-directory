@@ -5,25 +5,6 @@ import categories from '../data/categories.json';
 import changelog from '../data/changelog.json';
 import { getLastUpdated } from '../lib/changelog.mjs';
 const lastUpdated = getLastUpdated(changelog);
-const now = new Date();
-function daysLeft(iso) {
-  if (!iso) return null;
-  return Math.ceil((new Date(iso).getTime() - now.getTime()) / 86400000);
-}
-function timerText(api) {
-  if (!api.offer_temporary) return null;
-  const d = daysLeft(api.offer_expires_at);
-  if (d === null) return 'تاريخ انتهاء غير مؤكد — لا عدّاد حتى يُوثق تاريخ انتهاء عام من المصدر الرسمي';
-  if (d < 0) return 'انتهى هذا العرض';
-  if (d === 0) return 'ينتهي اليوم';
-  return `ينتهي خلال ${d} يوم`;
-}
-const tempApis = apis.filter((a) => a.offer_temporary).sort((a, b) => {
-  if (a.offer_expires_at && b.offer_expires_at) return a.offer_expires_at.localeCompare(b.offer_expires_at);
-  if (a.offer_expires_at) return -1;
-  if (b.offer_expires_at) return 1;
-  return a.name.localeCompare(b.name);
-});
 const title = 'دليل النماذج المجانية — طبقات مجانية موثقة لنماذج الذكاء الاصطناعي';
 const description = 'دليل عربي لـ APIs التي تشغّل نماذج ذكاء اصطناعي فقط، مع نوع المجانية وحدودها وتاريخ آخر تحقق وسجل تغييرات يومي.';
 const jsonLd = { '@context': 'https://schema.org', '@type': 'WebApplication', name: title, description, applicationCategory: 'DeveloperApplication', operatingSystem: 'Web' };
@@ -32,97 +13,57 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebApplication', na
 <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 <section class="rounded-3xl bg-blue-600 p-6 text-white sm:p-8">
 <h1 class="text-2xl font-bold sm:text-3xl">ابحث عن API لنموذج ذكاء اصطناعي مجاني، دون أن تنخدع بالرصيد التجريبي</h1>
-<p class="mt-3 max-w-3xl">نماذج ذكاء اصطناعي فقط، لا APIs عامة. كل بطاقة تفرّق بين طبقة مجانية دائمة ورصيد تجريبي، وتُظهر تاريخ آخر تحقق. النسخة الحالية تجريبية محلية: 40 إدخالا، 13 إدخالا موثقا جزئيا من صفحات رسمية مفتوحة، و27 إدخالا ما زالت قيد التحقق وحدودها غير مؤكد، وهي ليست جاهزة للنشر.</p>
-<p class="mt-3 text-sm font-bold">⚠️ لا ننشر مفاتيح حقيقية أبدا. الأمثلة تستخدم YOUR_KEY كعنصر نائب فقط.</p>
-<p class="mt-2 text-sm">آخر تحديث للقائمة: <strong>{lastUpdated}</strong> — تُراجع القائمة يوميا وتُنشر تغييراتها في سجل التغييرات، دون أن يُطلب من صاحب الموقع إدخال بيانات يوميا.</p>
+<p class="mt-3 max-w-3xl">نماذج ذكاء اصطناعي فقط، لا APIs عامة. كل بطاقة تفرّق بين طبقة مجانية دائمة ورصيد تجريبي.</p>
+<p class="mt-3 text-sm font-bold">لا ننشر مفاتيح ولا نخزنها؛ مفتاحك من المزود الرسمي فقط.</p>
 </section>
 
 <section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
-<div class="flex flex-col gap-3">
-<input id="search" type="search" placeholder="ابحث باسم المزود أو النموذج أو الوسم…" class="w-full rounded-full border border-slate-300 px-4 py-2 dark:border-slate-700 dark:bg-slate-950" />
-<div class="flex flex-wrap gap-2">
-<select id="filter-category" class="rounded-full border border-slate-300 px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-950">
-<option value="">كل الفئات</option>
-{categories.categories.map((c) => <option value={c.id}>{c.label}</option>)}
-</select>
-<select id="filter-free" class="rounded-full border border-slate-300 px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-950">
+<label for="search" class="block font-bold">ابحث أولاً باسم المزود أو النموذج</label>
+<input id="search" type="search" autocomplete="off" placeholder="مثال: OpenRouter، صورة، ترجمة…" class="mt-2 w-full rounded-full border border-slate-300 px-4 py-3 text-base dark:border-slate-700 dark:bg-slate-950" />
+<div class="mt-3 flex flex-wrap gap-2" role="group" aria-label="تصفية حسب الفئة">
+<button type="button" data-cat="" aria-pressed="true" class="cat-chip rounded-full bg-blue-600 px-4 py-2 text-sm text-white">الكل</button>
+{categories.categories.map((c) => <button type="button" data-cat={c.id} aria-pressed="false" class="cat-chip rounded-full border border-slate-300 px-4 py-2 text-sm dark:border-slate-700">{c.label}</button>)}
+</div>
+<div class="mt-3 flex flex-wrap items-center gap-3">
+<label for="filter-free" class="sr-only">تصفية حسب نوع المجانية</label>
+<select id="filter-free" class="rounded-full border border-slate-300 px-3 py-3 text-sm dark:border-slate-700 dark:bg-slate-950">
 <option value="">كل أنواع المجانية</option>
 <option value="طبقة مجانية دائمة">طبقة مجانية دائمة</option>
 <option value="رصيد تجريبي مؤقت">رصيد تجريبي مؤقت</option>
 <option value="فترة تجريبية محدودة">فترة تجريبية محدودة</option>
 <option value="غير مؤكد">غير مؤكد</option>
 </select>
-<select id="filter-media" class="rounded-full border border-slate-300 px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-950">
-<option value="">كل الوسائط</option>
-<option value="text">نص</option>
-<option value="image">صورة</option>
-<option value="audio">صوت</option>
-<option value="video">فيديو</option>
-<option value="embeddings">تضمين</option>
-<option value="code">كود</option>
-</select>
-<label class="flex items-center gap-2 rounded-full border border-slate-300 px-3 py-2 text-sm dark:border-slate-700"><input id="filter-nocard" type="checkbox" /> بدون بطاقة فقط</label>
-<label class="flex items-center gap-2 rounded-full border border-slate-300 px-3 py-2 text-sm dark:border-slate-700"><input id="filter-cors" type="checkbox" /> يدعم CORS فقط</label>
-<label class="flex items-center gap-2 rounded-full border border-slate-300 px-3 py-2 text-sm dark:border-slate-700"><input id="filter-working" type="checkbox" /> يعمل فقط</label>
-<label class="flex items-center gap-2 rounded-full border border-amber-300 px-3 py-2 text-sm dark:border-amber-700"><input id="filter-temp" type="checkbox" /> عروض مؤقتة فقط</label>
+<label class="flex min-h-12 items-center gap-2 rounded-full border border-amber-300 px-4 py-2 text-sm dark:border-amber-700"><input id="filter-temp" type="checkbox" /> عروض مؤقتة فقط</label>
 </div>
-</div>
-<p id="result-count" class="mt-3 text-sm text-slate-500"></p>
-</section>
-
-<section class="mt-6 rounded-3xl border border-amber-200 bg-amber-50 p-4 dark:border-amber-800 dark:bg-amber-950/40">
-<h2 class="font-bold text-lg">⏳ عروض مؤقتة — مرتّبة بالأقرب انتهاءً</h2>
-<p class="mt-1 text-sm text-slate-500">العروض المؤقتة وحدها تظهر هنا. العدّاد الحي يعمل فقط عند وجود تاريخ انتهاء عام موثّق؛ أما العروض التي تاريخ انتهائها غير مؤكد فتُعرض بلا عدّاد، ولا يُخترع لها أي تاريخ. العروض المنتهية تُخفى من التصفية الافتراضية وتُسجَّل في سجل التغييرات، ولا تُحذف بصمت.</p>
-<ul class="mt-3 space-y-2 text-sm">
-{tempApis.map((api) => {
-  const d = daysLeft(api.offer_expires_at);
-  const expired = d !== null && d < 0;
-  const soon = d !== null && d >= 0 && d < 7;
-  return (
-  <li class={expired ? 'opacity-60' : ''}>
-    <a class="font-bold text-blue-600" href={`/apis/${api.id}/`}>{api.name}</a> — {api.provider}
-    {expired && <span> · انتهى</span>}
-    {soon && <span class="font-bold text-amber-700 dark:text-amber-300"> · ينتهي قريباً</span>}
-    <span class="countdown" data-expires={api.offer_expires_at || ''}> · {timerText(api)}</span>
-  </li>
-  );
-})}
-</ul>
+<p id="result-count" aria-live="polite" class="mt-3 text-sm text-slate-500"></p>
 </section>
 
 <section class="mt-6">
-<div class="mb-4 flex flex-wrap gap-2">
-<button data-cat="" class="cat-chip rounded-full bg-blue-600 px-4 py-1 text-sm text-white">الكل</button>
-{categories.categories.map((c) => <button data-cat={c.id} class="cat-chip rounded-full border border-slate-300 px-4 py-1 text-sm dark:border-slate-700">{c.label}</button>)}
-</div>
 <div id="cards" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 {apis.map((api) => {
   const cat = categories.categories.find((c) => c.id === api.category);
   const searchText = [api.name, api.provider, api.description_ar, ...api.models.map((m) => m.name), ...api.tags].join(' ');
+  const hasPlayground = api.playground_status === 'implemented';
   return (
-  <article class="api-card rounded-3xl border border-slate-200 bg-white p-4 hover:border-blue-500 dark:border-slate-800 dark:bg-slate-900"
-    data-search={searchText} data-category={api.category} data-media={api.media.join(',')} data-free={api.free_type} data-card={api.card_required} data-cors={api.cors} data-status={api.status} data-temp={api.offer_temporary ? 'true' : 'false'} data-expires={api.offer_expires_at || ''}>
-    <h2 class="font-bold text-lg"><a class="hover:text-blue-600" href={`/apis/${api.id}/`}>{api.name}</a></h2>
-    {api.offer_temporary && (() => { const t = timerText(api); const d = daysLeft(api.offer_expires_at); return (<p class={`mt-1 text-sm font-bold ${d !== null && d >= 0 && d < 7 ? 'text-amber-700 dark:text-amber-300' : ''} ${d !== null && d < 0 ? 'text-slate-500' : ''}`}><span>⏳ عرض مؤقت: </span><span class="countdown" data-expires={api.offer_expires_at || ''}>{t}</span></p>); })()}
+  <article class="api-card rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900"
+    data-search={searchText} data-category={api.category} data-free={api.free_type} data-temp={api.offer_temporary ? 'true' : 'false'} data-expires={api.offer_expires_at || ''}>
+    <h2 class="font-bold text-lg">{api.name}{api.offer_temporary && <span class="ms-2 text-sm font-bold text-amber-700 dark:text-amber-300">⏳ عرض مؤقت</span>}</h2>
     <p class="text-sm text-slate-500">{api.provider} · {cat?.label}</p>
     <p class="mt-2 text-sm">{api.description_ar}</p>
-    <p class="mt-2 text-sm"><strong>النماذج:</strong> {api.models.map((m) => m.name).join('، ')}</p>
     <ul class="mt-3 space-y-1 text-sm">
       <li>نوع المجانية: <strong>{api.free_type}</strong></li>
       <li>الحد المجاني: <strong>{api.free_limit}</strong></li>
-      <li>بطاقة بنكية: <strong>{api.card_required}</strong></li>
-      <li>CORS: <strong>{api.cors}</strong></li>
       <li>الحالة: <strong>{api.status}</strong></li>
-      <li>آخر تحقق: {api.last_checked} · آخر تحقق سعري: {api.last_price_checked}</li>
     </ul>
-    <a class="mt-3 inline-block rounded-full bg-blue-600 px-4 py-1 text-sm text-white" href={`/apis/${api.id}/`}>التفاصيل والروابط الرسمية</a>
+    <p class="mt-2 text-sm">{hasPlayground ? 'ملعب تجربة متاح من المتصفح.' : 'بدون ملعب متصفح — صفحة التفاصيل تشرح السبب.'}</p>
+    <a class="btn-primary mt-4 w-full" href={`/apis/${api.id}/`}>{hasPlayground ? 'فتح التفاصيل والتجربة' : 'فتح التفاصيل'}</a>
   </article>
   );
 })}
 </div>
 <p id="no-results" class="mt-4 hidden text-sm">لا نتائج مطابقة لهذه التصفية.</p>
+<p class="mt-6 text-sm text-slate-500">آخر تحديث للقائمة: <strong>{lastUpdated}</strong> · <a class="text-blue-600" href="/changelog/">سجل التغييرات اليومي</a> · <a class="text-blue-600" href="/methodology/">المنهجية</a></p>
 </section>
 
-<script is:inline src="/countdown.js" defer></script>
 <script is:inline src="/filters.js" defer></script>
 </Base>

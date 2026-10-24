@@ -1,9 +1,8 @@
 # Security headers for Cloudflare Pages. This file is NOT active locally:
-# Cloudflare Pages parses it only at deploy time, and the site is not
-# published yet. CSP is now safe to add because all executable scripts
-# moved to external same-origin files (theme.js, countdown.js, filters.js,
-# live-try.js, copy-report.js, playground.js); the only remaining <script>
-# tags are application/ld+json data blocks, which are not executed.
+# Cloudflare Pages parses it only at deploy time. CSP is safe to add
+# because all executable scripts moved to external same-origin files
+# (theme.js, countdown.js, filters.js, playground.js); the only remaining
+# <script> tags are application/ld+json data blocks, which are not executed.
 # connect-src https: is required for the browser-only playground, which
 # calls providers directly from the visitor's browser. No server proxy.
 # img-src/media-src https: is required for provider-hosted generated
