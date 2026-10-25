@@ -79,6 +79,13 @@
       "media": [
         "embeddings"
       ]
+    },
+    {
+      "id": "evaluation-observability",
+      "label": "التقييم والمراقبة",
+      "media": [
+        "text"
+      ]
     }
   ]
 }

@@ -3974,5 +3974,56 @@
     "key_url": "https://cloud.qdrant.io/",
     "key_url_kind": "console",
     "key_url_note": "يفتح وحدة تحكم Qdrant Cloud؛ أنشئ العنقود المجاني من هناك واحصل على مفتاح API الخاص به."
+  },
+  {
+    "auth": "مفتاحا مشروع (عام وسري) بمصادقة Basic",
+    "card_required": "لا — لا حاجة إلى بطاقة حسب صفحة الأسعار الرسمية",
+    "category": "evaluation-observability",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "منصة مفتوحة المصدر لتتبع ومراقبة وتقييم تطبيقات ووكلاء الذكاء الاصطناعي: تتبع المسارات والتكاليف والزمن، وإدارة المطالبات، وتقييم بالنماذج والقضاة مع درجات وتعليقات بشرية.",
+    "docs": "https://langfuse.com/docs/api-and-data-platform/features/public-api",
+    "example_curl": "# استبدل YOUR_PUBLIC_KEY وYOUR_SECRET_KEY بمفتاحي مشروعك من وحدة تحكم Langfuse Cloud\ncurl -u YOUR_PUBLIC_KEY:YOUR_SECRET_KEY https://cloud.langfuse.com/api/public/projects",
+    "example_fetch": "// استبدل YOUR_PUBLIC_KEY وYOUR_SECRET_KEY بمفتاحي مشروعك من وحدة تحكم Langfuse Cloud\nfetch('https://cloud.langfuse.com/api/public/projects', { headers: { 'Authorization': 'Basic ' + btoa('YOUR_PUBLIC_KEY:YOUR_SECRET_KEY') } })",
+    "free_limit": "خطة Hobby: 50 ألف وحدة شهريا (مسار أو ملاحظة أو نتيجة = وحدة واحدة)، وصول للبيانات 30 يوما، مستخدمان",
+    "free_limit_scope": "لخطة Hobby المجانية",
+    "free_type": "طبقة مجانية دائمة",
+    "https": true,
+    "id": "langfuse",
+    "key_url": "https://cloud.langfuse.com/",
+    "key_url_kind": "console",
+    "key_url_note": "يفتح وحدة تحكم Langfuse Cloud؛ أنشئ مشروعا من هناك واحصل على مفتاحيه العام والسري من إعدادات المشروع.",
+    "last_checked": "2026-10-25",
+    "last_price_checked": "2026-10-25",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "تتبع وتقييم تطبيقات ووكلاء الذكاء الاصطناعي عبر Langfuse Cloud",
+        "type": "text"
+      }
+    ],
+    "name": "Langfuse Cloud",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "منصة تتبع ومراقبة وتقييم، لا مولّد نصوص أو صور: استخدامها يجري عبر حزم SDK ومفاتيح مشروع (عام وسري) ولوحة تحكم، وليس استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://langfuse.com/pricing",
+    "provider": "Langfuse",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "مراقبة",
+      "تقييم",
+      "تتبع",
+      "وكلاء"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية تصف خطة Hobby بأنها مجانية بلا بطاقة ائتمانية، وتشمل 50 ألف وحدة شهريا ووصولا للبيانات 30 يوما ومستخدمين اثنين؛ حالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة.",
+    "verification_source": "https://langfuse.com/pricing",
+    "website": "https://langfuse.com"
   }
 ]
