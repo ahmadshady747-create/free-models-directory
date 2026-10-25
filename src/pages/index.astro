@@ -57,11 +57,11 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebApplication', na
 <div id="cards" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 {apis.map((api) => {
   const cat = categories.categories.find((c) => c.id === api.category);
-  const searchText = [api.name, api.provider, api.description_ar, ...api.models.map((m) => m.name), ...api.tags].join(' ');
+  const searchText = [api.id, api.name, api.provider, api.description_ar, ...api.models.map((m) => m.name), ...api.tags].join(' ');
   const hasPlayground = api.playground_status === 'implemented';
   return (
   <article class="api-card rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900"
-    data-search={searchText} data-category={api.category} data-free={api.free_type} data-temp={api.offer_temporary ? 'true' : 'false'} data-expires={api.offer_expires_at || ''}>
+    data-search={searchText} data-category={api.category} data-free={api.free_type} data-temp={api.offer_temporary ? 'true' : 'false'} data-expires={api.offer_expires_at || ''} data-name={api.name} data-href={`/apis/${api.id}/`}>
     <h2 class="font-bold text-lg">{api.name}{api.offer_temporary && <span class="ms-2 text-sm font-bold text-amber-700 dark:text-amber-300">⏳ عرض مؤقت</span>}</h2>
     <p class="text-sm text-slate-500">{api.provider} · {cat?.label}</p>
     <p class="mt-2 text-sm">{api.description_ar}</p>
@@ -77,7 +77,12 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebApplication', na
   );
 })}
 </div>
-<p id="no-results" class="mt-4 hidden text-sm">لا نتائج مطابقة لهذه التصفية.</p>
+<div id="no-results" class="mt-4 hidden rounded-3xl border border-amber-300 bg-amber-50 p-4 dark:border-amber-700 dark:bg-amber-950/40" role="status">
+<p class="font-bold">لا نتائج مطابقة لهذه التصفية.</p>
+<p id="no-results-why" class="mt-1 text-sm text-slate-600 dark:text-slate-300"></p>
+<p id="no-results-suggestion" class="mt-3 text-sm"></p>
+<button id="reset-filters" type="button" class="mt-3 min-h-12 rounded-full bg-blue-600 px-5 py-2 text-sm font-bold text-white">إعادة تعيين البحث والتصفية</button>
+</div>
 <p class="mt-6 text-sm text-slate-500">آخر تحديث للقائمة: <strong>{lastUpdated}</strong> · <a class="text-blue-600" href="/changelog/">سجل التغييرات اليومي</a> · <a class="text-blue-600" href="/methodology/">المنهجية</a></p>
 </section>
 
