@@ -186,8 +186,11 @@
         if (stopped) break;
         var res;
         try { res = await doFetch(pollUrl, { method: "GET", headers: ctx.headers }); }
-        catch (e) { error.classList.remove("hidden"); error.textContent = corsMessage(); status.textContent = "توقف الاستطلاع."; break; }
+        catch (e) { if (stopped) break; error.classList.remove("hidden"); error.textContent = corsMessage(); status.textContent = "توقف الاستطلاع."; break; }
         var text = await res.text();
+        // الإيقاف أثناء طلب استطلاع قيد التنفيذ يغلب نتيجة الطلب المتأخرة:
+        // لا تُعرض نتيجة اكتمال ولا رسالة خطأ بعد أن ضغط الزائر «إيقاف».
+        if (stopped) break;
         if (!res.ok) { error.classList.remove("hidden"); error.textContent = httpError(res.status, text); status.textContent = "توقف الاستطلاع."; break; }
         var data; try { data = JSON.parse(text); } catch (e) { data = null; }
         if (!data) { error.classList.remove("hidden"); error.textContent = "استجابة غير متوقعة من المزود أثناء الاستطلاع."; status.textContent = "توقف الاستطلاع."; break; }
