@@ -5,66 +5,6 @@
     "category": "chat-text",
     "commercial": "غير معلن",
     "cors": "غير مؤكد",
-    "description_ar": "بوابة استدلال إلى نماذج مفتوحة من عدة مزودين؛ نتيجة سلبية موثقة: التوثيق الرسمي يقول إن المستخدمين المجانيين ليس لهم رصيد شهري مشمول، والاستخدام يتطلب شراء رصيد أو PRO مدفوعا، لذلك لا تُدرج كطبقة مجانية حتى يثبت خلاف ذلك، وبقيت البطاقة بقرار صريح لا بحذف صامت.",
-    "docs": "https://huggingface.co/docs/inference-providers",
-    "example_curl": "curl https://router.huggingface.co/v1/chat/completions -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"model\": \"MODEL_NAME\", \"messages\": [{\"role\": \"user\", \"content\": \"مرحبا\"}]}'",
-    "example_fetch": "fetch('https://router.huggingface.co/v1/chat/completions', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ model: 'MODEL_NAME', messages: [{ role: 'user', content: 'مرحبا' }] }) })",
-    "free_limit": "غير مؤكد",
-    "free_limit_scope": "غير مؤكد",
-    "free_type": "غير مؤكد",
-    "https": true,
-    "id": "huggingface-inference",
-    "last_checked": "2026-10-24",
-    "last_price_checked": "غير مؤكد",
-    "live_try": null,
-    "media": [
-      "text"
-    ],
-    "models": [
-      {
-        "name": "نماذج مفتوحة عبر Inference Providers",
-        "type": "text"
-      }
-    ],
-    "name": "Hugging Face Inference Providers",
-    "pricing": "https://huggingface.co/pricing",
-    "provider": "Hugging Face",
-    "signup": "غير مؤكد",
-    "status": "قيد التحقق",
-    "tags": [
-      "نماذج مفتوحة",
-      "محادثة"
-    ],
-    "training_use": "غير معلن",
-    "website": "https://huggingface.co",
-    "offer_temporary": false,
-    "offer_expires_at": null,
-    "playgrounds": [
-      {
-        "kind": "chat",
-        "endpoint": "https://router.huggingface.co/v1/chat/completions",
-        "format": "openai-chat",
-        "auth": "bearer",
-        "label": "توليد نص / محادثة",
-        "prompt_label": "رسالتك",
-        "model_input": true,
-        "fields": []
-      }
-    ],
-    "playground_status": "implemented",
-    "playground_block_reason": null,
-    "verification_source": "https://huggingface.co/docs/inference-providers/pricing",
-    "verification_note": "نتيجة سلبية موثقة يجب أن يقررها صاحب المشروع: توثيق Inference Providers يقول إن المستخدمين المجانيين ليس لهم رصيد شهري مشمول (Included Monthly Credits: Free Users: None)، وإن الاستخدام المجاني يتطلب شراء رصيد أو الترقية إلى PRO (2 دولار شهريا، مدفوع وليس مجانيا)؛ وأسعار Spaces (CPU Basic FREE وZeroGPU FREE) تخص عتاد Spaces وليست Inference Providers ولا يجوز خلطهما. البطاقة بقيت بلا زر حذف صامت، بانتظار قرار صاحب المشروع بحذفها أو نقلها إلى قسم غير مجاني.",
-    "key_url": "https://huggingface.co/settings/tokens",
-    "key_url_kind": "keys_page",
-    "key_url_note": "يفتح صفحة رموز الوصول (Access Tokens) في إعدادات حسابك على Hugging Face."
-  },
-  {
-    "auth": "مفتاح API",
-    "card_required": "غير معلن",
-    "category": "chat-text",
-    "commercial": "غير معلن",
-    "cors": "غير مؤكد",
     "description_ar": "استدلال سريع للنماذج اللغوية، بانتظار التحقق من النماذج والحدود المشمولة مجانا.",
     "docs": "https://console.groq.com/docs",
     "example_curl": "curl https://api.groq.com/openai/v1/chat/completions -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"model\": \"MODEL_NAME\", \"messages\": [{\"role\": \"user\", \"content\": \"مرحبا\"}]}'",
@@ -898,54 +838,6 @@
     "key_url": "https://tabnine.com",
     "key_url_kind": "official_site",
     "key_url_note": "لا صفحة مفاتيح API عامة مثبتة لـ Tabnine، فهو يعمل عبر إضافات بيئات التطوير وتسجيل الدخول — الزر يفتح صفحته الرسمية فقط."
-  },
-  {
-    "auth": "غير مؤكد",
-    "card_required": "غير معلن",
-    "category": "code",
-    "commercial": "غير معلن",
-    "cors": "غير مؤكد",
-    "description_ar": "مساعد كود؛ إعلان رسمي يقول إن Cody Free وCody Pro أُوقفا في 23 يوليو 2025، وإن Enterprise المؤسسي المدفوع ما زال مدعوما، لذلك لا يمكن إدراجه كعرض مجاني سارٍ، وبقيت البطاقة قيد التحقق بانتظار قرار صاحب المشروع بشأنها.",
-    "docs": "https://sourcegraph.com/docs",
-    "example_curl": "# راجع التوثيق الرسمي، فهذه البطاقة قيد التحقق\ncurl https://sourcegraph.com -H \"Authorization: Bearer YOUR_KEY\"",
-    "example_fetch": "// راجع التوثيق الرسمي\nfetch('https://sourcegraph.com', { headers: { 'Authorization': 'Bearer YOUR_KEY' } })",
-    "free_limit": "غير مؤكد",
-    "free_limit_scope": "غير مؤكد",
-    "free_type": "غير مؤكد",
-    "https": true,
-    "id": "sourcegraph-cody",
-    "last_checked": "2026-10-24",
-    "last_price_checked": "غير مؤكد",
-    "live_try": null,
-    "media": [
-      "code"
-    ],
-    "models": [
-      {
-        "name": "نماذج كود عبر Cody",
-        "type": "code"
-      }
-    ],
-    "name": "Sourcegraph Cody",
-    "pricing": "https://sourcegraph.com/pricing",
-    "provider": "Sourcegraph",
-    "signup": "غير مؤكد",
-    "status": "قيد التحقق",
-    "tags": [
-      "كود"
-    ],
-    "training_use": "غير معلن",
-    "website": "https://sourcegraph.com",
-    "offer_temporary": false,
-    "offer_expires_at": null,
-    "playgrounds": [],
-    "playground_status": "not-suitable",
-    "playground_block_reason": "غير مناسب لساحة مفاتيح في المتصفح: Cody Gateway يعمل للمشتركين في Sourcegraph Enterprise عبر مفتاح ترخيص وإعدادات مثيل ذاتي، وليس عبر مفتاح API عام لزائر.",
-    "verification_source": "https://sourcegraph.com/blog/changes-to-cody-free-pro-and-enterprise-starter-plans",
-    "verification_note": "منتج مجاني موقوف حاليا: الإعلان الرسمي المفتوح يقول إن Cody Free وCody Pro لن يعودا متاحين اعتبارا من 23 يوليو 2025، وإن التسجيلات الجديدة توقفت في 25 يونيو 2025، وإن الوصول القائم استمر حتى 23 يوليو 2025 فقط؛ وCody Enterprise ما زال مدعوما وهو خيار مؤسسي مدفوع وليس خطة مجانية عامة. الأرقام القديمة من توثيق أرشيفي لا تُعرض كحدود حالية لأنها أُلغيت بالإعلان الأحدث.",
-    "key_url": "https://sourcegraph.com",
-    "key_url_kind": "official_site",
-    "key_url_note": "Cody المجاني والاحترافي أُوقفا في 2025-07-23، ولا صفحة مفاتيح عامة له — الزر يفتح صفحة Sourcegraph الرسمية فقط."
   },
   {
     "auth": "مفتاح API",

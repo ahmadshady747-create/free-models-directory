@@ -5,7 +5,6 @@
 <url><loc>/methodology/</loc></url>
 <url><loc>/changelog/</loc></url>
 <url><loc>/privacy/</loc></url>
-<url><loc>/apis/huggingface-inference/</loc></url>
 <url><loc>/apis/groq/</loc></url>
 <url><loc>/apis/pollinations/</loc></url>
 <url><loc>/apis/replicate/</loc></url>
@@ -18,7 +17,6 @@
 <url><loc>/apis/clarifai/</loc></url>
 <url><loc>/apis/roboflow/</loc></url>
 <url><loc>/apis/tabnine/</loc></url>
-<url><loc>/apis/sourcegraph-cody/</loc></url>
 <url><loc>/apis/deepl/</loc></url>
 <url><loc>/apis/google-translate-api/</loc></url>
 <url><loc>/apis/google-ai-studio/</loc></url>
