@@ -2,12 +2,13 @@
 import Base from '../layouts/Base.astro';
 import apis from '../data/apis.json';
 import categories from '../data/categories.json';
+const verifiedCount = apis.filter((a) => a.status === 'موثق جزئيا').length;
 const title = 'كل النماذج — دليل النماذج المجانية';
 const description = 'قائمة كاملة بالإدخالات في الدليل، مرتبة حسب الفئة، مع نوع المجانية والحد والحالة.';
 ---
 <Base title={title} description={description} canonical="/apis/">
 <h1 class="text-3xl font-bold">كل النماذج</h1>
-<p class="mt-2 text-slate-500">عدد الإدخالات الحالية: {apis.length}، منها 13 موثقا جزئيا من صفحات رسمية، والباقي قيد التحقق.</p>
+<p class="mt-2 text-slate-500">عدد الإدخالات الحالية: {apis.length}، منها {verifiedCount} موثقا جزئيا من صفحات رسمية، والباقي قيد التحقق.</p>
 {categories.categories.map((cat) => {
   const list = apis.filter((a) => a.category === cat.id);
   return (

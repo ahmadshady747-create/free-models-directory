@@ -1,6 +1,9 @@
 ---
 import '../styles/global.css';
+import apis from '../data/apis.json';
 const { title, description, canonical } = Astro.props;
+const verifiedCount = apis.filter((a) => a.status === 'موثق جزئيا').length;
+const pendingCount = apis.length - verifiedCount;
 ---
 <!doctype html>
 <html lang="ar" dir="rtl">
@@ -34,7 +37,7 @@ const { title, description, canonical } = Astro.props;
 </main>
 <footer class="mx-auto max-w-6xl px-4 pb-10 text-sm text-slate-500 dark:text-slate-400">
 <p>هذا الدليل لا يوزع مفاتيح ولا يخزنها ولا يمرر طلباتك عبر خادم وسيط. خذ مفتاحك من المزود الرسمي فقط، وتحقق من صفحة الأسعار الرسمية قبل الاعتماد على أي حد مجاني.</p>
-<p class="mt-2">34 إدخالا موثقا جزئيا من صفحات رسمية، و30 إدخالا ما زالت قيد التحقق وحدودها غير مؤكد. صفحة <a class="text-blue-600" href="/privacy/">الخصوصية</a> تشرح أن الموقع بلا خادم خلفي وبلا تحليلات ولا يخزن مفاتيح الزوار.</p>
+<p class="mt-2">{verifiedCount} إدخالا موثقا جزئيا من صفحات رسمية، و{pendingCount} إدخالا ما زالت قيد التحقق وحدودها غير مؤكد. صفحة <a class="text-blue-600" href="/privacy/">الخصوصية</a> تشرح أن الموقع بلا خادم خلفي وبلا تحليلات ولا يخزن مفاتيح الزوار.</p>
 </footer>
 </body>
 </html>
