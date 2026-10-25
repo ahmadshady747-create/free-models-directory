@@ -86,6 +86,13 @@
       "media": [
         "text"
       ]
+    },
+    {
+      "id": "agent-memory",
+      "label": "ذاكرة الوكلاء",
+      "media": [
+        "text"
+      ]
     }
   ]
 }
