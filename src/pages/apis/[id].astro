@@ -76,8 +76,13 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'SoftwareApplication
 <p class="text-sm text-slate-500">Model Execution Runtime</p>
 <p class="mt-1 text-sm font-bold text-amber-800 dark:text-amber-200">مفتاحك يخرج من متصفحك مباشرة إلى المزود فقط، والاستخدام يُحسب على حصتك وقد يكلف مالاً بعد نفاد الطبقة المجانية.</p>
 <p class="mt-1 text-sm">معرّف النموذج من توثيق المزود الرسمي حيث يُطلب، وإذا فشل الطلب بسبب CORS ستظهر رسالة صريحة بذلك، وهي ليست خطأ في المفتاح بالضرورة. تفاصيل الأمان الكاملة في صفحة الخصوصية والمنهجية.</p>
+<ol class="mt-4 grid gap-2 sm:grid-cols-3">
+<li class="rounded-2xl border border-blue-200 bg-blue-50 p-3 text-sm dark:border-blue-800 dark:bg-blue-950/40"><strong>الخطوة 1 — احصل على مفتاحك</strong><p class="mt-1">من المزود الرسمي فقط، قبل أي تجربة: <a class="font-bold text-blue-600" href={api.key_url} rel="noopener" target="_blank">{keyLabel}</a></p></li>
+<li class="rounded-2xl border border-blue-200 bg-blue-50 p-3 text-sm dark:border-blue-800 dark:bg-blue-950/40"><strong>الخطوة 2 — الصق مفتاحك أدناه</strong><p class="mt-1">في حقل «مفتاحك الخاص»؛ لا يُحفظ افتراضيا، ولا يغادر متصفحك إلا إلى المزود. <a class="font-bold text-blue-600" href="#playground-0">انتقل إلى حقل المفتاح ↓</a></p></li>
+<li class="rounded-2xl border border-blue-200 bg-blue-50 p-3 text-sm dark:border-blue-800 dark:bg-blue-950/40"><strong>الخطوة 3 — اكتب طلبك واضغط توليد</strong><p class="mt-1">إذا ظهر خطأ فستكون رسالته مميزة (401 مفتاح، 403 صلاحية، 429 حد، CORS اتصال) لا فشلا صامتا.</p></li>
+</ol>
 {api.playgrounds.map((pg, idx) => (
-<div class="playground mt-4 rounded-2xl border border-slate-200 p-3 dark:border-slate-700" data-provider={api.id} data-kind={pg.kind} data-endpoint={pg.endpoint} data-format={pg.format} data-auth={pg.auth} data-poll-endpoint={pg.poll_endpoint || ''} data-poll-interval={pg.poll_interval_ms || ''} data-max-poll={pg.max_poll_ms || ''}>
+<div id={`playground-${idx}`} class="playground mt-4 rounded-2xl border border-slate-200 p-3 dark:border-slate-700" data-provider={api.id} data-kind={pg.kind} data-endpoint={pg.endpoint} data-format={pg.format} data-auth={pg.auth} data-poll-endpoint={pg.poll_endpoint || ''} data-poll-interval={pg.poll_interval_ms || ''} data-max-poll={pg.max_poll_ms || ''}>
 <h3 class="font-bold">{pg.label}</h3>
 <p class="text-sm text-slate-500" dir="ltr">{pg.endpoint}</p>
 {pg.note && <p class="mt-1 text-sm text-amber-800 dark:text-amber-200">{pg.note}</p>}
