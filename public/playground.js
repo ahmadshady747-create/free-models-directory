@@ -339,16 +339,37 @@
           // Replicate uses model as version, also required; handled below.
           status.textContent = "أدخل معرّف النموذج من توثيق المزود."; return;
         }
-        // Model Execution Runtime: analyse the text prompt locally
-        // (WebAssembly, JavaScript fallback) and send the cleaned prompt.
-        // A runtime failure must never block the provider request, so
-        // the original prompt is kept if analysis throws.
-        if (promptEl) {
+        // Model Execution Runtime: analyse the text that will be sent,
+        // locally (WebAssembly, JavaScript fallback) and send the cleaned
+        // prompt. A runtime failure must never block the provider request.
+        // The stats line must appear at generation for EVERY playground
+        // kind, not only kinds with a free-text prompt: vision and
+        // transcribe blocks send a URL field instead of a prompt, so
+        // their stats describe that URL field's text (display only —
+        // the field itself is never rewritten, only a free-text prompt
+        // is cleaned and replaced).
+        var analysisText = null, analysisIsPrompt = false;
+        if (promptEl) { analysisText = prompt; analysisIsPrompt = true; }
+        else {
+          var urlField = null, firstField = null;
+          $$(".pg-field", block).forEach(function (inp) {
+            if (!firstField) firstField = inp;
+            if (inp.dataset.field === "image_url" || inp.dataset.field === "audio_url") urlField = inp;
+          });
+          if (urlField) analysisText = urlField.value.trim();
+          else if (firstField) analysisText = firstField.value.trim();
+        }
+        if (analysisText) {
           try {
-            var rt = await runtimeAnalyse(block, prompt);
-            prompt = rt.cleaned;
-            promptEl.value = rt.cleaned;
-          } catch (e) {}
+            var rt = await runtimeAnalyse(block, analysisText);
+            if (analysisIsPrompt) { prompt = rt.cleaned; promptEl.value = rt.cleaned; }
+          } catch (e) {
+            var statsEl = $(".pg-runtime", block);
+            if (statsEl) {
+              statsEl.textContent = "بيئة تنفيذ النماذج: تعذّر تحليل النص محلياً — أُرسل النص كما هو دون تعديل.";
+              statsEl.classList.remove("hidden");
+            }
+          }
         }
         runBtn.disabled = true;
         var runLabel = runBtn.textContent;
