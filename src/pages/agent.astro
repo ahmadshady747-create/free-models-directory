@@ -1,0 +1,115 @@
+---
+import Base from '../layouts/Base.astro';
+import apis from '../data/apis.json';
+import categories from '../data/categories.json';
+const catLabel = (id) => categories.categories.find((c) => c.id === id)?.label || id;
+const index = apis.map((a) => ({
+  id: a.id, name: a.name, provider: a.provider, category: a.category,
+  category_label: catLabel(a.category), free_type: a.free_type, free_limit: a.free_limit,
+  status: a.status, has_runtime: a.playground_status === 'implemented',
+  key_url: a.key_url, key_url_kind: a.key_url_kind,
+  description: a.description_ar, tags: a.tags, models: a.models.map((m) => m.name),
+}));
+const brains = apis.filter((a) => a.playgrounds.some((p) => p.kind === 'chat' && p.format === 'openai-chat'))
+  .map((a) => {
+    const pg = a.playgrounds.find((p) => p.kind === 'chat' && p.format === 'openai-chat');
+    return { id: a.id, name: a.name, provider: a.provider, endpoint: pg.endpoint };
+  });
+const title = 'وكيل الدليل — اسأل بمفتاحك، والتوصيات من فهرس الدليل المحلي | دليل النماذج المجانية';
+const description = 'وكيل يعمل في متصفحك فوق بيئات التنفيذ الحالية: توصيات محلية بلا مفتاح من فهرس الدليل، ثم استدلال اختياري بنموذج محادثة تختاره بمفتاحك ومعرّف نموذجك، ثم إرسال مهمة إلى بيئة تنفيذ المزود دون إرسال تلقائي.';
+const jsonLd = { '@context': 'https://schema.org', '@type': 'WebApplication', name: title, description, applicationCategory: 'DeveloperApplication', operatingSystem: 'Web' };
+---
+<Base title={title} description={description} canonical="/agent/">
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+<script type="application/json" id="agent-index" set:html={JSON.stringify(index)} />
+<h1 class="text-3xl font-bold">وكيل الدليل</h1>
+<p class="mt-2 text-slate-500">فوق بيئات التنفيذ الحالية — لا يحل محلها، بل يستخدمها أدوات.</p>
+<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<h2 class="font-bold text-lg">كيف يعمل الوكيل، بصراحة</h2>
+<ul class="mt-2 list-disc space-y-1 ps-5 text-sm">
+<li><strong>وضع الخطة أولاً:</strong> «اسأل الوكيل» يبحث محلياً فقط ويبني مخططاً مرقّماً (قائمة مهام) قبل أي تنفيذ. لا يعمل أي شيء بمفتاحك قبل أن تراجع الخطة وتضغط «ابدأ التنفيذ» — هذا هو إذن التنفيذ.</li>
+<li><strong>حلقة أدوات، خطوة بخطوة:</strong> بعد موافقتك، ينفذ الوكيل خطوة واحدة في كل مرة، وكل خطوة تعرض اسم أداتها ومدخلاتها ونتيجتها المرصودة في سجل الأدوات أدناه، ثم تتكيف مع النتيجة: عند خطأ 401 أو 403 أو 429 أو 400 أو CORS لا يعيد المحاولة بالمفتاح نفسه، بل يتابع بالتوصيات المحلية وروابط المفاتيح الرسمية. الحلقة تتوقف عند نجاح المهمة أو عند ضغطك «إيقاف الحلقة»، وبحد أقصى 8 خطوات حمايةً من حلقة لا نهائية أو استهلاك حصة.</li>
+<li><strong>أدوات الوكيل:</strong> search_directory (بحث في فهرس الدليل المحلي)، read_entry (قراءة إدخال كامل)، get_key_link (رابط المفتاح الرسمي)، brain_call (استدعاء نموذج العقل بمفتاحك بعد موافقتك فقط)، execute_runtime (تجهيز مهمة لبيئة التنفيذ الحالية دون إرسال تلقائي)، todo_write (قائمة المهام نفسها، تُحدَّث مع كل خطوة)، ask_user (سؤال توضيحي عند هدف غامض أو بلا مطابقة — تتوقف الحلقة عنده بانتظارك).</li>
+<li><strong>فروق صريحة عن وكيل برمجة حقيقي:</strong> لا يوجد هنا وكلاء فرعيون حقيقيون، ولا Bash، ولا وصول إلى ملفات جهازك أبداً. الأدوات أعلاه هي المكافئات في المتصفح، وفهرس الدليل هو «قاعدة الكود» الوحيدة التي يقرأها الوكيل. هذا الموقع ليس لديه نموذج خاص به، ولا يشغّل نموذجاً محلياً.</li>
+<li><strong>الخطوة 1 — توصيات محلية بلا مفتاح:</strong> هدفك يُطابق فهرس الدليل المدمج في هذه الصفحة (الأسماء والفئات والأوصاف والوسوم)، وتُرتّب النتائج بأن تُقدَّم الموثقة جزئياً وذات بيئة التنفيذ أولاً، وتظهر حتى 3 توصيات مع سبب المطابقة. إن لم يوجد تطابق، يُقال ذلك صراحة ولا يُخترع أي مزود.</li>
+<li><strong>الخطوة 2 — استدلال اختياري بنموذج تختاره أنت:</strong> إن أدخلت مزود عقل ومفتاحك ومعرّف نموذج من توثيقه الرسمي، يُرسل هدفك والتوصيات المحلية فقط إلى نقطة محادثة ذلك المزود مباشرة من متصفحك، وتظهر إجابته كخطة أو شرح. بدون المفتاح ومعرّف النموذج، تبقى التوصيات المحلية وحدها.</li>
+<li><strong>الخطوة 3 — إرسال مهمة، دون إرسال تلقائي:</strong> زر «أرسل مهمة إلى بيئة التنفيذ» ينقلك إلى صفحة المزود ويملأ حقل الطلب بهدفك مرة واحدة فقط، ولا يضغط توليد نيابة عنك أبداً.</li>
+<li><strong>مفتاحك:</strong> يخرج من متصفحك إلى مزود العقل نفسه فقط، ولا يُرسل إلى أي خادم لهذا الموقع، ولا يُعاد استخدامه لمزود هدف مختلف، ويعيش افتراضياً في ذاكرة الصفحة فقط، والتذكّر اختياري صريح في جهازك فقط.</li>
+<li><strong>المحادثة:</strong> تبقى في ذاكرة الصفحة فقط، وتُمسح بزر «مسح المحادثة»، ولا تُحفظ في أي مكان آخر.</li>
+</ul>
+</section>
+
+<div id="agent-from-provider" class="mt-6 hidden rounded-3xl border border-blue-200 bg-blue-50 p-4 dark:border-blue-800 dark:bg-blue-950/40"></div>
+
+<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<h2 class="font-bold text-lg">الخطوة 1 — ما الذي تريد بناءه؟</h2>
+<label for="agent-goal" class="mt-3 block text-sm font-bold">هدفك، بالعربية أو الإنجليزية</label>
+<textarea id="agent-goal" rows="3" class="mt-1 w-full rounded-2xl border border-slate-300 px-4 py-3 dark:border-slate-700 dark:bg-slate-950" placeholder="مثال: أريد توليد صور من وصف نصي، أو تحويل تسجيل صوتي إلى نص، أو تضمين نصوص للبحث الدلالي"></textarea>
+<p id="agent-stats" class="mt-2 hidden text-sm text-slate-500" role="status" aria-live="polite"></p>
+</section>
+
+<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<h2 class="font-bold text-lg">الخطوة 2 — عقل الوكيل (اختياري، بمفتاحك أنت)</h2>
+<p class="mt-1 text-sm text-slate-500">مزودو العقل هنا هم فقط مزودو المحادثة بصيغة OpenAI النقية من بيئات التنفيذ الحالية، لأن استدعاء العقل يستخدم الصيغة نفسها تماماً. مزودون بصيغ مختلفة (مثل Gemini وAnthropic) وصيغة Pollinations المتغيرة غير مشمولين هنا عمداً، حتى لا يُبنى استدعاء على صيغة غير مطابقة.</p>
+<label for="agent-brain" class="mt-3 block text-sm font-bold">مزود العقل</label>
+<select id="agent-brain" class="mt-1 w-full rounded-full border border-slate-300 px-4 py-3 dark:border-slate-700 dark:bg-slate-950">
+{brains.map((b) => <option value={b.endpoint} data-provider-id={b.id}>{b.name} — {b.provider}</option>)}
+</select>
+<label for="agent-key" class="mt-3 block text-sm font-bold">مفتاحك الخاص لدى مزود العقل (من المزود الرسمي فقط)</label>
+<div class="mt-1 flex gap-2">
+<input id="agent-key" class="w-full rounded-full border border-slate-300 px-4 py-3 dark:border-slate-700 dark:bg-slate-950" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="الصق مفتاحك هنا — لن يغادر متصفحك إلا إلى مزود العقل" />
+<button id="agent-show" type="button" class="btn-secondary">إظهار</button>
+<button id="agent-clear-key" type="button" class="btn-secondary">مسح</button>
+</div>
+<label for="agent-remember" class="mt-2 flex min-h-12 items-center gap-2 text-sm"><input id="agent-remember" type="checkbox" /> تذكّر في هذا المتصفح فقط — غير مفعّل افتراضياً، ويُحفظ في جهازك أنت فقط</label>
+<label for="agent-model" class="mt-3 block text-sm font-bold">معرّف النموذج (من توثيق مزود العقل)</label>
+<input id="agent-model" class="mt-1 w-full rounded-full border border-slate-300 px-4 py-3 dark:border-slate-700 dark:bg-slate-950" type="text" autocomplete="off" placeholder="انسخ معرّف النموذج من توثيق المزود الرسمي — لا يوجد معرّف افتراضي هنا، ولا يُخترع أي معرّف" />
+<p class="mt-2 text-sm text-amber-800 dark:text-amber-200">تحذير: الاستدلال يُحسب على حصتك لدى مزود العقل، وقد يكلف مالاً بعد نفاد الطبقة المجانية. لا تستخدم مفتاحاً إنتاجياً على جهاز مشترك.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<button id="agent-ask" type="button" class="btn-primary">اسأل الوكيل</button>
+<button id="agent-clear" type="button" class="btn-secondary">مسح المحادثة</button>
+</div>
+<p id="agent-status" class="mt-2 hidden text-sm" role="status" aria-live="polite"></p>
+<p id="agent-error" class="mt-2 hidden rounded-xl bg-red-100 p-3 text-sm text-red-900 dark:bg-red-900 dark:text-red-100" role="alert" aria-live="assertive"></p>
+</section>
+
+<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<h2 class="font-bold text-lg">خطة الوكيل (وضع الخطة — لا تنفيذ قبل موافقتك)</h2>
+<p class="mt-1 text-sm text-slate-500">تظهر الخطة هنا بعد أن تكتب هدفك وتضغط «اسأل الوكيل». راجع خطواتها، ثم اضغط «ابدأ التنفيذ» للسماح بالتنفيذ، أو «إيقاف الحلقة» أثناء التنفيذ لإيقافها فوراً. الحد الأقصى: 8 خطوات.</p>
+<ol id="agent-plan" class="mt-3 space-y-3">
+<p class="text-sm text-slate-500">اكتب هدفك واضغط «اسأل الوكيل» أولاً: سيُبنى هنا مخطط مرقّم قبل أي تنفيذ، ولن يعمل أي شيء بمفتاحك قبل أن تضغط «ابدأ التنفيذ».</p>
+</ol>
+<div class="mt-4 flex flex-wrap gap-2">
+<button id="agent-start" type="button" class="btn-primary" disabled>ابدأ التنفيذ</button>
+<button id="agent-stop" type="button" class="btn-secondary" disabled>إيقاف الحلقة</button>
+</div>
+<p id="agent-plan-status" class="mt-2 hidden text-sm" role="status" aria-live="polite"></p>
+</section>
+
+<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<h2 class="font-bold text-lg">سجل الأدوات (خطوة، أداة، مدخلات، نتيجة مرصودة)</h2>
+<p class="mt-1 text-sm text-slate-500">كل خطوة منفذة تظهر هنا باسم أداتها ومدخلاتها ونتيجتها المرصودة، حتى ترى ما فعله الوكيل فعلاً لا ما وعد به.</p>
+<div id="agent-tool-log" class="mt-3 space-y-3" aria-live="polite"></div>
+</section>
+
+<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<h2 class="font-bold text-lg">التوصيات المحلية</h2>
+<div id="agent-recs" class="mt-3 space-y-3">
+<p class="text-sm text-slate-500">اكتب هدفك واضغط «اسأل الوكيل» لترى التوصيات هنا — بلا مفتاح.</p>
+</div>
+</section>
+
+<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<h2 class="font-bold text-lg">إجابة نموذج العقل</h2>
+<p class="mt-1 text-sm text-slate-500">تظهر هنا فقط عندما تدخل مزود العقل ومفتاحه ومعرّف النموذج. وهي إجابة ذلك النموذج، وليست نموذجاً خاصاً بهذا الموقع.</p>
+<div id="agent-answer" class="mt-3 hidden whitespace-pre-wrap text-sm"></div>
+</section>
+
+<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<h2 class="font-bold text-lg">المحادثة (ذاكرة الصفحة فقط)</h2>
+<div id="agent-history" class="mt-3 space-y-3"></div>
+</section>
+
+<script is:inline src="/runtime.js"></script>
+<script is:inline src="/agent.js"></script>
+</Base>

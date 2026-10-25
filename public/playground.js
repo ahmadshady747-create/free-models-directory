@@ -293,7 +293,45 @@
     return result;
   }
 
+  function applyAgentTask() {
+    // Agent handoff (from /agent/): a task stored in sessionStorage
+    // for THIS provider only. It pre-fills the free-text prompt field
+    // once, shows a dismissible banner, and is then cleared — it is
+    // never auto-submitted, and a task for another provider is ignored.
+    var raw = null;
+    try { raw = sessionStorage.getItem("agent-task"); } catch (e) { return; }
+    if (!raw) return;
+    var task = null;
+    try { task = JSON.parse(raw); } catch (e) { return; }
+    try { sessionStorage.removeItem("agent-task"); } catch (e) {}
+    if (!task || !task.provider) return;
+    var block = null;
+    $$(".playground").forEach(function (b) { if (b.dataset.provider === task.provider && !block) block = b; });
+    if (!block) return;
+    var section = document.getElementById("playground");
+    if (section) {
+      var banner = document.createElement("div");
+      banner.className = "rounded-2xl border border-blue-200 bg-blue-50 p-3 text-sm dark:border-blue-800 dark:bg-blue-950/40";
+      var label = document.createElement("span");
+      label.textContent = "مهمة مرسلة من الوكيل: " + (task.goal || task.prompt || "");
+      banner.appendChild(label);
+      var dismiss = document.createElement("button");
+      dismiss.type = "button";
+      dismiss.className = "btn-secondary ms-2";
+      dismiss.textContent = "إغلاق";
+      dismiss.addEventListener("click", function () { banner.remove(); });
+      banner.appendChild(dismiss);
+      section.insertBefore(banner, section.firstChild);
+    }
+    var promptEl = $(".pg-prompt", block);
+    if (promptEl && task.prompt) promptEl.value = task.prompt;
+    // Vision/transcribe blocks have no free-text prompt field: the
+    // banner above still tells the visitor the task arrived, and the
+    // visitor fills the block's own fields — no field is guessed.
+  }
+
   function init() {
+    applyAgentTask();
     $$(".playground").forEach(function (block) {
       var keyInput = $(".pg-key", block), remember = $(".pg-remember", block);
       var providerId = block.dataset.provider || "";
