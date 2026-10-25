@@ -2194,7 +2194,7 @@
     ],
     "playground_status": "implemented",
     "playground_block_reason": null,
-    "verification_source": "http://docs.libretranslate.com/",
+    "verification_source": "https://docs.libretranslate.com",
     "verification_note": "مجاني للاستضافة الذاتية فقط وليس عرضا مستضافا مجانيا: التوثيق الرسمي يقول إنه برمجية حرة مفتوحة المصدر للاستضافة الذاتية، بمثال خادم محلي على المنفذ 5000 وبلا حد أحرف مذكور؛ والاستضافة المدارة بتكلفة شهرية صغيرة وتتطلب مفتاحا من البوابة، دون مبلغ شهري ولا خطة مجانية مستضافة في الصفحة المفتوحة.",
     "key_url": "https://libretranslate.com",
     "key_url_kind": "official_site",

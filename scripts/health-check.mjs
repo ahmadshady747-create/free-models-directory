@@ -91,6 +91,7 @@ for (const api of apis) {
   }
   if (!sitemap.includes(`/apis/${api.id}/`)) problems.push(`${api.id}: missing from sitemap.xml`);
   if (api.status === 'موثق جزئيا' && !api.verification_source?.startsWith('https://')) problems.push(`${api.id}: partially verified but no https verification_source`);
+  if (api.verification_source && !api.verification_source.startsWith('https://')) problems.push(`${api.id}: verification_source is not https: ${api.verification_source}`);
   if (api.status !== 'قيد التحقق' && api.status !== 'موثق جزئيا' && api.status !== 'موثق') problems.push(`${api.id}: unknown verification status ${api.status}`);
   if (api.live_try && !api.live_try.endpoint?.startsWith('https://')) problems.push(`${api.id}: live_try endpoint is not https`);
   const keyKinds = ['keys_page', 'console', 'signup', 'official_site'];
