@@ -3924,5 +3924,55 @@
     "verification_note": "صفحة التسعير الرسمية تثبت الخطة المجانية بسعر صفر و100 طلب API وعدم اشتراط بيانات بطاقة للخطة المجانية وشروط الإسناد للاستخدام التجاري. ما لم يثبت: تجديد الحصة شهريا، ونقطة نهاية ومصادقة كاملتان من التوثيق الرسمي المقروء، ورابط مباشر لصفحة مفاتيح.",
     "verification_source": "https://imagga.com/pricing",
     "website": "https://imagga.com"
+  },
+  {
+    "auth": "مفتاح API",
+    "card_required": "غير معلن",
+    "category": "vector-databases",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "قاعدة بيانات متجهة مُدارة للبحث الدلالي واسترجاع RAG، مع ترشيح بالبيانات الوصفية؛ طبقتها المجانية عنقود عقدة واحدة للاختبار والنماذج الأولية.",
+    "docs": "https://qdrant.tech/documentation/manage-data/collections/",
+    "example_curl": "# استبدل YOUR_CLUSTER_URL برابط عنقودك من وحدة تحكم Qdrant Cloud\ncurl -X PUT \"https://YOUR_CLUSTER_URL/collections/COLLECTION_NAME\" -H \"api-key: YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"vectors_config\": {\"size\": 768, \"distance\": \"Cosine\"}}'",
+    "example_fetch": "// استبدل YOUR_CLUSTER_URL برابط عنقودك من وحدة تحكم Qdrant Cloud\nfetch('https://YOUR_CLUSTER_URL/collections/COLLECTION_NAME', { method: 'PUT', headers: { 'api-key': 'YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ vectors_config: { size: 768, distance: 'Cosine' } }) })",
+    "free_limit": "عنقود عقدة واحدة: 0.5 وحدة معالجة مركزية / 1 غيغابايت ذاكرة / 4 غيغابايت قرص، مع استدلال سحابي مجاني لنماذج مختارة",
+    "free_limit_scope": "للطبقة المجانية، للاختبار والنماذج الأولية",
+    "free_type": "طبقة مجانية دائمة",
+    "https": true,
+    "id": "qdrant",
+    "last_checked": "2026-10-25",
+    "last_price_checked": "2026-10-25",
+    "live_try": null,
+    "media": [
+      "embeddings"
+    ],
+    "models": [
+      {
+        "name": "بحث متجهي وتخزين تضمينات عبر Qdrant Cloud",
+        "type": "embeddings"
+      }
+    ],
+    "name": "Qdrant Cloud",
+    "pricing": "https://qdrant.tech/pricing/",
+    "provider": "Qdrant",
+    "signup": "غير مؤكد",
+    "status": "موثق جزئيا",
+    "tags": [
+      "قاعدة بيانات متجهة",
+      "استرجاع",
+      "RAG"
+    ],
+    "training_use": "غير معلن",
+    "website": "https://qdrant.tech",
+    "offer_temporary": false,
+    "offer_expires_at": null,
+    "playgrounds": [],
+    "playground_status": "not-suitable",
+    "playground_block_reason": "قاعدة بيانات متجهة بعقدة سحابية خاصة بكل حساب: عملياتها (إنشاء مجموعة، إدراج نقاط، بحث) تجري على رابط عنقود خاص بالمستخدم ومفتاحه، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "verification_source": "https://qdrant.tech/pricing/",
+    "verification_note": "صفحة الأسعار الرسمية تصف الطبقة المجانية بأنها Free forever لعنقود عقدة واحدة (0.5 وحدة معالجة مركزية / 1 غيغابايت ذاكرة / 4 غيغابايت قرص) للاختبار والنماذج الأولية، مع استدلال سحابي مجاني لنماذج مختارة؛ شرط البطاقة وحالة CORS غير مذكورين في صفحة الأسعار نفسها فبقيا غير مؤكدين.",
+    "key_url": "https://cloud.qdrant.io/",
+    "key_url_kind": "console",
+    "key_url_note": "يفتح وحدة تحكم Qdrant Cloud؛ أنشئ العنقود المجاني من هناك واحصل على مفتاح API الخاص به."
   }
 ]
