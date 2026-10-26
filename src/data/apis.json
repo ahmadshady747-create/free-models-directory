@@ -4688,5 +4688,56 @@
     "verification_note": "صفحة الأسعار الرسمية تعرض عمود الخطة المجانية (Free) شاملا اعتدال الصور واعتدال النصوص وكشف الصور المولدة بالذكاء الاصطناعي، وسعة طلب واحد في الثانية وحجم صورة أقصى 12 ميغابايت، مع استبعاد دعم الفيديو والبث المباشر منها؛ وتوثيق كشف الصور المولدة يقول إن طبقة مجانية متاحة للاختبار والاستخدام الشخصي، وصفحة التسجيل الرسمية تقول «Create your free account» و«No credit card required»؛ والقراءة الكاملة لبطاقة الخطة في صفحة الأسعار نفسها عبر المتصفح الحي تثبت 2000 عملية شهريا بحد أقصى 500 يوميا، وحدودا صارمة واستخداما غير تجاري للفحوصات المشمولة، وإمكانية البقاء على الخطة دون حد زمني، وحالة CORS والتدريب غير مذكورة فيها فبقيتا غير مؤكدتين.",
     "verification_source": "https://sightengine.com/pricing",
     "website": "https://sightengine.com"
+  },
+  {
+    "auth": "مفتاح API",
+    "card_required": "لا — لا حاجة إلى بطاقة حسب صفحة الأسعار الرسمية",
+    "category": "ai-guardrails",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "منصة أمان وحواجز أمان لتطبيقات الذكاء الاصطناعي من Enkrypt AI: نقطة Guardrails Detect تشغّل الكاشفات المفعّلة على مدخل نصي للكشف عن هجمات حقن التلقين والمحتوى غير اللائق والسمّية والمعلومات الشخصية وانتهاك السياسات والتحيز وهجمات الاستنزاف، مع مراقبة وامتثال؛ وخطة Explore المجانية مخصصة حسب صفحة الأسعار نفسها للطلاب والمطورين الأفراد والباحثين وتقييم أمان الذكاء الاصطناعي.",
+    "docs": "https://docs.enkryptai.com/api-reference/guardrails-api-reference/endpoint/detect",
+    "example_curl": "# استبدل YOUR_KEY بمفتاحك من حساب Enkrypt AI؛ أضف جسم الطلب (مدخل نصي) من مثال التوثيق الرسمي لنقطة Detect قبل الإرسال، وراجع التوثيق الحالي قبل الاستخدام\ncurl -X POST \"https://api.enkryptai.com/guardrails/detect\" -H \"apikey: YOUR_KEY\" -H \"Content-Type: application/json\"",
+    "example_fetch": "// استبدل YOUR_KEY بمفتاحك من حساب Enkrypt AI؛ أضف جسم الطلب (مدخل نصي) من مثال التوثيق الرسمي لنقطة Detect قبل الإرسال، وراجع التوثيق الحالي قبل الاستخدام\nfetch('https://api.enkryptai.com/guardrails/detect', { method: 'POST', headers: { 'apikey': 'YOUR_KEY', 'Content-Type': 'application/json' } })",
+    "free_limit": "خطة Explore المجانية (0 دولار شهريا، مجانية دائما): 500 رصيد عند البدء و50 رصيدا شهريا، مع وصول كامل إلى واجهة برمجة التطبيقات",
+    "free_limit_scope": "لخطة Explore في صفحة الأسعار الرسمية",
+    "free_type": "خطة مجانية",
+    "https": true,
+    "id": "enkrypt-ai",
+    "key_url": "https://www.enkryptai.com/free-trial",
+    "key_url_kind": "signup",
+    "key_url_note": "يفتح صفحة البدء المجاني عبر زر «Get Started» في بطاقة خطة Explore في صفحة الأسعار الرسمية نفسها (ويظهر الرابط نفسه أسفل الصفحة بنص «Start with Explore»)؛ ومن الحساب تحصل على مفتاح API.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "فحص أمان النصوص عبر Guardrails Detect",
+        "type": "text"
+      }
+    ],
+    "name": "Enkrypt AI",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "حاجز أمان وقت تشغيل يعمل عبر سياسات وكاشفات ومفاتيح API وفحص تفاعلات كاملة وفق سياسة المشروع، وليس استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://www.enkryptai.com/pricing",
+    "provider": "Enkrypt AI",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "حواجز أمان",
+      "حقن التلقين",
+      "فحص محتوى",
+      "أمان"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية تعرض خطة Explore بسعر 0 دولار شهريا ومكتوب تحتها «Free forever»، وتشمل 500 رصيد عند البدء و50 رصيدا شهريا ووصولا كاملا إلى واجهة برمجة التطبيقات ولا تتطلب بطاقة ائتمانية، ووصفها أنها للطلاب والمطورين الأفراد والباحثين وتقييم أمان الذكاء الاصطناعي؛ وصفحة التوثيق الرسمي لنقطة Guardrails Detect تصفها بأنها تشغّل الكاشفات المفعّلة على مدخل نصي، وتشمل كاشفات حقن التلقين والمحتوى غير اللائق والسمّية والمعلومات الشخصية وانتهاك السياسات والتحيز وهجمات الاستنزاف؛ وحالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة.",
+    "verification_source": "https://www.enkryptai.com/pricing",
+    "website": "https://www.enkryptai.com"
   }
 ]
