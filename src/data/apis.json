@@ -4582,5 +4582,55 @@
     "verification_note": "صفحة الأسعار الرسمية لا تعرض خطة مجانية مسماة ولا جدول أسعار؛ أقرب عبارة مجانية فيها هي «Free trial, no credit card required» ضمن قسم الوكالات والشركاء فقط، دون مدة للتجربة ودون حصة مذكورة، لذلك بقي الحد غير مؤكد وحالة الإدخال قيد التحقق لا موثقا جزئيا، ولم تُعتمد أرقام ثانوية عن رصيد أو عدد وكلاء. نقطة إرسال الرسالة (PUT conversation) ورأس المصادقة (Bearer PAT) من صفحة «Run your first conversation turn» في التوثيق الرسمي؛ حالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار فبقيت غير مؤكدة.",
     "verification_source": "https://www.voiceflow.com/pricing",
     "website": "https://www.voiceflow.com"
+  },
+  {
+    "auth": "مفتاح API (رأس Authorization: Bearer)",
+    "card_required": "غير معلن",
+    "category": "agent-memory",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "بنية ذاكرة مُدارة لوكلاء وتطبيقات الذكاء الاصطناعي: تحوّل النصوص والروابط إلى ذاكرة متطورة قابلة للبحث، مع ملفات مستخدم وخرائط ذاكرة واسترجاع دلالي عبر مساحات أسماء معزولة.",
+    "docs": "https://supermemory.ai/docs/v5/api-reference/ingest/add-document",
+    "example_curl": "# استبدل YOUR_NAMESPACE بمساحة الاسم الخاصة بك (معرّف مستخدم أو مشروع) وYOUR_KEY بمفتاحك من لوحة تحكم Supermemory؛ الصيغة من التوثيق الرسمي لإضافة مستند\ncurl -X POST \"https://api.supermemory.ai/ns/YOUR_NAMESPACE/document\" -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"content\": \"أنا نباتي ولا آكل المكسرات\"}'",
+    "example_fetch": "// استبدل YOUR_NAMESPACE بمساحة الاسم الخاصة بك وYOUR_KEY بمفتاحك من لوحة تحكم Supermemory؛ الصيغة من التوثيق الرسمي لإضافة مستند\nfetch('https://api.supermemory.ai/ns/YOUR_NAMESPACE/document', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ content: 'أنا نباتي ولا آكل المكسرات' }) })",
+    "free_limit": "الخطة المجانية (Free): 0 دولار شهريا، تشمل 5 دولارات من الأرصدة تُجدد كل شهر، ويتطلب الاستخدام رصيدا متاحا مع إمكانية شراء أرصدة إضافية من لوحة التحكم",
+    "free_limit_scope": "للخطة المجانية (Free) في صفحة الأسعار الرسمية",
+    "free_type": "خطة مجانية",
+    "https": true,
+    "id": "supermemory",
+    "key_url": "https://console.supermemory.ai/billing",
+    "key_url_kind": "console",
+    "key_url_note": "يفتح وحدة تحكم Supermemory (صفحة الفوترة) عبر زر «Start free» في صفحة الأسعار الرسمية؛ أنشئ حسابا من هناك واحصل على مفتاح API من لوحة التحكم.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "ذاكرة وكلاء واسترجاع عبر Supermemory",
+        "type": "text"
+      }
+    ],
+    "name": "Supermemory",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "بنية ذاكرة لوكلاء الذكاء الاصطناعي تعمل عبر حزم SDK ومفاتيح API ومساحات أسماء ومعالجة مستندات عبر جلسات متعددة، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://supermemory.ai/pricing",
+    "provider": "Supermemory",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "ذاكرة",
+      "وكلاء",
+      "استرجاع"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية تصف الخطة المجانية (Free) بأنها 0 دولار شهريا وتشمل 5 دولارات من الأرصدة تُجدد كل شهر، وأسئلتها تقول إن أرصدة الاشتراك تُعاد شهريا وإن الاستخدام يتطلب رصيدا متاحا مع إمكانية شراء أرصدة إضافية من لوحة التحكم؛ شرط البطاقة غير مذكور في صفحة الأسعار نفسها فبقي غير معلن، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فيها فبقيت غير مؤكدة.",
+    "verification_source": "https://supermemory.ai/pricing",
+    "website": "https://supermemory.ai"
   }
 ]
