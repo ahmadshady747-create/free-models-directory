@@ -4941,5 +4941,55 @@
    "verification_note": "صفحة الأسعار الرسمية تعرض خطة Developer بسعر Free Forever وتصفها بأنها مثالية للنماذج الأولية والاختبار وتقييم إثباتات المفهوم للمؤسسات وغير مناسبة لأحمال الإنتاج، وتشمل 10 آلاف سجل مسجّل شهريا مع بقاء الطلبات نفسها غير متأثرة بتجاوز حد السجلات (لا تُسجَّل السجلات الزائدة فقط)، واحتفاظا 3 أيام للسجلات و30 يوما للمقاييس، وبوابة ذكاء اصطناعي بواجهة موحدة وبدائل وموازنة حمل وإعادة محاولة، ومراقبة بالسجلات والمسارات والتغذية الراجعة، وإدارة تلقينات حتى 3 قوالب، وتخزينا مؤقتا بسيطا وحواجز حتمية؛ وشرط البطاقة والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير معلنة، وحالة CORS غير مذكورة فبقيت غير مؤكدة؛ ونقطة Chat Completions ورأسا المصادقة (x-portkey-api-key وx-portkey-provider) من التوثيق الرسمي نفسه.",
    "verification_source": "https://portkey.ai/pricing",
    "website": "https://portkey.ai"
+  },
+  {
+    "auth": "مفتاح API (رأس Authorization: Bearer)",
+    "card_required": "غير معلن",
+    "category": "vector-databases",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "قاعدة بيانات متجهة مدارة بالكامل مدعومة بـ Milvus للبحث الدلالي واسترجاع RAG: مجموعات وفهارس وبحث هجين عبر واجهة REST، مع عناقيد سحابية خاصة بكل حساب؛ طبقتها المجانية موجهة للتعلم والمشاريع الشخصية حسب صفحة الأسعار الرسمية.",
+    "docs": "https://docs.zilliz.com/reference/restful/create-collection-v2",
+    "example_curl": "# استبدل YOUR_CLUSTER_ENDPOINT بنقطة نهاية عنقودك من وحدة تحكم Zilliz Cloud وYOUR_KEY برمز API الخاص به؛ المثال من التوثيق الرسمي لنقطة إنشاء مجموعة V2، فراجع التوثيق الحالي قبل الاستخدام\ncurl --request POST \"https://YOUR_CLUSTER_ENDPOINT/v2/vectordb/collections/create\" -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"collectionName\": \"test_collection\", \"dimension\": 5}'",
+    "example_fetch": "// استبدل YOUR_CLUSTER_ENDPOINT بنقطة نهاية عنقودك من وحدة تحكم Zilliz Cloud وYOUR_KEY برمز API الخاص به؛ المثال من التوثيق الرسمي لنقطة إنشاء مجموعة V2\nfetch('https://YOUR_CLUSTER_ENDPOINT/v2/vectordb/collections/create', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ collectionName: 'test_collection', dimension: 5 }) })",
+    "free_limit": "الخطة المجانية (Free): 0 دولار شهريا، 5 غيغابايت تخزين، 2.5 مليون وحدة حوسبة افتراضية (vCU) شهريا، حتى 5 مجموعات، للتعلم والمشاريع الشخصية",
+    "free_limit_scope": "للخطة المجانية (Free) في صفحة الأسعار الرسمية",
+    "free_type": "طبقة مجانية",
+    "https": true,
+    "id": "zilliz-cloud",
+    "key_url": "https://cloud.zilliz.com/signup",
+    "key_url_kind": "signup",
+    "key_url_note": "زر «Start for Free» في بطاقة Free في صفحة الأسعار الرسمية ينقل إلى إنشاء حساب Zilliz Cloud؛ وحُذف معاملا التتبع من الرابط المحفوظ لأنهما ليسا جزءا من وجهة الحساب.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "embeddings"
+    ],
+    "models": [
+      {
+        "name": "بحث متجهي واسترجاع RAG عبر Zilliz Cloud",
+        "type": "embeddings"
+      }
+    ],
+    "name": "Zilliz Cloud",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "قاعدة بيانات متجهة بعناقيد سحابية خاصة بكل حساب: عملياتها (إنشاء مجموعات، إدراج متجهات، بحث) تجري على نقطة نهاية عنقود خاص بالمستخدم ورمزه، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://zilliz.com/pricing",
+    "provider": "Zilliz",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "قاعدة بيانات متجهة",
+      "استرجاع",
+      "RAG"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية تعرض الخطة المجانية (Free) بسعر 0 دولار وتصفها بأنها نقطة بداية للتعلم والمشاريع الشخصية، وتشمل 5 غيغابايت تخزين و2.5 مليون وحدة حوسبة افتراضية (vCU) شهريا وحتى 5 مجموعات ودعما مجتمعيا؛ وصفحة الأسعار نفسها لا تذكر اشتراط بطاقة للخطة المجانية فبقي شرط البطاقة غير معلن، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فيها فبقيت غير مؤكدة وغير معلنة؛ ونقطة إنشاء مجموعة V2 (POST /v2/vectordb/collections/create) ورأس المصادقة (Authorization: Bearer) ونقطة نهاية العنقود من التوثيق الرسمي نفسه، مع تنبيهه أن التوثيق يقبل مفتاح API أو زوج اسم مستخدم وكلمة مرور حسب نوع نقطة الاتصال.",
+    "verification_source": "https://zilliz.com/pricing",
+    "website": "https://zilliz.com"
   }
 ]
