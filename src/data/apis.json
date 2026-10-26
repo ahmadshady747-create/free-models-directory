@@ -4532,5 +4532,55 @@
     "verification_note": "صفحة الأسعار الرسمية تصف خطة AX Free بأنها مجانية (0 دولار) بلا بطاقة ائتمانية، وتشمل 25 ألف span شهريا و1 غيغابايت استيعاب شهريا واحتفاظ 15 يوما ومستخدمين بلا حد وتقييمات وتجارب بلا حد وSignal حتى 10 مشكلات شهريا ومساحة واحدة ومنطقة بيانات US أو EU أو CA؛ شرط البطاقة مذكور صراحة بعدم الحاجة إليها، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة.",
     "verification_source": "https://arize.com/pricing",
     "website": "https://arize.com"
+  },
+  {
+    "auth": "رمز وصول شخصي (Bearer)",
+    "card_required": "لا — للتجربة المذكورة بلا بطاقة حسب صفحة الأسعار",
+    "category": "agent-platforms",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "منصة لبناء ونشر وكلاء محادثة وصوت بصريا: مصمم تدفقات محادثة وقاعدة معرفة وقنوات نشر؛ صفحة الأسعار الرسمية تذكر تجربة مجانية بلا بطاقة، دون مدة أو حصة مذكورة، فبقي الحد غير مؤكد.",
+    "docs": "https://www.voiceflow.com/docs/cookbook/first-conversation-turn",
+    "example_curl": "# المحادثة عبر الواجهة تتم بخطوتين حسب التوثيق: إطلاق الوكيل أولا ثم إرسال رسالة المستخدم؛ هذه خطوة إرسال الرسالة، استبدل YOUR_USER_ID وYOUR_PROJECT_ID وYOUR_PAT بالقيم الخاصة بك، وراجع التوثيق الحالي قبل الاستخدام\ncurl -X PUT \"https://realtime-api.voiceflow.com/v1/stable/conversation/YOUR_USER_ID?projectID=YOUR_PROJECT_ID&environmentAlias=published\" -H \"Authorization: Bearer YOUR_PAT\" -H \"Content-Type: application/json\" -d '{\"action\": {\"type\": \"text\", \"payload\": \"مرحبا، ما الذي يمكنك فعله؟\"}, \"version\": \"published\"}'",
+    "example_fetch": "// المحادثة عبر الواجهة تتم بخطوتين حسب التوثيق: إطلاق الوكيل أولا ثم إرسال رسالة المستخدم؛ هذه خطوة إرسال الرسالة، استبدل القيم النائبة بالقيم الخاصة بك\nfetch('https://realtime-api.voiceflow.com/v1/stable/conversation/YOUR_USER_ID?projectID=YOUR_PROJECT_ID&environmentAlias=published', { method: 'PUT', headers: { 'Authorization': 'Bearer YOUR_PAT', 'Content-Type': 'application/json' }, body: JSON.stringify({ action: { type: 'text', payload: 'مرحبا، ما الذي يمكنك فعله؟' }, version: 'published' }) })",
+    "free_limit": "غير مؤكد",
+    "free_limit_scope": "للتجربة المجانية المذكورة في صفحة الأسعار الرسمية، دون مدة أو حصة مذكورة فيها",
+    "free_type": "تجربة مجانية (مدتها غير مذكورة في صفحة الأسعار)",
+    "https": true,
+    "id": "voiceflow",
+    "key_url": "https://creator.voiceflow.com/start",
+    "key_url_kind": "signup",
+    "key_url_note": "رابط «Get started» العام في ترويسة وتذييل صفحة الأسعار الرسمية، وليس زر خطة مجانية مسماة؛ التجربة المجانية مذكورة في قسم الوكالات والشركاء فقط، دون مدة أو حصة.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "بناء ونشر وكلاء محادثة وصوت عبر Voiceflow",
+        "type": "text"
+      }
+    ],
+    "name": "Voiceflow",
+    "offer_expires_at": null,
+    "offer_temporary": true,
+    "playground_block_reason": "منصة بناء وكلاء تعمل عبر مصمم تدفقات بصري وقاعدة معرفة ووكلاء منشورين بقنوات نشر، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط بعد بناء وكيلك ونشره.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://www.voiceflow.com/pricing",
+    "provider": "Voiceflow",
+    "signup": "تجربة مجانية متاحة",
+    "status": "قيد التحقق",
+    "tags": [
+      "وكلاء",
+      "محادثة",
+      "صوت"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية لا تعرض خطة مجانية مسماة ولا جدول أسعار؛ أقرب عبارة مجانية فيها هي «Free trial, no credit card required» ضمن قسم الوكالات والشركاء فقط، دون مدة للتجربة ودون حصة مذكورة، لذلك بقي الحد غير مؤكد وحالة الإدخال قيد التحقق لا موثقا جزئيا، ولم تُعتمد أرقام ثانوية عن رصيد أو عدد وكلاء. نقطة إرسال الرسالة (PUT conversation) ورأس المصادقة (Bearer PAT) من صفحة «Run your first conversation turn» في التوثيق الرسمي؛ حالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار فبقيت غير مؤكدة.",
+    "verification_source": "https://www.voiceflow.com/pricing",
+    "website": "https://www.voiceflow.com"
   }
 ]
