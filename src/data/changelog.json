@@ -457,5 +457,14 @@
     "provider": "Membase",
     "source": "https://docs.membase.com/faq/",
     "type": "إضافة"
+  },
+  {
+    "date": "2026-10-27",
+    "model": "إضافة Mistral Moderation — إدخال سادس لفئة حواجز الأمان وفحص المحتوى (حلقة التحسين العميق، الجولة 42)",
+    "new_limit": "إدخال جديد موثق جزئيا: نموذج Mistral Moderation 2 بسعر Free للمدخل والمخرج حسب صفحة الأسعار الرسمية في توثيق Mistral، بلا حد عددي مذكور فيها؛ يصنّف النصوص الخام والمحادثات عبر فئات سياسة ويعيد درجة لكل فئة؛ بلا بيئة تنفيذ في المتصفح لسبب مكتوب (نقطة تصنيف إشراف لا تولّد نصا) مع مثال طلب عبر POST /v1/moderations على جهاز الزائر فقط؛ الإدخالات صارت 96 والموثقة جزئيا 65 وخريطة الموقع 102 <loc>",
+    "old_limit": "فئة حواجز الأمان وفحص المحتوى بخمسة إدخالات (Azure AI Content Safety وLakera Guard وSightengine وEnkrypt AI وOpenAI Moderation API)",
+    "provider": "Mistral Moderation",
+    "source": "https://docs.mistral.ai/inference/pricing",
+    "type": "إضافة"
   }
 ]

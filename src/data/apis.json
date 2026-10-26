@@ -5499,5 +5499,56 @@
     "verification_note": "أسئلة التوثيق الرسمي تقول إن الحساب المجاني يشمل مخصصا أوليا من جولات المحادثة، وإن الذاكرة المخزنة تبقى بعد نفاده لكن متابعة عمل المساعد تتطلب مصدر نموذج متاحا أو خطة مناسبة؛ ولم ينشر التوثيق عدد الجولات فبقي غير مؤكد، أما شرط الدفع فشروط الموقع الرسمي (القسم 6، https://membase.com/terms) تنص على عدم فرض أي رسوم حاليا وعدم اشتراط أي وسيلة دفع لاستخدامه. ولا توجد صفحة أسعار منفصلة في الموقع الرسمي (صفحة /pricing تعيد صفحة غير موجودة)، فالمصدر هو التوثيق الرسمي نفسه. ومرجع الواجهة الرسمي يوثق القاعدة https://api.app.membase.com والمصادقة برأس Authorization: Bearer ونقطة POST /v1/search بحقل q المطلوب، ودليل البدء الرسمي يوثق إنشاء المفتاح عبر Connect › Skills › Manage keys › Create key بمستوى وصول وذاكرات محددة. وحالة CORS والاستخدام التجاري والتدريب غير مذكورة في التوثيق المقروء فبقيت غير مؤكدة.",
     "verification_source": "https://docs.membase.com/faq/",
     "website": "https://membase.com/"
+  },
+  {
+    "auth": "مفتاح API (رأس Authorization: Bearer)",
+    "card_required": "غير معلن",
+    "category": "ai-guardrails",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "نقطة إشراف من Mistral AI تصنّف النصوص الخام والمحادثات عبر فئات سياسة — جنسي، وكراهية وتمييز، وعنف وتهديدات، وخطير، وإجرامي، وإيذاء ذاتي، وصحي، ومالي، وقانوني، ومعلومات شخصية، وكسر حماية — وتعيد درجة لكل فئة ليحدد المطور عتبته الخاصة، دون توليد نص؛ النموذج الحالي حسب دليل الإشراف mistral-moderation-2603، ونقطة النص الخام POST /v1/moderations ونقطة المحادثات POST /v1/chat/moderations.",
+    "docs": "https://docs.mistral.ai/capabilities/guardrailing/",
+    "example_curl": "# استبدل YOUR_KEY بمفتاحك من وحدة تحكم Mistral؛ النموذج mistral-moderation-latest كما في مثال مرجع API الرسمي، ودليل الإشراف يسمي النموذج الحالي mistral-moderation-2603، والمدخل هنا نص محايد للتجربة فقط، وراجع الدليل الحالي قبل الاستخدام\ncurl https://api.mistral.ai/v1/moderations -H \"Content-Type: application/json\" -H \"Authorization: Bearer YOUR_KEY\" -d '{\"model\": \"mistral-moderation-latest\", \"input\": \"مرحبا، كيف حالك؟\"}'",
+    "example_fetch": "// استبدل YOUR_KEY بمفتاحك من وحدة تحكم Mistral؛ النموذج mistral-moderation-latest كما في مثال مرجع API الرسمي، ودليل الإشراف يسمي النموذج الحالي mistral-moderation-2603، والمدخل هنا نص محايد للتجربة فقط، وراجع الدليل الحالي قبل الاستخدام\nfetch('https://api.mistral.ai/v1/moderations', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer YOUR_KEY' }, body: JSON.stringify({ model: 'mistral-moderation-latest', input: 'مرحبا، كيف حالك؟' }) })",
+    "free_limit": "نموذج Mistral Moderation 2 بسعر Free للمدخل والمخرج حسب صفحة الأسعار الرسمية، بلا حد عددي مذكور فيها؛ يصنّف النصوص الخام والمحادثات عبر فئات سياسة ويعيد درجة لكل فئة",
+    "free_limit_scope": "لنموذج Mistral Moderation 2 في صفحة الأسعار الرسمية",
+    "free_type": "نموذج مجاني الاستخدام",
+    "https": true,
+    "id": "mistral-moderation",
+    "key_url": "https://console.mistral.ai/api-keys",
+    "key_url_kind": "keys_page",
+    "key_url_note": "يفتح صفحة مفاتيح API في وحدة تحكم Mistral.",
+    "last_checked": "2026-10-27",
+    "last_price_checked": "2026-10-27",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "تصنيف إشراف النصوص والمحادثات عبر Mistral Moderation",
+        "type": "text"
+      }
+    ],
+    "name": "Mistral Moderation",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "نقطة تصنيف إشراف تعيد درجات فئات سياسة لنصوص ولا تولّد نصا أو صورة، وليست استدعاء توليد بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://docs.mistral.ai/inference/pricing",
+    "provider": "Mistral AI",
+    "signup": "غير مؤكد",
+    "status": "موثق جزئيا",
+    "tags": [
+      "حواجز أمان",
+      "فحص محتوى",
+      "إشراف",
+      "أمان"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية في توثيق Mistral تدرج Mistral Moderation 2 تحت نماذج تصفية الأمان والإشراف وفحص السياسات بسعر Free للمدخل والمخرج؛ ودليل الإشراف الرسمي يقول إن الخدمة تعمل بنموذج mistral-moderation-2603 وتصنّف النصوص عبر فئات سياسة منها كسر الحماية، وأن النموذج السابق 2411 أُهمل في 2026-03-31؛ ومرجع API الرسمي يوثق نقطتي POST /v1/moderations للنص الخام وPOST /v1/chat/moderations للمحادثات، ومثال مرجع API يستخدم mistral-moderation-latest؛ ولم تذكر صفحة الأسعار حدا عدديا ولا شرط بطاقة ولا استخداما تجاريا ولا تدريبا ولا حالة CORS فبقيت غير مؤكدة.",
+    "verification_source": "https://docs.mistral.ai/inference/pricing",
+    "website": "https://mistral.ai"
   }
 ]

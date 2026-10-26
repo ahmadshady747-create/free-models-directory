@@ -153,4 +153,5 @@
 <url><loc>/apis/mongodb-atlas-vector-search/</loc></url>
 <url><loc>/apis/langflow/</loc></url>
 <url><loc>/apis/membase/</loc></url>
+<url><loc>/apis/mistral-moderation/</loc></url>
 </urlset>
