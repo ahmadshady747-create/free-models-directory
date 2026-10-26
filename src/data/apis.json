@@ -5197,5 +5197,56 @@
     "verification_note": "صفحة الأسعار الرسمية تصف الخطة المجانية (Free) بأنها 0 دولار و«Free forever, no card»، وتشمل 1000 رصيد شهريا وسير عمل بلا حد وحتى 5 مستخدمين و«Chat to automation» وFlows وAgents وTables وMCPs ووصول API؛ وسؤال FAQ في الصفحة نفسها يؤكد: بلا بطاقة وبلا حد زمني، ورصيد جديد كل شهر. جدول المقارنة في الصفحة نفسها يذكر أن إعادة تعيين رصيد الخطة المجانية يومية وأن التجاوز فيها ينتظر لليوم التالي، بينما FAQ يذكر تجديدا شهريا، فاعتُمد حد البطاقة (1000 رصيد شهريا) دون ادعاء آلية تجديد أدق. FAQ يذكر أيضا أن خطوة الذكاء على نموذج سريع تكلف رصيدين وعلى نموذج ذكي 10 وعلى نموذج رائد 20، وأن الإجراء الوكيلي رصيد واحد، وأن إحضار مفتاح ذكاء خاص يخفض كل خطوة ذكاء إلى رصيد واحد لكنه متاح من Plus فأعلى، فلم يُدخل ذلك في حد البطاقة. صفحة Webhook الرسمية تصف Webhook بأنه يستقبل طلبات HTTP ويشغّل سير عمل بروابط فريدة، وأنه مشمول في كل خطة بما فيها السحابية المجانية، فاستُخدم رابط Webhook بمعرّف نائب في المثال بدل اختراع رابط سير حقيقي. حالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة. مرشح مستبعد في هذه الجولة نفسها قبل الاختيار: BuildShip رغم أن مصادر ثانوية قديمة تذكر خطة مجانية، لأن صفحة الأسعار الرسمية الحالية لا تعرض أي بطاقة خطة مجانية، بل تجربة مجانية 7 أيام ثم خطط مدفوعة تبدأ من Starter بسعر 19 دولارا شهريا؛ لم يُعتمد ولم يُدخل.",
     "verification_source": "https://www.activepieces.com/pricing",
     "website": "https://www.activepieces.com"
+  },
+  {
+    "auth": "مفتاح W&B API (متغير البيئة WANDB_API_KEY أو wandb login) مع حساب سحابي",
+    "card_required": "غير معلن",
+    "category": "evaluation-observability",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "منصة تتبع تجارب ومراقبة وتقييم من Weights & Biases: تتبع تجارب تدريب النماذج ومقارنة المقاييس، وتتبع تطبيقات الذكاء (Weave) مع تقييمها ومراقبة إنتاجها، وسجل أصول ونماذج مع تتبع النسب؛ خطتها المجانية دائمة بسعر 0 دولار شهريا وتشمل حتى 5 مقاعد نماذج و5 غيغابايت تخزين شهريا و1 غيغابايت استيعاب Weave شهريا.",
+    "docs": "https://docs.coreweave.com/products/wandb/ref/python/public-api",
+    "example_curl": "# التتبع العادي يجري عبر Python SDK (wandb.init وwandb.log)، لا عبر استدعاء REST واحد؛ والمثال أدناه استعلام GraphQL عام على نقطة الواجهة العامة التي يستخدمها خادم MCP الرسمي من W&B نفسها، وليس مثال curl منشورا رسميا — راجع التوثيق الحالي قبل الاستخدام\ncurl https://api.wandb.ai/graphql -H \"Content-Type: application/json\" -H \"Authorization: Bearer YOUR_KEY\" -d '{\"query\": \"{ viewer { username } }\"}'",
+    "example_fetch": "// التتبع العادي يجري عبر Python SDK (wandb.init وwandb.log)، لا عبر استدعاء REST واحد؛ والمثال أدناه استعلام GraphQL عام على نقطة الواجهة العامة، وليس مثالا منشورا رسميا — راجع التوثيق الحالي قبل الاستخدام\nfetch('https://api.wandb.ai/graphql', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer YOUR_KEY' }, body: JSON.stringify({ query: '{ viewer { username } }' }) })",
+    "free_limit": "الخطة المجانية (Free): 0 دولار شهريا، حتى 5 مقاعد نماذج، تخزين 5 غيغابايت شهريا، استيعاب بيانات Weave 1 غيغابايت شهريا، مع تقييم تطبيقات الذكاء وتتبعها ومسجلاتها وتتبع تجارب النماذج وسجل الأصول وتتبع النسب ودعم مجتمعي",
+    "free_limit_scope": "للخطة المجانية (Free) في صفحة الأسعار الرسمية",
+    "free_type": "خطة مجانية",
+    "https": true,
+    "id": "weights-biases",
+    "key_url": "https://id.coreweave.com/signup",
+    "key_url_kind": "signup",
+    "key_url_note": "زر «Get started» في بطاقة Free نفسها في صفحة الأسعار الرسمية؛ ينقل إلى إنشاء حساب CoreWeave ID، ومن الحساب يُؤخذ مفتاح W&B API من صفحة التفويض الرسمية wandb.ai/authorize حسب توثيق W&B.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "تتبع تجارب وتقييم ومراقبة نماذج وتطبيقات ذكاء عبر Weights & Biases",
+        "type": "text"
+      }
+    ],
+    "name": "Weights & Biases",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "منصة تتبع تجارب ومراقبة وتقييم تعمل عبر Python SDK ومشاريع ومساحات عمل ولوحات تحكم، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط بعد إعداد مشروعك.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://coreweave.com/forge-pricing",
+    "provider": "Weights & Biases",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "تتبع تجارب",
+      "تقييم",
+      "مراقبة",
+      "سجل نماذج"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية الحالية (عنوان wandb.ai/site/pricing يُعيد التوجيه إليها الآن بعد انتقال Weights & Biases إلى CoreWeave Forge) تعرض الخطة المجانية (Free) بسعر 0 دولار شهريا ووصفها بأنها مصممة للتطوير الشخصي لتطبيقات ونماذج الذكاء، وتشمل تقييم تطبيقات الذكاء وتتبعها ومسجلاتها وتتبع تجارب النماذج وسجل الأصول وتتبع النسب ودعما مجتمعيا، وحدودها في جدول المقارنة: حتى 5 مقاعد نماذج و5 غيغابايت تخزين شهريا و1 غيغابايت استيعاب بيانات Weave شهريا؛ وشريط «Free forever for academic research» منفصل بسعة 200 غيغابايت فلم يُخلط بالخطة العامة؛ وشرط البطاقة والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير معلنة، وحالة CORS غير مذكورة فبقيت غير مؤكدة؛ ومفتاح API يُؤخذ من صفحة التفويض الرسمية wandb.ai/authorize حسب توثيق W&B، والتتبع العادي يجري عبر Python SDK لا عبر استدعاء REST واحد.",
+    "verification_source": "https://coreweave.com/forge-pricing",
+    "website": "https://wandb.ai"
   }
 ]
