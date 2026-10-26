@@ -4890,5 +4890,56 @@
    "verification_note": "صفحة الأسعار الرسمية في توثيق Letta تصف الخطة المجانية بسعر 0 دولار شهريا، وتذكر أن الخطط المجانية محدودة بثلاثة وكلاء ذوي حالة، وتشمل 5 ميغابايت تخزين لكل مستودع ذاكرة واستخداما محدودا من Letta Auto وإحضار مفاتيح خاصة؛ ودليل البدء السريع الرسمي يوجّه إلى إنشاء مفتاح API من صفحة مفاتيح المنصة؛ شرط البطاقة والاستخدام التجاري والتدريب وحالة CORS غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة. وتنبيه أمانة: أسئلة صفحة الأسعار نفسها تفرّق بين الخطط الشخصية (مصادقة OAuth عبر CLI أو تطبيق الويب) وخطط المطورين (مصادقة بمفتاح API وأسعار بالاستخدام)، لذلك مسار المصادقة الفعلي على الخطة المجانية قد يختلف عن مفتاح API وحده.",
    "verification_source": "https://docs.letta.com/pricing",
    "website": "https://letta.com"
+  },
+  {
+   "auth": "مفتاح Portkey API (رأس x-portkey-api-key) مع اختيار المزود (رأس x-portkey-provider)",
+   "card_required": "غير معلن",
+   "category": "evaluation-observability",
+   "commercial": "غير معلن",
+   "cors": "غير مؤكد",
+   "description_ar": "بوابة ذكاء اصطناعي ومراقبة من Portkey: واجهة موحدة لمزودي نماذج متعددين مع توجيه وبدائل وموازنة حمل وإعادة محاولة، ومراقبة بالسجلات والمسارات والتغذية الراجعة والبيانات الوصفية المخصصة، وإدارة تلقينات وتخزين مؤقت بسيط وحواجز حتمية، على خطة Developer المجانية.",
+   "docs": "https://portkey.ai/docs/product/ai-gateway/universal-api",
+   "example_curl": "# البوابة تمرّر الطلب إلى المزود الذي تختاره؛ صيغة النموذج في التوثيق الأحدث هي @provider/model، وراجع التوثيق الحالي لإعداد مفتاح المزود قبل الاستخدام\ncurl https://api.portkey.ai/v1/chat/completions -H \"Content-Type: application/json\" -H \"x-portkey-api-key: YOUR_KEY\" -H \"x-portkey-provider: YOUR_PROVIDER\" -d '{\"model\": \"YOUR_MODEL\", \"messages\": [{\"role\": \"user\", \"content\": \"مرحبا\"}]}'",
+   "example_fetch": "// البوابة تمرّر الطلب إلى المزود الذي تختاره؛ راجع التوثيق الحالي لصيغة النموذج وإعداد مفتاح المزود قبل الاستخدام\nfetch('https://api.portkey.ai/v1/chat/completions', { method: 'POST', headers: { 'Content-Type': 'application/json', 'x-portkey-api-key': 'YOUR_KEY', 'x-portkey-provider': 'YOUR_PROVIDER' }, body: JSON.stringify({ model: 'YOUR_MODEL', messages: [{ role: 'user', content: 'مرحبا' }] }) })",
+   "free_limit": "خطة Developer المجانية (Free Forever): 10 آلاف سجل مسجّل شهريا، احتفاظ 3 أيام للسجلات و30 يوما للمقاييس، حتى 3 قوالب تلقين، غير مناسبة لأحمال الإنتاج",
+   "free_limit_scope": "لخطة Developer في صفحة الأسعار الرسمية",
+   "free_type": "خطة مجانية",
+   "https": true,
+   "id": "portkey",
+   "key_url": "https://app.portkey.ai/signup",
+   "key_url_kind": "signup",
+   "key_url_note": "زر «Start for Free» في بطاقة Developer في صفحة الأسعار الرسمية ينقل إلى إنشاء حساب Portkey؛ ومن الحساب تنسخ مفتاح Portkey API حسب التوثيق الرسمي.",
+   "last_checked": "2026-10-26",
+   "last_price_checked": "2026-10-26",
+   "live_try": null,
+   "media": [
+    "text"
+   ],
+   "models": [
+    {
+     "name": "بوابة ذكاء اصطناعي ومراقبة عبر Portkey",
+     "type": "text"
+    }
+   ],
+   "name": "Portkey",
+   "offer_expires_at": null,
+   "offer_temporary": false,
+   "playground_block_reason": "بوابة ذكاء اصطناعي ومراقبة تعمل عبر مفاتيح Portkey ومفاتيح مزودين ومشاريع وتوجيه وسياسات، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+   "playground_status": "not-suitable",
+   "playgrounds": [],
+   "pricing": "https://portkey.ai/pricing",
+   "provider": "Portkey",
+   "signup": "حساب مجاني متاح",
+   "status": "موثق جزئيا",
+   "tags": [
+    "بوابة ذكاء اصطناعي",
+    "مراقبة",
+    "تقييم",
+    "توجيه"
+   ],
+   "training_use": "غير معلن",
+   "verification_note": "صفحة الأسعار الرسمية تعرض خطة Developer بسعر Free Forever وتصفها بأنها مثالية للنماذج الأولية والاختبار وتقييم إثباتات المفهوم للمؤسسات وغير مناسبة لأحمال الإنتاج، وتشمل 10 آلاف سجل مسجّل شهريا مع بقاء الطلبات نفسها غير متأثرة بتجاوز حد السجلات (لا تُسجَّل السجلات الزائدة فقط)، واحتفاظا 3 أيام للسجلات و30 يوما للمقاييس، وبوابة ذكاء اصطناعي بواجهة موحدة وبدائل وموازنة حمل وإعادة محاولة، ومراقبة بالسجلات والمسارات والتغذية الراجعة، وإدارة تلقينات حتى 3 قوالب، وتخزينا مؤقتا بسيطا وحواجز حتمية؛ وشرط البطاقة والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير معلنة، وحالة CORS غير مذكورة فبقيت غير مؤكدة؛ ونقطة Chat Completions ورأسا المصادقة (x-portkey-api-key وx-portkey-provider) من التوثيق الرسمي نفسه.",
+   "verification_source": "https://portkey.ai/pricing",
+   "website": "https://portkey.ai"
   }
 ]
