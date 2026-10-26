@@ -4791,156 +4791,156 @@
     "website": "https://upstash.com"
   },
   {
-   "auth": "مفتاح Opik API واسم مساحة العمل (رأسان Authorization وComet-Workspace)",
-   "card_required": "غير معلن",
-   "category": "evaluation-observability",
-   "commercial": "غير معلن",
-   "cors": "غير مؤكد",
-   "description_ar": "منصة تتبع ومراقبة وتقييم مفتوحة المصدر لتطبيقات ووكلاء الذكاء الاصطناعي من Comet: تتبع المسارات وتحليلها، مجموعات اختبار وتقييمات آلية، مكتبة تلقينات، وتكامل أصلي مع OpenTelemetry، مع ملعب وكلاء يعمل على جهاز المطور.",
-   "docs": "https://www.comet.com/docs/opik/integrations/opentelemetry",
-   "example_curl": "# التتبع نفسه يجري عادة عبر حزم SDK؛ هذه نقطة OTLP الرسمية من التوثيق، وتحتاج جسما بصيغة OTLP (protobuf) لا طلبا فارغا، ورأس Authorization يحمل المفتاح الخام بلا بادئة Bearer، وراجع التوثيق الحالي قبل الاستخدام\ncurl -X POST \"https://www.comet.com/opik/api/v1/private/otel/v1/traces\" -H \"Authorization: YOUR_KEY\" -H \"Comet-Workspace: YOUR_WORKSPACE\" -H \"projectName: YOUR_PROJECT\" -H \"Content-Type: application/x-protobuf\" --data-binary @trace.pb",
-   "example_fetch": "// التتبع نفسه يجري عادة عبر حزم SDK؛ هذه نقطة OTLP الرسمية من التوثيق، وتحتاج جسما بصيغة OTLP (protobuf) لا طلبا فارغا، ورأس Authorization يحمل المفتاح الخام بلا بادئة Bearer\nfetch('https://www.comet.com/opik/api/v1/private/otel/v1/traces', { method: 'POST', headers: { 'Authorization': 'YOUR_KEY', 'Comet-Workspace': 'YOUR_WORKSPACE', 'projectName': 'YOUR_PROJECT', 'Content-Type': 'application/x-protobuf' }, body: OTLP_PROTOBUF_BYTES })",
-   "free_limit": "خطة Free Cloud المجانية (0 دولار): حتى 10 أعضاء فريق، 25 ألف span شهريا، احتفاظ بالبيانات 60 يوما",
-   "free_limit_scope": "لخطة Free Cloud في صفحة الأسعار الرسمية",
-   "free_type": "خطة مجانية",
-   "https": true,
-   "id": "opik",
-   "key_url": "https://www.comet.com/signup",
-   "key_url_kind": "signup",
-   "key_url_note": "زر «Get Started» في بطاقة Free Cloud في صفحة الأسعار الرسمية ينقل إلى إنشاء حساب Comet؛ ومن الحساب تنسخ مفتاح Opik API واسم مساحة العمل من إعدادات الحساب حسب التوثيق الرسمي.",
-   "last_checked": "2026-10-26",
-   "last_price_checked": "2026-10-26",
-   "live_try": null,
-   "media": [
-    "text"
-   ],
-   "models": [
-    {
-     "name": "تتبع وتقييم تطبيقات ووكلاء الذكاء الاصطناعي عبر Opik",
-     "type": "text"
-    }
-   ],
-   "name": "Opik",
-   "offer_expires_at": null,
-   "offer_temporary": false,
-   "playground_block_reason": "منصة تتبع ومراقبة وتقييم تعمل عبر حزم SDK ومفاتيح API ومساحات عمل ولوحة تحكم، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
-   "playground_status": "not-suitable",
-   "playgrounds": [],
-   "pricing": "https://www.comet.com/site/pricing/",
-   "provider": "Comet",
-   "signup": "حساب مجاني متاح",
-   "status": "موثق جزئيا",
-   "tags": [
-    "مراقبة",
-    "تقييم",
-    "تتبع",
-    "وكلاء"
-   ],
-   "training_use": "غير معلن",
-   "verification_note": "صفحة الأسعار الرسمية تعرض خطة Free Cloud بسعر 0 دولار وتصفها بأنها للأفراد، وتشمل حتى 10 أعضاء فريق و25 ألف span شهريا واحتفاظا بالبيانات 60 يوما، وتشمل تتبع الوكلاء وتحليلها ومجموعات الاختبار وملعب الوكلاء؛ وزر الخطة المدفوعة المجاور يحمل «Start Free Trial» بينما Free Cloud خطة مجانية بزر «Get Started» لا تجربة، فلم تُعدّ عرضا مؤقتا؛ وشرط البطاقة غير مذكور في صفحة الأسعار نفسها فبقي غير معلن، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فبقيت غير مؤكدة؛ ونقطة OTLP ورأسا المصادقة (المفتاح الخام بلا بادئة Bearer واسم مساحة العمل) من التوثيق الرسمي نفسه.",
-   "verification_source": "https://www.comet.com/site/pricing/",
-   "website": "https://www.comet.com"
+    "auth": "مفتاح Opik API واسم مساحة العمل (رأسان Authorization وComet-Workspace)",
+    "card_required": "غير معلن",
+    "category": "evaluation-observability",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "منصة تتبع ومراقبة وتقييم مفتوحة المصدر لتطبيقات ووكلاء الذكاء الاصطناعي من Comet: تتبع المسارات وتحليلها، مجموعات اختبار وتقييمات آلية، مكتبة تلقينات، وتكامل أصلي مع OpenTelemetry، مع ملعب وكلاء يعمل على جهاز المطور.",
+    "docs": "https://www.comet.com/docs/opik/integrations/opentelemetry",
+    "example_curl": "# التتبع نفسه يجري عادة عبر حزم SDK؛ هذه نقطة OTLP الرسمية من التوثيق، وتحتاج جسما بصيغة OTLP (protobuf) لا طلبا فارغا، ورأس Authorization يحمل المفتاح الخام بلا بادئة Bearer، وراجع التوثيق الحالي قبل الاستخدام\ncurl -X POST \"https://www.comet.com/opik/api/v1/private/otel/v1/traces\" -H \"Authorization: YOUR_KEY\" -H \"Comet-Workspace: YOUR_WORKSPACE\" -H \"projectName: YOUR_PROJECT\" -H \"Content-Type: application/x-protobuf\" --data-binary @trace.pb",
+    "example_fetch": "// التتبع نفسه يجري عادة عبر حزم SDK؛ هذه نقطة OTLP الرسمية من التوثيق، وتحتاج جسما بصيغة OTLP (protobuf) لا طلبا فارغا، ورأس Authorization يحمل المفتاح الخام بلا بادئة Bearer\nfetch('https://www.comet.com/opik/api/v1/private/otel/v1/traces', { method: 'POST', headers: { 'Authorization': 'YOUR_KEY', 'Comet-Workspace': 'YOUR_WORKSPACE', 'projectName': 'YOUR_PROJECT', 'Content-Type': 'application/x-protobuf' }, body: OTLP_PROTOBUF_BYTES })",
+    "free_limit": "خطة Free Cloud المجانية (0 دولار): حتى 10 أعضاء فريق، 25 ألف span شهريا، احتفاظ بالبيانات 60 يوما",
+    "free_limit_scope": "لخطة Free Cloud في صفحة الأسعار الرسمية",
+    "free_type": "خطة مجانية",
+    "https": true,
+    "id": "opik",
+    "key_url": "https://www.comet.com/signup",
+    "key_url_kind": "signup",
+    "key_url_note": "زر «Get Started» في بطاقة Free Cloud في صفحة الأسعار الرسمية ينقل إلى إنشاء حساب Comet؛ ومن الحساب تنسخ مفتاح Opik API واسم مساحة العمل من إعدادات الحساب حسب التوثيق الرسمي.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "تتبع وتقييم تطبيقات ووكلاء الذكاء الاصطناعي عبر Opik",
+        "type": "text"
+      }
+    ],
+    "name": "Opik",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "منصة تتبع ومراقبة وتقييم تعمل عبر حزم SDK ومفاتيح API ومساحات عمل ولوحة تحكم، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://www.comet.com/site/pricing/",
+    "provider": "Comet",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "مراقبة",
+      "تقييم",
+      "تتبع",
+      "وكلاء"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية تعرض خطة Free Cloud بسعر 0 دولار وتصفها بأنها للأفراد، وتشمل حتى 10 أعضاء فريق و25 ألف span شهريا واحتفاظا بالبيانات 60 يوما، وتشمل تتبع الوكلاء وتحليلها ومجموعات الاختبار وملعب الوكلاء؛ وزر الخطة المدفوعة المجاور يحمل «Start Free Trial» بينما Free Cloud خطة مجانية بزر «Get Started» لا تجربة، فلم تُعدّ عرضا مؤقتا؛ وشرط البطاقة غير مذكور في صفحة الأسعار نفسها فبقي غير معلن، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فبقيت غير مؤكدة؛ ونقطة OTLP ورأسا المصادقة (المفتاح الخام بلا بادئة Bearer واسم مساحة العمل) من التوثيق الرسمي نفسه.",
+    "verification_source": "https://www.comet.com/site/pricing/",
+    "website": "https://www.comet.com"
   },
   {
-   "auth": "مفتاح API (رأس Authorization Bearer)",
-   "card_required": "غير معلن",
-   "category": "agent-memory",
-   "commercial": "غير معلن",
-   "cors": "غير مؤكد",
-   "description_ar": "وقت تشغيل وكلاء ذوي حالة وذاكرة دائمة: يدير الوكيل ذاكرته بنفسه عبر استدعاءات الأدوات — ذاكرة أساسية داخل نافذة السياق، وذاكرة استدعاء للمحادثات السابقة، وذاكرة أرشيفية يبحث فيها عند الحاجة — ويستأنف من حيث توقف عبر الجلسات والنماذج والأجهزة.",
-   "docs": "https://docs.letta.com/agent-sdk/quickstart",
-   "example_curl": "# استبدل YOUR_KEY بمفتاحك من منصة Letta واستبدل AGENT_ID بمعرّف وكيلك؛ التفاعل عادة عبر حزم SDK وجلسات، وهذا المثال يتبع نمط مرجع واجهة Letta الرسمي لإرسال رسالة إلى وكيل موجود (حقل input اختصار موثق لرسالة مستخدم واحدة)، فراجع التوثيق الحالي قبل الاستخدام\ncurl https://api.letta.com/v1/agents/$AGENT_ID/messages -H \"Content-Type: application/json\" -H \"Authorization: Bearer <redacted>\" -d '{\"input\": \"مرحبا، تذكر أنني أفضل الملخصات الموجزة\"}'",
-   "example_fetch": "// استبدل YOUR_KEY بمفتاحك من منصة Letta واستبدل AGENT_ID بمعرّف وكيلك\nfetch('https://api.letta.com/v1/agents/' + AGENT_ID + '/messages', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer <redacted>' }, body: JSON.stringify({ input: 'مرحبا، تذكر أنني أفضل الملخصات الموجزة' }) })",
-   "free_limit": "الخطة المجانية: 0 دولار شهريا، حتى 3 وكلاء ذوي حالة، 5 ميغابايت تخزين لكل مستودع ذاكرة، استخدام محدود من Letta Auto، مع إحضار مفاتيحك الخاصة",
-   "free_limit_scope": "للخطة المجانية في صفحة الأسعار الرسمية",
-   "free_type": "طبقة مجانية دائمة",
-   "https": true,
-   "id": "letta",
-   "key_url": "https://platform.letta.com/api-keys",
-   "key_url_kind": "keys_page",
-   "key_url_note": "يفتح صفحة مفاتيح منصة Letta وفق دليل البدء السريع الرسمي؛ أنشئ مفتاح API من هناك واستخدمه مع SDK أو واجهة Letta.",
-   "last_checked": "2026-10-26",
-   "last_price_checked": "2026-10-26",
-   "live_try": null,
-   "media": [
-    "text"
-   ],
-   "models": [
-    {
-     "name": "وكلاء ذوو حالة وذاكرة دائمة عبر Letta Cloud",
-     "type": "text"
-    }
-   ],
-   "name": "Letta Cloud",
-   "offer_expires_at": null,
-   "offer_temporary": false,
-   "playground_block_reason": "وقت تشغيل وكلاء ذوي حالة وذاكرة دائمة يعمل عبر حزم SDK ومفاتيح API ووكلاء وجلسات وذاكرة عبر جلسات متعددة، وليس استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
-   "playground_status": "not-suitable",
-   "playgrounds": [],
-   "pricing": "https://docs.letta.com/pricing",
-   "provider": "Letta",
-   "signup": "حساب مجاني متاح",
-   "status": "موثق جزئيا",
-   "tags": [
-    "ذاكرة",
-    "وكلاء",
-    "وكلاء ذوو حالة"
-   ],
-   "training_use": "غير معلن",
-   "verification_note": "صفحة الأسعار الرسمية في توثيق Letta تصف الخطة المجانية بسعر 0 دولار شهريا، وتذكر أن الخطط المجانية محدودة بثلاثة وكلاء ذوي حالة، وتشمل 5 ميغابايت تخزين لكل مستودع ذاكرة واستخداما محدودا من Letta Auto وإحضار مفاتيح خاصة؛ ودليل البدء السريع الرسمي يوجّه إلى إنشاء مفتاح API من صفحة مفاتيح المنصة؛ شرط البطاقة والاستخدام التجاري والتدريب وحالة CORS غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة. وتنبيه أمانة: أسئلة صفحة الأسعار نفسها تفرّق بين الخطط الشخصية (مصادقة OAuth عبر CLI أو تطبيق الويب) وخطط المطورين (مصادقة بمفتاح API وأسعار بالاستخدام)، لذلك مسار المصادقة الفعلي على الخطة المجانية قد يختلف عن مفتاح API وحده.",
-   "verification_source": "https://docs.letta.com/pricing",
-   "website": "https://letta.com"
+    "auth": "مفتاح API (رأس Authorization Bearer)",
+    "card_required": "غير معلن",
+    "category": "agent-memory",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "وقت تشغيل وكلاء ذوي حالة وذاكرة دائمة: يدير الوكيل ذاكرته بنفسه عبر استدعاءات الأدوات — ذاكرة أساسية داخل نافذة السياق، وذاكرة استدعاء للمحادثات السابقة، وذاكرة أرشيفية يبحث فيها عند الحاجة — ويستأنف من حيث توقف عبر الجلسات والنماذج والأجهزة.",
+    "docs": "https://docs.letta.com/agent-sdk/quickstart",
+    "example_curl": "# استبدل YOUR_KEY بمفتاحك من منصة Letta واستبدل AGENT_ID بمعرّف وكيلك؛ التفاعل عادة عبر حزم SDK وجلسات، وهذا المثال يتبع نمط مرجع واجهة Letta الرسمي لإرسال رسالة إلى وكيل موجود (حقل input اختصار موثق لرسالة مستخدم واحدة)، فراجع التوثيق الحالي قبل الاستخدام\ncurl https://api.letta.com/v1/agents/$AGENT_ID/messages -H \"Content-Type: application/json\" -H \"Authorization: Bearer <redacted>\" -d '{\"input\": \"مرحبا، تذكر أنني أفضل الملخصات الموجزة\"}'",
+    "example_fetch": "// استبدل YOUR_KEY بمفتاحك من منصة Letta واستبدل AGENT_ID بمعرّف وكيلك\nfetch('https://api.letta.com/v1/agents/' + AGENT_ID + '/messages', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer <redacted>' }, body: JSON.stringify({ input: 'مرحبا، تذكر أنني أفضل الملخصات الموجزة' }) })",
+    "free_limit": "الخطة المجانية: 0 دولار شهريا، حتى 3 وكلاء ذوي حالة، 5 ميغابايت تخزين لكل مستودع ذاكرة، استخدام محدود من Letta Auto، مع إحضار مفاتيحك الخاصة",
+    "free_limit_scope": "للخطة المجانية في صفحة الأسعار الرسمية",
+    "free_type": "طبقة مجانية دائمة",
+    "https": true,
+    "id": "letta",
+    "key_url": "https://platform.letta.com/api-keys",
+    "key_url_kind": "keys_page",
+    "key_url_note": "يفتح صفحة مفاتيح منصة Letta وفق دليل البدء السريع الرسمي؛ أنشئ مفتاح API من هناك واستخدمه مع SDK أو واجهة Letta.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "وكلاء ذوو حالة وذاكرة دائمة عبر Letta Cloud",
+        "type": "text"
+      }
+    ],
+    "name": "Letta Cloud",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "وقت تشغيل وكلاء ذوي حالة وذاكرة دائمة يعمل عبر حزم SDK ومفاتيح API ووكلاء وجلسات وذاكرة عبر جلسات متعددة، وليس استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://docs.letta.com/pricing",
+    "provider": "Letta",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "ذاكرة",
+      "وكلاء",
+      "وكلاء ذوو حالة"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية في توثيق Letta تصف الخطة المجانية بسعر 0 دولار شهريا، وتذكر أن الخطط المجانية محدودة بثلاثة وكلاء ذوي حالة، وتشمل 5 ميغابايت تخزين لكل مستودع ذاكرة واستخداما محدودا من Letta Auto وإحضار مفاتيح خاصة؛ ودليل البدء السريع الرسمي يوجّه إلى إنشاء مفتاح API من صفحة مفاتيح المنصة؛ شرط البطاقة والاستخدام التجاري والتدريب وحالة CORS غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة. وتنبيه أمانة: أسئلة صفحة الأسعار نفسها تفرّق بين الخطط الشخصية (مصادقة OAuth عبر CLI أو تطبيق الويب) وخطط المطورين (مصادقة بمفتاح API وأسعار بالاستخدام)، لذلك مسار المصادقة الفعلي على الخطة المجانية قد يختلف عن مفتاح API وحده.",
+    "verification_source": "https://docs.letta.com/pricing",
+    "website": "https://letta.com"
   },
   {
-   "auth": "مفتاح Portkey API (رأس x-portkey-api-key) مع اختيار المزود (رأس x-portkey-provider)",
-   "card_required": "غير معلن",
-   "category": "evaluation-observability",
-   "commercial": "غير معلن",
-   "cors": "غير مؤكد",
-   "description_ar": "بوابة ذكاء اصطناعي ومراقبة من Portkey: واجهة موحدة لمزودي نماذج متعددين مع توجيه وبدائل وموازنة حمل وإعادة محاولة، ومراقبة بالسجلات والمسارات والتغذية الراجعة والبيانات الوصفية المخصصة، وإدارة تلقينات وتخزين مؤقت بسيط وحواجز حتمية، على خطة Developer المجانية.",
-   "docs": "https://portkey.ai/docs/product/ai-gateway/universal-api",
-   "example_curl": "# البوابة تمرّر الطلب إلى المزود الذي تختاره؛ صيغة النموذج في التوثيق الأحدث هي @provider/model، وراجع التوثيق الحالي لإعداد مفتاح المزود قبل الاستخدام\ncurl https://api.portkey.ai/v1/chat/completions -H \"Content-Type: application/json\" -H \"x-portkey-api-key: YOUR_KEY\" -H \"x-portkey-provider: YOUR_PROVIDER\" -d '{\"model\": \"YOUR_MODEL\", \"messages\": [{\"role\": \"user\", \"content\": \"مرحبا\"}]}'",
-   "example_fetch": "// البوابة تمرّر الطلب إلى المزود الذي تختاره؛ راجع التوثيق الحالي لصيغة النموذج وإعداد مفتاح المزود قبل الاستخدام\nfetch('https://api.portkey.ai/v1/chat/completions', { method: 'POST', headers: { 'Content-Type': 'application/json', 'x-portkey-api-key': 'YOUR_KEY', 'x-portkey-provider': 'YOUR_PROVIDER' }, body: JSON.stringify({ model: 'YOUR_MODEL', messages: [{ role: 'user', content: 'مرحبا' }] }) })",
-   "free_limit": "خطة Developer المجانية (Free Forever): 10 آلاف سجل مسجّل شهريا، احتفاظ 3 أيام للسجلات و30 يوما للمقاييس، حتى 3 قوالب تلقين، غير مناسبة لأحمال الإنتاج",
-   "free_limit_scope": "لخطة Developer في صفحة الأسعار الرسمية",
-   "free_type": "خطة مجانية",
-   "https": true,
-   "id": "portkey",
-   "key_url": "https://app.portkey.ai/signup",
-   "key_url_kind": "signup",
-   "key_url_note": "زر «Start for Free» في بطاقة Developer في صفحة الأسعار الرسمية ينقل إلى إنشاء حساب Portkey؛ ومن الحساب تنسخ مفتاح Portkey API حسب التوثيق الرسمي.",
-   "last_checked": "2026-10-26",
-   "last_price_checked": "2026-10-26",
-   "live_try": null,
-   "media": [
-    "text"
-   ],
-   "models": [
-    {
-     "name": "بوابة ذكاء اصطناعي ومراقبة عبر Portkey",
-     "type": "text"
-    }
-   ],
-   "name": "Portkey",
-   "offer_expires_at": null,
-   "offer_temporary": false,
-   "playground_block_reason": "بوابة ذكاء اصطناعي ومراقبة تعمل عبر مفاتيح Portkey ومفاتيح مزودين ومشاريع وتوجيه وسياسات، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
-   "playground_status": "not-suitable",
-   "playgrounds": [],
-   "pricing": "https://portkey.ai/pricing",
-   "provider": "Portkey",
-   "signup": "حساب مجاني متاح",
-   "status": "موثق جزئيا",
-   "tags": [
-    "بوابة ذكاء اصطناعي",
-    "مراقبة",
-    "تقييم",
-    "توجيه"
-   ],
-   "training_use": "غير معلن",
-   "verification_note": "صفحة الأسعار الرسمية تعرض خطة Developer بسعر Free Forever وتصفها بأنها مثالية للنماذج الأولية والاختبار وتقييم إثباتات المفهوم للمؤسسات وغير مناسبة لأحمال الإنتاج، وتشمل 10 آلاف سجل مسجّل شهريا مع بقاء الطلبات نفسها غير متأثرة بتجاوز حد السجلات (لا تُسجَّل السجلات الزائدة فقط)، واحتفاظا 3 أيام للسجلات و30 يوما للمقاييس، وبوابة ذكاء اصطناعي بواجهة موحدة وبدائل وموازنة حمل وإعادة محاولة، ومراقبة بالسجلات والمسارات والتغذية الراجعة، وإدارة تلقينات حتى 3 قوالب، وتخزينا مؤقتا بسيطا وحواجز حتمية؛ وشرط البطاقة والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير معلنة، وحالة CORS غير مذكورة فبقيت غير مؤكدة؛ ونقطة Chat Completions ورأسا المصادقة (x-portkey-api-key وx-portkey-provider) من التوثيق الرسمي نفسه.",
-   "verification_source": "https://portkey.ai/pricing",
-   "website": "https://portkey.ai"
+    "auth": "مفتاح Portkey API (رأس x-portkey-api-key) مع اختيار المزود (رأس x-portkey-provider)",
+    "card_required": "غير معلن",
+    "category": "evaluation-observability",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "بوابة ذكاء اصطناعي ومراقبة من Portkey: واجهة موحدة لمزودي نماذج متعددين مع توجيه وبدائل وموازنة حمل وإعادة محاولة، ومراقبة بالسجلات والمسارات والتغذية الراجعة والبيانات الوصفية المخصصة، وإدارة تلقينات وتخزين مؤقت بسيط وحواجز حتمية، على خطة Developer المجانية.",
+    "docs": "https://portkey.ai/docs/product/ai-gateway/universal-api",
+    "example_curl": "# البوابة تمرّر الطلب إلى المزود الذي تختاره؛ صيغة النموذج في التوثيق الأحدث هي @provider/model، وراجع التوثيق الحالي لإعداد مفتاح المزود قبل الاستخدام\ncurl https://api.portkey.ai/v1/chat/completions -H \"Content-Type: application/json\" -H \"x-portkey-api-key: YOUR_KEY\" -H \"x-portkey-provider: YOUR_PROVIDER\" -d '{\"model\": \"YOUR_MODEL\", \"messages\": [{\"role\": \"user\", \"content\": \"مرحبا\"}]}'",
+    "example_fetch": "// البوابة تمرّر الطلب إلى المزود الذي تختاره؛ راجع التوثيق الحالي لصيغة النموذج وإعداد مفتاح المزود قبل الاستخدام\nfetch('https://api.portkey.ai/v1/chat/completions', { method: 'POST', headers: { 'Content-Type': 'application/json', 'x-portkey-api-key': 'YOUR_KEY', 'x-portkey-provider': 'YOUR_PROVIDER' }, body: JSON.stringify({ model: 'YOUR_MODEL', messages: [{ role: 'user', content: 'مرحبا' }] }) })",
+    "free_limit": "خطة Developer المجانية (Free Forever): 10 آلاف سجل مسجّل شهريا، احتفاظ 3 أيام للسجلات و30 يوما للمقاييس، حتى 3 قوالب تلقين، غير مناسبة لأحمال الإنتاج",
+    "free_limit_scope": "لخطة Developer في صفحة الأسعار الرسمية",
+    "free_type": "خطة مجانية",
+    "https": true,
+    "id": "portkey",
+    "key_url": "https://app.portkey.ai/signup",
+    "key_url_kind": "signup",
+    "key_url_note": "زر «Start for Free» في بطاقة Developer في صفحة الأسعار الرسمية ينقل إلى إنشاء حساب Portkey؛ ومن الحساب تنسخ مفتاح Portkey API حسب التوثيق الرسمي.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "بوابة ذكاء اصطناعي ومراقبة عبر Portkey",
+        "type": "text"
+      }
+    ],
+    "name": "Portkey",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "بوابة ذكاء اصطناعي ومراقبة تعمل عبر مفاتيح Portkey ومفاتيح مزودين ومشاريع وتوجيه وسياسات، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://portkey.ai/pricing",
+    "provider": "Portkey",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "بوابة ذكاء اصطناعي",
+      "مراقبة",
+      "تقييم",
+      "توجيه"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية تعرض خطة Developer بسعر Free Forever وتصفها بأنها مثالية للنماذج الأولية والاختبار وتقييم إثباتات المفهوم للمؤسسات وغير مناسبة لأحمال الإنتاج، وتشمل 10 آلاف سجل مسجّل شهريا مع بقاء الطلبات نفسها غير متأثرة بتجاوز حد السجلات (لا تُسجَّل السجلات الزائدة فقط)، واحتفاظا 3 أيام للسجلات و30 يوما للمقاييس، وبوابة ذكاء اصطناعي بواجهة موحدة وبدائل وموازنة حمل وإعادة محاولة، ومراقبة بالسجلات والمسارات والتغذية الراجعة، وإدارة تلقينات حتى 3 قوالب، وتخزينا مؤقتا بسيطا وحواجز حتمية؛ وشرط البطاقة والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير معلنة، وحالة CORS غير مذكورة فبقيت غير مؤكدة؛ ونقطة Chat Completions ورأسا المصادقة (x-portkey-api-key وx-portkey-provider) من التوثيق الرسمي نفسه.",
+    "verification_source": "https://portkey.ai/pricing",
+    "website": "https://portkey.ai"
   },
   {
     "auth": "مفتاح API (رأس Authorization: Bearer)",
@@ -5250,53 +5250,53 @@
     "website": "https://wandb.ai"
   },
   {
-  "auth": "مفتاح API (رأس Authorization Bearer)",
-  "card_required": "غير معلن",
-  "category": "vector-databases",
-  "commercial": "غير معلن",
-  "cors": "غير مؤكد",
-  "description_ar": "خدمة مدارة لتحليل المستندات واستخراجها وفهرستها واسترجاعها لبناء تطبيقات RAG ووكلاء: تحليل المستندات المعقدة (جداول ورسوم بيانية وصور) ثم فهرستها في مخزن متجهي للاسترجاع عند الحاجة، مع موصلات لمصادر بيانات متعددة.",
-  "docs": "https://developers.llamaindex.ai/llamaparse/",
-  "example_curl": "# استبدل YOUR_KEY بمفتاح LlamaCloud الخاص بك واستبدل document.pdf بملفك؛ المثال من دليل واجهة LlamaParse الرسمي v2: رفع ملف وبدء مهمة تحليل في طلب واحد بصيغة multipart، والرد يعيد معرّف المهمة وحالتها، فراجع التوثيق الحالي قبل الاستخدام\ncurl -X POST \"https://api.cloud.llamaindex.ai/api/v2/parse/upload\" -H \"Authorization: Bearer YOUR_KEY\" -F \"file=@document.pdf\" -F \"configuration={\\\"tier\\\": \\\"fast\\\", \\\"version\\\": \\\"latest\\\"}\"",
-  "example_fetch": "// استبدل YOUR_KEY بمفتاح LlamaCloud الخاص بك وfile بملفك؛ رفع ملف وبدء مهمة تحليل عبر واجهة LlamaParse v2 الرسمية\nconst form = new FormData();\nform.append('file', file);\nform.append('configuration', JSON.stringify({ tier: 'fast', version: 'latest' }));\nfetch('https://api.cloud.llamaindex.ai/api/v2/parse/upload', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY' }, body: form })",
-  "free_limit": "البدء المجاني: 10 آلاف رصيد شهريا لجميع المستخدمين الجدد، مع 5 فهارس وحتى 50 ملفا لكل فهرس ومشروع واحد و100 مستخدم ودعم مجتمعي؛ وتكلفة التحليل تبدأ من رصيد واحد للصفحة في طبقة Fast",
-  "free_limit_scope": "للبدء المجاني في صفحة الأسعار الرسمية",
-  "free_type": "أرصدة مجانية شهرية",
-  "https": true,
-  "id": "llamacloud",
-  "key_url": "https://cloud.llamaindex.ai/",
-  "key_url_kind": "signup",
-  "key_url_note": "زر «Start for free» في صفحة الأسعار الرسمية ينقل إلى تطبيق LlamaCloud؛ ومنه يُؤخذ مفتاح API (LLAMA_CLOUD_API_KEY) حسب دليل البدء الرسمي.",
-  "last_checked": "2026-10-26",
-  "last_price_checked": "2026-10-26",
-  "live_try": null,
-  "media": [
-    "text"
-  ],
-  "models": [
-    {
-      "name": "تحليل واستخراج وفهرسة واسترجاع المستندات عبر LlamaCloud",
-      "type": "text"
-    }
-  ],
-  "name": "LlamaCloud",
-  "offer_expires_at": null,
-  "offer_temporary": false,
-  "playground_block_reason": "خدمة مدارة لتحليل المستندات وفهرستها واسترجاعها تعمل عبر رفع ملفات ومشاريع ومهام تحليل غير متزامنة ومفاتيح API وحزم SDK، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
-  "playground_status": "not-suitable",
-  "playgrounds": [],
-  "pricing": "https://www.llamaindex.ai/pricing",
-  "provider": "LlamaIndex",
-  "signup": "حساب مجاني متاح",
-  "status": "موثق جزئيا",
-  "tags": [
-    "استرجاع",
-    "RAG",
-    "تحليل مستندات"
-  ],
-  "training_use": "غير معلن",
-  "verification_note": "صفحة الأسعار الرسمية (llamaindex.ai/pricing) تقول في أسئلتها إن LlamaParse يقدم 10 آلاف رصيد مجاني شهريا لجميع المستخدمين الجدد، وزر «Start for free» فيها ينقل إلى تطبيق LlamaCloud، وجدول المقارنة فيها للخطة الأولى يذكر 10 آلاف رصيد و5 فهارس و50 ملفا لكل فهرس ومشروعا واحدا و100 مستخدم ودعما مجتمعيا؛ وتوثيق الأسعار الرسمي (docs.cloud.llamaindex.ai/pricing) يذكر أن 1000 رصيد تساوي 1.25 دولار وأن طبقة Fast تكلف رصيدا واحدا للصفحة؛ ودليل واجهة LlamaParse الرسمي v2 يوثق نقطة POST /api/v2/parse/upload برأس Authorization Bearer لرفع ملف وبدء مهمة تحليل. أسماء الخطط وأسعارها الشهرية بالدولار لم تظهر في النص المستخرج من صفحة الأسعار، فلم يُدعَ سعر شهري بالدولار للخطة ولم تُسمَّ الخطة باسم مسمى؛ وشرط البطاقة والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير معلنة، وحالة CORS بقيت غير مؤكدة لأنها غير مذكورة فيها.",
-  "verification_source": "https://www.llamaindex.ai/pricing",
-  "website": "https://www.llamaindex.ai"
-}
+    "auth": "مفتاح API (رأس Authorization Bearer)",
+    "card_required": "غير معلن",
+    "category": "vector-databases",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "خدمة مدارة لتحليل المستندات واستخراجها وفهرستها واسترجاعها لبناء تطبيقات RAG ووكلاء: تحليل المستندات المعقدة (جداول ورسوم بيانية وصور) ثم فهرستها في مخزن متجهي للاسترجاع عند الحاجة، مع موصلات لمصادر بيانات متعددة.",
+    "docs": "https://developers.llamaindex.ai/llamaparse/",
+    "example_curl": "# استبدل YOUR_KEY بمفتاح LlamaCloud الخاص بك واستبدل document.pdf بملفك؛ المثال من دليل واجهة LlamaParse الرسمي v2: رفع ملف وبدء مهمة تحليل في طلب واحد بصيغة multipart، والرد يعيد معرّف المهمة وحالتها، فراجع التوثيق الحالي قبل الاستخدام\ncurl -X POST \"https://api.cloud.llamaindex.ai/api/v2/parse/upload\" -H \"Authorization: Bearer YOUR_KEY\" -F \"file=@document.pdf\" -F \"configuration={\\\"tier\\\": \\\"fast\\\", \\\"version\\\": \\\"latest\\\"}\"",
+    "example_fetch": "// استبدل YOUR_KEY بمفتاح LlamaCloud الخاص بك وfile بملفك؛ رفع ملف وبدء مهمة تحليل عبر واجهة LlamaParse v2 الرسمية\nconst form = new FormData();\nform.append('file', file);\nform.append('configuration', JSON.stringify({ tier: 'fast', version: 'latest' }));\nfetch('https://api.cloud.llamaindex.ai/api/v2/parse/upload', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY' }, body: form })",
+    "free_limit": "البدء المجاني: خطة Free بسعر 0 دولار شهريا، مع 10 آلاف رصيد شهريا لجميع المستخدمين الجدد، و5 فهارس وحتى 50 ملفا لكل فهرس ومشروع واحد و100 مستخدم؛ وتكلفة التحليل تبدأ من رصيد واحد للصفحة في طبقة Fast",
+    "free_limit_scope": "للبدء المجاني في صفحة الأسعار الرسمية",
+    "free_type": "أرصدة مجانية شهرية",
+    "https": true,
+    "id": "llamacloud",
+    "key_url": "https://cloud.llamaindex.ai/",
+    "key_url_kind": "signup",
+    "key_url_note": "زر «Start for free» في صفحة الأسعار الرسمية ينقل إلى تطبيق LlamaCloud؛ ومنه يُؤخذ مفتاح API (LLAMA_CLOUD_API_KEY) حسب دليل البدء الرسمي.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "تحليل واستخراج وفهرسة واسترجاع المستندات عبر LlamaCloud",
+        "type": "text"
+      }
+    ],
+    "name": "LlamaCloud",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "خدمة مدارة لتحليل المستندات وفهرستها واسترجاعها تعمل عبر رفع ملفات ومشاريع ومهام تحليل غير متزامنة ومفاتيح API وحزم SDK، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://www.llamaindex.ai/pricing",
+    "provider": "LlamaIndex",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "استرجاع",
+      "RAG",
+      "تحليل مستندات"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية (llamaindex.ai/pricing) تقول في أسئلتها إن LlamaParse يقدم 10 آلاف رصيد مجاني شهريا لجميع المستخدمين الجدد، وزر «Start for free» فيها ينقل إلى تطبيق LlamaCloud، وبطاقة الخطة الأولى فيها مسماة Free بسعر 0 دولار شهريا وتذكر 10 آلاف رصيد و100 مستخدم، وجدول المقارنة فيها للخطة الأولى يذكر 10 آلاف رصيد و5 فهارس و50 ملفا لكل فهرس ومشروعا واحدا و100 مستخدم؛ وتوثيق الأسعار الرسمي (docs.cloud.llamaindex.ai/pricing) يذكر أن 1000 رصيد تساوي 1.25 دولار وأن طبقة Fast تكلف رصيدا واحدا للصفحة؛ ودليل واجهة LlamaParse الرسمي v2 يوثق نقطة POST /api/v2/parse/upload برأس Authorization Bearer لرفع ملف وبدء مهمة تحليل. تنبيه أمانة: بطاقة الخطة المجانية في صفحة الأسعار نفسها تذكر «Basic support» بينما جدول المقارنة فيها يذكر للعمود نفسه «Community»، فلم يُدعَ مستوى دعم محدد هنا لأن الصفحة نفسها غير متسقة فيه؛ وشرط البطاقة والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير معلنة، وحالة CORS بقيت غير مؤكدة لأنها غير مذكورة فيها.",
+    "verification_source": "https://www.llamaindex.ai/pricing",
+    "website": "https://www.llamaindex.ai"
+  }
 ]
