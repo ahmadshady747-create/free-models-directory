@@ -93,6 +93,13 @@
       "media": [
         "text"
       ]
+    },
+    {
+      "id": "agent-platforms",
+      "label": "منصات بناء الوكلاء",
+      "media": [
+        "text"
+      ]
     }
   ]
 }

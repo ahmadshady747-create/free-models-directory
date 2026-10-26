@@ -125,4 +125,5 @@
 <url><loc>/apis/qdrant/</loc></url>
 <url><loc>/apis/langfuse/</loc></url>
 <url><loc>/apis/mem0/</loc></url>
+<url><loc>/apis/botpress/</loc></url>
 </urlset>
