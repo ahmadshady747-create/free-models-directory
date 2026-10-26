@@ -448,5 +448,14 @@
     "provider": "Langflow Cloud",
     "source": "https://www.langflow.org/",
     "type": "إضافة"
+  },
+  {
+    "date": "2026-10-26",
+    "model": "إضافة Membase — إدخال سادس لفئة ذاكرة الوكلاء (حلقة التحسين العميق، الجولة 41)",
+    "new_limit": "إدخال جديد موثق جزئيا: حساب مجاني يشمل مخصصا أوليا من جولات المحادثة حسب أسئلة التوثيق الرسمي، بلا حدود عددية منشورة؛ بلا بيئة تنفيذ في المتصفح لسبب مكتوب (طبقة ذاكرة عبر SDK وMCP ومفاتيح وحاويات) مع مثال بحث عبر POST /v1/search على جهاز الزائر فقط؛ الإدخالات صارت 95 والموثقة جزئيا 64 وخريطة الموقع 101 <loc>",
+    "old_limit": "فئة ذاكرة الوكلاء بخمسة إدخالات (Mem0 Platform وZep Cloud وSupermemory وLetta Cloud وCognee Cloud)",
+    "provider": "Membase",
+    "source": "https://docs.membase.com/faq/",
+    "type": "إضافة"
   }
 ]

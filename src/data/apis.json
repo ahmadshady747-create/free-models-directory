@@ -5449,5 +5449,55 @@
     "verification_note": "الموقع الرسمي الحالي (https://www.langflow.org/) يعرض في قسم «From Notebook to Production» عبارة «Deploy yourself or sign up for a free cloud account» (انشر بنفسك أو سجّل لحساب سحابي مجاني)، ولا يعرض صفحة أسعار منفصلة ولا حدودا عددية للحساب السحابي المجاني في النص المسترجع، فبقيت الحدود العددية غير مؤكدة ولم يُدعَ سعر أو دوام دائم أو عدم اشتراط بطاقة. توثيق «Get started with the Langflow API» الرسمي (https://docs.langflow.org/api-reference-api-examples) يوثق نقطة POST /api/v1/run/{flow_id}?stream=false برأس x-api-key وجسم input_value وoutput_type وinput_type، وأن النشر المحلي يخدم عادة على المنفذ 7860 وأن النشر المستضاف يخدم على نطاق خدمة الاستضافة، لذلك بقي عنوان الخادم ومعرّف التدفق عنصرين نائبين في المثال بدل اختراع عنوان سحابي. شرط البطاقة غير مذكور في الموقع الرسمي فبقي غير معلن، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فيه فبقيت غير مؤكدة.",
     "verification_source": "https://www.langflow.org/",
     "website": "https://www.langflow.org/"
+  },
+  {
+    "auth": "مفتاح مطور (رأس Authorization: Bearer) بصيغة mbk_",
+    "card_required": "غير معلن",
+    "category": "agent-memory",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "طبقة ذاكرة موحدة لوكلاء وتطبيقات الذكاء الاصطناعي من Membase (بناء Unibase): ذاكرة واحدة عبر حاويات (Memories) ومصادر وملفات، يشاركها الوكلاء وأدوات الذكاء الاصطناعي مع تحكم بمستوى الوصول لكل مفتاح، وبحث واسترجاع عبر الجلسات بدل إعادة إدخال السياق في كل مرة.",
+    "docs": "https://docs.membase.com/build/getting-started/api-quickstart/",
+    "example_curl": "# استبدل YOUR_KEY بمفتاح المطور من تطبيق Membase (Connect › Skills › Manage keys › Create key)؛ نقطة البحث الرسمية POST /v1/search تتطلب حقل q، والمصادقة برأس Authorization: Bearer حسب مرجع الواجهة الرسمي، فراجع التوثيق الحالي قبل الاستخدام\ncurl -X POST \"https://api.app.membase.com/v1/search\" -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"q\": \"ما الذي قررناه بشأن قاعدة البيانات؟\"}'",
+    "example_fetch": "// استبدل YOUR_KEY بمفتاح المطور من تطبيق Membase؛ نقطة البحث الرسمية POST /v1/search تتطلب حقل q\nfetch('https://api.app.membase.com/v1/search', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ q: 'ما الذي قررناه بشأن قاعدة البيانات؟' }) })",
+    "free_limit": "حساب مجاني: يشمل مخصصا أوليا من جولات المحادثة (chat turns) حسب أسئلة التوثيق الرسمي؛ ولم ينشر التوثيق عدد الجولات ولا حدودا عددية أخرى للحساب المجاني، فبقيت غير مؤكدة",
+    "free_limit_scope": "للحساب المجاني في أسئلة التوثيق الرسمي",
+    "free_type": "حساب مجاني",
+    "https": true,
+    "id": "membase",
+    "key_url": "https://membase.com/",
+    "key_url_kind": "official_site",
+    "key_url_note": "الموقع الرسمي نفسه؛ إنشاء المفتاح يجري داخل التطبيق عبر Connect › Skills › Manage keys › Create key حسب دليل البدء الرسمي، ولم يُثبت في نص التوثيق المقروء رابط مباشر ثابت لصفحة المفاتيح، فلم يُخترع رابط مباشر.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "ذاكرة وكلاء وبحث عبر Membase",
+        "type": "text"
+      }
+    ],
+    "name": "Membase",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "طبقة ذاكرة لوكلاء الذكاء الاصطناعي تعمل عبر حزم SDK وخادم MCP ومفاتيح مطور وحاويات ذاكرة وبحث عبر جلسات متعددة، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://membase.com/",
+    "provider": "Membase",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "ذاكرة",
+      "وكلاء",
+      "بحث"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "أسئلة التوثيق الرسمي تقول إن الحساب المجاني يشمل مخصصا أوليا من جولات المحادثة، وإن الذاكرة المخزنة تبقى بعد نفاده لكن متابعة عمل المساعد تتطلب مصدر نموذج متاحا أو خطة مناسبة؛ ولم ينشر التوثيق عدد الجولات ولا شرط بطاقة، فبقيا غير مؤكد وغير معلن على الترتيب. ولا توجد صفحة أسعار منفصلة في الموقع الرسمي (صفحة /pricing تعيد صفحة غير موجودة)، فالمصدر هو التوثيق الرسمي نفسه. ومرجع الواجهة الرسمي يوثق القاعدة https://api.app.membase.com والمصادقة برأس Authorization: Bearer ونقطة POST /v1/search بحقل q المطلوب، ودليل البدء الرسمي يوثق إنشاء المفتاح عبر Connect › Skills › Manage keys › Create key بمستوى وصول وذاكرات محددة. وحالة CORS والاستخدام التجاري والتدريب غير مذكورة في التوثيق المقروء فبقيت غير مؤكدة.",
+    "verification_source": "https://docs.membase.com/faq/",
+    "website": "https://membase.com/"
   }
 ]
