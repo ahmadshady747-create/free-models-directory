@@ -5097,5 +5097,55 @@
     "verification_note": "صفحة الأسعار الرسمية تصف الخطة المجانية (Free) بأنها 0 دولار شهريا و«Free forever» وتشمل مليون رمز ومساحة عمل واحدة ومستخدمين ومكالمات API بلا حد وتكاملات وكلاء (Claude Code وCodex وMCP)، وملخصها «no card required»؛ ودليل البدء الرسمي يوجّه إلى إنشاء الحساب ثم إنشاء مفتاح API من لوحة التحكم، ومرجع الواجهة الرسمي يذكر أن سحابة Cognee تصادق برأس X-Api-Key وأن نقطة POST /api/v1/search تتطلب حقل query؛ قاعدة الواجهة لم تُثبت كعنوان ثابت واحد في النص المقروء من المرجع فبقيت عنصرا نائبا في المثال بدل اختراع عنوان، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة.",
     "verification_source": "https://www.cognee.ai/pricing",
     "website": "https://www.cognee.ai"
+  },
+  {
+    "auth": "مفتاح API من إعدادات StackAI (Settings → API Keys) للمشروع المنشور",
+    "card_required": "غير معلن",
+    "category": "agent-platforms",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "منصة لبناء ونشر وكلاء ذكاء اصطناعي للمؤسسات بصريا: استوديو سير عمل ووكلاء وقواعد معرفة وتكاملات مع أنظمة المؤسسات، مع نشر كمساعد محادثة أو نموذج أو واجهة برمجة؛ خطتها المجانية تشمل 500 تشغيل شهريا ومشروعين ومقعدا واحدا.",
+    "docs": "https://docs.stackai.com/guides-and-quickstarts/interfaces-and-end-user-experiences/publish-a-project-through-the-api",
+    "example_curl": "# استبدل YOUR_PROJECT_API_URL بنقطة النهاية المولدة لمشروعك المنشور من واجهة API في StackAI، واستبدل YOUR_KEY بمفتاح API من Settings → API Keys، وطابق أسماء حقول المدخلات مع مدخلات سير عملك؛ التوثيق الرسمي الحالي يوجّه إلى استخدام نقطة النهاية ومعرّفات المدخلات المولدة للمشروع نفسه، فلا يوجد جسم ثابت واحد لكل مشروع، وانسخ رأس المصادقة كما يظهر في الطلب المولد لمشروعك\ncurl -X POST \"https://YOUR_PROJECT_API_URL\" -H \"Authorization: Bearer <redacted>\" -H \"Content-Type: application/json\" -d '{\"YOUR_INPUT_FIELD\": \"مرحبا، ما الذي يمكنك فعله؟\"}'",
+    "example_fetch": "// استبدل YOUR_PROJECT_API_URL بنقطة النهاية المولدة لمشروعك المنشور من واجهة API في StackAI، واستبدل YOUR_KEY بمفتاح API من Settings → API Keys، وطابق أسماء حقول المدخلات مع مدخلات سير عملك\nfetch('https://YOUR_PROJECT_API_URL', { method: 'POST', headers: { 'Authorization': 'Bearer <redacted>', 'Content-Type': 'application/json' }, body: JSON.stringify({ 'YOUR_INPUT_FIELD': 'مرحبا، ما الذي يمكنك فعله؟' }) })",
+    "free_limit": "الخطة المجانية (Free): 500 تشغيل شهريا، مشروعان، مقعد واحد، دعم مجتمعي عبر Discord",
+    "free_limit_scope": "للخطة المجانية (Free) في صفحة الأسعار الرسمية",
+    "free_type": "خطة مجانية",
+    "https": true,
+    "id": "stack-ai",
+    "key_url": "https://www.stackai.com/auth/signup",
+    "key_url_kind": "signup",
+    "key_url_note": "زر «Try For Free» في بطاقة Free نفسها في صفحة الأسعار الرسمية؛ يفتح صفحة إنشاء حساب StackAI.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "بناء ونشر وكلاء ذكاء اصطناعي عبر StackAI",
+        "type": "text"
+      }
+    ],
+    "name": "Stack AI",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "منصة بناء وكلاء تعمل عبر استوديو مرئي ومساحات عمل ومشاريع منشورة بواجهات مولدة لكل مشروع، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط بعد بناء مشروعك ونشره.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://www.stackai.com/pricing",
+    "provider": "Stack AI",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "وكلاء",
+      "سير عمل",
+      "مؤسسات"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية تصف الخطة المجانية (Free) بأنها 0 دولار شهريا وتشمل 500 تشغيل شهريا ومشروعين ومقعدا واحدا ودعما مجتمعيا عبر Discord، وجدول المقارنة في الصفحة نفسها يؤكد 500 تشغيل ومقعدا واحدا ومشروعين؛ ولم تذكر الصفحة اشتراط بطاقة أو عدمه ولا مدة محددة ولا وصف «free forever»، فبقي شرط البطاقة غير معلن ولم يُدعَ دوام دائم. توثيق «Publish a project through the API» الرسمي يقول إن واجهة API للمشروع المنشور تستخدم نقطة نهاية ومعرّفات مدخلات مولدة للمشروع نفسه ويجب أن تطابق الحقول مدخلات سير العمل، وأن المفاتيح تُدار من Settings → API Keys، لذلك بقيت نقطة النهاية وحقل المدخل عنصرين نائبين في المثال بدل اختراع عنوان أو حقل؛ وقسم الاستدلال القديم (Legacy) في التوثيق نفسه يذكر نقطة POST /inference/v0/run/{org_id}/{flow_id} برأس Bearer وحقل مثال in-0، لكنه لم يُستخدم مثالا رئيسيا لأنه مصنف Legacy ولأن التوثيق الحالي يوجّه إلى نقطة المشروع المولدة. حالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة. مرشح مستبعد في هذه الجولة نفسها قبل الاختيار: Flowise Cloud رغم أن صفحته الرئيسية ما زالت تعرض خطة Free (تدفقان و100 تنبؤ شهريا)، لأن صفحة الإيقاف الرسمية نفسها (flowiseai.com/sunset) تعلن تجميد التطوير 2026-07-29 ونهاية العمر 2026-08-31، فإضافته الآن كانت ستضلّل الزائر؛ لم يُعتمد ولم يُدخل.",
+    "verification_source": "https://www.stackai.com/pricing",
+    "website": "https://www.stackai.com"
   }
 ]
