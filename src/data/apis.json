@@ -4789,5 +4789,56 @@
     "verification_note": "صفحة الأسعار الرسمية تعرض الطبقة المجانية (Free) بسعر 0 دولار وتصفها بأنها للنماذج الأولية والمشاريع الهواة، وتشمل 10 آلاف استعلام/تحديث يوميا وحتى 200 مليون متجه × بُعد وبُعدا أقصى 1536 وحتى 100 مساحة اسم وحد بيانات/بيانات وصفية 1 غيغابايت، وجدول المقارنة فيها يجعل السعر الشهري وسعر الطلب وسعر التخزين وسعر النطاق الترددي كلها مجانية لهذه الطبقة، وأسئلتها تقول إنه يمكن إنشاء حتى 10 فهارس مجانا؛ وأسئلتها تقول أيضا إن إدخال بطاقة يرقّي الفهرس إلى الدفع حسب الاستخدام، لكنها لا تنص صراحة أن الطبقة المجانية بلا بطاقة فبقي شرط البطاقة غير معلن؛ ونقطة upsert-data ورأس المصادقة (Bearer) من التوثيق الرسمي نفسه، مع تنبيهه أن هذه النقطة تتطلب فهرسا أُنشئ بنموذج تضمين؛ وحالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة.",
     "verification_source": "https://upstash.com/pricing/vector",
     "website": "https://upstash.com"
+  },
+  {
+   "auth": "مفتاح Opik API واسم مساحة العمل (رأسان Authorization وComet-Workspace)",
+   "card_required": "غير معلن",
+   "category": "evaluation-observability",
+   "commercial": "غير معلن",
+   "cors": "غير مؤكد",
+   "description_ar": "منصة تتبع ومراقبة وتقييم مفتوحة المصدر لتطبيقات ووكلاء الذكاء الاصطناعي من Comet: تتبع المسارات وتحليلها، مجموعات اختبار وتقييمات آلية، مكتبة تلقينات، وتكامل أصلي مع OpenTelemetry، مع ملعب وكلاء يعمل على جهاز المطور.",
+   "docs": "https://www.comet.com/docs/opik/integrations/opentelemetry",
+   "example_curl": "# التتبع نفسه يجري عادة عبر حزم SDK؛ هذه نقطة OTLP الرسمية من التوثيق، وتحتاج جسما بصيغة OTLP (protobuf) لا طلبا فارغا، ورأس Authorization يحمل المفتاح الخام بلا بادئة Bearer، وراجع التوثيق الحالي قبل الاستخدام\ncurl -X POST \"https://www.comet.com/opik/api/v1/private/otel/v1/traces\" -H \"Authorization: YOUR_KEY\" -H \"Comet-Workspace: YOUR_WORKSPACE\" -H \"projectName: YOUR_PROJECT\" -H \"Content-Type: application/x-protobuf\" --data-binary @trace.pb",
+   "example_fetch": "// التتبع نفسه يجري عادة عبر حزم SDK؛ هذه نقطة OTLP الرسمية من التوثيق، وتحتاج جسما بصيغة OTLP (protobuf) لا طلبا فارغا، ورأس Authorization يحمل المفتاح الخام بلا بادئة Bearer\nfetch('https://www.comet.com/opik/api/v1/private/otel/v1/traces', { method: 'POST', headers: { 'Authorization': 'YOUR_KEY', 'Comet-Workspace': 'YOUR_WORKSPACE', 'projectName': 'YOUR_PROJECT', 'Content-Type': 'application/x-protobuf' }, body: OTLP_PROTOBUF_BYTES })",
+   "free_limit": "خطة Free Cloud المجانية (0 دولار): حتى 10 أعضاء فريق، 25 ألف span شهريا، احتفاظ بالبيانات 60 يوما",
+   "free_limit_scope": "لخطة Free Cloud في صفحة الأسعار الرسمية",
+   "free_type": "خطة مجانية",
+   "https": true,
+   "id": "opik",
+   "key_url": "https://www.comet.com/signup",
+   "key_url_kind": "signup",
+   "key_url_note": "زر «Get Started» في بطاقة Free Cloud في صفحة الأسعار الرسمية ينقل إلى إنشاء حساب Comet؛ ومن الحساب تنسخ مفتاح Opik API واسم مساحة العمل من إعدادات الحساب حسب التوثيق الرسمي.",
+   "last_checked": "2026-10-26",
+   "last_price_checked": "2026-10-26",
+   "live_try": null,
+   "media": [
+    "text"
+   ],
+   "models": [
+    {
+     "name": "تتبع وتقييم تطبيقات ووكلاء الذكاء الاصطناعي عبر Opik",
+     "type": "text"
+    }
+   ],
+   "name": "Opik",
+   "offer_expires_at": null,
+   "offer_temporary": false,
+   "playground_block_reason": "منصة تتبع ومراقبة وتقييم تعمل عبر حزم SDK ومفاتيح API ومساحات عمل ولوحة تحكم، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+   "playground_status": "not-suitable",
+   "playgrounds": [],
+   "pricing": "https://www.comet.com/site/pricing/",
+   "provider": "Comet",
+   "signup": "حساب مجاني متاح",
+   "status": "موثق جزئيا",
+   "tags": [
+    "مراقبة",
+    "تقييم",
+    "تتبع",
+    "وكلاء"
+   ],
+   "training_use": "غير معلن",
+   "verification_note": "صفحة الأسعار الرسمية تعرض خطة Free Cloud بسعر 0 دولار وتصفها بأنها للأفراد، وتشمل حتى 10 أعضاء فريق و25 ألف span شهريا واحتفاظا بالبيانات 60 يوما، وتشمل تتبع الوكلاء وتحليلها ومجموعات الاختبار وملعب الوكلاء؛ وزر الخطة المدفوعة المجاور يحمل «Start Free Trial» بينما Free Cloud خطة مجانية بزر «Get Started» لا تجربة، فلم تُعدّ عرضا مؤقتا؛ وشرط البطاقة غير مذكور في صفحة الأسعار نفسها فبقي غير معلن، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فبقيت غير مؤكدة؛ ونقطة OTLP ورأسا المصادقة (المفتاح الخام بلا بادئة Bearer واسم مساحة العمل) من التوثيق الرسمي نفسه.",
+   "verification_source": "https://www.comet.com/site/pricing/",
+   "website": "https://www.comet.com"
   }
 ]
