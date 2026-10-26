@@ -5047,5 +5047,55 @@
     "verification_note": "دليل الإشراف الرسمي في منصة OpenAI ينص صراحة أن نقطة الإشراف مجانية الاستخدام (The moderation endpoint is free to use)، وأن نموذج omni-moderation-latest يقبل نصوصا وصورا ولا يصنّف الصوت، وأن ملفات الصور حتى 20 ميغابايت؛ ولم يذكر الدليل حدا عدديا للاستخدام المجاني ولا شرط بطاقة ولا استخداما تجاريا ولا تدريبا ولا حالة CORS فبقيت غير مؤكدة.",
     "verification_source": "https://platform.openai.com/docs/guides/moderation",
     "website": "https://openai.com"
+  },
+  {
+    "auth": "مفتاح API (رأس X-Api-Key)",
+    "card_required": "لا — لا حاجة إلى بطاقة حسب صفحة الأسعار الرسمية",
+    "category": "agent-memory",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "محرك ذاكرة معرفي سحابي لوكلاء الذكاء الاصطناعي: يحوّل المستندات والبيانات المرفوعة إلى رسم بياني معرفي قابل للبحث، فيعمل الوكيل على سياق دائم عبر الجلسات بدل إعادة إدخال السياق في كل مرة.",
+    "docs": "https://docs.cognee.ai/cognee-cloud/quickstart",
+    "example_curl": "# استبدل YOUR_COGNEE_CLOUD_BASE بقاعدة واجهة Cognee Cloud الخاصة بك من التوثيق الرسمي أو لوحة التحكم، واستبدل YOUR_KEY بمفتاحك من لوحة تحكم Cognee Cloud؛ نقطة البحث الرسمية POST /api/v1/search تتطلب حقل query، والمصادقة في سحابة Cognee برأس X-Api-Key حسب مرجع الواجهة الرسمي، فأضف بياناتك وعالجها (cognify) قبل البحث، وراجع التوثيق الحالي قبل الاستخدام\ncurl -X POST \"https://YOUR_COGNEE_CLOUD_BASE/api/v1/search\" -H \"X-Api-Key: YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"query\": \"ما الذي أعرفه عن تفضيلات المستخدم؟\"}'",
+    "example_fetch": "// استبدل YOUR_COGNEE_CLOUD_BASE بقاعدة واجهة Cognee Cloud الخاصة بك من التوثيق الرسمي أو لوحة التحكم، واستبدل YOUR_KEY بمفتاحك من لوحة تحكم Cognee Cloud؛ نقطة البحث الرسمية POST /api/v1/search تتطلب حقل query، والمصادقة في سحابة Cognee برأس X-Api-Key حسب مرجع الواجهة الرسمي\nfetch('https://YOUR_COGNEE_CLOUD_BASE/api/v1/search', { method: 'POST', headers: { 'X-Api-Key': 'YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ query: 'ما الذي أعرفه عن تفضيلات المستخدم؟' }) })",
+    "free_limit": "الخطة المجانية (Free): 0 دولار شهريا، تشمل مليون رمز (1M tokens) ومساحة عمل واحدة، مع مستخدمين ومكالمات API بلا حد، وتكاملات وكلاء (Claude Code وCodex وMCP)، بلا بطاقة ائتمانية",
+    "free_limit_scope": "للخطة المجانية (Free) في صفحة الأسعار الرسمية",
+    "free_type": "خطة مجانية دائمة",
+    "https": true,
+    "id": "cognee-cloud",
+    "key_url": "https://platform.cognee.ai/sign-up",
+    "key_url_kind": "signup",
+    "key_url_note": "زر «Start building» في بطاقة Free نفسها في صفحة الأسعار الرسمية؛ أنشئ حسابا من هناك ثم أنشئ مفتاح API من لوحة التحكم حسب دليل البدء الرسمي.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "ذاكرة وكلاء وبحث معرفي عبر Cognee Cloud",
+        "type": "text"
+      }
+    ],
+    "name": "Cognee Cloud",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "محرك ذاكرة معرفي يعمل عبر حزم SDK ومفاتيح API ومساحات عمل ومجموعات بيانات ومعالجة (cognify) ثم بحث عبر جلسات متعددة، وليس استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://www.cognee.ai/pricing",
+    "provider": "Cognee",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "ذاكرة",
+      "وكلاء",
+      "رسم بياني معرفي"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية تصف الخطة المجانية (Free) بأنها 0 دولار شهريا و«Free forever» وتشمل مليون رمز ومساحة عمل واحدة ومستخدمين ومكالمات API بلا حد وتكاملات وكلاء (Claude Code وCodex وMCP)، وملخصها «no card required»؛ ودليل البدء الرسمي يوجّه إلى إنشاء الحساب ثم إنشاء مفتاح API من لوحة التحكم، ومرجع الواجهة الرسمي يذكر أن سحابة Cognee تصادق برأس X-Api-Key وأن نقطة POST /api/v1/search تتطلب حقل query؛ قاعدة الواجهة لم تُثبت كعنوان ثابت واحد في النص المقروء من المرجع فبقيت عنصرا نائبا في المثال بدل اختراع عنوان، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة.",
+    "verification_source": "https://www.cognee.ai/pricing",
+    "website": "https://www.cognee.ai"
   }
 ]
