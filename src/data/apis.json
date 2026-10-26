@@ -4178,5 +4178,55 @@
     "verification_note": "صفحة الأسعار الرسمية تصف الطبقة المجانية (Free – Web) بأنها تشمل 5000 سجل نصي شهريا و5000 صورة شهريا، وأن السجل النصي حتى 1000 حرف، وأن الاستخدام يتوقف عند بلوغ الحد بلا تجاوزات على الطبقة المجانية؛ شرط البطاقة وحالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة.",
     "verification_source": "https://azure.microsoft.com/en-ca/pricing/details/cognitive-services/content-safety/",
     "website": "https://azure.microsoft.com"
+  },
+  {
+    "auth": "مفتاح API",
+    "card_required": "غير معلن",
+    "category": "vector-databases",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "قاعدة بيانات متجهة مُدارة بلا خوادم للبحث الدلالي واسترجاع RAG، مع فهارس كثيفة ومتفرقة ونصية؛ خطتها المجانية (Starter) للتجربة والتطبيقات الصغيرة.",
+    "docs": "https://docs.pinecone.io/guides/index-data/create-an-index",
+    "example_curl": "# استبدل YOUR_KEY بمفتاح API من وحدة تحكم Pinecone؛ الصيغة من دليل إنشاء فهرس الرسمي، وراجع التوثيق الحالي قبل الاستخدام\ncurl -X POST \"https://api.pinecone.io/indexes\" -H \"Api-Key: YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"name\": \"example-index\", \"dimension\": 1536, \"metric\": \"cosine\", \"spec\": {\"serverless\": {\"cloud\": \"aws\", \"region\": \"us-east-1\"}}}'",
+    "example_fetch": "// استبدل YOUR_KEY بمفتاح API من وحدة تحكم Pinecone؛ الصيغة من دليل إنشاء فهرس الرسمي\nfetch('https://api.pinecone.io/indexes', { method: 'POST', headers: { 'Api-Key': 'YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ name: 'example-index', dimension: 1536, metric: 'cosine', spec: { serverless: { cloud: 'aws', region: 'us-east-1' } } }) })",
+    "free_limit": "الخطة المجانية (Starter): تخزين حتى 2 غيغابايت، ووحدات كتابة حتى مليوني وحدة شهريا، ووحدات قراءة حتى مليون وحدة شهريا، وخروج حتى 1 غيغابايت شهريا، وحتى 5 فهارس، في منطقة us-east-1 على AWS",
+    "free_limit_scope": "للخطة المجانية (Starter) في صفحة الأسعار الرسمية",
+    "free_type": "خطة مجانية",
+    "https": true,
+    "id": "pinecone",
+    "key_url": "https://app.pinecone.io/",
+    "key_url_kind": "signup",
+    "key_url_note": "يفتح وحدة تحكم Pinecone (رابط «ابدأ» الرسمي في صفحة الأسعار)؛ أنشئ حسابا وفهرسا من هناك واحصل على مفتاح API الخاص بك.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "embeddings"
+    ],
+    "models": [
+      {
+        "name": "بحث متجهي وتخزين تضمينات عبر Pinecone",
+        "type": "embeddings"
+      }
+    ],
+    "name": "Pinecone",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "قاعدة بيانات متجهة بفهارس سحابية خاصة بكل حساب: عملياتها (إنشاء فهرس، إدراج متجهات، بحث) تجري على فهرس خاص بالمستخدم ومفتاحه، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://www.pinecone.io/pricing/",
+    "provider": "Pinecone",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "قاعدة بيانات متجهة",
+      "استرجاع",
+      "RAG"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية تصف الخطة المجانية (Starter) بأنها مجانية للتجربة والتطبيقات الصغيرة، وتشمل تخزينا حتى 2 غيغابايت ووحدات كتابة حتى مليوني وحدة شهريا ووحدات قراءة حتى مليون وحدة شهريا وخروجا حتى 1 غيغابايت شهريا وحتى 5 فهارس في منطقة us-east-1 على AWS، مع Pinecone Database وInference وAssistant؛ شرط البطاقة غير مذكور في نص صفحة الأسعار المرئي فبقي غير معلن، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فيها فبقيت غير مؤكدة.",
+    "verification_source": "https://www.pinecone.io/pricing/",
+    "website": "https://www.pinecone.io"
   }
 ]

@@ -127,4 +127,5 @@
 <url><loc>/apis/mem0/</loc></url>
 <url><loc>/apis/botpress/</loc></url>
 <url><loc>/apis/azure-ai-content-safety/</loc></url>
+<url><loc>/apis/pinecone/</loc></url>
 </urlset>
