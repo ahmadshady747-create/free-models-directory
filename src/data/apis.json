@@ -4228,5 +4228,56 @@
     "verification_note": "صفحة الأسعار الرسمية تصف الخطة المجانية (Starter) بأنها مجانية للتجربة والتطبيقات الصغيرة، وتشمل تخزينا حتى 2 غيغابايت ووحدات كتابة حتى مليوني وحدة شهريا ووحدات قراءة حتى مليون وحدة شهريا وخروجا حتى 1 غيغابايت شهريا وحتى 5 فهارس في منطقة us-east-1 على AWS، مع Pinecone Database وInference وAssistant؛ شرط البطاقة غير مذكور في نص صفحة الأسعار المرئي فبقي غير معلن، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فيها فبقيت غير مؤكدة.",
     "verification_source": "https://www.pinecone.io/pricing/",
     "website": "https://www.pinecone.io"
+  },
+  {
+    "auth": "مفتاح API (شخصي أو خدمة أو تتبع فقط، حسب الاستخدام)",
+    "card_required": "غير معلن",
+    "category": "evaluation-observability",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "منصة تتبع ومراقبة وتقييم لتطبيقات ووكلاء الذكاء الاصطناعي: تتبع مسارات التنفيذ والتكاليف والأخطاء، وإدارة المطالبات، وتقييم بمجموعات بيانات وتعليقات بشرية.",
+    "docs": "https://docs.langchain.com/langsmith/create-account-api-key",
+    "example_curl": "# التتبع نفسه يجري عادة عبر SDK؛ هذا مثال لإدراج مفاتيح التتبع من صفحة إنشاء الحساب والمفتاح الرسمية، وراجع التوثيق الحالي قبل الاستخدام\ncurl https://api.smith.langchain.com/api/v1/orgs/current/tracing-keys -H \"X-Api-Key: YOUR_KEY\"",
+    "example_fetch": "// التتبع نفسه يجري عادة عبر SDK؛ هذا مثال لإدراج مفاتيح التتبع من صفحة إنشاء الحساب والمفتاح الرسمية\nfetch('https://api.smith.langchain.com/api/v1/orgs/current/tracing-keys', { headers: { 'X-Api-Key': 'YOUR_KEY' } })",
+    "free_limit": "خطة Developer: حتى 5000 تتبع أساسي شهريا، ثم الدفع حسب الاستخدام، ومقعد واحد، واحتفاظ بالتتبعات الأساسية 14 يوما",
+    "free_limit_scope": "لخطة Developer المجانية في صفحة الأسعار الرسمية",
+    "free_type": "خطة مجانية",
+    "https": true,
+    "id": "langsmith",
+    "key_url": "https://smith.langchain.com/",
+    "key_url_kind": "console",
+    "key_url_note": "يفتح منصة LangSmith (رابط «ابدأ مجانا» الرسمي في صفحة الأسعار)؛ أنشئ حسابا من هناك واحصل على مفتاح API من إعدادات الحساب.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "تتبع وتقييم تطبيقات ووكلاء الذكاء الاصطناعي عبر LangSmith",
+        "type": "text"
+      }
+    ],
+    "name": "LangSmith",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "منصة تتبع ومراقبة وتقييم تعمل عبر حزم SDK ومفاتيح مشروع ولوحة تحكم، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://www.langchain.com/pricing",
+    "provider": "LangChain",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "مراقبة",
+      "تقييم",
+      "تتبع",
+      "وكلاء"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية تصف خطة Developer بأنها مجانية لمستخدم واحد (0 دولار للمقعد شهريا) وتشمل حتى 5000 تتبع أساسي شهريا ثم الدفع حسب الاستخدام، ومقعدا واحدا كحد أقصى، والتتبعات الأساسية باحتفاظ 14 يوما؛ شرط البطاقة غير مذكور في صفحة الأسعار نفسها فبقي غير معلن، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فيها فبقيت غير مؤكدة.",
+    "verification_source": "https://www.langchain.com/pricing",
+    "website": "https://www.langchain.com"
   }
 ]
