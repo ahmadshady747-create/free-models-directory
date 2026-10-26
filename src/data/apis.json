@@ -4632,5 +4632,61 @@
     "verification_note": "صفحة الأسعار الرسمية تصف الخطة المجانية (Free) بأنها 0 دولار شهريا وتشمل 5 دولارات من الأرصدة تُجدد كل شهر، وأسئلتها تقول إن أرصدة الاشتراك تُعاد شهريا وإن الاستخدام يتطلب رصيدا متاحا مع إمكانية شراء أرصدة إضافية من لوحة التحكم؛ شرط البطاقة غير مذكور في صفحة الأسعار نفسها فبقي غير معلن، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فيها فبقيت غير مؤكدة.",
     "verification_source": "https://supermemory.ai/pricing",
     "website": "https://supermemory.ai"
+  },
+  {
+    "auth": "معرّفا اعتماد (api_user وapi_secret) في حقول نموذج الطلب",
+    "card_required": "لا — لا حاجة إلى بطاقة حسب صفحة التسجيل الرسمية",
+    "category": "ai-guardrails",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "واجهة فحص محتوى من Sightengine لتطبيقات الذكاء الاصطناعي: اعتدال الصور (كشف المحتوى غير المرغوب) واعتدال النصوص (الألفاظ النابية والمعلومات الشخصية والنص الضار) وكشف الصور المولدة بالذكاء الاصطناعي والتزييف العميق؛ الخطة المجانية تشمل فحص الصور والنصوص وكشف الصور المولدة، دون دعم الفيديو والبث المباشر.",
+    "docs": "https://sightengine.com/docs/ai-generated-image-detection",
+    "example_curl": "# استبدل YOUR_API_USER وYOUR_API_SECRET ببيانات اعتمادك من لوحة تحكم Sightengine؛ الصيغة من التوثيق الرسمي لكشف الصور المولدة بالذكاء الاصطناعي، ونماذج الاعتدال الأخرى تُمرر في الحقل models بالطريقة نفسها\ncurl -X POST \"https://api.sightengine.com/1.0/check.json\" -F \"media=@/path/to/image.jpg\" -F \"models=genai\" -F \"api_user=YOUR_API_USER\" -F \"api_secret=YOUR_API_SECRET\"",
+    "example_fetch": "// استبدل YOUR_API_USER وYOUR_API_SECRET ببيانات اعتمادك من لوحة تحكم Sightengine؛ الصيغة من التوثيق الرسمي لكشف الصور المولدة بالذكاء الاصطناعي\nconst form = new FormData(); form.append('media', YOUR_IMAGE_FILE); form.append('models', 'genai'); form.append('api_user', 'YOUR_API_USER'); form.append('api_secret', 'YOUR_API_SECRET');\nfetch('https://api.sightengine.com/1.0/check.json', { method: 'POST', body: form })",
+    "free_limit": "الخطة المجانية (Free): تشمل اعتدال الصور واعتدال النصوص وكشف الصور المولدة بالذكاء الاصطناعي، بسعة طلب واحد في الثانية وحجم صورة أقصى 12 ميغابايت؛ دعم الفيديو والبث المباشر غير مشمول فيها",
+    "free_limit_scope": "للخطة المجانية (Free) في صفحة الأسعار الرسمية",
+    "free_type": "خطة مجانية",
+    "https": true,
+    "id": "sightengine",
+    "key_url": "https://dashboard.sightengine.com/signup",
+    "key_url_kind": "signup",
+    "key_url_note": "يفتح صفحة إنشاء حساب مجاني الرسمية؛ نصها «Create your free account» و«No credit card required»، ومنها تحصل على بيانات الاعتماد (api_user وapi_secret) من لوحة التحكم.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "text",
+      "image"
+    ],
+    "models": [
+      {
+        "name": "اعتدال الصور وكشف الصور المولدة بالذكاء الاصطناعي",
+        "type": "image"
+      },
+      {
+        "name": "اعتدال النصوص",
+        "type": "text"
+      }
+    ],
+    "name": "Sightengine",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "واجهة فحص محتوى تعمل عبر رفع ملفات أو روابط وسائط ومفاتيح اعتماد (api_user وapi_secret) وفحص قوائم نماذج متعددة، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://sightengine.com/pricing",
+    "provider": "Sightengine",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "حواجز أمان",
+      "فحص محتوى",
+      "اعتدال",
+      "كشف التزييف"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية تعرض عمود الخطة المجانية (Free) شاملا اعتدال الصور واعتدال النصوص وكشف الصور المولدة بالذكاء الاصطناعي، وسعة طلب واحد في الثانية وحجم صورة أقصى 12 ميغابايت، مع استبعاد دعم الفيديو والبث المباشر منها؛ وتوثيق كشف الصور المولدة يقول إن طبقة مجانية متاحة للاختبار والاستخدام الشخصي، وصفحة التسجيل الرسمية تقول «Create your free account» و«No credit card required»؛ رقم شهري لعدد العمليات غير مذكور في النص المقروء من صفحة الأسعار الرسمية فلم يُعتمد أي رقم له، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فيها فبقيت غير مؤكدة.",
+    "verification_source": "https://sightengine.com/pricing",
+    "website": "https://sightengine.com"
   }
 ]
