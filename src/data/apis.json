@@ -4330,5 +4330,55 @@
     "verification_note": "صفحة الأسعار الرسمية تصف خطة Sandbox بأنها مجانية وتشمل 200 رصيد رسائل (تُستهلك حسب نوع النموذج، وبعد نفادها يمكن استخدام مفتاح API خاص) ومساحة عمل فريق واحدة وعضوا واحدا و5 تطبيقات و50 مستند معرفة و50 ميغابايت تخزين بيانات معرفة و10 طلبات معرفة بالدقيقة و3000 حدث تشغيل وحتى مشغلين اثنين لكل سير عمل و10 حصص تعليق توضيحي وسجل 30 يوما و5000 حد مكالمات API شهريا؛ شرط البطاقة غير مذكور في صفحة الأسعار نفسها فبقي غير معلن، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فيها فبقيت غير مؤكدة.",
     "verification_source": "https://dify.ai/pricing/dify-cloud",
     "website": "https://dify.ai"
+  },
+  {
+    "auth": "مفتاح API (رأس Api-Key)",
+    "card_required": "غير معلن",
+    "category": "agent-memory",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "طبقة ذاكرة زمنية لوكلاء الذكاء الاصطناعي: تبني رسما بيانيا للسياق من رسائل المحادثات وبيانات الأعمال، وتتتبع متى أصبحت الحقائق صحيحة ومتى توقفت، لتسترجع السياق ذا الصلة قبل توليد النموذج.",
+    "docs": "https://help.getzep.com/quick-start-guide",
+    "example_curl": "# استبدل YOUR_KEY بمفتاحك من لوحة تحكم Zep Cloud؛ الذاكرة تعمل عادة عبر حزم SDK، وهذا المثال ترجمة REST لمفهوم إنشاء المستخدم من دليل البدء الرسمي (قاعدة الواجهة https://api.getzep.com ورأس Api-Key)، فراجع التوثيق الحالي قبل الاستخدام\ncurl -X POST \"https://api.getzep.com/api/v2/users\" -H \"Authorization: Api-Key YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"user_id\": \"user123\", \"first_name\": \"Jane\", \"last_name\": \"Smith\"}'",
+    "example_fetch": "// استبدل YOUR_KEY بمفتاحك من لوحة تحكم Zep Cloud؛ الذاكرة تعمل عادة عبر حزم SDK، وهذا المثال ترجمة REST لمفهوم إنشاء المستخدم من دليل البدء الرسمي، فراجع التوثيق الحالي قبل الاستخدام\nfetch('https://api.getzep.com/api/v2/users', { method: 'POST', headers: { 'Authorization': 'Api-Key YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ user_id: 'user123', first_name: 'Jane', last_name: 'Smith' }) })",
+    "free_limit": "الخطة المجانية: 10 آلاف رصيد شهريا (الرصيد يُستهلك حسب حجم الحلقة: رصيد واحد لكل حلقة حتى 350 بايت، ورصيد إضافي لكل 350 بايت إضافية أو جزء منها)، مشروعان، مقعد واحد لخادم Context MCP، 5 أنواع كيانات وحواف مخصصة، بلا ترحيل رصيد وبلا تعبئة تلقائية، وحدود معدل متغيرة ومعالجة حلقات بأولوية أقل",
+    "free_limit_scope": "للخطة المجانية في صفحة الأسعار الرسمية",
+    "free_type": "خطة مجانية",
+    "https": true,
+    "id": "zep",
+    "key_url": "https://app.getzep.com/api/auth/register",
+    "key_url_kind": "signup",
+    "key_url_note": "يفتح صفحة التسجيل في Zep Cloud (رابط «Start free» الرسمي في صفحة الأسعار)؛ أنشئ حسابا من هناك واحصل على مفتاح API من لوحة التحكم.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "ذاكرة زمنية لوكلاء الذكاء الاصطناعي عبر Zep Cloud",
+        "type": "text"
+      }
+    ],
+    "name": "Zep Cloud",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "طبقة ذاكرة زمنية لوكلاء الذكاء الاصطناعي تعمل عبر حزم SDK ومفاتيح API ومستخدمين وسلاسل محادثة ورسوم بيانية للسياق عبر جلسات متعددة، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://www.getzep.com/pricing/",
+    "provider": "Zep",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "ذاكرة",
+      "وكلاء",
+      "رسم بياني للسياق"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية تصف البدء المجاني بأنه 10 آلاف رصيد شهريا مع حدود، وأسئلة الصفحة نفسها تحدد حدود الخطة المجانية: 10 آلاف رصيد شهريا بلا ترحيل وبلا تعبئة تلقائية، ومشروعان، ومقعد واحد لخادم Context MCP، و5 أنواع كيانات وحواف مخصصة، وحدود معدل متغيرة ومعالجة حلقات بأولوية أقل، ورصيد واحد لكل حلقة حتى 350 بايت ورصيد إضافي لكل 350 بايت إضافية أو جزء منها؛ شرط البطاقة غير مذكور في صفحة الأسعار نفسها فبقي غير معلن، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فيها فبقيت غير مؤكدة.",
+    "verification_source": "https://www.getzep.com/pricing/",
+    "website": "https://www.getzep.com"
   }
 ]

@@ -130,4 +130,5 @@
 <url><loc>/apis/pinecone/</loc></url>
 <url><loc>/apis/langsmith/</loc></url>
 <url><loc>/apis/dify/</loc></url>
+<url><loc>/apis/zep/</loc></url>
 </urlset>
