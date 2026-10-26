@@ -4279,5 +4279,56 @@
     "verification_note": "صفحة الأسعار الرسمية تصف خطة Developer بأنها مجانية لمستخدم واحد (0 دولار للمقعد شهريا) وتشمل حتى 5000 تتبع أساسي شهريا ثم الدفع حسب الاستخدام، ومقعدا واحدا كحد أقصى، والتتبعات الأساسية باحتفاظ 14 يوما؛ شرط البطاقة غير مذكور في صفحة الأسعار نفسها فبقي غير معلن، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فيها فبقيت غير مؤكدة.",
     "verification_source": "https://www.langchain.com/pricing",
     "website": "https://www.langchain.com"
+  },
+  {
+    "auth": "مفتاح API للتطبيق (Bearer) مع معرّف مستخدم",
+    "card_required": "غير معلن",
+    "category": "agent-platforms",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "منصة لبناء ونشر تطبيقات ووكلاء ذكاء اصطناعي بصريا: استوديو تطبيقات ووكيل وسير عمل وتدفق محادثة، مع قاعدة معرفة للاسترجاع المعزز ونشر كتطبيق ويب أو واجهة برمجة؛ خطتها المجانية Sandbox تشمل 200 رصيد رسائل و5 تطبيقات.",
+    "docs": "https://docs.dify.ai/",
+    "example_curl": "# بعد بناء تطبيقك في Dify Cloud، استبدل YOUR_KEY بمفتاح API للتطبيق من صفحة API Access داخل تطبيقك؛ الصيغة من واجهة رسائل المحادثة في توثيق Dify (POST /v1/chat-messages)، وراجع التوثيق الحالي قبل الاستخدام\ncurl -X POST \"https://api.dify.ai/v1/chat-messages\" -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"inputs\": {}, \"query\": \"مرحبا، ما الذي يمكنك فعله؟\", \"response_mode\": \"blocking\", \"user\": \"user123\"}'",
+    "example_fetch": "// بعد بناء تطبيقك في Dify Cloud، استبدل YOUR_KEY بمفتاح API للتطبيق من صفحة API Access داخل تطبيقك؛ الصيغة من واجهة رسائل المحادثة في توثيق Dify\nfetch('https://api.dify.ai/v1/chat-messages', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ inputs: {}, query: 'مرحبا، ما الذي يمكنك فعله؟', response_mode: 'blocking', user: 'user123' }) })",
+    "free_limit": "خطة Sandbox المجانية: 200 رصيد رسائل، 5 تطبيقات، 50 مستند معرفة، 50 ميغابايت تخزين بيانات معرفة، 10 طلبات معرفة بالدقيقة، 3000 حدث تشغيل، حتى مشغلين اثنين لكل سير عمل، 10 حصص تعليق توضيحي، سجل 30 يوما، 5000 حد مكالمات API شهريا",
+    "free_limit_scope": "لخطة Sandbox المجانية في صفحة الأسعار الرسمية",
+    "free_type": "خطة مجانية",
+    "https": true,
+    "id": "dify",
+    "key_url": "https://cloud.dify.ai",
+    "key_url_kind": "console",
+    "key_url_note": "يفتح Dify Cloud (رابط «Start for Free» الرسمي في صفحة الأسعار)؛ أنشئ حسابا ومساحة عمل من هناك، ثم احصل على مفتاح API للتطبيق من صفحة API Access داخل تطبيقك.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "بناء ونشر تطبيقات ووكلاء ذكاء اصطناعي عبر Dify Cloud",
+        "type": "text"
+      }
+    ],
+    "name": "Dify Cloud",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "منصة بناء تطبيقات ووكلاء تعمل عبر استوديو مرئي ومساحات عمل وقواعد معرفة وتطبيقات منشورة بمفاتيح خاصة بكل تطبيق، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط بعد بناء تطبيقك ونشره.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://dify.ai/pricing/dify-cloud",
+    "provider": "Dify",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "وكلاء",
+      "بناء وكلاء",
+      "سير عمل",
+      "استرجاع"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية تصف خطة Sandbox بأنها مجانية وتشمل 200 رصيد رسائل (تُستهلك حسب نوع النموذج، وبعد نفادها يمكن استخدام مفتاح API خاص) ومساحة عمل فريق واحدة وعضوا واحدا و5 تطبيقات و50 مستند معرفة و50 ميغابايت تخزين بيانات معرفة و10 طلبات معرفة بالدقيقة و3000 حدث تشغيل وحتى مشغلين اثنين لكل سير عمل و10 حصص تعليق توضيحي وسجل 30 يوما و5000 حد مكالمات API شهريا؛ شرط البطاقة غير مذكور في صفحة الأسعار نفسها فبقي غير معلن، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فيها فبقيت غير مؤكدة.",
+    "verification_source": "https://dify.ai/pricing/dify-cloud",
+    "website": "https://dify.ai"
   }
 ]
