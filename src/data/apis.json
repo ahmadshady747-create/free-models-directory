@@ -5550,5 +5550,56 @@
     "verification_note": "صفحة الأسعار الرسمية في توثيق Mistral تدرج Mistral Moderation 2 تحت نماذج تصفية الأمان والإشراف وفحص السياسات بسعر Free للمدخل والمخرج؛ ودليل الإشراف الرسمي يقول إن الخدمة تعمل بنموذج mistral-moderation-2603 وتصنّف النصوص عبر فئات سياسة منها كسر الحماية، وأن النموذج السابق 2411 أُهمل في 2026-03-31؛ ومرجع API الرسمي يوثق نقطتي POST /v1/moderations للنص الخام وPOST /v1/chat/moderations للمحادثات، ومثال مرجع API يستخدم mistral-moderation-latest؛ ولم تذكر صفحة الأسعار حدا عدديا ولا شرط بطاقة ولا استخداما تجاريا ولا تدريبا ولا حالة CORS فبقيت غير مؤكدة.",
     "verification_source": "https://docs.mistral.ai/inference/pricing",
     "website": "https://mistral.ai"
+  },
+  {
+    "auth": "مفتاح Braintrust API برأس Authorization: Bearer حسب مرجع API الرسمي",
+    "card_required": "لا — لا حاجة إلى بطاقة حسب صفحة الأسعار الرسمية",
+    "category": "evaluation-observability",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "منصة تتبع وتقييم ومراقبة تطبيقات ووكلاء الذكاء الاصطناعي: تتبع المسارات والتجارب، وتقييم المخرجات بمقاييس مدمجة أو مخصصة أو مراجعة بشرية، وتحويل إخفاقات الإنتاج إلى مجموعات بيانات اختبار، ومراجعة النتائج ومقارنة التجارب من لوحة تحكم واحدة.",
+    "docs": "https://www.braintrust.dev/docs/api-reference/experiments/create-experiment",
+    "example_curl": "# التتبع العادي يجري عبر حزم SDK (Python أو TypeScript)؛ والمثال أدناه نقطة إنشاء تجربة من مرجع API الرسمي، وتحتاج معرّف مشروع حقيقيا من حسابك، فراجع المرجع الحالي قبل الاستخدام\ncurl -X POST \"https://api.braintrust.dev/v1/experiment\" -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"project_id\": \"YOUR_PROJECT_ID\", \"name\": \"تجربة-أولى\"}'",
+    "example_fetch": "// التتبع العادي يجري عبر حزم SDK؛ والمثال أدناه نقطة إنشاء تجربة من مرجع API الرسمي، وتحتاج معرّف مشروع حقيقيا من حسابك\nfetch('https://api.braintrust.dev/v1/experiment', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ project_id: 'YOUR_PROJECT_ID', name: 'تجربة-أولى' }) })",
+    "free_limit": "خطة Starter: رسم منصة 0 دولار شهريا، 1 غيغابايت بيانات معالجة شهريا، 10 آلاف نتيجة تقييم (score) شهريا، احتفاظ 14 يوما، مستخدمون ومشروعات وملاعب تجربة وتجارب ومجموعات بيانات بلا حد، ونتيجة مراجعة بشرية واحدة لكل مشروع",
+    "free_limit_scope": "لخطة Starter المجانية في صفحة الأسعار الرسمية",
+    "free_type": "خطة مجانية",
+    "https": true,
+    "id": "braintrust",
+    "key_url": "https://www.braintrust.dev/signup",
+    "key_url_kind": "signup",
+    "key_url_note": "زر «Sign up» في صفحة الأسعار الرسمية؛ يفتح صفحة التسجيل، ومن إعدادات المنظمة يُنشأ مفتاح API حسب مرجع API الرسمي، ولم يُدعَ رابط مفاتيح عميق مباشر لم يُثبت.",
+    "last_checked": "2026-10-27",
+    "last_price_checked": "2026-10-27",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "تتبع وتقييم ومراقبة تطبيقات ووكلاء الذكاء عبر Braintrust",
+        "type": "text"
+      }
+    ],
+    "name": "Braintrust",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "منصة تتبع وتقييم ومراقبة تعمل عبر حزم SDK ومشروعات ومجموعات بيانات وتجارب ومقاييس ولوحة تحكم، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط بعد إنشاء مشروعك.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://www.braintrust.dev/pricing",
+    "provider": "Braintrust",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "تقييم",
+      "مراقبة",
+      "تتبع",
+      "تجارب"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية تعرض خطة Starter برسم منصة 0 دولار شهريا وبعبارة «No credit card required» (لا حاجة إلى بطاقة ائتمانية) في زر التسجيل، وتشمل 1 غيغابايت بيانات معالجة شهريا (ثم 4 دولارات للغيغابايت) و10 آلاف نتيجة تقييم شهريا (ثم 2.50 دولار لكل ألف) واحتفاظا 14 يوما، ومستخدمين ومشروعات وملاعب تجربة وتجارب ومجموعات بيانات بلا حد، ونتيجة مراجعة بشرية واحدة لكل مشروع؛ وأسئلة الصفحة نفسها تؤكد أن خطة Starter لا تتطلب بطاقة للبدء وأن البيانات المعالجة تُحسب من أول الشهر إلى آخره وأن حذف البيانات بعد تجاوز الحصة لا يخفضها. ومرجع API الرسمي لإنشاء تجربة يوثق المصادقة برأس Authorization: Bearer وإنشاء المفتاح من صفحة إعدادات المنظمة، وحقل project_id المطلوب واسم التجربة الفريد داخل المشروع. وحالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة.",
+    "verification_source": "https://www.braintrust.dev/pricing",
+    "website": "https://www.braintrust.dev"
   }
 ]
