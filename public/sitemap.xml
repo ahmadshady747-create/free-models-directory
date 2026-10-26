@@ -132,4 +132,5 @@
 <url><loc>/apis/dify/</loc></url>
 <url><loc>/apis/zep/</loc></url>
 <url><loc>/apis/lakera-guard/</loc></url>
+<url><loc>/apis/weaviate/</loc></url>
 </urlset>
