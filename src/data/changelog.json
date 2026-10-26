@@ -421,5 +421,14 @@
     "provider": "LlamaIndex",
     "source": "https://www.llamaindex.ai/pricing",
     "type": "تصحيح"
+  },
+  {
+    "date": "2026-10-26",
+    "model": "إضافة LangWatch — إدخال سابع لفئة التقييم والمراقبة (حلقة التحسين العميق، الجولة 38)",
+    "new_limit": "إدخال جديد موثق جزئيا: خطة Developer مجانية للأبد (0 يورو شهريا، بلا بطاقة) تشمل 50 ألف حدث شهريا ووصولا للبيانات 14 يوما ومستخدمين اثنين و3 سيناريوهات و3 محاكاة و3 تقييمات مخصصة؛ بلا بيئة تنفيذ في المتصفح لسبب مكتوب (منصة مراقبة وتقييم عبر SDK وOTLP ولوحة تحكم) مع مثال طلب OTLP على جهاز الزائر فقط؛ الإدخالات صارت 92 والموثقة جزئيا 61 وخريطة الموقع 98 <loc>",
+    "old_limit": "فئة التقييم والمراقبة بستة إدخالات (Langfuse Cloud وLangSmith وArize AX وOpik وPortkey وWeights & Biases)",
+    "provider": "LangWatch",
+    "source": "https://langwatch.ai/pricing",
+    "type": "إضافة"
   }
 ]

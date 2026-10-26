@@ -5298,5 +5298,56 @@
     "verification_note": "صفحة الأسعار الرسمية (llamaindex.ai/pricing) تقول في أسئلتها إن LlamaParse يقدم 10 آلاف رصيد مجاني شهريا لجميع المستخدمين الجدد، وزر «Start for free» فيها ينقل إلى تطبيق LlamaCloud، وبطاقة الخطة الأولى فيها مسماة Free بسعر 0 دولار شهريا وتذكر 10 آلاف رصيد و100 مستخدم، وجدول المقارنة فيها للخطة الأولى يذكر 10 آلاف رصيد و5 فهارس و50 ملفا لكل فهرس ومشروعا واحدا و100 مستخدم؛ وتوثيق الأسعار الرسمي (docs.cloud.llamaindex.ai/pricing) يذكر أن 1000 رصيد تساوي 1.25 دولار وأن طبقة Fast تكلف رصيدا واحدا للصفحة؛ ودليل واجهة LlamaParse الرسمي v2 يوثق نقطة POST /api/v2/parse/upload برأس Authorization Bearer لرفع ملف وبدء مهمة تحليل. تنبيه أمانة: بطاقة الخطة المجانية في صفحة الأسعار نفسها تذكر «Basic support» بينما جدول المقارنة فيها يذكر للعمود نفسه «Community»، فلم يُدعَ مستوى دعم محدد هنا لأن الصفحة نفسها غير متسقة فيه؛ وشرط البطاقة والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير معلنة، وحالة CORS بقيت غير مؤكدة لأنها غير مذكورة فيها.",
     "verification_source": "https://www.llamaindex.ai/pricing",
     "website": "https://www.llamaindex.ai"
+  },
+  {
+    "auth": "مفتاح LangWatch API برأس Authorization Bearer (ومعرّف مشروع لمفاتيح الخدمة)",
+    "card_required": "لا — لا حاجة إلى بطاقة حسب صفحة الأسعار الرسمية",
+    "category": "evaluation-observability",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "منصة مراقبة وتقييم واختبار وكلاء الذكاء الاصطناعي: تتبع المسارات عبر OpenTelemetry الأصلي، وتقييمات آنية لحركة الإنتاج، ومحاكاة محادثات متعددة الأدوار بحكام ذكاء اصطناعي، وإدارة مطالبات وتجارب وحواجز تقييم داخل الكود.",
+    "docs": "https://langwatch.ai/docs/integration/opentelemetry/guide",
+    "example_curl": "# التتبع نفسه يجري عادة عبر حزم OpenTelemetry SDK؛ هذه نقطة OTLP الرسمية من التوثيق، وتحتاج جسما بصيغة OTLP (protobuf أو JSON) لا طلبا فارغا، ولا يقبل gRPC، وراجع التوثيق الحالي قبل الاستخدام\ncurl -X POST \"https://app.langwatch.ai/api/otel/v1/traces\" -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/x-protobuf\" --data-binary @trace.pb",
+    "example_fetch": "// التتبع نفسه يجري عادة عبر حزم OpenTelemetry SDK؛ هذه نقطة OTLP الرسمية من التوثيق، وتحتاج جسما بصيغة OTLP (protobuf أو JSON) لا طلبا فارغا، ولا يقبل gRPC\nfetch('https://app.langwatch.ai/api/otel/v1/traces', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/x-protobuf' }, body: OTLP_PROTOBUF_BYTES })",
+    "free_limit": "خطة Developer: 0 يورو شهريا (مجانية للأبد)، 50 ألف حدث شهريا، وصول للبيانات 14 يوما، مستخدمان، 3 سيناريوهات و3 محاكاة و3 تقييمات مخصصة، دعم مجتمعي (GitHub وDiscord)",
+    "free_limit_scope": "لخطة Developer المجانية في صفحة الأسعار الرسمية",
+    "free_type": "خطة مجانية دائمة",
+    "https": true,
+    "id": "langwatch",
+    "key_url": "https://app.langwatch.ai/",
+    "key_url_kind": "console",
+    "key_url_note": "رابط «Get Started» الرسمي في بطاقة Developer في صفحة الأسعار؛ أنشئ حسابا من هناك، ثم أنشئ مفتاح API من Settings > API Keys في لوحة التحكم حسب التوثيق الرسمي.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "مراقبة وتقييم واختبار وكلاء الذكاء الاصطناعي عبر LangWatch",
+        "type": "text"
+      }
+    ],
+    "name": "LangWatch",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "منصة مراقبة وتقييم واختبار تعمل عبر حزم SDK وOpenTelemetry ومفاتيح API ولوحة تحكم ومحاكاة محادثات، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://langwatch.ai/pricing",
+    "provider": "LangWatch",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "مراقبة",
+      "تقييم",
+      "تتبع",
+      "وكلاء"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية تصف خطة Developer بأنها 0 يورو ومجانية للأبد وبلا بطاقة ائتمانية، وتشمل 50 ألف حدث شهريا ووصولا للبيانات 14 يوما ومستخدمين اثنين و3 سيناريوهات و3 محاكاة و3 تقييمات مخصصة ودعما مجتمعيا؛ وأسئلتها تؤكد عدم الحاجة إلى بطاقة للبدء؛ ونقطة OTLP (app.langwatch.ai/api/otel/v1/traces) ورأس المصادقة (Authorization Bearer) ومكان إنشاء المفتاح (Settings > API Keys) من دليل OpenTelemetry الرسمي نفسه؛ وحالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة.",
+    "verification_source": "https://langwatch.ai/pricing",
+    "website": "https://langwatch.ai"
   }
 ]
