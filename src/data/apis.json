@@ -4126,5 +4126,57 @@
     "verification_note": "صفحة الأسعار الرسمية تصف الخطة المجانية (Free) بأنها تشمل 100 محادثة و3 مقاعد و3 وكلاء ذكاء اصطناعي و1000 صف جدول و100 ميغابايت تخزين متجهي و100 ميغابايت تخزين ملفات، وأنها محددة بحد صارم بلا إضافات، وأن المحادثة تُحسب في شهر الفوترة؛ شرط البطاقة وحالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة.",
     "verification_source": "https://botpress.com/pricing",
     "website": "https://botpress.com"
+  },
+  {
+    "auth": "مفتاح اشتراك Azure (Ocp-Apim-Subscription-Key) مع نقطة نهاية المورد",
+    "card_required": "غير معلن",
+    "category": "ai-guardrails",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "خدمة فحص أمان المحتوى من Microsoft Azure لتطبيقات الذكاء الاصطناعي: تحليل النصوص والصور للكشف عن المحتوى الضار، ودروع الحماية من هجمات التلقين (Prompt Shields)، وكشف المواد المحمية والتأريض؛ طبقتها المجانية 5000 سجل نصي و5000 صورة شهريا.",
+    "docs": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview",
+    "example_curl": "# استبدل YOUR_ENDPOINT بنقطة نهاية موردك وYOUR_KEY بمفتاح اشتراكك من بوابة Azure؛ الصيغة من دليل البدء الرسمي لتحليل النصوص\ncurl --location --request POST \"YOUR_ENDPOINT/contentsafety/text:analyze?api-version=2024-09-01\" -H \"Ocp-Apim-Subscription-Key: YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"text\": \"مرحبا، كيف حالك؟\", \"categories\": [\"Hate\", \"Sexual\", \"SelfHarm\", \"Violence\"], \"outputType\": \"FourSeverityLevels\"}'",
+    "example_fetch": "// استبدل YOUR_ENDPOINT بنقطة نهاية موردك وYOUR_KEY بمفتاح اشتراكك من بوابة Azure؛ الصيغة من دليل البدء الرسمي لتحليل النصوص\nfetch(YOUR_ENDPOINT + '/contentsafety/text:analyze?api-version=2024-09-01', { method: 'POST', headers: { 'Ocp-Apim-Subscription-Key': 'YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ text: 'مرحبا، كيف حالك؟', categories: ['Hate', 'Sexual', 'SelfHarm', 'Violence'], outputType: 'FourSeverityLevels' }) })",
+    "free_limit": "الطبقة المجانية (Free – Web): 5000 سجل نصي شهريا و5000 صورة شهريا؛ السجل النصي حتى 1000 حرف، ويتوقف الاستخدام عند بلوغ الحد بلا تجاوزات",
+    "free_limit_scope": "للطبقة المجانية (Free – Web) في صفحة الأسعار الرسمية",
+    "free_type": "طبقة مجانية دائمة",
+    "https": true,
+    "id": "azure-ai-content-safety",
+    "key_url": "https://azure.microsoft.com",
+    "key_url_kind": "official_site",
+    "key_url_note": "ليس صفحة مفاتيح؛ المفتاح ونقطة النهاية يأتيان من مورد Azure AI Content Safety بعد إنشائه في البوابة (خطة Free F0)، ولم يثبت رابط مباشر لصفحة مفاتيح في النص المقروء.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "text",
+      "image"
+    ],
+    "models": [
+      {
+        "name": "فحص أمان النصوص والصور عبر Azure AI Content Safety",
+        "type": "text"
+      }
+    ],
+    "name": "Azure AI Content Safety",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "خدمة فحص أمان تعمل عبر مورد Azure خاص بكل حساب (مفتاح اشتراك ونقطة نهاية مورد)، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://azure.microsoft.com/en-ca/pricing/details/cognitive-services/content-safety/",
+    "provider": "Microsoft Azure",
+    "signup": "غير مؤكد",
+    "status": "موثق جزئيا",
+    "tags": [
+      "حواجز أمان",
+      "فحص محتوى",
+      "اعتدال",
+      "أمان"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية تصف الطبقة المجانية (Free – Web) بأنها تشمل 5000 سجل نصي شهريا و5000 صورة شهريا، وأن السجل النصي حتى 1000 حرف، وأن الاستخدام يتوقف عند بلوغ الحد بلا تجاوزات على الطبقة المجانية؛ شرط البطاقة وحالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة.",
+    "verification_source": "https://azure.microsoft.com/en-ca/pricing/details/cognitive-services/content-safety/",
+    "website": "https://azure.microsoft.com"
   }
 ]
