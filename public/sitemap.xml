@@ -133,4 +133,5 @@
 <url><loc>/apis/zep/</loc></url>
 <url><loc>/apis/lakera-guard/</loc></url>
 <url><loc>/apis/weaviate/</loc></url>
+<url><loc>/apis/arize-ax/</loc></url>
 </urlset>

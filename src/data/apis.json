@@ -4481,5 +4481,56 @@
     "verification_note": "صفحة الأسعار الرسمية تصف الخطة المجانية (Free) بأنها دائمة المجانية (Always free / Forever) بسعر 0 دولار شهريا وبلا بطاقة ائتمانية، وتشمل عنقودا واحدا لكل مستخدم حتى 100 ألف كائن و1 غيغابايت ذاكرة و10 غيغابايت قرص ومجموعة واحدة حتى 3 مستأجرين وتضمينات 2000 طلب يوميا ووكيل استعلام 1000 طلب شهريا ودعما أساسيا؛ وتوثيق إنشاء العناقيد الرسمي يضيف قيدا عمليا: العنقود المجاني يُعلَّق بعد 7 أيام من عدم الاستخدام ويُحذف نهائيا بعد 30 يوما من عدم الاستخدام الإجمالي مع تنبيه بالبريد قبل يوم واحد، فالمجانية دائمة بالسعر لكن بقاء العنقود مشروط بالاستخدام؛ حالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة.",
     "verification_source": "https://weaviate.io/pricing",
     "website": "https://weaviate.io"
+  },
+  {
+    "auth": "مفتاح API ومعرّف مساحة (Space ID)",
+    "card_required": "لا — لا حاجة إلى بطاقة حسب صفحة الأسعار الرسمية",
+    "category": "evaluation-observability",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "منصة تتبع ومراقبة وتقييم لتطبيقات ووكلاء الذكاء الاصطناعي: تتبع المسارات والتقييمات والتجارب والتعليقات البشرية ومراقبة الإشارات (Signal) واكتشاف الانحراف.",
+    "docs": "https://arize.com/docs/ax/instrument/manual-instrumentation",
+    "example_curl": "# التتبع نفسه يجري عادة عبر حزم OpenTelemetry SDK؛ هذه نقطة OTLP الرسمية من التوثيق، وتحتاج جسما بصيغة OTLP (ملف protobuf) لا طلبا فارغا، وراجع التوثيق الحالي قبل الاستخدام\ncurl https://otlp.arize.com/v1/traces -H \"arize-space-id: YOUR_SPACE_ID\" -H \"arize-api-key: YOUR_API_KEY\" -H \"Content-Type: application/x-protobuf\" --data-binary @trace.pb",
+    "example_fetch": "// التتبع نفسه يجري عادة عبر حزم OpenTelemetry SDK؛ هذه نقطة OTLP الرسمية من التوثيق، وتحتاج جسما بصيغة OTLP لا طلبا فارغا\nfetch('https://otlp.arize.com/v1/traces', { method: 'POST', headers: { 'arize-space-id': 'YOUR_SPACE_ID', 'arize-api-key': 'YOUR_API_KEY', 'Content-Type': 'application/x-protobuf' }, body: OTLP_PROTOBUF_BYTES })",
+    "free_limit": "خطة AX Free: 25 ألف span شهريا، 1 غيغابايت استيعاب شهريا، احتفاظ 15 يوما، مستخدمون بلا حد، تقييمات وتجارب وتعليقات بشرية بلا حد، Signal حتى 10 مشكلات شهريا، مساحة واحدة، منطقة بيانات US أو EU أو CA",
+    "free_limit_scope": "لخطة AX Free المجانية في صفحة الأسعار الرسمية",
+    "free_type": "خطة مجانية",
+    "https": true,
+    "id": "arize-ax",
+    "key_url": "https://arize.com/auth/join",
+    "key_url_kind": "signup",
+    "key_url_note": "رابط «START FOR FREE» الرسمي في صفحة الأسعار؛ أنشئ حسابا من هناك، ثم انسخ معرّف المساحة ومفتاح API من Settings > API keys في لوحة التحكم حسب التوثيق الرسمي.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "تتبع وتقييم تطبيقات ووكلاء الذكاء الاصطناعي عبر Arize AX",
+        "type": "text"
+      }
+    ],
+    "name": "Arize AX",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "منصة تتبع ومراقبة وتقييم تعمل عبر حزم OpenTelemetry SDK ومعرّف مساحة ومفتاح API ولوحة تحكم، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://arize.com/pricing",
+    "provider": "Arize",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "مراقبة",
+      "تقييم",
+      "تتبع",
+      "وكلاء"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية تصف خطة AX Free بأنها مجانية (0 دولار) بلا بطاقة ائتمانية، وتشمل 25 ألف span شهريا و1 غيغابايت استيعاب شهريا واحتفاظ 15 يوما ومستخدمين بلا حد وتقييمات وتجارب بلا حد وSignal حتى 10 مشكلات شهريا ومساحة واحدة ومنطقة بيانات US أو EU أو CA؛ شرط البطاقة مذكور صراحة بعدم الحاجة إليها، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة.",
+    "verification_source": "https://arize.com/pricing",
+    "website": "https://arize.com"
   }
 ]
