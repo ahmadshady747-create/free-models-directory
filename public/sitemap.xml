@@ -150,4 +150,5 @@
 <url><loc>/apis/weights-biases/</loc></url>
 <url><loc>/apis/llamacloud/</loc></url>
 <url><loc>/apis/langwatch/</loc></url>
+<url><loc>/apis/mongodb-atlas-vector-search/</loc></url>
 </urlset>

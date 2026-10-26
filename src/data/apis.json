@@ -5349,5 +5349,55 @@
     "verification_note": "صفحة الأسعار الرسمية تصف خطة Developer بأنها 0 يورو ومجانية للأبد وبلا بطاقة ائتمانية، وتشمل 50 ألف حدث شهريا ووصولا للبيانات 14 يوما ومستخدمين اثنين و3 سيناريوهات و3 محاكاة و3 تقييمات مخصصة ودعما مجتمعيا؛ وأسئلتها تؤكد عدم الحاجة إلى بطاقة للبدء؛ ونقطة OTLP (app.langwatch.ai/api/otel/v1/traces) ورأس المصادقة (Authorization Bearer) ومكان إنشاء المفتاح (Settings > API Keys) من دليل OpenTelemetry الرسمي نفسه؛ وحالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة.",
     "verification_source": "https://langwatch.ai/pricing",
     "website": "https://langwatch.ai"
+  },
+  {
+    "auth": "مفتاحا Atlas Admin API العام والخاص (مصادقة Digest) لإدارة الفهارس، ومستخدم قاعدة بيانات لسلسلة الاتصال عند الاستعلام",
+    "card_required": "غير معلن",
+    "category": "vector-databases",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "بحث متجهي مدمج في قاعدة بيانات MongoDB Atlas السحابية: فهارس بحث متجهي بحقول متجهة وتشابه جيب التمام أو الجداء النقطي أو الإقليدي مع ترشيح بالحقول، لبناء استرجاع RAG وبحث دلالي فوق البيانات التشغيلية نفسها دون قاعدة ثانية.",
+    "docs": "https://www.mongodb.com/docs/vector-search/deployment/compatibility-limitations/",
+    "example_curl": "# أنشئ فهرس بحث متجهي عبر واجهة إدارة Atlas الرسمية (Atlas Admin API v2): استبدل GROUP_ID بمعرّف مشروعك وCLUSTER_NAME باسم عنقودك وPUBLIC_KEY وPRIVATE_KEY بمفتاحي الإدارة؛ الفهارس تُنشأ عادة من وحدة تحكم Atlas أو عبر برنامج التشغيل، وهذا المثال ترجمة REST لعملية إنشاء الفهرس من توثيق واجهة الإدارة الرسمي، فراجع التوثيق الحالي قبل الاستخدام\ncurl --digest -u \"PUBLIC_KEY:PRIVATE_KEY\" -X POST \"https://cloud.mongodb.com/api/atlas/v2/groups/GROUP_ID/clusters/CLUSTER_NAME/search/indexes\" -H \"Content-Type: application/vnd.atlas.2024-05-30+json\" -H \"Accept: application/vnd.atlas.2024-05-30+json\" -d '{\"collectionName\": \"COLLECTION_NAME\", \"database\": \"DATABASE_NAME\", \"name\": \"vector_index\", \"type\": \"vectorSearch\", \"definition\": {\"fields\": [{\"type\": \"vector\", \"path\": \"embedding\", \"numDimensions\": 768, \"similarity\": \"cosine\"}]}}'",
+    "example_fetch": "// واجهة الإدارة تستخدم مصادقة Digest فيعالجها عميل HTTP يدعمها (curl أعلاه مثال كامل)؛ هذا المثال يوضح المسار والجسم فقط، وراجع التوثيق الحالي قبل الاستخدام\nfetch('https://cloud.mongodb.com/api/atlas/v2/groups/GROUP_ID/clusters/CLUSTER_NAME/search/indexes', { method: 'POST', headers: { 'Content-Type': 'application/vnd.atlas.2024-05-30+json', 'Accept': 'application/vnd.atlas.2024-05-30+json' }, body: JSON.stringify({ collectionName: 'COLLECTION_NAME', database: 'DATABASE_NAME', name: 'vector_index', type: 'vectorSearch', definition: { fields: [{ type: 'vector', path: 'embedding', numDimensions: 768, similarity: 'cosine' }] } }) })",
+    "free_limit": "عنقود M0 مجاني للأبد: 512 ميغابايت تخزين وذاكرة ومعالج مشتركان، وبحد أقصى 3 فهارس بحث أو بحث متجهي مجتمعة على العناقيد المجانية",
+    "free_limit_scope": "لعنقود M0 المجاني في صفحة الأسعار الرسمية وصفحة حدود البحث المتجهي الرسمية",
+    "free_type": "طبقة مجانية دائمة",
+    "https": true,
+    "id": "mongodb-atlas-vector-search",
+    "key_url": "https://www.mongodb.com/cloud/atlas",
+    "key_url_kind": "official_site",
+    "key_url_note": "لا صفحة مفاتيح API عامة مثبتة لـ Atlas Vector Search، فهو يعمل عبر مستخدم قاعدة بيانات وسلسلة اتصال وفهارس تُنشأ من وحدة تحكم Atlas أو واجهة الإدارة — الزر يفتح صفحة Atlas الرسمية فقط.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "embeddings"
+    ],
+    "models": [
+      {
+        "name": "بحث متجهي Atlas على عنقود M0",
+        "type": "embeddings"
+      }
+    ],
+    "name": "MongoDB Atlas Vector Search",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "قاعدة بيانات سحابية بعناقيد خاصة بكل حساب: عملياتها (إنشاء فهرس بحث متجهي، إدراج مستندات، بحث) تجري على عنقود خاص بالمستخدم وسلسلة اتصال خاصة به، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://www.mongodb.com/pricing",
+    "provider": "MongoDB",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "بحث متجهي",
+      "استرجاع",
+      "RAG"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية تصف عنقود M0 بأنه 512 ميغابايت بذاكرة ومعالج مشتركين ومجاني للأبد، وصفحة حدود البحث المتجهي الرسمية تحدد 3 فهارس كحد أقصى (بحث أو بحث متجهي) على العناقيد المجانية، وتوثيق واجهة الإدارة الرسمي يثبت عملية إنشاء فهرس بحث على مجموعة بمعرّفي المشروع والعنقود وبنوع vectorSearch؛ وشرط البطاقة وحالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة.",
+    "verification_source": "https://www.mongodb.com/pricing",
+    "website": "https://www.mongodb.com/cloud/atlas"
   }
 ]

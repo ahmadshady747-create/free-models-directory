@@ -430,5 +430,14 @@
     "provider": "LangWatch",
     "source": "https://langwatch.ai/pricing",
     "type": "إضافة"
+  },
+  {
+    "date": "2026-10-26",
+    "model": "إضافة MongoDB Atlas Vector Search — إدخال سابع لفئة قواعد البيانات المتجهة والاسترجاع (حلقة التحسين العميق، الجولة 39)",
+    "new_limit": "إدخال جديد موثق جزئيا: عنقود M0 مجاني للأبد (512 ميغابايت، ذاكرة ومعالج مشتركان) وبحد أقصى 3 فهارس بحث أو بحث متجهي مجتمعة على العناقيد المجانية؛ بلا بيئة تنفيذ في المتصفح لسبب مكتوب (عنقود خاص بالمستخدم وسلسلة اتصال) مع مثال إنشاء فهرس عبر واجهة إدارة Atlas على جهاز الزائر فقط؛ الإدخالات صارت 93 والموثقة جزئيا 62 وخريطة الموقع 99 <loc>",
+    "old_limit": "فئة قواعد البيانات المتجهة والاسترجاع بستة إدخالات (Qdrant Cloud وPinecone وWeaviate Cloud وUpstash Vector وZilliz Cloud وLlamaCloud)",
+    "provider": "MongoDB Atlas Vector Search",
+    "source": "https://www.mongodb.com/pricing",
+    "type": "إضافة"
   }
 ]
