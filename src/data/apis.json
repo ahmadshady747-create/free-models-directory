@@ -4991,5 +4991,61 @@
     "verification_note": "صفحة الأسعار الرسمية تعرض الخطة المجانية (Free) بسعر 0 دولار وتصفها بأنها نقطة بداية للتعلم والمشاريع الشخصية، وتشمل 5 غيغابايت تخزين و2.5 مليون وحدة حوسبة افتراضية (vCU) شهريا وحتى 5 مجموعات ودعما مجتمعيا؛ وصفحة الأسعار نفسها لا تذكر اشتراط بطاقة للخطة المجانية فبقي شرط البطاقة غير معلن، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فيها فبقيت غير مؤكدة وغير معلنة؛ ونقطة إنشاء مجموعة V2 (POST /v2/vectordb/collections/create) ورأس المصادقة (Authorization: Bearer) ونقطة نهاية العنقود من التوثيق الرسمي نفسه، مع تنبيهه أن التوثيق يقبل مفتاح API أو زوج اسم مستخدم وكلمة مرور حسب نوع نقطة الاتصال.",
     "verification_source": "https://zilliz.com/pricing",
     "website": "https://zilliz.com"
+  },
+  {
+    "auth": "مفتاح API (رأس Authorization Bearer)",
+    "card_required": "غير معلن",
+    "category": "ai-guardrails",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "نقطة إشراف من OpenAI تصنّف مدخلات نصية وصورا وتعيد لكل فئة ضرر علامة flagged ودرجة ثقة بين 0 و1 — فئات منها التحرش والكراهية والمحتوى غير المشروع وإيذاء الذات والمحتوى الجنسي والعنف — لفرض سياسة تطبيقك (تصفية أو توجيه للمراجعة أو التدخل) دون توليد نص؛ النموذج الحالي omni-moderation-latest، ولا يصنّف الصوت، وحجم ملف الصورة حتى 20 ميغابايت.",
+    "docs": "https://platform.openai.com/docs/guides/moderation",
+    "example_curl": "# استبدل YOUR_KEY بمفتاحك من منصة OpenAI؛ النموذج omni-moderation-latest، والمدخل هنا نص محايد للتجربة فقط، وراجع الدليل الحالي قبل الاستخدام\ncurl https://api.openai.com/v1/moderations -H \"Content-Type: application/json\" -H \"Authorization: Bearer YOUR_KEY\" -d '{\"model\": \"omni-moderation-latest\", \"input\": \"مرحبا، كيف حالك؟\"}'",
+    "example_fetch": "// استبدل YOUR_KEY بمفتاحك من منصة OpenAI؛ النموذج omni-moderation-latest، والمدخل هنا نص محايد للتجربة فقط، وراجع الدليل الحالي قبل الاستخدام\nfetch('https://api.openai.com/v1/moderations', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer YOUR_KEY' }, body: JSON.stringify({ model: 'omni-moderation-latest', input: 'مرحبا، كيف حالك؟' }) })",
+    "free_limit": "نقطة الإشراف مجانية الاستخدام حسب دليل الإشراف الرسمي، بلا حد عددي مذكور فيه؛ تقبل نصوصا وصورا (حتى 20 ميغابايت لملف الصورة) ولا تصنّف الصوت",
+    "free_limit_scope": "لنقطة الإشراف في دليل الإشراف الرسمي",
+    "free_type": "نقطة مجانية الاستخدام",
+    "https": true,
+    "id": "openai-moderation",
+    "key_url": "https://platform.openai.com/api-keys",
+    "key_url_kind": "keys_page",
+    "key_url_note": "يفتح صفحة مفاتيح API في منصة OpenAI؛ أنشئ مفتاحا من هناك واستخدمه مع نقطة الإشراف.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "text",
+      "image"
+    ],
+    "models": [
+      {
+        "name": "تصنيف إشراف النصوص عبر omni-moderation-latest",
+        "type": "text"
+      },
+      {
+        "name": "تصنيف إشراف الصور عبر omni-moderation-latest",
+        "type": "image"
+      }
+    ],
+    "name": "OpenAI Moderation API",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "نقطة تصنيف إشراف تعيد علامات ودرجات ثقة لفئات ضرر ولا تولّد نصا أو صورة، وليست استدعاء توليد بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://platform.openai.com/docs/guides/moderation",
+    "provider": "OpenAI",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "حواجز أمان",
+      "فحص محتوى",
+      "إشراف",
+      "أمان"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "دليل الإشراف الرسمي في منصة OpenAI ينص صراحة أن نقطة الإشراف مجانية الاستخدام (The moderation endpoint is free to use)، وأن نموذج omni-moderation-latest يقبل نصوصا وصورا ولا يصنّف الصوت، وأن ملفات الصور حتى 20 ميغابايت؛ ولم يذكر الدليل حدا عدديا للاستخدام المجاني ولا شرط بطاقة ولا استخداما تجاريا ولا تدريبا ولا حالة CORS فبقيت غير مؤكدة.",
+    "verification_source": "https://platform.openai.com/docs/guides/moderation",
+    "website": "https://openai.com"
   }
 ]
