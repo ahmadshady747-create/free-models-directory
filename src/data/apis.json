@@ -4739,5 +4739,55 @@
     "verification_note": "صفحة الأسعار الرسمية تعرض خطة Explore بسعر 0 دولار شهريا ومكتوب تحتها «Free forever»، وتشمل 500 رصيد عند البدء و50 رصيدا شهريا ووصولا كاملا إلى واجهة برمجة التطبيقات ولا تتطلب بطاقة ائتمانية، ووصفها أنها للطلاب والمطورين الأفراد والباحثين وتقييم أمان الذكاء الاصطناعي؛ وصفحة التوثيق الرسمي لنقطة Guardrails Detect تصفها بأنها تشغّل الكاشفات المفعّلة على مدخل نصي، وتشمل كاشفات حقن التلقين والمحتوى غير اللائق والسمّية والمعلومات الشخصية وانتهاك السياسات والتحيز وهجمات الاستنزاف؛ وحالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة.",
     "verification_source": "https://www.enkryptai.com/pricing",
     "website": "https://www.enkryptai.com"
+  },
+  {
+    "auth": "مفتاح API (رأس Authorization: Bearer)",
+    "card_required": "غير معلن",
+    "category": "vector-databases",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "قاعدة بيانات متجهة خادمية (serverless) للبحث الدلالي واسترجاع RAG عبر REST، مع مساحات أسماء وترشيح بالبيانات الوصفية؛ طبقتها المجانية موجهة للنماذج الأولية والمشاريع الهواة حسب صفحة الأسعار الرسمية.",
+    "docs": "https://upstash.com/docs/vector/api/endpoints/upsert-data",
+    "example_curl": "# استبدل YOUR_INDEX_URL برابط REST الخاص بفهرسك من وحدة تحكم Upstash وYOUR_KEY برمز REST الخاص به؛ المثال من التوثيق الرسمي لنقطة upsert-data، وهي تتطلب إنشاء الفهرس بنموذج تضمين ليُضمَّن النص خادميا، فراجع التوثيق الحالي قبل الاستخدام\ncurl -X POST \"https://YOUR_INDEX_URL/upsert-data\" -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '[{\"id\": \"doc-1\", \"data\": \"Upstash Vector is a serverless vector database.\", \"metadata\": {\"link\": \"upstash.com\"}}]'",
+    "example_fetch": "// استبدل YOUR_INDEX_URL برابط REST الخاص بفهرسك من وحدة تحكم Upstash وYOUR_KEY برمز REST الخاص به؛ المثال من التوثيق الرسمي لنقطة upsert-data، وهي تتطلب إنشاء الفهرس بنموذج تضمين ليُضمَّن النص خادميا\nfetch('https://YOUR_INDEX_URL/upsert-data', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify([{ id: 'doc-1', data: 'Upstash Vector is a serverless vector database.', metadata: { link: 'upstash.com' } }]) })",
+    "free_limit": "الطبقة المجانية (Free): 10 آلاف استعلام/تحديث يوميا، حتى 200 مليون متجه × بُعد، حتى 100 مساحة اسم، حد بيانات/بيانات وصفية 1 غيغابايت، بُعد أقصى 1536، وحتى 10 فهارس مجانية",
+    "free_limit_scope": "للطبقة المجانية (Free) في صفحة الأسعار الرسمية",
+    "free_type": "طبقة مجانية",
+    "https": true,
+    "id": "upstash-vector",
+    "key_url": "https://console.upstash.com/",
+    "key_url_kind": "console",
+    "key_url_note": "زر «Start Now» في صفحة الأسعار الرسمية ينقل إلى وحدة تحكم Upstash؛ أنشئ فهرس Vector مجانيا من هناك واحصل على رابط REST ورمز REST الخاصين به.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "embeddings"
+    ],
+    "models": [
+      {
+        "name": "بحث متجهي واسترجاع RAG عبر Upstash Vector",
+        "type": "embeddings"
+      }
+    ],
+    "name": "Upstash Vector",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "قاعدة بيانات متجهة بفهارس خاصة بكل حساب: عملياتها (إدراج متجهات، بحث، مساحات أسماء) تجري على رابط REST خاص بفهرس المستخدم ورمزه، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://upstash.com/pricing/vector",
+    "provider": "Upstash",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "قاعدة بيانات متجهة",
+      "استرجاع",
+      "RAG"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية تعرض الطبقة المجانية (Free) بسعر 0 دولار وتصفها بأنها للنماذج الأولية والمشاريع الهواة، وتشمل 10 آلاف استعلام/تحديث يوميا وحتى 200 مليون متجه × بُعد وبُعدا أقصى 1536 وحتى 100 مساحة اسم وحد بيانات/بيانات وصفية 1 غيغابايت، وجدول المقارنة فيها يجعل السعر الشهري وسعر الطلب وسعر التخزين وسعر النطاق الترددي كلها مجانية لهذه الطبقة، وأسئلتها تقول إنه يمكن إنشاء حتى 10 فهارس مجانا؛ وأسئلتها تقول أيضا إن إدخال بطاقة يرقّي الفهرس إلى الدفع حسب الاستخدام، لكنها لا تنص صراحة أن الطبقة المجانية بلا بطاقة فبقي شرط البطاقة غير معلن؛ ونقطة upsert-data ورأس المصادقة (Bearer) من التوثيق الرسمي نفسه، مع تنبيهه أن هذه النقطة تتطلب فهرسا أُنشئ بنموذج تضمين؛ وحالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة.",
+    "verification_source": "https://upstash.com/pricing/vector",
+    "website": "https://upstash.com"
   }
 ]

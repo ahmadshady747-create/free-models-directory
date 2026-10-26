@@ -138,4 +138,5 @@
 <url><loc>/apis/supermemory/</loc></url>
 <url><loc>/apis/sightengine/</loc></url>
 <url><loc>/apis/enkrypt-ai/</loc></url>
+<url><loc>/apis/upstash-vector/</loc></url>
 </urlset>
