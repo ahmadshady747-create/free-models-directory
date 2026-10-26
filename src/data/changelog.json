@@ -385,5 +385,14 @@
     "provider": "Activepieces",
     "source": "https://www.activepieces.com/pricing",
     "type": "إضافة"
+  },
+  {
+    "date": "2026-10-26",
+    "model": "ترقية مثال طلب Stack AI إلى نقطة POST /v2/runs الرسمية (حلقة التحسين العميق، الجولة 34)",
+    "new_limit": "مثال طلب Stack AI صار نقطة POST https://api.stack-ai.com/v2/runs الرسمية من مرجع REST API v2: جسم project_id وinput بمفتاح in-0، ورأس Bearer بمفتاح API بصلاحية projects.run، وحذف project_version أو null يشغّل النسخة المنشورة و-1 يشغّل المسودة، والرد 201 يعني إنشاء التشغيل لا نجاحه مع حفظ data.run_id ومتابعة حالته؛ المثال ما زال على جهاز الزائر فقط وبعناصر نائبة، ولم يتغير أي حد أو مصدر سعري؛ الإدخالات ما زالت 89 والموثقة جزئيا 58 وخريطة الموقع 95 <loc>",
+    "old_limit": "مثال طلب Stack AI بنقطة نهاية مولدة للمشروع وحقل مدخل نائبين على جهاز الزائر فقط حسب دليل النشر الحالي",
+    "provider": "Stack AI",
+    "source": "https://docs.stackai.com/stackai-api/rest-api-v2/runs/post-v2-runs",
+    "type": "تحسين"
   }
 ]
