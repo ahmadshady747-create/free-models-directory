@@ -5399,5 +5399,55 @@
     "verification_note": "صفحة الأسعار الرسمية تصف عنقود M0 بأنه 512 ميغابايت بذاكرة ومعالج مشتركين ومجاني للأبد، وصفحة حدود البحث المتجهي الرسمية تحدد 3 فهارس كحد أقصى (بحث أو بحث متجهي) على العناقيد المجانية، وتوثيق واجهة الإدارة الرسمي يثبت عملية إنشاء فهرس بحث على مجموعة بمعرّفي المشروع والعنقود وبنوع vectorSearch؛ وشرط البطاقة وحالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة.",
     "verification_source": "https://www.mongodb.com/pricing",
     "website": "https://www.mongodb.com/cloud/atlas"
+  },
+  {
+    "auth": "مفتاح API من Langflow (رأس x-api-key) لتشغيل التدفقات",
+    "card_required": "غير معلن",
+    "category": "agent-platforms",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "منصة بناء مرئي لوكلاء الذكاء الاصطناعي وتدفقات الاسترجاع المعزز (RAG) وخوادم MCP: مكونات سحب وإفلات لأي نموذج أو قاعدة بيانات متجهة، مع تخصيص Python ونشر التدفق كواجهة برمجة؛ حسابها السحابي مجاني حسب الموقع الرسمي، بلا حدود عددية منشورة.",
+    "docs": "https://docs.langflow.org/api-reference-api-examples",
+    "example_curl": "# شغّل تدفقك عبر نقطة POST /api/v1/run/{flow_id} الرسمية: استبدل YOUR_SERVER_URL بعنوان نشر Langflow الخاص بك (سحابي أو ذاتي الاستضافة)، وYOUR_FLOW_ID بمعرّف تدفقك من لوحة API access، وYOUR_KEY بمفتاح Langflow API من Settings → Langflow API Keys؛ التوثيق الرسمي يستخدم رأس x-api-key وجسم input_value وoutput_type وinput_type، فراجع التوثيق الحالي قبل الاستخدام\ncurl -X POST \"YOUR_SERVER_URL/api/v1/run/YOUR_FLOW_ID?stream=false\" -H \"Content-Type: application/json\" -H \"x-api-key: YOUR_KEY\" -d '{\"input_value\": \"مرحبا، ما الذي يمكنك فعله؟\", \"output_type\": \"chat\", \"input_type\": \"chat\"}'",
+    "example_fetch": "// شغّل تدفقك عبر نقطة POST /api/v1/run/{flow_id} الرسمية: استبدل YOUR_SERVER_URL بعنوان نشر Langflow الخاص بك، وYOUR_FLOW_ID بمعرّف تدفقك، وYOUR_KEY بمفتاح Langflow API من Settings → Langflow API Keys\nfetch('YOUR_SERVER_URL/api/v1/run/YOUR_FLOW_ID?stream=false', { method: 'POST', headers: { 'Content-Type': 'application/json', 'x-api-key': 'YOUR_KEY' }, body: JSON.stringify({ input_value: 'مرحبا، ما الذي يمكنك فعله؟', output_type: 'chat', input_type: 'chat' }) })",
+    "free_limit": "حساب سحابي مجاني للبناء والاختبار والنشر حسب الموقع الرسمي؛ ولم ينشر الموقع الرسمي حدودا عددية للحساب السحابي المجاني (عدد التدفقات أو التشغيلات أو المستخدمين)، فبقيت غير مؤكدة",
+    "free_limit_scope": "للحساب السحابي المجاني في الموقع الرسمي",
+    "free_type": "حساب سحابي مجاني",
+    "https": true,
+    "id": "langflow",
+    "key_url": "https://www.langflow.org/",
+    "key_url_kind": "official_site",
+    "key_url_note": "الموقع الرسمي نفسه يعرض «sign up for a free cloud account» (سجّل لحساب سحابي مجاني)، لكن نص الصفحة المسترجع لا يكشف وجهة زر التسجيل المباشرة، فالزر يفتح الموقع الرسمي فقط ولا يُدعى رابط تسجيل مباشر لم يُثبت.",
+    "last_checked": "2026-10-26",
+    "last_price_checked": "2026-10-26",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "بناء ونشر وكلاء وتدفقات RAG عبر Langflow",
+        "type": "text"
+      }
+    ],
+    "name": "Langflow Cloud",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "منصة بناء وكلاء تعمل عبر منشئ مرئي وتدفقات بمكونات ومفاتيح نماذج خاصة بكل مستخدم ونشر كواجهة لكل تدفق، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط بعد بناء تدفقك.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://www.langflow.org/",
+    "provider": "Langflow",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "وكلاء",
+      "سير عمل",
+      "RAG"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "الموقع الرسمي الحالي (https://www.langflow.org/) يعرض في قسم «From Notebook to Production» عبارة «Deploy yourself or sign up for a free cloud account» (انشر بنفسك أو سجّل لحساب سحابي مجاني)، ولا يعرض صفحة أسعار منفصلة ولا حدودا عددية للحساب السحابي المجاني في النص المسترجع، فبقيت الحدود العددية غير مؤكدة ولم يُدعَ سعر أو دوام دائم أو عدم اشتراط بطاقة. توثيق «Get started with the Langflow API» الرسمي (https://docs.langflow.org/api-reference-api-examples) يوثق نقطة POST /api/v1/run/{flow_id}?stream=false برأس x-api-key وجسم input_value وoutput_type وinput_type، وأن النشر المحلي يخدم عادة على المنفذ 7860 وأن النشر المستضاف يخدم على نطاق خدمة الاستضافة، لذلك بقي عنوان الخادم ومعرّف التدفق عنصرين نائبين في المثال بدل اختراع عنوان سحابي. شرط البطاقة غير مذكور في الموقع الرسمي فبقي غير معلن، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فيه فبقيت غير مؤكدة.",
+    "verification_source": "https://www.langflow.org/",
+    "website": "https://www.langflow.org/"
   }
 ]

@@ -151,4 +151,5 @@
 <url><loc>/apis/llamacloud/</loc></url>
 <url><loc>/apis/langwatch/</loc></url>
 <url><loc>/apis/mongodb-atlas-vector-search/</loc></url>
+<url><loc>/apis/langflow/</loc></url>
 </urlset>

@@ -439,5 +439,14 @@
     "provider": "MongoDB Atlas Vector Search",
     "source": "https://www.mongodb.com/pricing",
     "type": "إضافة"
+  },
+  {
+    "date": "2026-10-26",
+    "model": "إضافة Langflow Cloud — إدخال سادس لفئة منصات بناء الوكلاء (حلقة التحسين العميق، الجولة 40)",
+    "new_limit": "إدخال جديد موثق جزئيا: حساب سحابي مجاني للبناء والاختبار والنشر حسب الموقع الرسمي، بلا حدود عددية منشورة للحساب السحابي المجاني؛ بلا بيئة تنفيذ في المتصفح لسبب مكتوب (منصة بناء مرئي بتدفقات ومفاتيح نماذج خاصة) مع مثال تشغيل تدفق عبر POST /api/v1/run/{flow_id} على جهاز الزائر فقط؛ الإدخالات صارت 94 والموثقة جزئيا 63 وخريطة الموقع 100 <loc>",
+    "old_limit": "فئة منصات بناء الوكلاء بخمسة إدخالات (Botpress Cloud وDify Cloud وVoiceflow وStack AI وActivepieces)",
+    "provider": "Langflow Cloud",
+    "source": "https://www.langflow.org/",
+    "type": "إضافة"
   }
 ]
