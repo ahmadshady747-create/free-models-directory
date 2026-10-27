@@ -164,4 +164,5 @@
   <url><loc>/apis/singlestore-helios/</loc></url>
   <url><loc>/apis/traceloop/</loc></url>
   <url><loc>/apis/composio/</loc></url>
+  <url><loc>/apis/google-model-armor/</loc></url>
 </urlset>

@@ -6057,5 +6057,56 @@
   "verification_note": "صفحة الأسعار الرسمية تعرض خطة Hobby بسعر 0 دولار ومكتوب عليها «No credit card required»، وتشمل 100,000 استدعاء أداة شهريا و50,000 حدث تشغيل شهريا وحسابات متصلة بلا حد و3 أعضاء فريق، وقسم أسعار الاستخدام في الصفحة نفسها يذكر 1,000,000 رمز Sandbox LLM شهريا مجانا لخطة Hobby؛ والأسئلة الشائعة في الصفحة نفسها تؤكد أن Hobby لا تحتاج بطاقة ائتمانية. مرجع تنفيذ الأدوات الرسمي يصف نقطة POST /api/v3.1/tools/execute/{tool_slug} برأس x-api-key وحقلي connected_account_id وarguments، لذلك بقي معرّف الأداة ومعرّف الحساب المتصل عنصرين نائبين بدل اختراع أداة أو حساب. مرشحون مستبعدون في هذه الجولة نفسها قبل الاختيار: Gumloop (صفحة أسعاره الرسمية تعرض Pro وEnterprise فقط بلا بطاقة مجانية)، وFlowise Cloud (موقعه الرسمي يعلن إيقافه ونهاية عمره 2026-08-31 رغم بقاء بطاقة Free ظاهرة)، وLindy (مستبعد أصلا في الجولة 21 ولم تتغير صفحته: رصيد 50 دولارا ينتهي بعد 7 أيام وبلا نقطة REST موثقة لتشغيل وكيل)، وPangea AI Guard (مستبعد أصلا في الجولات السابقة؛ توثيقه يثبت حسابا مجانيا لكن فوترته بالدفع حسب الاستخدام بلا حد مجاني رقمي منشور)، وAporia (مصادر ثانوية متضاربة بعد استحواذ Coralogix وبلا خطة مجانية علنية مؤكدة)، وRelevance AI (خطته المجانية مغلقة أمام المشتركين الجدد حسب توثيقه)، وConfident AI (من فئة التقييم والمراقبة نفسها، فئة الجولة السابقة، لا فئة مختلفة)، وGiskard Hub (منتج مؤسسي بمبيعات مباشرة بلا طبقة سحابية مجانية علنية). حالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة.",
   "verification_source": "https://composio.dev/pricing",
   "website": "https://composio.dev"
+ },
+ {
+  "auth": "رمز وصول Google Cloud (رأس Authorization: Bearer من gcloud) مع مشروع وقالب Model Armor",
+  "card_required": "غير معلن",
+  "category": "ai-guardrails",
+  "commercial": "غير معلن",
+  "cors": "غير مؤكد",
+  "description_ar": "حاجز أمان وقت التشغيل من Google Cloud لنماذج ووكلاء الذكاء الاصطناعي: يفحص المطالبات وردود النماذج وتفاعلات الوكلاء عبر واجهة REST مع أي نموذج، للكشف عن حقن التلقين وكسر الحماية والمحتوى الضار والروابط الخبيثة وتسرب البيانات الحساسة؛ طبقته المجانية حتى مليوني رمز شهريا.",
+  "docs": "https://docs.cloud.google.com/model-armor/sanitize-prompts-responses",
+  "example_curl": "# أنشئ قالب Model Armor في مشروعك أولا، ثم استبدل YOUR_PROJECT_ID وYOUR_LOCATION وYOUR_TEMPLATE_ID، ورمز الوصول من gcloud auth print-access-token؛ الصيغة من صفحة فحص المطالبات والردود الرسمية\ncurl -X POST -d '{\"userPromptData\":{\"text\":\"مرحبا\"}}' -H \"Content-Type: application/json\" -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\" \"https://modelarmor.YOUR_LOCATION.rep.googleapis.com/v1/projects/YOUR_PROJECT_ID/locations/YOUR_LOCATION/templates/YOUR_TEMPLATE_ID:sanitizeUserPrompt\"",
+  "example_fetch": "// أنشئ قالب Model Armor في مشروعك أولا، ثم استبدل YOUR_PROJECT_ID وYOUR_LOCATION وYOUR_TEMPLATE_ID، ورمز الوصول من gcloud auth print-access-token؛ الصيغة من صفحة فحص المطالبات والردود الرسمية\nfetch('https://modelarmor.YOUR_LOCATION.rep.googleapis.com/v1/projects/YOUR_PROJECT_ID/locations/YOUR_LOCATION/templates/YOUR_TEMPLATE_ID:sanitizeUserPrompt', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_ACCESS_TOKEN', 'Content-Type': 'application/json' }, body: JSON.stringify({ userPromptData: { text: 'مرحبا' } }) })",
+  "free_limit": "الطبقة المجانية (Free tier): حتى مليوني رمز شهريا مجانا؛ ما فوقها 0.10 دولار لكل مليون رمز إضافي",
+  "free_limit_scope": "للطبقة المجانية في صفحة المنتج الرسمية",
+  "free_type": "طبقة مجانية دائمة",
+  "https": true,
+  "id": "google-model-armor",
+  "key_url": "https://cloud.google.com/security/products/model-armor",
+  "key_url_kind": "official_site",
+  "key_url_note": "ليس صفحة مفاتيح؛ الوصول يجري عبر مشروع Google Cloud وقالب Model Armor في وحدة التحكم، ورمز الوصول من gcloud، ولم يثبت رابط مباشر لصفحة مفاتيح في النص المقروء.",
+  "last_checked": "2026-10-27",
+  "last_price_checked": "2026-10-27",
+  "live_try": null,
+  "media": [
+   "text"
+  ],
+  "models": [
+   {
+    "name": "فحص أمان المطالبات والردود عبر Google Cloud Model Armor",
+    "type": "text"
+   }
+  ],
+  "name": "Google Cloud Model Armor",
+  "offer_expires_at": null,
+  "offer_temporary": false,
+  "playground_block_reason": "حاجز أمان وقت تشغيل يعمل عبر مشروع Google Cloud وقالب وسياسات ورمز وصول OAuth من gcloud، وليس استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+  "playground_status": "not-suitable",
+  "playgrounds": [],
+  "pricing": "https://cloud.google.com/security/products/model-armor",
+  "provider": "Google Cloud",
+  "signup": "غير مؤكد",
+  "status": "موثق جزئيا",
+  "tags": [
+   "حواجز أمان",
+   "فحص محتوى",
+   "حقن التلقين",
+   "أمان"
+  ],
+  "training_use": "غير معلن",
+  "verification_note": "صفحة المنتج الرسمية تعرض جدول الأسعار: الطبقة المجانية حتى مليوني رمز شهريا، وما فوقها 0.10 دولار لكل مليون رمز إضافي، بلا تاريخ انتهاء مذكور فيها؛ ومثال REST الرسمي لفحص المطالبات يستخدم نقطة modelarmor.rep.googleapis.com مع رمز وصول Bearer من gcloud وقالبا منشأ مسبقا؛ شرط البطاقة وحساب الفوترة وحالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة المنتج نفسها فبقيت غير مؤكدة.",
+  "verification_source": "https://cloud.google.com/security/products/model-armor",
+  "website": "https://cloud.google.com/security/products/model-armor"
  }
 ]
