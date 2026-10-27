@@ -6310,23 +6310,23 @@
   "website": "https://www.honeyhive.ai/"
  },
 {
- "auth": "مفتاح API (يُمرر في جسم طلب JSON باسم api_key)",
+ "auth": "مفتاح API (رأس Authorization: Bearer)",
  "card_required": "لا — لا حاجة إلى بطاقة حسب صفحة الأسعار الرسمية",
  "category": "vector-databases",
  "commercial": "غير معلن",
  "cors": "غير مؤكد",
  "description_ar": "واجهة بحث ويب مصممة لوكلاء الذكاء الاصطناعي وخطوط أنابيب الاسترجاع المعزز (RAG): بحث حي واستخراج محتوى من روابط وزحف مواقع وبحث معمق، بنتائج تحمل العناوين والروابط والمحتوى والدرجات؛ خطتها المجانية Researcher تشمل 1,000 رصيد API شهريا.",
- "docs": "https://www.tavily.com/blog/getting-started-with-the-tavily-search-api",
- "example_curl": "# البحث يجري عادة عبر حزم SDK؛ هذا استدعاء REST مكافئ لبحث واحد على جهازك فقط: استبدل YOUR_KEY بمفتاح API من لوحة تحكم Tavily\ncurl -sS -X POST \"https://api.tavily.com/search\" -H \"Content-Type: application/json\" --data '{\"api_key\": \"YOUR_KEY\", \"query\": \"What is retrieval-augmented generation?\", \"search_depth\": \"basic\", \"max_results\": 5}'",
- "example_fetch": "// البحث يجري عادة عبر حزم SDK؛ هذا استدعاء REST مكافئ لبحث واحد على جهازك فقط: استبدل YOUR_KEY بمفتاح API من لوحة تحكم Tavily\nfetch('https://api.tavily.com/search', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ api_key: 'YOUR_KEY', query: 'What is retrieval-augmented generation?', search_depth: 'basic', max_results: 5 }) })",
+ "docs": "https://docs.tavily.com/documentation/api-reference/endpoint/search",
+ "example_curl": "# البحث يجري عادة عبر حزم SDK؛ هذا استدعاء REST مكافئ لبحث واحد على جهازك فقط: استبدل YOUR_KEY بمفتاح API من لوحة تحكم Tavily، والحقل المطلوب الوحيد في الجسم هو query حسب مرجع واجهة البحث الرسمي\ncurl -sS -X POST \"https://api.tavily.com/search\" -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" --data '{\"query\": \"What is retrieval-augmented generation?\", \"search_depth\": \"basic\", \"max_results\": 5}'",
+ "example_fetch": "// البحث يجري عادة عبر حزم SDK؛ هذا استدعاء REST مكافئ لبحث واحد على جهازك فقط: استبدل YOUR_KEY بمفتاح API من لوحة تحكم Tavily، والحقل المطلوب الوحيد في الجسم هو query حسب مرجع واجهة البحث الرسمي\nfetch('https://api.tavily.com/search', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ query: 'What is retrieval-augmented generation?', search_depth: 'basic', max_results: 5 }) })",
  "free_limit": "خطة Researcher المجانية: 1,000 رصيد API شهريا، بلا بطاقة ائتمانية، وتتجدد الأرصدة في أول كل شهر، وتتوقف الطلبات عند نفاد الأرصدة حتى التجديد أو الترقية",
  "free_limit_scope": "لخطة Researcher المجانية في صفحة الأسعار الرسمية",
  "free_type": "خطة مجانية",
  "https": true,
  "id": "tavily",
- "key_url": "https://app.tavily.com/home",
+ "key_url": "https://app.tavily.com",
  "key_url_kind": "console",
- "key_url_note": "صفحة دخول لوحة تحكم Tavily وفيها رابط إنشاء حساب؛ بعد الدخول تُنسخ مفاتيح API من لوحة التحكم، كما تنص صفحة الأسعار الرسمية نفسها (تسجيل حساب مجاني ومفتاح من لوحة التحكم).",
+ "key_url_note": "زر «Get an API key» في مرجع واجهة البحث الرسمي نفسه يفتح تطبيق Tavily؛ بعد الدخول تُنسخ مفاتيح API من لوحة التحكم، كما تنص صفحة الأسعار الرسمية نفسها (تسجيل حساب مجاني ومفتاح من لوحة التحكم).",
  "last_checked": "2026-10-27",
  "last_price_checked": "2026-10-27",
  "live_try": null,
@@ -6356,7 +6356,7 @@
   "وكلاء ذكاء اصطناعي"
  ],
  "training_use": "غير معلن",
- "verification_note": "صفحة الأسعار الرسمية نفسها تعرض خطة Researcher بسعر Free شهريا: 1,000 رصيد API شهريا، وNo credit card required، ودعم بالبريد الإلكتروني؛ ونص الصفحة نفسه يقول إن الحساب المجاني يبدأ بـ 1,000 رصيد مجاني شهريا بلا بطاقة ائتمانية، وإن الأرصدة تتجدد في أول كل شهر، وإن الاستهلاك بحسب نوع الطلب، وإن الطلبات تتوقف عند نفاد الأرصدة حتى التجديد أو الترقية؛ وصفحة البدء الرسمية نفسها تقول إن المفتاح يُحصل عليه بالتسجيل في tavily.com ومن لوحة التحكم، وإن البحث يجري باستدعاء search؛ ومقدار استهلاك كل نوع طلب بالرصيد غير مذكور في صفحة الأسعار المقروءة فلم يُخترع أي رقم له، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فيها فبقيت غير مؤكدة وغير معلنة.",
+ "verification_note": "صفحة الأسعار الرسمية نفسها تعرض خطة Researcher بسعر Free شهريا: 1,000 رصيد API شهريا، وNo credit card required، ودعم بالبريد الإلكتروني؛ ونص الصفحة نفسه يقول إن الحساب المجاني يبدأ بـ 1,000 رصيد مجاني شهريا بلا بطاقة ائتمانية، وإن الأرصدة تتجدد في أول كل شهر، وإن الاستهلاك بحسب نوع الطلب، وإن الطلبات تتوقف عند نفاد الأرصدة حتى التجديد أو الترقية؛ ومرجع واجهة البحث الرسمي نفسه يثبت أن البحث هو POST على https://api.tavily.com/search، وأن المفتاح يُمرر في رأس Authorization بصيغة Bearer، وأن الحقل المطلوب الوحيد في الجسم هو query؛ ومقدار استهلاك كل نوع طلب بالرصيد غير مذكور في صفحة الأسعار المقروءة فلم يُخترع أي رقم له، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فيها فبقيت غير مؤكدة وغير معلنة.",
  "verification_source": "https://www.tavily.com/pricing",
  "website": "https://www.tavily.com/"
 }
