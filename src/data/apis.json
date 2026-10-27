@@ -5905,5 +5905,56 @@
     "verification_note": "صفحة الأسعار الرسمية تعرض خطة Free بسعر 0 دولار شهريا، وتشمل 5 مستخدمين و2500 طلب شهريا ومساحة عمل واحدة و250 تنفيذ خلية تقييم شهريا ومجموعة بيانات حتى 10 ميغابايت، وجدول المقارنة في الصفحة نفسها يضيف 10 مطالبات و750 تنفيذ عقدة وكيل شهريا و10 تشغيلات ملعب يوميا؛ ومعدل التجاوز في الخطة المجانية هو «—» (لا تجاوز مدفوع مذكور)، فلم تُعدّ عرضا مؤقتا؛ وشرط البطاقة غير مذكور في صفحة الأسعار نفسها فبقي غير معلن، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فبقيت غير مؤكدة؛ ومكان إنشاء المفتاح (Settings > PromptLayer API Keys) من التوثيق الرسمي نفسه، ونقطة تحديث سير عمل REST ورأس X-API-KEY من مرجع REST الرسمي نفسه.",
     "verification_source": "https://promptlayer.com/pricing",
     "website": "https://promptlayer.com"
+  },
+  {
+    "auth": "بيانات اعتماد مستخدم قاعدة البيانات عبر Data API (Basic أو Bearer) حسب توثيق Data API الرسمي",
+    "card_required": "غير معلن",
+    "category": "vector-databases",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "بحث متجهي مدمج في قاعدة بيانات SingleStore Helios السحابية: نوع متجه أصلي ودالتا تشابه DOT_PRODUCT وEUCLIDEAN_DISTANCE وبحث هجين، مع استعلام SQL عبر Data API، لبناء استرجاع RAG وبحث دلالي فوق البيانات التشغيلية نفسها دون قاعدة ثانية.",
+    "docs": "https://docs.singlestore.com/cloud/getting-started-with-singlestore-helios/",
+    "example_curl": "# استبدل YOUR_CLUSTER_HOST بمضيف عنقودك وYOUR_KEY ببيانات اعتمادك وYOUR_DATABASE بقاعدة بياناتك؛ مثال الاستعلام الرسمي عبر Data API (POST /api/v2/query/rows بجسم sql وdatabase)، وبحث المتجه يجري بالاستعلام نفسه مع DOT_PRODUCT في ORDER BY حسب توثيق المتجهات الرسمي، فراجع التوثيق الحالي قبل الاستخدام\ncurl -X POST \"https://YOUR_CLUSTER_HOST/api/v2/query/rows\" -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"sql\": \"SELECT title, genre FROM books WHERE book_id = 1\", \"database\": \"YOUR_DATABASE\"}'",
+    "example_fetch": "// استبدل YOUR_CLUSTER_HOST بمضيف عنقودك وYOUR_KEY ببيانات اعتمادك وYOUR_DATABASE بقاعدة بياناتك؛ مثال الاستعلام الرسمي عبر Data API، وبحث المتجه يجري بالاستعلام نفسه مع DOT_PRODUCT في ORDER BY\nfetch('https://YOUR_CLUSTER_HOST/api/v2/query/rows', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ sql: 'SELECT title, genre FROM books WHERE book_id = 1', database: 'YOUR_DATABASE' }) })",
+    "free_limit": "الإصدار المشترك المجاني (Free Shared Edition): عنقود مشترك مجاني بقاعدة بيانات مرفقة واحدة وحد تخزين مضغوط 1 غيغابايت، وليس مخصصا لبيئات الإنتاج حسب توثيق البدء الرسمي",
+    "free_limit_scope": "للإصدار المشترك المجاني في توثيق البدء الرسمي",
+    "free_type": "طبقة مجانية",
+    "https": true,
+    "id": "singlestore-helios",
+    "key_url": "https://portal.singlestore.com/",
+    "key_url_kind": "console",
+    "key_url_note": "بوابة SingleStore السحابية (Cloud Portal) المذكورة في توثيق البدء الرسمي نفسه للتسجيل والاتصال بالعنقود المشترك المجاني.",
+    "last_checked": "2026-10-27",
+    "last_price_checked": "2026-10-27",
+    "live_try": null,
+    "media": [
+      "embeddings"
+    ],
+    "models": [
+      {
+        "name": "بحث متجهي SingleStore Helios",
+        "type": "embeddings"
+      }
+    ],
+    "name": "SingleStore Helios",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "قاعدة بيانات سحابية بعناقيد خاصة بكل حساب: عملياتها (إنشاء جداول وفهارس متجهة، إدراج مستندات، بحث) تجري على عنقود خاص بالمستخدم وبيانات اعتماد خاصة به، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://docs.singlestore.com/cloud/getting-started-with-singlestore-helios/",
+    "provider": "SingleStore",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "بحث متجهي",
+      "استرجاع",
+      "RAG",
+      "SQL"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "توثيق البدء الرسمي نفسه يقول إن SingleStore يسمح بالبناء مجانا بالإصدار المشترك المجاني (Free Shared Edition)، وإنه يقدم عنقودا مشتركا مجانيا بقاعدة بيانات مرفقة واحدة، وإن العنقود المشترك يستخدم بيئة حوسبة مشتركة بحد تخزين مضغوط 1 غيغابايت، وإنه ليس مخصصا لبيئات الإنتاج؛ وتوثيق Data API الرسمي يثبت نقطة POST /api/v2/query/rows لتنفيذ جملة SQL وإعادة مجموعات النتائج، بجسم JSON فيه sql وdatabase الاختياري ورأسي Authorization وContent-Type: application/json؛ وتوثيق المتجهات الرسمي يثبت دالتي DOT_PRODUCT وEUCLIDEAN_DISTANCE وبحث التشابه بصيغة SELECT…ORDER BY…LIMIT؛ وشرط البطاقة وحالة CORS والاستخدام التجاري والتدريب غير مذكورة في توثيق البدء نفسه فبقيت غير معلنة وغير مؤكدة — لم يُخترع أي رقم أو شرط.",
+    "verification_source": "https://docs.singlestore.com/cloud/getting-started-with-singlestore-helios/",
+    "website": "https://www.singlestore.com/"
   }
 ]

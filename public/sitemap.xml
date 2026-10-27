@@ -161,4 +161,5 @@
 <url><loc>/apis/mindstudio/</loc></url>
   <url><loc>/apis/guardrailx/</loc></url>
   <url><loc>/apis/promptlayer/</loc></url>
+  <url><loc>/apis/singlestore-helios/</loc></url>
 </urlset>
