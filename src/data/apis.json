@@ -5802,5 +5802,57 @@
     "verification_note": "صفحة الأسعار الرسمية تعرض بطاقة Free بسعر 0 دولار شهريا + تكاليف الاستخدام، وتشمل وكيلا واحدا و1000 تشغيل شهريا ووصولا إلى أكثر من 200 نموذج عبر MindStudio Service Router دون مفاتيح خاصة مع إمكانية إحضار مفاتيح خاصة، وتنص على أن بياناتك لا تُستخدم أبدا للتدريب؛ وأسئلة الصفحة نفسها توضح أن تكاليف الاستخدام مفوترة بسعر التكلفة دون هامش؛ وشرط البطاقة غير مذكور في صفحة الأسعار نفسها فبقي غير معلن، والاستخدام التجاري غير مذكور فيها فبقي غير معلن، وحالة CORS غير مؤكدة؛ ورابط التسجيل هو زر Get Free في البطاقة نفسها؛ وصيغة تشغيل التطبيق (POST /developer/v2/apps/run بمصادقة Bearer ومعرّف appId) من مرجع واجهة MindStudio الرسمي نفسه (https://university.mindstudio.ai/developers/api-reference، قسم Run an app)، وهي تصحيح لصيغة الجولة 47 الأولى (POST /developer/v2/agents/run بمعرّف workerId) التي كانت مأخوذة من تكامل Pipedream لا من توثيق رسمي.",
     "verification_source": "https://www.mindstudio.ai/pricing",
     "website": "https://www.mindstudio.ai"
+  },
+  {
+    "auth": "مفتاح GuardrailX (gr_) مع عنوان وكيل GuardrailX الخاص بالمزود",
+    "card_required": "لا",
+    "category": "ai-guardrails",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "حاجز تحكم لوكلاء الذكاء الاصطناعي من GuardrailX: يمرر مكالمات الوكيل عبر وكيله (proxy) بمفتاح gr_ خاص، فيفرض حدود إنفاق يومية وشهرية على مستوى المشروع والمفتاح والوكيل والجلسة، ويحظر الحلقات المتكررة، ويخفي البيانات الحساسة (بريد وأرقام وهويات وأرقام حسابات) عبر Privacy Guard قبل وصولها إلى المزود ويعيدها في الرد، ويوجه العمل إلى نماذج أرخص عند كفايتها، لمزودي OpenAI وAnthropic وGemini وMistral وDeepSeek وOpenRouter.",
+    "docs": "https://www.guardrailx.ai/",
+    "example_curl": "# استبدل YOUR_KEY بمفتاح gr_ من لوحة تحكم GuardrailX بعد إضافة مفتاح مزودك فيها؛ الصيغة من مثال الصفحة الرسمية نفسها (عنوان وكيل OpenAI: agent.guardrailx.ai/openai/v1) وراجع الصفحة الرسمية قبل الاستخدام\ncurl -X POST \"https://agent.guardrailx.ai/openai/v1/chat/completions\" -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"model\": \"gpt-4o-mini\", \"messages\": [{\"role\": \"user\", \"content\": \"Hello\"}]}'",
+    "example_fetch": "// استبدل YOUR_KEY بمفتاح gr_ من لوحة تحكم GuardrailX بعد إضافة مفتاح مزودك فيها؛ الصيغة من مثال الصفحة الرسمية نفسها (عنوان وكيل OpenAI: agent.guardrailx.ai/openai/v1) وراجع الصفحة الرسمية قبل الاستخدام\nfetch('https://agent.guardrailx.ai/openai/v1/chat/completions', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ model: 'gpt-4o-mini', messages: [{ role: 'user', content: 'Hello' }] }) })",
+    "free_limit": "الخطة المجانية (Free): 0 يورو شهريا للأبد، 5000 طلب شهريا، مشروع واحد، حدود إنفاق وحظر حلقات وPrivacy Guard وتوجيه ومقارنات نماذج، وسجل طلبات 90 يوما؛ عند بلوغ السقف تتوقف المكالمات حتى الشهر التالي",
+    "free_limit_scope": "للخطة المجانية (Free) في الصفحة الرسمية",
+    "free_type": "خطة مجانية",
+    "https": true,
+    "id": "guardrailx",
+    "key_url": "https://guardrailx.ai/signup",
+    "key_url_kind": "signup",
+    "key_url_note": "صفحة إنشاء حساب في الخطة المجانية (بلا بطاقة وبلا تاريخ انتهاء حسب الصفحة نفسها)؛ بعد التسجيل أنشئ مفتاح gr_ من لوحة التحكم وأضف مفتاح مزودك فيها، والمفتاح يُعرض مرة واحدة فقط عند إنشائه حسب الأسئلة الشائعة في الصفحة نفسها.",
+    "last_checked": "2026-10-27",
+    "last_price_checked": "2026-10-27",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "تحكم وحماية مكالمات الوكلاء عبر GuardrailX",
+        "type": "text"
+      }
+    ],
+    "name": "GuardrailX",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "وكيل تحكم يمرر مكالمات الوكيل عبر مفاتيح gr_ ومفاتيح مزود خاصة بكل مستخدم وحدود ومشاريع وسياسات، وليس استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://www.guardrailx.ai/",
+    "provider": "GuardrailX",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "حواجز أمان",
+      "حدود إنفاق",
+      "حظر الحلقات",
+      "خصوصية",
+      "وكلاء"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "الصفحة الرسمية نفسها تصف الخطة المجانية (Free) بأنها 0 يورو للأبد بلا بطاقة وبلا تاريخ انتهاء، وتشمل 5000 طلب شهريا ومشروعا واحدا وحدود إنفاق وحظر حلقات وPrivacy Guard وتوجيها ومقارنات نماذج وسجل طلبات 90 يوما بلا متعاونين، وتنص على أن مكالمات الخطة المجانية تتوقف عند السقف حتى الشهر التالي (بينما الخطط المدفوعة تُفوتر الطلبات الزائدة بـ 5 يورو لكل 100 ألف طلب)، وتصف كشف الحلقات الافتراضي بأنه 5 تكرارات خلال 60 ثانية؛ وتنص على أن التلقينات لا تُخزَّن (تُسجَّل التكاليف والرموز والبيانات الوصفية فقط) باستثناء عينات المقارنات والطيار الآلي المشفرة المحذوفة بعد 30 يوما إن فُعّلت، وعلى أن مفاتيح المزود تُخزَّن مشفرة وتُستخدم لمكالمات الوكيل فقط، وأن GuardrailX وكيل (proxy) يمرر المكالمات عبره لا اتصال مباشر بالمزود؛ شرط البطاقة «لا» صراحة في الصفحة نفسها؛ لم تُثبت صفحة توثيق مستقلة فالرابط هو الصفحة الرسمية نفسها التي تشرح التكامل والأسئلة الشائعة؛ حالة CORS والاستخدام التجاري والتدريب غير مذكورة فيها فبقيت غير مؤكدة وغير معلنة — لم يُخترع أي رقم أو شرط.",
+    "verification_source": "https://www.guardrailx.ai/",
+    "website": "https://www.guardrailx.ai/"
   }
 ]
