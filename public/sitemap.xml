@@ -162,4 +162,5 @@
   <url><loc>/apis/guardrailx/</loc></url>
   <url><loc>/apis/promptlayer/</loc></url>
   <url><loc>/apis/singlestore-helios/</loc></url>
+  <url><loc>/apis/traceloop/</loc></url>
 </urlset>
