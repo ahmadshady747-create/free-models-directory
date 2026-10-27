@@ -166,4 +166,5 @@
   <url><loc>/apis/composio/</loc></url>
   <url><loc>/apis/google-model-armor/</loc></url>
   <url><loc>/apis/agentprizm/</loc></url>
+  <url><loc>/apis/langtrace/</loc></url>
 </urlset>

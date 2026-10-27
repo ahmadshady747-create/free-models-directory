@@ -6158,5 +6158,55 @@
   "verification_note": "صفحة AgentPrizm الرسمية تصف خطة Hobby بأنها 0 دولار للأبد بلا بطاقة ائتمانية، وتشمل 10,000 ذاكرة و4,500 استرجاع شهريا ووكيلين/مفتاحي API ووصولا API وMCP وجميع ميزات الاسترجاع، وتذكر أن AgentSkills مشمول مجانا في كل خطة؛ ومثال الاسترجاع REST في الصفحة نفسها يستخدم POST /api/v1/agent/recall برأس Authorization: Bearer؛ ولم تُعثر على صفحة توثيق مستقلة مرتبطة من الصفحة نفسها فكان حقل التوثيق هو الصفحة الرسمية نفسها؛ حالة CORS والاستخدام التجاري والتدريب غير مذكورة في الصفحة نفسها فبقيت غير مؤكدة.",
   "verification_source": "https://agentprizm.com/",
   "website": "https://agentprizm.com/"
+ },
+ {
+  "auth": "مفتاح API: مفتاح فريق لإنشاء مفتاح مشروع، ثم مفتاح مشروع للتتبع عبر حزم SDK",
+  "card_required": "غير معلن",
+  "category": "evaluation-observability",
+  "commercial": "غير معلن",
+  "cors": "غير مؤكد",
+  "description_ar": "أداة مراقبة مفتوحة المصدر لتطبيقات النماذج اللغوية: جمع وتحليل المسارات (traces) المبنية على OpenTelemetry، وقياس الاستخدام والتكلفة والزمن ومعدل النجاح، مع إدارة المطالبات والتقييمات ومجموعات البيانات.",
+  "docs": "https://docs.langtrace.ai/introduction",
+  "example_curl": "# التتبع نفسه يجري عبر حزم SDK (Python/TypeScript) لا عبر طلب توليد واحد؛ هذا الاستدعاء الموثق ينشئ مفتاح مشروع من مفتاح فريق تولّده من الإعدادات في لوحة التحكم، على جهازك فقط\ncurl --request POST \"https://app.langtrace.ai/api/api-key?project_id=YOUR_PROJECT_ID\" --header \"Content-Type: application/json\" --header \"x-api-key: YOUR_TEAM_KEY\"",
+  "example_fetch": "// التتبع نفسه يجري عبر حزم SDK (Python/TypeScript) لا عبر طلب توليد واحد؛ هذا الاستدعاء الموثق ينشئ مفتاح مشروع من مفتاح فريق تولّده من الإعدادات في لوحة التحكم، على جهازك فقط\nfetch('https://app.langtrace.ai/api/api-key?project_id=YOUR_PROJECT_ID', { method: 'POST', headers: { 'Content-Type': 'application/json', 'x-api-key': 'YOUR_TEAM_KEY' } })",
+  "free_limit": "خطة Starter: مجانية للأبد، مستخدم واحد شهريا، حتى 10 آلاف span شهريا، مع إدارة المطالبات والتقييمات",
+  "free_limit_scope": "لخطة Starter المجانية",
+  "free_type": "طبقة مجانية دائمة",
+  "https": true,
+  "id": "langtrace",
+  "key_url": "https://app.langtrace.ai/signup",
+  "key_url_kind": "signup",
+  "key_url_note": "يفتح صفحة إنشاء حساب Langtrace؛ بعدها أنشئ مشروعا ومفتاحا من لوحة التحكم.",
+  "last_checked": "2026-10-27",
+  "last_price_checked": "2026-10-27",
+  "live_try": null,
+  "media": [
+   "text"
+  ],
+  "models": [
+   {
+    "name": "تتبع وتقييم تطبيقات النماذج اللغوية عبر Langtrace",
+    "type": "text"
+   }
+  ],
+  "name": "Langtrace",
+  "offer_expires_at": null,
+  "offer_temporary": false,
+  "playground_block_reason": "منصة تتبع ومراقبة وتقييم، لا مولّد نصوص أو صور: استخدامها يجري عبر حزم SDK ومفاتيح مشروع ولوحة تحكم، وليس استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+  "playground_status": "not-suitable",
+  "playgrounds": [],
+  "pricing": "https://docs.langtrace.ai/introduction#pricing",
+  "provider": "Langtrace",
+  "signup": "حساب مجاني متاح",
+  "status": "موثق جزئيا",
+  "tags": [
+   "مراقبة",
+   "تقييم",
+   "تتبع"
+  ],
+  "training_use": "غير معلن",
+  "verification_note": "قسم Pricing في الوثائق الرسمية يصف خطة Starter بأنها مجانية للأبد لمستخدم واحد وتشمل حتى 10 آلاف span شهريا وإدارة المطالبات والتقييمات؛ صفحة الأسعار المستقلة عرضت «Site not found» في الفحص الحي فلم تُعتمد، وصفحة أسعار التطبيق أعادت التوجيه إلى تسجيل الدخول فلم تُدخل؛ شرط البطاقة والاحتفاظ لخطة Starter غير مذكورين في قسم Pricing المقروء فبقيا غير معلن وغير مؤكد، ولم تُنسخ أي قيمة مثال من التوثيق بل استُبدلت كلها بعناصر نائبة.",
+  "verification_source": "https://docs.langtrace.ai/introduction#pricing",
+  "website": "https://www.langtrace.ai"
  }
 ]
