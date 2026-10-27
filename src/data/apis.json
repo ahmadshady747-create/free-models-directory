@@ -6258,5 +6258,55 @@
   "verification_note": "توثيق إدارة الخطة الرسمي نفسه يقول إن خطط منظمات Astra ثلاث هي Free وStandard وEnterprise، وإن منظمات خطة Free تحصل على مقدار ثابت من الرصيد كل شهر، وإن نفاد الرصيد يُسبت قواعد بيانات Serverless حتى تجديد الرصيد في دورة الفوترة التالية أو الترقية، وإن خطة Free محدودة بخمس قواعد بيانات Serverless كحد أقصى ولا تتيح تصدير المقاييس ولا النقاط الخاصة ولا قواعد البيانات متعددة المناطق؛ وتوثيق فرز المستندات الرسمي نفسه يثبت مثال البحث المتجهي find بفرز $vector عبر POST على API_ENDPOINT/api/json/v1/KEYSPACE_NAME/COLLECTION_NAME برأس Token؛ ومقدار الرصيد الشهري بالدولار أو بالعمليات غير مذكور في صفحة إدارة الخطة المقروءة فلم يُخترع أي رقم له، وشرط البطاقة وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فيها فبقيت غير معلنة وغير مؤكدة.",
   "verification_source": "https://docs.datastax.com/en/astra-db-serverless/administration/subscription-plans.html",
   "website": "https://astra.datastax.com/"
+ },
+ {
+  "auth": "مفتاح API (رأس Authorization: Bearer)",
+  "card_required": "لا — لا حاجة إلى بطاقة حسب صفحة الأسعار الرسمية",
+  "category": "evaluation-observability",
+  "commercial": "غير معلن",
+  "cors": "غير مؤكد",
+  "description_ar": "منصة مراقبة وتقييم لوكلاء الذكاء الاصطناعي: تتبع موزع مبني على OpenTelemetry، وتقييمات آلية وبشرية، وإدارة مطالبات ومجموعات بيانات وتجارب، وتنبيهات عند تدهور الجودة؛ خطتها المجانية Developer تشمل 10 آلاف حدث شهريا.",
+  "docs": "https://docs.honeyhive.ai/",
+  "example_curl": "# التتبع والتقييم يجريان عادة عبر حزم SDK وOpenTelemetry لا عبر طلب توليد واحد؛ هذا الاستدعاء يسترجع مجموعات بيانات التقييم بمفتاح API (رأس Authorization: Bearer)، على جهازك فقط، وراجع التوثيق الحالي قبل الاستخدام لأن مضيف مستوى البيانات يختلف بحسب منطقة الحساب\ncurl -sS \"https://api.dp1.us.honeyhive.ai/v1/datasets\" -H \"Authorization: Bearer YOUR_KEY\"",
+  "example_fetch": "// التتبع والتقييم يجريان عادة عبر حزم SDK وOpenTelemetry لا عبر طلب توليد واحد؛ هذا الاستدعاء يسترجع مجموعات بيانات التقييم بمفتاح API، على جهازك فقط، وراجع التوثيق الحالي قبل الاستخدام\nfetch('https://api.dp1.us.honeyhive.ai/v1/datasets', { headers: { 'Authorization': 'Bearer YOUR_KEY' } })",
+  "free_limit": "خطة Developer المجانية: 10,000 حدث شهريا، حتى 5 مستخدمين، مساحة عمل واحدة، احتفاظ بالبيانات 30 يوما، وحد أقصى 1,000 طلب بالدقيقة، بلا بطاقة ائتمانية",
+  "free_limit_scope": "لخطة Developer المجانية في صفحة الأسعار الرسمية",
+  "free_type": "خطة مجانية",
+  "https": true,
+  "id": "honeyhive",
+  "key_url": "https://app.us.honeyhive.ai/",
+  "key_url_kind": "signup",
+  "key_url_note": "زر «Start for free» في بطاقة Developer نفسها في صفحة الأسعار الرسمية؛ يفتح تطبيق HoneyHive حيث يُنشأ الحساب ومفتاح API من الإعدادات.",
+  "last_checked": "2026-10-27",
+  "last_price_checked": "2026-10-27",
+  "live_try": null,
+  "media": [
+   "text"
+  ],
+  "models": [
+   {
+    "name": "تتبع وتقييم وكلاء الذكاء الاصطناعي عبر HoneyHive",
+    "type": "text"
+   }
+  ],
+  "name": "HoneyHive",
+  "offer_expires_at": null,
+  "offer_temporary": false,
+  "playground_block_reason": "منصة تتبع ومراقبة وتقييم، لا مولّد نصوص أو صور: استخدامها يجري عبر حزم SDK وOpenTelemetry ومفاتيح API ولوحة تحكم، وليس استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+  "playground_status": "not-suitable",
+  "playgrounds": [],
+  "pricing": "https://www.honeyhive.ai/pricing",
+  "provider": "HoneyHive",
+  "signup": "حساب مجاني متاح",
+  "status": "موثق جزئيا",
+  "tags": [
+   "مراقبة",
+   "تقييم",
+   "تتبع"
+  ],
+  "training_use": "غير معلن",
+  "verification_note": "صفحة الأسعار الرسمية تعرض خطة Developer المجانية بعبارة «No credit card required»، وتشمل 10,000 حدث شهريا (والحدث حسب أسئلة الصفحة نفسها هو span تتبع واحد أو تركيبة تسمية مقياس واحدة) وحتى 5 مستخدمين ومساحة عمل واحدة واحتفاظا بالبيانات 30 يوما وحدا أقصى 1,000 طلب بالدقيقة، مع تقييمات آلية وبشرية وإدارة إصدارات المطالبات ومراقبة كاملة؛ شرط البطاقة ثبت «لا» من الصفحة نفسها، بينما حالة CORS والاستخدام التجاري والتدريب غير مذكورة فيها فبقيت غير مؤكدة وغير معلنة، ولم يُخترع أي رقم أو شرط. مثال استرجاع مجموعات البيانات يستخدم نقطة GET /v1/datasets برأس Authorization: Bearer، والتتبع نفسه يجري عادة عبر SDK وOpenTelemetry كما في التوثيق الرسمي، فذُكر ذلك صراحة في المثال نفسه.",
+  "verification_source": "https://www.honeyhive.ai/pricing",
+  "website": "https://www.honeyhive.ai/"
  }
 ]
