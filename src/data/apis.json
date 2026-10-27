@@ -6562,5 +6562,55 @@
   "verification_note": "توثيق خطط Essentials الرسمي نفسه يقول إن خطة 30 ميغابايت مجانية ومخصصة للتعلم وبناء مشاريع تجريبية، وجدوله يحدد للطبقة المجانية 30 اتصالا متزامنا وقاعدة سماح CIDR واحدة و5 غيغابايت نطاقا شهريا و100 عملية بالثانية بافتراض طلب 1 كيلوبايت، والخطط المدفوعة تبدأ من 250 ميغابايت؛ وتوثيق Redis Cloud نفسه يقول إن قاعدة البيانات المجانية 30 ميغابايت تُنشأ من صفحة البدء، وإن البحث المتجهي يجري بأوامر FT.CREATE وFT.SEARCH. شرط البطاقة والاستخدام التجاري والتدريب غير مذكورة في صفحة الخطط المقروءة، وحالة CORS غير مذكورة فيها، فبقيت غير معلنة وغير مؤكدة، ولم يُخترع أي رقم أو شرط، ولم يُعتمد على ملخصات ثانوية في أي رقم.",
   "verification_source": "https://redis.io/docs/latest/operate/rc/subscriptions/view-essentials-subscription/essentials-plan-details/",
   "website": "https://redis.io/"
-}
+ },
+ {
+  "auth": "مفتاح API (رأس Authorization: Bearer)",
+  "card_required": "لا — لا حاجة إلى بطاقة حسب الموقع الرسمي",
+  "category": "agent-memory",
+  "commercial": "غير معلن",
+  "cors": "غير مؤكد",
+  "description_ar": "طبقة ذاكرة متعددة الوسائط عبر النماذج والأدوات: ذاكرة واحدة محمولة (Memory Passport) بأنواع ستة — خلفية وحقائق وأحداث وحوارات وتأملات ومهارات — تُغذّى بالمحادثات والمستندات والجداول والصور والصوت والفيديو، مع إصدارات شبيهة بـ Git وكشف تعارضات وسجل تدقيق، وتُسترجع عبر جلسات وأدوات مختلفة بدل إعادة إدخال السياق في كل مرة.",
+  "docs": "https://docs.memorylake.ai/features/memorylake/api-reference/overview",
+  "example_curl": "# استبدل YOUR_KEY بمفتاحك من تطبيق MemoryLake واستبدل WORKSPACE_ID بمعرّف مساحة عملك؛ المثال مأخوذ من صفحة المصادقة الرسمية نفسها (طلب GET لمساحة عمل موجودة)، فراجع التوثيق الحالي قبل الاستخدام\ncurl -X GET 'https://app.memorylake.ai/openapi/memorylake/api/v3/workspaces/WORKSPACE_ID' -H 'Authorization: Bearer YOUR_KEY' -H 'Content-Type: application/json'",
+  "example_fetch": "// استبدل YOUR_KEY بمفتاحك من تطبيق MemoryLake واستبدل WORKSPACE_ID بمعرّف مساحة عملك\nfetch('https://app.memorylake.ai/openapi/memorylake/api/v3/workspaces/' + WORKSPACE_ID, { method: 'GET', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' } })",
+  "free_limit": "الخطة المجانية (Free): 0 دولار شهريا، 300,000 رمز شهريا؛ وتقدّر صفحة الأسعار نفسها ذلك بنحو 1,200 استدعاء استرجاع شهريا ونحو 40 صفحة مستند أو 40 صورة شهريا",
+  "free_limit_scope": "للخطة المجانية (Free) في صفحة الأسعار الرسمية",
+  "free_type": "خطة مجانية دائمة",
+  "https": true,
+  "id": "memorylake",
+  "key_url": "https://app.memorylake.ai/",
+  "key_url_kind": "console",
+  "key_url_note": "يفتح تطبيق MemoryLake (زر «Get started» في صفحة الأسعار الرسمية)؛ إنشاء المفتاح يجري داخل مشروع في التطبيق عبر تبويب API Keys حسب صفحة المصادقة الرسمية، ولم تُثبت صفحة مفاتيح مباشرة مستقلة، فلم يُخترع رابط مباشر.",
+  "last_checked": "2026-10-27",
+  "last_price_checked": "2026-10-27",
+  "live_try": null,
+  "media": [
+    "text"
+  ],
+  "models": [
+    {
+      "name": "ذاكرة وكلاء متعددة الوسائط عبر MemoryLake",
+      "type": "text"
+    }
+  ],
+  "name": "MemoryLake",
+  "offer_expires_at": null,
+  "offer_temporary": false,
+  "playground_block_reason": "طبقة ذاكرة عبر مشاريع ومساحات عمل ومفاتيح API وبحث عبر جلسات متعددة، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+  "playground_status": "not-suitable",
+  "playgrounds": [],
+  "pricing": "https://www.memorylake.ai/en/pricing",
+  "provider": "MemoryLake",
+  "signup": "حساب مجاني متاح",
+  "status": "موثق جزئيا",
+  "tags": [
+    "ذاكرة",
+    "وكلاء",
+    "متعدد الوسائط"
+  ],
+  "training_use": "غير معلن",
+  "verification_note": "صفحة الأسعار الرسمية المقروءة نصا في 2026-10-27 تصف الخطة المجانية (Free) بأنها 0 دولار شهريا وتشمل 300,000 رمز شهريا، وتقول أسئلتها إن الرصيد الائتماني (3.125 دولار لكل مليون رمز) يُحتاج فقط عند تجاوز الحصة، وإن الخطة المجانية لا تحتاج رصيدا للبدء؛ والموقع الرسمي نفسه يقول «Free forever» و«Free to use · No credit card»، فثبت شرط البطاقة «لا» بهذا المصدر؛ وتقديرات الصفحة نفسها للخطة المجانية (نحو 1,200 استدعاء استرجاع، نحو 40 صفحة مستند أو 40 صورة) مذكورة في الحد كتقديرات لا أرقام مضمونة. وصفحة المصادقة الرسمية توجّه إلى إنشاء المفتاح داخل مشروع في التطبيق عبر تبويب API Keys بزر «Create API Key»، وتقول إن السر يُعرض مرة واحدة فقط، وإن كل الطلبات تتطلب رأس Authorization: Bearer، ومثالها هو GET لمساحة عمل على المضيف app.memorylake.ai، فاعتُمد المثال نفسه بمعرّف نائب. والموقع الرسمي نفسه يصف الأنواع الستة للذاكرة (خلفية وحقائق وأحداث وحوارات وتأملات ومهارات) والإصدارات الشبيهة بـ Git وكشف التعارضات. شرط الاستخدام التجاري والتدريب وحالة CORS غير مذكورة في صفحة الأسعار المقروءة فبقيت غير معلنة وغير مؤكدة؛ وتنبيه أمانة: الموقع يقول إنه لا يستطيع قراءة الذاكرة معماريا، لكنه لا ينص صراحة على عدم التدريب، فلم يُثبت حقل التدريب «لا» من ذلك وحده.",
+  "verification_source": "https://www.memorylake.ai/en/pricing",
+  "website": "https://memorylake.ai"
+ }
 ]
