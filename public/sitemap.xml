@@ -175,4 +175,5 @@
   <url><loc>/apis/agenta/</loc></url>
   <url><loc>/apis/redis-cloud/</loc></url>
   <url><loc>/apis/memorylake/</loc></url>
+  <url><loc>/apis/memorysync/</loc></url>
 </urlset>
