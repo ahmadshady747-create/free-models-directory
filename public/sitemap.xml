@@ -176,4 +176,5 @@
   <url><loc>/apis/redis-cloud/</loc></url>
   <url><loc>/apis/memorylake/</loc></url>
   <url><loc>/apis/memorysync/</loc></url>
+  <url><loc>/apis/sanitext/</loc></url>
 </urlset>

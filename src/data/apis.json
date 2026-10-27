@@ -6662,5 +6662,56 @@
    "verification_note": "صفحة MemorySync الرسمية المقروءة نصا في 2026-10-27 تعرض في قسم الأسعار خطة FREE بسعر 0 دولار تشمل 10,000 طلب إضافة شهريا و1,000 طلب استرجاع شهريا وتخزينا ومستخدمين بلا حد، مع تطبيقات OAuth وتكاملات ومصادقة SSO/SAML وتوفير SCIM وتكاملات SIEM وسجلات تدقيق ونظام ذكاء أساسي ودعم بالبريد؛ وتصف الصفحة نفسها البنية بأنها استرجاع تكيفي وترتيب دلالي وتجميع سياق واختيار طبقة ذاكرة وفرض سياسات وحوكمة وتدقيق وعزل مستأجرين. وتوثيق MemorySync الرسمي نفسه ينص على أن كل استدعاء بمفتاح API يجب أن يسمّي مستخدما نهائيا برأس X-End-User-ID وإلا أعاد 400، وعلى أن المفتاح يُرسل كـ X-API-Key ويُنشأ من لوحة التحكم، وأن نقطة MCP المستضافة هي https://mcp.memorysync.io/mcp؛ ومثال الاسترجاع مأخوذ من توثيق حزمة MemorySync الرسمية (إعداد أداة webhook: POST إلى https://api.memorysync.io/memory/query برأسَي X-API-Key وX-End-User-ID وجسم query وk). شرط البطاقة والاستخدام التجاري والتدريب وحالة CORS غير مذكورة في صفحة الأسعار المقروءة فبقيت غير معلنة وغير مؤكدة — لم يُخترع أي رقم أو شرط.",
    "verification_source": "https://memorysync.io/",
    "website": "https://memorysync.io/"
+ },
+ {
+  "auth": "مفتاح API (رأس Authorization: Bearer)",
+  "card_required": "لا — لا حاجة إلى بطاقة حسب الصفحة الرسمية",
+  "category": "ai-guardrails",
+  "commercial": "غير معلن",
+  "cors": "غير مؤكد",
+  "description_ar": "واجهة كشف بيانات شخصية وتنقيحها من Sanitext لحماية تلقينات الذكاء الاصطناعي قبل إرسالها إلى نموذج: نقطة Detect تعيد كل نطاق بيانات شخصية مع تسميته وإزاحات بايتاته ودرجة ثقته، ونقطة Redact تعيد النص نفسه مع كل نطاق مخفيا بتسميته، لأسماء وأرقام هواتف وبريد وعناوين وتواريخ وروابط وأرقام حسابات وبطاقات وأسرار مثل مفاتيح API، بأكثر من 30 لغة، دون إرسال النص إلى نموذج لغة ثالث ودون احتفاظ به حسب الصفحة الرسمية.",
+  "docs": "https://sanitext.app/",
+  "example_curl": "# استبدل YOUR_KEY بمفتاحك من حساب Sanitext؛ الصيغة من مثال الصفحة الرسمية نفسها (POST /v1/redact برأس Authorization: Bearer وجسم text)، وراجع الصفحة الحالية قبل الاستخدام\ncurl -X POST \"https://sanitext.app/v1/redact\" -H \"Authorization: Bearer <redacted>\" -H \"Content-Type: application/json\" -d '{\"text\": \"Contact Maria at maria@example.com\"}'",
+  "example_fetch": "// استبدل YOUR_KEY بمفتاحك من حساب Sanitext؛ الصيغة من مثال الصفحة الرسمية نفسها (POST /v1/redact برأس Authorization: Bearer وجسم text)\nfetch('https://sanitext.app/v1/redact', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ text: 'Contact Maria at maria@example.com' }) })",
+  "free_limit": "طبقة مجانية دائمة: 300 ألف حرف مجانا للبدء، بلا بطاقة وبلا حد زمني مذكور للبدء؛ والخطط المدفوعة تبدأ من 29 دولارا شهريا",
+  "free_limit_scope": "للطبقة المجانية في الصفحة الرسمية",
+  "free_type": "طبقة مجانية",
+  "https": true,
+  "id": "sanitext",
+  "key_url": "https://sanitext.app/signup",
+  "key_url_kind": "signup",
+  "key_url_note": "يفتح صفحة التسجيل عبر زر «Get your free API key» في الصفحة الرسمية نفسها، ونصها «Free tier, no credit card. Your API key is waiting»؛ ولم تُفتح صفحة التسجيل بتسجيل دخول، ولم يُثبت رابط مفاتيح مباشر مستقل فلم يُخترع رابط مباشر.",
+  "last_checked": "2026-10-27",
+  "last_price_checked": "2026-10-27",
+  "live_try": null,
+  "media": [
+   "text"
+  ],
+  "models": [
+   {
+    "name": "كشف البيانات الشخصية وتنقيحها عبر Sanitext",
+    "type": "text"
+   }
+  ],
+  "name": "Sanitext",
+  "offer_expires_at": null,
+  "offer_temporary": false,
+  "playground_block_reason": "واجهة حماية خصوصية تعمل عبر مفاتيح API خاصة بكل حساب ونقطتي كشف وتنقيح لنصوص المستخدم، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+  "playground_status": "not-suitable",
+  "playgrounds": [],
+  "pricing": "https://sanitext.app/",
+  "provider": "Sanitext",
+  "signup": "حساب مجاني متاح",
+  "status": "موثق جزئيا",
+  "tags": [
+   "حواجز أمان",
+   "خصوصية",
+   "بيانات شخصية",
+   "تنقيح"
+  ],
+  "training_use": "غير معلن",
+  "verification_note": "الصفحة الرسمية المقروءة نصا في 2026-10-27 تعرض في أعلاها «No credit card · 300K characters free» وفي قسم الأسعار «Free to start. $29/mo when you grow» و«300K characters free to start — no clock, no card» و«a permanent free tier»، وتصف نقطتي POST /v1/detect (نطاقات مع تسمية وإزاحات بايت ودرجة ثقة) وPOST /v1/redact (نص مخفي بتسميات)، وأنواع البيانات المشمولة (أسماء وبريد وهواتف وعناوين وتواريخ وروابط وأرقام حسابات وبطاقات وأسرار مثل مفاتيح API) بأكثر من 30 لغة، وأنها تسجّل البيانات الوصفية فقط (عدد الأحرف وعدد الكيانات والتوقيت) ولا تسجّل النص أو البيانات الشخصية نفسها، وأنها لا ترسل النص إلى نموذج لغة ثالث؛ وصفحة التسجيل الرسمية نفسها نصها «Free tier, no credit card. Your API key is waiting». لم تُذكر في الصفحة المقروءة مدة تجدد حصة 300 ألف حرف، فلم تُدعَ شهرية ولا لمرة واحدة، وحالة CORS والاستخدام التجاري والتدريب بقيت غير مؤكدة وغير معلنة — لم يُخترع أي رقم أو شرط، ولم تُفتح صفحة التسجيل بتسجيل دخول.",
+  "verification_source": "https://sanitext.app/",
+  "website": "https://sanitext.app/"
  }
 ]
