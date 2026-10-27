@@ -29,14 +29,14 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'SoftwareApplication
 ---
 <Base title={title} description={description} canonical={`/apis/${api.id}/`}>
 <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-<a href="/" class="text-sm text-blue-600">← العودة إلى الدليل</a>
+<a href="/" class="text-sm text-[#1D4ED8]">← العودة إلى الدليل</a>
 <h1 class="mt-3 text-3xl font-bold">{api.name}</h1>
-<p class="mt-1 text-slate-500">{api.provider} · {cat?.label}</p>
+<p class="mt-1 text-[#78716C]">{api.provider} · {cat?.label}</p>
 {api.free_type === 'رصيد تجريبي مؤقت' && <p class="mt-4 rounded-xl bg-amber-100 p-3 text-sm font-bold text-amber-900 dark:bg-amber-900 dark:text-amber-100">تحذير: هذه المجانية رصيد تجريبي ينتهي، وليست طبقة مجانية دائمة.</p>}
 {api.status === 'قيد التحقق' && <p class="mt-4 rounded-xl bg-amber-100 p-3 text-sm font-bold text-amber-900 dark:bg-amber-900 dark:text-amber-100">بطاقة قيد التحقق: لا تعتمد على أي رقم هنا حتى يُفحص من التوثيق الرسمي. الحدود الحالية غير مؤكد.</p>}
 {api.status === 'موثق جزئيا' && <p class="mt-4 rounded-xl bg-emerald-100 p-3 text-sm font-bold text-emerald-900 dark:bg-emerald-900 dark:text-emerald-100">موثق جزئيا: نوع المجانية والحد المذكور أدناه موثقان من صفحة الأسعار الرسمية بتاريخ آخر تحقق، لكن شرط البطاقة وحالة CORS ومعرّفات النماذج الدقيقة ما زالت غير مؤكدة حيث لم تثبتها الصفحة نفسها. تحقق دائما من صفحة الأسعار الرسمية قبل الاعتماد على أي حد.</p>}
 {api.offer_temporary && (
-<p class={`mt-4 rounded-xl p-3 text-sm font-bold ${expDays !== null && expDays < 0 ? 'bg-slate-200 text-slate-600 dark:bg-slate-800 dark:text-slate-300' : 'bg-amber-100 text-amber-900 dark:bg-amber-900 dark:text-amber-100'}`}>⏳ عرض مؤقت: <span class="countdown" data-expires={api.offer_expires_at || ''}>{detailTimerText()}</span></p>
+<p class={`mt-4 rounded-xl p-3 text-sm font-bold ${expDays !== null && expDays < 0 ? 'bg-[#E7E5E4] text-[#57534E] dark:bg-[#292524] dark:text-[#D6D3D1]' : 'bg-amber-100 text-amber-900 dark:bg-amber-900 dark:text-amber-100'}`}>⏳ عرض مؤقت: <span class="countdown" data-expires={api.offer_expires_at || ''}>{detailTimerText()}</span></p>
 )}
 
 <div class="mt-6 flex flex-wrap items-center gap-3">
@@ -54,11 +54,11 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'SoftwareApplication
 <a class="btn-secondary" href={api.docs} rel="noopener" target="_blank">التوثيق الرسمي</a>
 <a class="btn-secondary" href={api.pricing} rel="noopener" target="_blank">صفحة الأسعار الرسمية</a>
 </div>
-{api.key_url_note && <p class="mt-3 text-sm text-slate-500">{api.key_url_note}</p>}
-<p class="mt-3"><a class="flex min-h-12 items-center text-sm font-bold text-blue-600" href={`/agent/?provider=${api.id}`}>اسأل الوكيل عن هذا المزود</a></p>
+{api.key_url_note && <p class="mt-3 text-sm text-[#78716C]">{api.key_url_note}</p>}
+<p class="mt-3"><a class="flex min-h-12 items-center text-sm font-bold text-[#1D4ED8]" href={`/agent/?provider=${api.id}`}>اسأل الوكيل عن هذا المزود</a></p>
 {!hasPlayground && <p class="mt-3 text-sm font-bold text-red-800 dark:text-red-200">لا بيئة تنفيذ نماذج في المتصفح لهذا المزود — <a class="underline" href="#playground">السبب والخطوات البديلة في قسم بيئة تنفيذ النماذج أدناه ↓</a></p>}
 
-<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<section class="mt-6 rounded-3xl border border-[#E7E5E4] bg-white p-4 dark:border-[#44403C] dark:bg-[#292524]">
 <h2 class="font-bold text-lg">ملخص سريع</h2>
 <ul class="mt-2 space-y-1 text-sm">
 <li>نوع المجانية: <strong>{api.free_type}</strong></li>
@@ -67,46 +67,46 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'SoftwareApplication
 <li>CORS: {api.cors} · HTTPS: {api.https ? 'نعم' : 'غير مؤكد'}</li>
 <li>استخدام المدخلات للتدريب: {api.training_use} · الاستخدام التجاري: {api.commercial}</li>
 <li>الحالة: <strong>{api.status}</strong> · آخر تحقق: {api.last_checked} · آخر تحقق سعري: {api.last_price_checked}</li>
-{api.verification_source && <li>مصدر التحقق: <a class="break-all text-blue-600" href={api.verification_source} rel="noopener" target="_blank">{api.verification_source}</a>{api.verification_note && <> — {api.verification_note}</>}</li>}
+{api.verification_source && <li>مصدر التحقق: <a class="break-all text-[#1D4ED8]" href={api.verification_source} rel="noopener" target="_blank">{api.verification_source}</a>{api.verification_note && <> — {api.verification_note}</>}</li>}
 </ul>
 </section>
 
 {hasPlayground ? (
-<section id="playground" tabindex="-1" class="mt-6 scroll-mt-24 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<section id="playground" tabindex="-1" class="mt-6 scroll-mt-24 rounded-3xl border border-[#E7E5E4] bg-white p-4 dark:border-[#44403C] dark:bg-[#292524]">
 <h2 class="font-bold text-lg">بيئة تنفيذ النماذج — بمفتاحك الخاص</h2>
-<p class="text-sm text-slate-500">Model Execution Runtime</p>
+<p class="text-sm text-[#78716C]">Model Execution Runtime</p>
 <p class="mt-1 text-sm font-bold text-amber-800 dark:text-amber-200">مفتاحك يخرج من متصفحك مباشرة إلى المزود فقط، والاستخدام يُحسب على حصتك وقد يكلف مالاً بعد نفاد الطبقة المجانية.</p>
 <p class="mt-1 text-sm">معرّف النموذج من توثيق المزود الرسمي حيث يُطلب، وإذا فشل الطلب بسبب CORS ستظهر رسالة صريحة بذلك، وهي ليست خطأ في المفتاح بالضرورة. تفاصيل الأمان الكاملة في صفحة الخصوصية والمنهجية.</p>
 <ol class="mt-4 grid gap-2 sm:grid-cols-3">
-<li class="rounded-2xl border border-blue-200 bg-blue-50 p-3 text-sm dark:border-blue-800 dark:bg-blue-950/40"><strong>الخطوة 1 — احصل على مفتاحك</strong><p class="mt-1">من المزود الرسمي فقط، قبل أي تجربة: <a class="font-bold text-blue-600" href={api.key_url} rel="noopener" target="_blank">{keyLabel}</a></p></li>
-<li class="rounded-2xl border border-blue-200 bg-blue-50 p-3 text-sm dark:border-blue-800 dark:bg-blue-950/40"><strong>الخطوة 2 — الصق مفتاحك أدناه</strong><p class="mt-1">في حقل «مفتاحك الخاص»؛ لا يُحفظ افتراضيا، ولا يغادر متصفحك إلا إلى المزود. <a class="font-bold text-blue-600" href="#playground-0">انتقل إلى حقل المفتاح ↓</a></p></li>
-<li class="rounded-2xl border border-blue-200 bg-blue-50 p-3 text-sm dark:border-blue-800 dark:bg-blue-950/40"><strong>الخطوة 3 — اكتب طلبك واضغط توليد</strong><p class="mt-1">إذا ظهر خطأ فستكون رسالته مميزة (401 مفتاح، 403 صلاحية، 429 حد، CORS اتصال) لا فشلا صامتا.</p></li>
+<li class="rounded-2xl border border-[#E7E5E4] bg-[#F5F5F4] p-3 text-sm dark:border-[#44403C] dark:bg-[#292524]/40"><strong>الخطوة 1 — احصل على مفتاحك</strong><p class="mt-1">من المزود الرسمي فقط، قبل أي تجربة: <a class="font-bold text-[#1D4ED8]" href={api.key_url} rel="noopener" target="_blank">{keyLabel}</a></p></li>
+<li class="rounded-2xl border border-[#E7E5E4] bg-[#F5F5F4] p-3 text-sm dark:border-[#44403C] dark:bg-[#292524]/40"><strong>الخطوة 2 — الصق مفتاحك أدناه</strong><p class="mt-1">في حقل «مفتاحك الخاص»؛ لا يُحفظ افتراضيا، ولا يغادر متصفحك إلا إلى المزود. <a class="font-bold text-[#1D4ED8]" href="#playground-0">انتقل إلى حقل المفتاح ↓</a></p></li>
+<li class="rounded-2xl border border-[#E7E5E4] bg-[#F5F5F4] p-3 text-sm dark:border-[#44403C] dark:bg-[#292524]/40"><strong>الخطوة 3 — اكتب طلبك واضغط توليد</strong><p class="mt-1">إذا ظهر خطأ فستكون رسالته مميزة (401 مفتاح، 403 صلاحية، 429 حد، CORS اتصال) لا فشلا صامتا.</p></li>
 </ol>
 {api.playgrounds.map((pg, idx) => (
-<div id={`playground-${idx}`} class="playground mt-4 rounded-2xl border border-slate-200 p-3 dark:border-slate-700" data-provider={api.id} data-kind={pg.kind} data-endpoint={pg.endpoint} data-format={pg.format} data-auth={pg.auth} data-poll-endpoint={pg.poll_endpoint || ''} data-poll-interval={pg.poll_interval_ms || ''} data-max-poll={pg.max_poll_ms || ''}>
+<div id={`playground-${idx}`} class="playground mt-4 rounded-2xl border border-[#E7E5E4] p-3 dark:border-[#57534E]" data-provider={api.id} data-kind={pg.kind} data-endpoint={pg.endpoint} data-format={pg.format} data-auth={pg.auth} data-poll-endpoint={pg.poll_endpoint || ''} data-poll-interval={pg.poll_interval_ms || ''} data-max-poll={pg.max_poll_ms || ''}>
 <h3 class="font-bold">{pg.label}</h3>
-<p class="break-all text-sm text-slate-500" dir="ltr">{pg.endpoint}</p>
+<p class="break-all text-sm text-[#78716C]" dir="ltr">{pg.endpoint}</p>
 {pg.note && <p class="mt-1 text-sm text-amber-800 dark:text-amber-200">{pg.note}</p>}
 <label for={`pg-${idx}-key`} class="mt-3 block text-sm font-bold">مفتاحك الخاص (من المزود الرسمي فقط)</label>
 <div class="mt-1 flex gap-2">
-<input id={`pg-${idx}-key`} class="pg-key w-full rounded-full border border-slate-300 px-4 py-3 dark:border-slate-700 dark:bg-slate-950" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="الصق مفتاحك هنا — لن يغادر متصفحك إلا إلى المزود" />
+<input id={`pg-${idx}-key`} class="pg-key w-full rounded-full border border-[#D6D3D1] px-4 py-3 dark:border-[#57534E] dark:bg-[#1C1917]" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="الصق مفتاحك هنا — لن يغادر متصفحك إلا إلى المزود" />
 <button type="button" class="pg-show btn-secondary">إظهار</button>
 <button type="button" class="pg-clear btn-secondary">مسح</button>
 </div>
 <label for={`pg-${idx}-remember`} class="mt-2 flex min-h-12 items-center gap-2 text-sm"><input id={`pg-${idx}-remember`} class="pg-remember" type="checkbox" /> تذكّر في هذا المتصفح فقط — غير مفعّل افتراضيا، ويُحفظ في جهازك أنت فقط</label>
-{pg.model_input && (<div class="mt-2"><label for={`pg-${idx}-model`} class="block text-sm font-bold">معرّف النموذج (من توثيق المزود)</label><input id={`pg-${idx}-model`} class="pg-model mt-1 w-full rounded-full border border-slate-300 px-4 py-3 dark:border-slate-700 dark:bg-slate-950" type="text" autocomplete="off" placeholder="معرّف النموذج كما في توثيق المزود" /></div>)}
+{pg.model_input && (<div class="mt-2"><label for={`pg-${idx}-model`} class="block text-sm font-bold">معرّف النموذج (من توثيق المزود)</label><input id={`pg-${idx}-model`} class="pg-model mt-1 w-full rounded-full border border-[#D6D3D1] px-4 py-3 dark:border-[#57534E] dark:bg-[#1C1917]" type="text" autocomplete="off" placeholder="معرّف النموذج كما في توثيق المزود" /></div>)}
 {pg.fields.map((f) => (
-<div class="mt-2"><label for={`pg-${idx}-field-${f.key}`} class="block text-sm font-bold">{f.label}</label><input id={`pg-${idx}-field-${f.key}`} class="pg-field mt-1 w-full rounded-full border border-slate-300 px-4 py-3 dark:border-slate-700 dark:bg-slate-950" type="text" autocomplete="off" data-field={f.key} required={f.required} placeholder={f.placeholder} /></div>
+<div class="mt-2"><label for={`pg-${idx}-field-${f.key}`} class="block text-sm font-bold">{f.label}</label><input id={`pg-${idx}-field-${f.key}`} class="pg-field mt-1 w-full rounded-full border border-[#D6D3D1] px-4 py-3 dark:border-[#57534E] dark:bg-[#1C1917]" type="text" autocomplete="off" data-field={f.key} required={f.required} placeholder={f.placeholder} /></div>
 ))}
-{pg.kind !== 'vision' && pg.kind !== 'transcribe' && (<div class="mt-2"><label for={`pg-${idx}-prompt`} class="block text-sm font-bold">{pg.prompt_label}</label><textarea id={`pg-${idx}-prompt`} class="pg-prompt mt-1 w-full rounded-2xl border border-slate-300 px-4 py-3 dark:border-slate-700 dark:bg-slate-950" rows="3" placeholder="اكتب هنا…"></textarea></div>)}
+{pg.kind !== 'vision' && pg.kind !== 'transcribe' && (<div class="mt-2"><label for={`pg-${idx}-prompt`} class="block text-sm font-bold">{pg.prompt_label}</label><textarea id={`pg-${idx}-prompt`} class="pg-prompt mt-1 w-full rounded-2xl border border-[#D6D3D1] px-4 py-3 dark:border-[#57534E] dark:bg-[#1C1917]" rows="3" placeholder="اكتب هنا…"></textarea></div>)}
 <div class="mt-4 flex flex-wrap gap-2">
 <button type="button" class="pg-run btn-primary w-full sm:w-auto">توليد</button>
 <button type="button" class="pg-stop btn-secondary hidden">إيقاف الاستطلاع</button>
 </div>
 <p class="pg-status mt-2 hidden text-sm" role="status" aria-live="polite"></p>
-<p class="pg-runtime mt-2 hidden text-sm text-slate-500" role="status" aria-live="polite"></p>
+<p class="pg-runtime mt-2 hidden text-sm text-[#78716C]" role="status" aria-live="polite"></p>
 <p class="pg-error mt-2 hidden rounded-xl bg-red-100 p-3 text-sm text-red-900 dark:bg-red-900 dark:text-red-100" role="alert" aria-live="assertive"></p>
-<pre class="pg-output mt-2 hidden overflow-x-auto rounded-xl bg-slate-950 p-3 text-xs text-slate-100" dir="ltr"></pre>
+<pre class="pg-output mt-2 hidden overflow-x-auto rounded-xl bg-[#1C1917] p-3 text-xs text-[#E7E5E4]" dir="ltr"></pre>
 <div class="pg-media mt-2 hidden"></div>
 </div>
 ))}
@@ -114,24 +114,24 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'SoftwareApplication
 <script is:inline src="/playground.js"></script>
 </section>
 ) : (
-<section id="playground" tabindex="-1" class="mt-6 scroll-mt-24 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<section id="playground" tabindex="-1" class="mt-6 scroll-mt-24 rounded-3xl border border-[#E7E5E4] bg-white p-4 dark:border-[#44403C] dark:bg-[#292524]">
 <h2 class="font-bold text-lg">بيئة تنفيذ النماذج — بمفتاحك الخاص</h2>
-<p class="text-sm text-slate-500">Model Execution Runtime</p>
+<p class="text-sm text-[#78716C]">Model Execution Runtime</p>
 {api.playground_status === 'browser-blocked' && <p class="mt-1 text-sm font-bold text-red-800 dark:text-red-200">لا يوجد زر توليد في المتصفح لهذا المزود، بتوجيه من المزود نفسه — وليس عطلاً في الموقع.</p>}
 {api.playground_status === 'not-suitable' && <p class="mt-1 text-sm font-bold text-red-800 dark:text-red-200">هذا المزود غير مناسب لساحة مفاتيح في المتصفح، فلا يوجد زر توليد له هنا.</p>}
 {api.playground_status === 'needs-confirmation' && <p class="mt-1 text-sm font-bold text-amber-800 dark:text-amber-200">صيغة هذا المزود تحتاج تأكيداً رسمياً أخيراً قبل كتابة المحول، لذلك لا يوجد زر توليد قد يفشل هنا.</p>}
 {!api.playground_status && <p class="mt-1 text-sm">صيغة هذا المزود غير موثقة بعد، لذلك لا نعرض زر توليد قد يفشل.</p>}
 {api.playground_block_reason && <p class="mt-1 text-sm">{api.playground_block_reason}</p>}
 <ol class="mt-4 grid gap-2 sm:grid-cols-3">
-<li class="rounded-2xl border border-blue-200 bg-blue-50 p-3 text-sm dark:border-blue-800 dark:bg-blue-950/40"><strong>الخطوة 1 — احصل على مفتاحك</strong><p class="mt-1">من المزود الرسمي فقط، قبل أي تجربة: <a class="font-bold text-blue-600" href={api.key_url} rel="noopener" target="_blank">{keyLabel}</a></p></li>
-<li class="rounded-2xl border border-blue-200 bg-blue-50 p-3 text-sm dark:border-blue-800 dark:bg-blue-950/40"><strong>الخطوة 2 — استخدم أدوات المزود نفسه</strong><p class="mt-1">بما أنه لا توليد من المتصفح هنا، جرّب من وحدة تحكم المزود أو توثيقه: <a class="font-bold text-blue-600" href={api.website} rel="noopener" target="_blank">الموقع الرسمي</a> · <a class="font-bold text-blue-600" href={api.docs} rel="noopener" target="_blank">التوثيق الرسمي</a></p></li>
-<li class="rounded-2xl border border-blue-200 bg-blue-50 p-3 text-sm dark:border-blue-800 dark:bg-blue-950/40"><strong>الخطوة 3 — جرّب مثال الطلب أدناه</strong><p class="mt-1">انسخ <a class="font-bold text-blue-600" href="#example-curl">مثال الطلب (curl) أدناه ↓</a> وبدّل YOUR_KEY بمفتاحك على جهازك فقط، ولا تضعه في أي مكان عام.</p></li>
+<li class="rounded-2xl border border-[#E7E5E4] bg-[#F5F5F4] p-3 text-sm dark:border-[#44403C] dark:bg-[#292524]/40"><strong>الخطوة 1 — احصل على مفتاحك</strong><p class="mt-1">من المزود الرسمي فقط، قبل أي تجربة: <a class="font-bold text-[#1D4ED8]" href={api.key_url} rel="noopener" target="_blank">{keyLabel}</a></p></li>
+<li class="rounded-2xl border border-[#E7E5E4] bg-[#F5F5F4] p-3 text-sm dark:border-[#44403C] dark:bg-[#292524]/40"><strong>الخطوة 2 — استخدم أدوات المزود نفسه</strong><p class="mt-1">بما أنه لا توليد من المتصفح هنا، جرّب من وحدة تحكم المزود أو توثيقه: <a class="font-bold text-[#1D4ED8]" href={api.website} rel="noopener" target="_blank">الموقع الرسمي</a> · <a class="font-bold text-[#1D4ED8]" href={api.docs} rel="noopener" target="_blank">التوثيق الرسمي</a></p></li>
+<li class="rounded-2xl border border-[#E7E5E4] bg-[#F5F5F4] p-3 text-sm dark:border-[#44403C] dark:bg-[#292524]/40"><strong>الخطوة 3 — جرّب مثال الطلب أدناه</strong><p class="mt-1">انسخ <a class="font-bold text-[#1D4ED8]" href="#example-curl">مثال الطلب (curl) أدناه ↓</a> وبدّل YOUR_KEY بمفتاحك على جهازك فقط، ولا تضعه في أي مكان عام.</p></li>
 </ol>
 <p class="mt-3 text-sm">يبقى هذا المزود في الدليل كمعلومة فقط، مع روابطه الرسمية أعلاه. لا تضع مفتاحك في أي مكان آخر في هذه الصفحة.</p>
 </section>
 )}
 
-<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<section class="mt-6 rounded-3xl border border-[#E7E5E4] bg-white p-4 dark:border-[#44403C] dark:bg-[#292524]">
 <h2 class="font-bold text-lg">النماذج المشمولة</h2>
 <ul class="mt-2 list-disc ps-5 text-sm">
 {api.models.map((m) => <li>{m.name} — {m.type}</li>)}
@@ -139,17 +139,17 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'SoftwareApplication
 <p class="mt-2 text-sm">{api.description_ar}</p>
 </section>
 
-<details id="example-curl" class="mt-6 scroll-mt-24 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<details id="example-curl" class="mt-6 scroll-mt-24 rounded-3xl border border-[#E7E5E4] bg-white p-4 dark:border-[#44403C] dark:bg-[#292524]">
 <summary class="cursor-pointer font-bold text-lg">مثال طلب (curl) — اختياري</summary>
-<p class="mt-2 text-sm text-slate-500">YOUR_KEY عنصر نائب فقط، لا تضع مفتاحا حقيقيا في أي مثال منسوخ إلى مكان عام.</p>
-<pre class="mt-2 overflow-x-auto rounded-xl bg-slate-950 p-3 text-xs text-slate-100" dir="ltr">{api.example_curl}</pre>
+<p class="mt-2 text-sm text-[#78716C]">YOUR_KEY عنصر نائب فقط، لا تضع مفتاحا حقيقيا في أي مثال منسوخ إلى مكان عام.</p>
+<pre class="mt-2 overflow-x-auto rounded-xl bg-[#1C1917] p-3 text-xs text-[#E7E5E4]" dir="ltr">{api.example_curl}</pre>
 </details>
 
 {alternatives.length > 0 && (
-<p class="mt-6 text-sm">بدائل من نفس الفئة: {alternatives.map((a, i) => <span>{i > 0 && ' · '}<a class="text-blue-600" href={`/apis/${a.id}/`}>{a.name}</a> ({a.status})</span>)}</p>
+<p class="mt-6 text-sm">بدائل من نفس الفئة: {alternatives.map((a, i) => <span>{i > 0 && ' · '}<a class="text-[#1D4ED8]" href={`/apis/${a.id}/`}>{a.name}</a> ({a.status})</span>)}</p>
 )}
 
-<section class="mt-6 rounded-3xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+<section class="mt-6 rounded-3xl border border-[#E7E5E4] bg-white p-4 dark:border-[#44403C] dark:bg-[#292524]">
 <h2 class="font-bold text-lg">إبلاغ عن خطأ أو تحديث</h2>
 <p class="mt-1 text-sm">إذا أُوقف نموذج أو تغيّر حد أو تعطّل رابط، أرسل بلاغاً وسيُراجع ضمن التحديث اليومي بعد التحقق من المصدر الرسمي. لا تضع أي مفتاح API حقيقي في البلاغ أبداً.</p>
 {reportUrl ? (

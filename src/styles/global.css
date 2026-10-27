@@ -29,7 +29,7 @@ body {
   min-height: 48px;
   padding: 0 24px;
   border-radius: 9999px;
-  background: #2563eb;
+  background: #1D4ED8;
   color: #fff;
   font-weight: 700;
   font-size: 1rem;
@@ -43,7 +43,7 @@ body {
   min-height: 48px;
   padding: 0 20px;
   border-radius: 9999px;
-  border: 1px solid #cbd5e1;
+  border: 1px solid #D6D3D1;
   background: transparent;
   color: inherit;
   font-weight: 600;
@@ -52,7 +52,7 @@ body {
   text-align: center;
 }
 .dark .btn-secondary {
-  border-color: #334155;
+  border-color: #57534E;
 }
 .btn-primary:disabled,
 .btn-secondary:disabled {
