@@ -6713,5 +6713,57 @@
   "verification_note": "الصفحة الرسمية المقروءة نصا في 2026-10-27 تعرض في أعلاها «No credit card · 300K characters free» وفي قسم الأسعار «Free to start. $29/mo when you grow» و«300K characters free to start — no clock, no card» و«a permanent free tier»، وتصف نقطتي POST /v1/detect (نطاقات مع تسمية وإزاحات بايت ودرجة ثقة) وPOST /v1/redact (نص مخفي بتسميات)، وأنواع البيانات المشمولة (أسماء وبريد وهواتف وعناوين وتواريخ وروابط وأرقام حسابات وبطاقات وأسرار مثل مفاتيح API) بأكثر من 30 لغة، وأنها تسجّل البيانات الوصفية فقط (عدد الأحرف وعدد الكيانات والتوقيت) ولا تسجّل النص أو البيانات الشخصية نفسها، وأنها لا ترسل النص إلى نموذج لغة ثالث؛ وصفحة التسجيل الرسمية نفسها نصها «Free tier, no credit card. Your API key is waiting». لم تُذكر في الصفحة المقروءة مدة تجدد حصة 300 ألف حرف، فلم تُدعَ شهرية ولا لمرة واحدة، وحالة CORS والاستخدام التجاري والتدريب بقيت غير مؤكدة وغير معلنة — لم يُخترع أي رقم أو شرط، ولم تُفتح صفحة التسجيل بتسجيل دخول.",
   "verification_source": "https://sanitext.app/",
   "website": "https://sanitext.app/"
+ },
+ {
+  "auth": "مفتاح API (رأس Authorization: Bearer)",
+  "card_required": "لا — البدء بلا معلومات دفع حسب الصفحة الرسمية",
+  "category": "ai-guardrails",
+  "commercial": "مقيّد في الطبقة المجانية للمؤسسات التي تزيد عن 20 موظفا أو مليون دولار إيرادا سنويا حسب صفحة المنتج الرسمية",
+  "cors": "غير مؤكد",
+  "description_ar": "واجهة تنقيح بالذكاء الاصطناعي من Nutrient لمستندات PDF: تكتشف البيانات الشخصية والصحية وبيانات الدفع بالسياق لا بالأنماط فقط — أسماء وبريد وهواتف وأرقام وطنية وبطاقات وحسابات ومصطلحات طبية وكيانات مخصصة — ثم تحرق التنقيحات في الملف نفسه فلا يبقى النص الأصلي قابلا للاستعادة، قبل إدخال المستند في خط أنابيب ذكاء اصطناعي أو استرجاع.",
+  "docs": "https://www.nutrient.io/api/ai-redaction-api/",
+  "example_curl": "# استبدل <redacted> بمفتاحك من لوحة تحكم Nutrient؛ الصيغة من مثال صفحة التنقيح بالذكاء الاصطناعي الرسمية نفسها (POST /ai/redact برأس Authorization: Bearer وملف PDF ومعايير criteria)، وراجع الصفحة الحالية قبل الاستخدام\ncurl -X POST \"https://api.nutrient.io/ai/redact\" -H \"Authorization: Bearer <redacted>\" -o result.pdf --fail -F file1=@document.pdf -F data='{\"documents\": [{\"documentId\": \"file1\"}], \"criteria\": \"All personally identifiable information\"}'",
+  "example_fetch": "// استبدل <redacted> بمفتاحك من لوحة تحكم Nutrient؛ الصيغة من مثال صفحة التنقيح بالذكاء الاصطناعي الرسمية نفسها (POST /ai/redact برأس Authorization: Bearer وملف PDF ومعايير criteria)\nconst form = new FormData();\nform.append('file1', documentFile);\nform.append('data', JSON.stringify({ documents: [{ documentId: 'file1' }], criteria: 'All personally identifiable information' }));\nfetch('https://api.nutrient.io/ai/redact', { method: 'POST', headers: { 'Authorization': 'Bearer <redacted>' }, body: form })",
+  "free_limit": "طبقة مجانية: 0 دولار شهريا، 50 رصيدا شهريا تتجدد شهريا؛ التنقيح بالذكاء الاصطناعي 0.05 رصيد للصفحة الواحدة إضافة إلى رسم التنقيح القياسي، ومخرجات الطبقة المجانية بعلامة مائية «For Evaluation Purposes Only»؛ وخطة Starter من 67 دولارا شهريا عند الفوترة السنوية (1000 رصيد شهريا)",
+  "free_limit_scope": "للطبقة المجانية في صفحة الأسعار الرسمية",
+  "free_type": "طبقة مجانية",
+  "https": true,
+  "id": "nutrient-ai-redaction",
+  "key_url": "https://dashboard.nutrient.io/",
+  "key_url_kind": "console",
+  "key_url_note": "زر «TRY FOR FREE» في صفحة الأسعار الرسمية ورابط «See my API keys» في صفحة التنقيح بالذكاء الاصطناعي الرسمية يشيران إلى لوحة التحكم dashboard.nutrient.io؛ ولم تُفتح اللوحة ولم يُسجَّل دخول إليها، ولم تُثبت صفحة مفاتيح مباشرة مستقلة فلم يُخترع رابط مباشر.",
+  "last_checked": "2026-10-27",
+  "last_price_checked": "2026-10-27",
+  "live_try": null,
+  "media": [
+   "text"
+  ],
+  "models": [
+   {
+    "name": "تنقيح ذكاء اصطناعي لمستندات PDF عبر Nutrient",
+    "type": "text"
+   }
+  ],
+  "name": "Nutrient AI Redaction",
+  "offer_expires_at": null,
+  "offer_temporary": false,
+  "playground_block_reason": "واجهة تنقيح مستندات تعمل عبر مفاتيح API خاصة بكل حساب ورفع ملفات PDF ومعايير تنقيح لكل مستند، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+  "playground_status": "not-suitable",
+  "playgrounds": [],
+  "pricing": "https://www.nutrient.io/api/pricing/processor-api/",
+  "provider": "Nutrient",
+  "signup": "حساب مجاني متاح",
+  "status": "موثق جزئيا",
+  "tags": [
+   "حواجز أمان",
+   "خصوصية",
+   "بيانات شخصية",
+   "تنقيح",
+   "مستندات"
+  ],
+  "training_use": "غير معلن",
+  "verification_note": "الصفحات الرسمية المقروءة نصا في 2026-10-27: صفحة الأسعار تعرض خطة Free بسعر 0 دولار شهريا و50 رصيدا شهريا، وأن مخرجات الطبقة المجانية تحمل علامة «For Evaluation Purposes Only»، وأن التنقيح بالذكاء الاصطناعي 0.05 رصيد للصفحة، وأن خطة Starter من 67 دولارا شهريا عند الفوترة السنوية (1000 رصيد)؛ وصفحة التنقيح بالذكاء الاصطناعي نفسها تقول إن البدء بلا معلومات دفع، وإن التنقيح بالذكاء الاصطناعي يكلف 0.05 رصيد للصفحة إضافة إلى رسم التنقيح القياسي، وإن مثالها الرسمي POST https://api.nutrient.io/ai/redact برأس Authorization: Bearer وملف PDF ومعايير criteria؛ وصفحة المنتج الرسمية تقول إن الاستخدام التجاري في الطبقة المجانية مقيّد للمؤسسات التي تزيد عن 20 موظفا أو مليون دولار إيرادا سنويا، وإن الحد 100 طلب بالدقيقة لكل مفتاح على كل الخطط، وإن الملفات تُحذف خلال 24 ساعة في الخطط بلا احتفاظ بالبيانات. حذف الملفات خلال 24 ساعة لا يثبت وحده عدم التدريب، فبقي حقل التدريب «غير معلن»، وحالة CORS «غير مؤكد» لأنها غير مذكورة في الصفحات المقروءة — لم يُخترع أي رقم أو شرط، ولم تُفتح لوحة التحكم بتسجيل دخول.",
+  "verification_source": "https://www.nutrient.io/api/pricing/processor-api/",
+  "website": "https://www.nutrient.io/"
  }
 ]
