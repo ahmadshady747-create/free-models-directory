@@ -699,5 +699,14 @@
   "provider": "Nutrient AI Redaction",
   "source": "https://www.nutrient.io/api/pricing/processor-api/",
   "type": "إضافة"
+ },
+ {
+  "date": "2026-10-27",
+  "model": "وصف ميتا فريد لكل صفحة تفاصيل (حلقة التحسين العميق، الجولة 68 — التدقيق الختامي)",
+  "new_limit": "وصف كل صفحة تفاصيل (meta description وJSON-LD) يبدأ الآن باسم المزود، فصارت أوصاف الصفحات الـ 120 كلها فريدة؛ لا تغيير في أي حد أو مصدر أو إدخال، والإدخالات ما زالت 120 والموثقة جزئيا 89 وخريطة الموقع 126 <loc>",
+  "old_limit": "أربع صفحات تفاصيل كانت تشارك وصفا ميتا مطابقا مع صفحة أخرى (DeepInfra مع Hyperbolic، وHailuo AI مع Pika AI، وIdeogram AI مع Stability AI، وJina AI مع Mixedbread AI) لأن الوصف كان يُبنى من الوصف والحد والحالة فقط دون اسم المزود",
+  "provider": "دليل النماذج المجانية",
+  "source": "قالب صفحة التفاصيل في المشروع (src/pages/apis/[id].astro)",
+  "type": "تحسين"
  }
 ]

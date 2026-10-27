@@ -24,7 +24,7 @@ const hasPlayground = api.playground_status === 'implemented' && api.playgrounds
 const isKeyKind = api.key_url_kind === 'keys_page' || api.key_url_kind === 'console' || api.key_url_kind === 'signup';
 const keyLabel = isKeyKind ? 'احصل على مفتاحك ↗' : 'فتح صفحة المزود الرسمية';
 const title = `${api.name} — API لنموذج ذكاء اصطناعي | دليل النماذج المجانية`;
-const description = `${api.description_ar} نوع المجانية: ${api.free_type}. الحد المجاني: ${api.free_limit}. الحالة: ${api.status}.`;
+const description = `${api.name}: ${api.description_ar} نوع المجانية: ${api.free_type}. الحد المجاني: ${api.free_limit}. الحالة: ${api.status}.`;
 const jsonLd = { '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: api.name, description, applicationCategory: 'DeveloperApplication', operatingSystem: 'Web', url: api.website };
 ---
 <Base title={title} description={description} canonical={`/apis/${api.id}/`}>
