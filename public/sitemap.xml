@@ -170,4 +170,5 @@
   <url><loc>/apis/astra-db/</loc></url>
   <url><loc>/apis/honeyhive/</loc></url>
   <url><loc>/apis/tavily/</loc></url>
+  <url><loc>/apis/sim/</loc></url>
 </urlset>

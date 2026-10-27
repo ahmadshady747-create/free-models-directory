@@ -6359,5 +6359,55 @@
  "verification_note": "صفحة الأسعار الرسمية نفسها تعرض خطة Researcher بسعر Free شهريا: 1,000 رصيد API شهريا، وNo credit card required، ودعم بالبريد الإلكتروني؛ ونص الصفحة نفسه يقول إن الحساب المجاني يبدأ بـ 1,000 رصيد مجاني شهريا بلا بطاقة ائتمانية، وإن الأرصدة تتجدد في أول كل شهر، وإن الاستهلاك بحسب نوع الطلب، وإن الطلبات تتوقف عند نفاد الأرصدة حتى التجديد أو الترقية؛ ومرجع واجهة البحث الرسمي نفسه يثبت أن البحث هو POST على https://api.tavily.com/search، وأن المفتاح يُمرر في رأس Authorization بصيغة Bearer، وأن الحقل المطلوب الوحيد في الجسم هو query؛ ومقدار استهلاك كل نوع طلب بالرصيد غير مذكور في صفحة الأسعار المقروءة فلم يُخترع أي رقم له، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فيها فبقيت غير مؤكدة وغير معلنة.",
  "verification_source": "https://www.tavily.com/pricing",
  "website": "https://www.tavily.com/"
+},
+{
+ "auth": "مفتاح Sim API (رأس X-API-Key)",
+ "card_required": "غير معلن",
+ "category": "agent-platforms",
+ "commercial": "غير معلن",
+ "cors": "غير مؤكد",
+ "description_ar": "مساحة عمل ذكاء اصطناعي مفتوحة المصدر لبناء وكلاء وسير عمل بصريا: لوحة سحب وإفلات تربط النماذج والأدوات والتكاملات، مع نشر سير العمل كواجهة برمجة؛ خطتها المجانية تشمل 1000 رصيد لمرة واحدة.",
+ "docs": "https://docs.sim.ai/api-reference/getting-started",
+ "example_curl": "# شغّل سير عملك المنشور عبر واجهة Sim v2 الرسمية: استبدل YOUR_WORKFLOW_ID بمعرّف سير عملك من رابط محرر سير العمل، واستبدل YOUR_KEY بمفتاح Sim API من Account settings → Sim API keys (أو Workspace settings → Sim API keys لمفتاح مساحة العمل)، وضع حقول الإدخال المسماة داخل input حسب سير عملك المنشور؛ المضيف الرسمي هو https://www.sim.ai وليس api.sim.ai، وasync true يعيد runId مع HTTP 202 للتنفيذ غير المتزامن، فراجع التوثيق الحالي قبل الاستخدام\ncurl --fail-with-body -X POST \"https://www.sim.ai/api/v2/workflows/YOUR_WORKFLOW_ID/execute\" -H \"X-API-Key: YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"input\": {}, \"async\": true}'",
+ "example_fetch": "// شغّل سير عملك المنشور عبر واجهة Sim v2 الرسمية: استبدل YOUR_WORKFLOW_ID وYOUR_KEY كما في مثال curl، وضع حقول الإدخال المسماة داخل input حسب سير عملك المنشور، على جهازك فقط\nfetch('https://www.sim.ai/api/v2/workflows/YOUR_WORKFLOW_ID/execute', { method: 'POST', headers: { 'X-API-Key': 'YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ input: {}, async: true }) })",
+ "free_limit": "الخطة المجانية: 1000 رصيد لمرة واحدة (غير متجدد شهريا)، مساحة عمل واحدة، 10 تنفيذات متزامنة، حد معدل 50 تنفيذ متزامن بالدقيقة و200 غير متزامن بالدقيقة و30 نقطة API بالدقيقة، مهلة تنفيذ متزامن 5 دقائق وغير متزامن 90 دقيقة، تخزين ملفات 5 غيغابايت، حتى 5 جداول و50 ألف صف لكل جدول، احتفاظ بالسجلات 30 يوما",
+ "free_limit_scope": "للخطة المجانية في صفحة الأسعار الرسمية",
+ "free_type": "رصيد مجاني لمرة واحدة",
+ "https": true,
+ "id": "sim",
+ "key_url": "https://www.sim.ai/",
+ "key_url_kind": "official_site",
+ "key_url_note": "ليس رابط مفاتيح مباشرا؛ دليل البدء الرسمي يقول افتح Account settings → Sim API keys للمفتاح الشخصي أو Workspace settings → Sim API keys لمفتاح مساحة العمل، فالزر يفتح الموقع الرسمي ومنه تُفتح الإعدادات.",
+ "last_checked": "2026-10-27",
+ "last_price_checked": "2026-10-27",
+ "live_try": null,
+ "media": [
+  "text"
+ ],
+ "models": [
+  {
+   "name": "بناء وكلاء وسير عمل عبر Sim Studio",
+   "type": "text"
+  }
+ ],
+ "name": "Sim Studio",
+ "offer_expires_at": null,
+ "offer_temporary": false,
+ "playground_block_reason": "منصة بناء وكلاء تعمل عبر محرر سير عمل بصري ومساحات عمل وسير عمل منشورة بمفاتيح خاصة بكل حساب، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط بعد بناء سير عملك ونشره.",
+ "playground_status": "not-suitable",
+ "playgrounds": [],
+ "pricing": "https://www.sim.ai/pricing",
+ "provider": "Sim",
+ "signup": "حساب مجاني متاح",
+ "status": "موثق جزئيا",
+ "tags": [
+  "وكلاء",
+  "سير عمل",
+  "أتمتة"
+ ],
+ "training_use": "غير معلن",
+ "verification_note": "صفحة الأسعار الرسمية تعرض خطة بسعر 0 دولار تشمل 1000 رصيد لمرة واحدة، ومساحة عمل واحدة، و10 تنفيذات متزامنة، وحد معدل 50 تنفيذ متزامن بالدقيقة و200 غير متزامن بالدقيقة و30 نقطة API بالدقيقة، ومهلة تنفيذ متزامن 5 دقائق وغير متزامن 90 دقيقة، وتخزين ملفات 5 غيغابايت، وحتى 5 جداول و50 ألف صف لكل جدول، واحتفاظا بالسجلات 30 يوما؛ والأرصدة لمرة واحدة صراحة وليست حصة شهرية متجددة، فلم تُعامل كحصة شهرية، ولم تذكر الصفحة اشتراط بطاقة أو عدمه فبقي غير معلن، ولم تدعِ الصفحة المقروءة دواما دائما صراحة فلم يُدعَ ذلك. دليل البدء الرسمي نفسه يثبت أن مضيف Sim Cloud هو https://www.sim.ai وليس api.sim.ai، وأن تنفيذ سير العمل هو POST على /api/v2/workflows/{workflowId}/execute برأس X-API-Key، وأن التنفيذ غير المتزامن يعيد runId مع HTTP 202، وأن المفاتيح تُنشأ من Account settings → Sim API keys أو Workspace settings → Sim API keys. حالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة وغير معلنة، ولم يُخترع أي رقم أو شرط.",
+ "verification_source": "https://www.sim.ai/pricing",
+ "website": "https://www.sim.ai"
 }
 ]
