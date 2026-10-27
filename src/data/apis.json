@@ -6460,6 +6460,56 @@
   "training_use": "غير معلن",
   "verification_note": "صفحة الأسعار الرسمية نفسها تعرض طبقة مجانية بعبارة «1,000 credits every month, refreshed monthly, no credit card required»، وتوضح وحدة الرصيد: رصيد واحد لصفحة في الكشف الأساسي أو الزحف أو الخريطة، ورصيدان لكل 10 نتائج بحث؛ وأسئلة الصفحة نفسها تؤكد أن الطبقة المجانية تعطي 1,000 رصيد مجاني شهريا يغطي نحو 1,000 صفحة وبلا بطاقة؛ وصفحة المصادقة الرسمية نفسها تثبت أن المفتاح يُنشأ من لوحة التحكم ويُمرر في رأس Authorization بصيغة Bearer، وأن نقطة واجهة الكشف هي https://api.firecrawl.dev/v2/scrape بحقل url مطلوب؛ وحالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار المقروءة فبقيت غير مؤكدة وغير معلنة، ولم يُخترع أي رقم أو شرط.",
   "verification_source": "https://www.firecrawl.dev/pricing",
-  "website": "https://www.firecrawl.dev/"
+  "website": "https://www.firecrawl.dev/" },
+ {
+  "auth": "مفتاح API (رأس Authorization: ApiKey) حسب دليل التتبع الرسمي",
+  "card_required": "غير معلن",
+  "category": "evaluation-observability",
+  "commercial": "غير معلن",
+  "cors": "غير مؤكد",
+  "description_ar": "مساحة عمل مفتوحة المصدر لبناء وكلاء وأتمتة الذكاء الاصطناعي: بناء بالمحادثة، وتتبع ومراقبة للتكاليف والزمن، وتقييم بآثار تعليق (annotation) مرتبطة بآثار الاستدعاء، وموافقات بشرية على أدوات الوكلاء؛ خطتها المجانية Hobby تشمل أرصدة يومية ومهام متزامنة.",
+  "docs": "https://docs.agenta.ai/reference/api-guide/tracing",
+  "example_curl": "# سجّل تعليقا تقييميا واحدا (annotation) على أثر موجود؛ الصيغة من دليل التتبع الرسمي (POST /simple/traces/ برأس Authorization: ApiKey)، والمفتاح من صفحة مفاتيح API في إعدادات حسابك؛ استبدل YOUR_KEY وYOUR_TRACE_ID وYOUR_SPAN_ID، وراجع التوثيق الحالي قبل الاستخدام\ncurl -X POST \"https://cloud.agenta.ai/api/simple/traces/\" -H \"Content-Type: application/json\" -H \"Authorization: ApiKey YOUR_KEY\" -d '{\"trace\": {\"origin\": \"human\", \"kind\": \"adhoc\", \"channel\": \"api\", \"data\": {\"outputs\": {\"score\": 5, \"comment\": \"Good response\"}}, \"references\": {\"evaluator\": {\"slug\": \"user-feedback\"}}, \"links\": {\"invocation\": {\"trace_id\": \"YOUR_TRACE_ID\", \"span_id\": \"YOUR_SPAN_ID\"}}}}'",
+  "example_fetch": "// سجّل تعليقا تقييميا واحدا (annotation) على أثر موجود؛ الصيغة من دليل التتبع الرسمي (POST /simple/traces/ برأس Authorization: ApiKey)، على جهازك فقط، وراجع التوثيق الحالي قبل الاستخدام\nfetch('https://cloud.agenta.ai/api/simple/traces/', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': 'ApiKey YOUR_KEY' }, body: JSON.stringify({ trace: { origin: 'human', kind: 'adhoc', channel: 'api', data: { outputs: { score: 5, comment: 'Good response' } }, references: { evaluator: { slug: 'user-feedback' } }, links: { invocation: { trace_id: 'YOUR_TRACE_ID', span_id: 'YOUR_SPAN_ID' } } } }) })",
+  "free_limit": "خطة Hobby المجانية: 0 دولار للأبد، 500 رصيد إضافي عند التسجيل، 75 رصيدا مجانيا يوميا حتى 10 أيام شهريا، مهمتان متزامنتان، مشروع واحد وعضوا فريق",
+  "free_limit_scope": "لخطة Hobby المجانية في صفحة الأسعار الرسمية",
+  "free_type": "خطة مجانية",
+  "https": true,
+  "id": "agenta",
+  "key_url": "https://cloud.agenta.ai/settings?tab=apiKeys",
+  "key_url_kind": "keys_page",
+  "key_url_note": "صفحة مفاتيح API في إعدادات حساب Agenta Cloud حسب دليل البدء الرسمي؛ أنشئ مفتاحا جديدا من هناك.",
+  "last_checked": "2026-10-27",
+  "last_price_checked": "2026-10-27",
+  "live_try": null,
+  "media": [
+   "text"
+  ],
+  "models": [
+   {
+    "name": "تتبع وتقييم وكلاء الذكاء الاصطناعي عبر Agenta",
+    "type": "text"
+   }
+  ],
+  "name": "Agenta",
+  "offer_expires_at": null,
+  "offer_temporary": false,
+  "playground_block_reason": "مساحة عمل لبناء الوكلاء والأتمتة والتتبع والتقييم، لا مولّد نصوص أو صور: استخدامها يجري عبر مساحة العمل والمحادثة وحزم SDK ومفاتيح API ولوحة تحكم، وليس استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+  "playground_status": "not-suitable",
+  "playgrounds": [],
+  "pricing": "https://agenta.ai/pricing",
+  "provider": "Agenta",
+  "signup": "حساب مجاني متاح",
+  "status": "موثق جزئيا",
+  "tags": [
+   "تقييم",
+   "مراقبة",
+   "تتبع",
+   "وكلاء"
+  ],
+  "training_use": "لا — صفحة الأسعار الرسمية تنفي استخدام المطالبات أو البيانات لتدريب النماذج",
+  "verification_note": "صفحة الأسعار الرسمية تعرض خطة Hobby بسعر 0 دولار للأبد، وتشمل 500 رصيد إضافي عند التسجيل و75 رصيدا مجانيا يوميا حتى 10 أيام شهريا ومهمتين متزامنتين ومشروعا واحدا وعضوي فريق، وواجهة REST عامة ومفاتيح API؛ وأسئلة الصفحة نفسها تنفي استخدام المطالبات أو البيانات لتدريب النماذج. مثال الطلب مأخوذ من دليل التتبع الرسمي نفسه (POST /simple/traces/ برأس Authorization: ApiKey لتسجيل تعليق تقييمي واحد)، ومضيفه https://cloud.agenta.ai من دليل البدء الرسمي نفسه، وصفحة المفاتيح هي صفحة الإعدادات المذكورة في الدليل نفسه. شرط البطاقة والاستخدام التجاري غير مذكورين في صفحة الأسعار المقروءة وحالة CORS غير مذكورة فيها، فبقيت غير معلنة وغير مؤكدة، ولم يُخترع أي رقم أو شرط، ولم يُعتمد في المثال على ملخصات ثانوية.",
+  "verification_source": "https://agenta.ai/pricing",
+  "website": "https://agenta.ai/"
  }
 ]

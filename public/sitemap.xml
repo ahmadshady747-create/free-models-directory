@@ -172,4 +172,5 @@
   <url><loc>/apis/tavily/</loc></url>
   <url><loc>/apis/sim/</loc></url>
   <url><loc>/apis/firecrawl/</loc></url>
+  <url><loc>/apis/agenta/</loc></url>
 </urlset>
