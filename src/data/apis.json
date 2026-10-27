@@ -6007,5 +6007,55 @@
   "verification_note": "صفحة الأسعار الرسمية تعرض خطة Free Forever بسعر 0 دولار شهريا، وتشمل حتى 50,000 span شهريا واحتفاظا بالبيانات 24 ساعة ولوحة مراقبة ولوحة تقييم وإدارة مطالبات وتكامل CI/CD؛ وصفحة التوثيق الرسمية لخيارات تهيئة SDK تؤكد أن نقطة OpenTelemetry الافتراضية هي https://api.traceloop.com وأن المفتاح يُرسل كحامل Bearer، وأن SDK يلحق /v1/traces. تنبيهان من الصفحة نفسها: جدول الخطة يذكر حتى 5 مقاعد بينما نص الأسئلة الشائعة في الصفحة نفسها يقول بلا حد للمقاعد، فلم يُنشر رقم مقاعد في الحد؛ والصفحة تتصدرها عبارة أن Traceloop تنضم إلى جهة أخرى (كما تظهر في الصفحة)، فاستمرار الخطة مستقبلا غير مضمون من الصفحة نفسها. شرط البطاقة والاستخدام التجاري والتدريب وحالة CORS غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة.",
   "verification_source": "https://www.traceloop.com/pricing",
   "website": "https://www.traceloop.com"
+ },
+ {
+  "auth": "مفتاح API للمشروع من لوحة تحكم Composio (رأس x-api-key)",
+  "card_required": "لا — لا حاجة إلى بطاقة حسب صفحة الأسعار الرسمية",
+  "category": "agent-platforms",
+  "commercial": "غير معلن",
+  "cors": "غير مؤكد",
+  "description_ar": "طبقة أدوات وتكاملات لوكلاء الذكاء الاصطناعي: تربط الوكيل بتطبيقات وأدوات خارجية عبر OAuth وإدارة مفاتيح خارج سياق الوكيل، مع بوابة MCP ومحفزات (triggers) وتنفيذ أدوات؛ خطتها المجانية Hobby تشمل 100,000 استدعاء أداة و50,000 حدث تشغيل شهريا.",
+  "docs": "https://docs.composio.dev/reference/api-reference/tools/postToolsExecuteByToolSlug",
+  "example_curl": "# نفّذ أداة عبر نقطة POST /api/v3.1/tools/execute/{tool_slug} الرسمية: استبدل YOUR_TOOL_SLUG بمعرّف (slug) أداة حقيقي من مجموعة الأدوات (toolkit) في التوثيق، وYOUR_CONNECTED_ACCOUNT_ID بمعرّف الحساب المتصل من لوحة التحكم، وYOUR_KEY بمفتاح API للمشروع (رأس x-api-key)؛ ووسيطات الأداة (arguments) تختلف باختلاف الأداة فراجع مخططها في التوثيق قبل الإرسال، وراجع التوثيق الحالي قبل الاستخدام\ncurl -X POST \"https://backend.composio.dev/api/v3.1/tools/execute/YOUR_TOOL_SLUG\" -H \"x-api-key: YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"connected_account_id\": \"YOUR_CONNECTED_ACCOUNT_ID\", \"arguments\": {}}'",
+  "example_fetch": "// نفّذ أداة عبر نقطة POST /api/v3.1/tools/execute/{tool_slug} الرسمية: استبدل YOUR_TOOL_SLUG بمعرّف أداة حقيقي، وYOUR_CONNECTED_ACCOUNT_ID بمعرّف الحساب المتصل، وYOUR_KEY بمفتاح API للمشروع\nfetch('https://backend.composio.dev/api/v3.1/tools/execute/YOUR_TOOL_SLUG', { method: 'POST', headers: { 'x-api-key': 'YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ connected_account_id: 'YOUR_CONNECTED_ACCOUNT_ID', arguments: {} }) })",
+  "free_limit": "الخطة المجانية (Hobby): 0 دولار شهريا، بلا بطاقة ائتمانية، 100,000 استدعاء أداة شهريا، 50,000 حدث تشغيل (trigger) شهريا، حسابات متصلة بلا حد، 3 أعضاء فريق، و1,000,000 رمز Sandbox LLM شهريا مجانا (من قسم أسعار الاستخدام في صفحة الأسعار نفسها)",
+  "free_limit_scope": "لخطة Hobby المجانية في صفحة الأسعار الرسمية",
+  "free_type": "خطة مجانية",
+  "https": true,
+  "id": "composio",
+  "key_url": "https://dashboard.composio.dev/?cta_placement=pricing-free",
+  "key_url_kind": "signup",
+  "key_url_note": "زر «Start for free» في بطاقة Hobby نفسها في صفحة الأسعار الرسمية؛ يفتح لوحة تحكم Composio حيث يُنشأ مفتاح API للمشروع.",
+  "last_checked": "2026-10-27",
+  "last_price_checked": "2026-10-27",
+  "live_try": null,
+  "media": [
+   "text"
+  ],
+  "models": [
+   {
+    "name": "أدوات وتكاملات الوكلاء عبر Composio",
+    "type": "text"
+   }
+  ],
+  "name": "Composio",
+  "offer_expires_at": null,
+  "offer_temporary": false,
+  "playground_block_reason": "طبقة أدوات وتكاملات تعمل عبر حزم SDK وبوابة MCP وحسابات متصلة بأذونات OAuth وأدوات خاصة بكل تطبيق، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط بعد ربط حساب وتحديد أداة.",
+  "playground_status": "not-suitable",
+  "playgrounds": [],
+  "pricing": "https://composio.dev/pricing",
+  "provider": "Composio",
+  "signup": "حساب مجاني متاح",
+  "status": "موثق جزئيا",
+  "tags": [
+   "وكلاء",
+   "أدوات",
+   "تكاملات"
+  ],
+  "training_use": "غير معلن",
+  "verification_note": "صفحة الأسعار الرسمية تعرض خطة Hobby بسعر 0 دولار ومكتوب عليها «No credit card required»، وتشمل 100,000 استدعاء أداة شهريا و50,000 حدث تشغيل شهريا وحسابات متصلة بلا حد و3 أعضاء فريق، وقسم أسعار الاستخدام في الصفحة نفسها يذكر 1,000,000 رمز Sandbox LLM شهريا مجانا لخطة Hobby؛ والأسئلة الشائعة في الصفحة نفسها تؤكد أن Hobby لا تحتاج بطاقة ائتمانية. مرجع تنفيذ الأدوات الرسمي يصف نقطة POST /api/v3.1/tools/execute/{tool_slug} برأس x-api-key وحقلي connected_account_id وarguments، لذلك بقي معرّف الأداة ومعرّف الحساب المتصل عنصرين نائبين بدل اختراع أداة أو حساب. مرشحون مستبعدون في هذه الجولة نفسها قبل الاختيار: Gumloop (صفحة أسعاره الرسمية تعرض Pro وEnterprise فقط بلا بطاقة مجانية)، وFlowise Cloud (موقعه الرسمي يعلن إيقافه ونهاية عمره 2026-08-31 رغم بقاء بطاقة Free ظاهرة)، وLindy (مستبعد أصلا في الجولة 21 ولم تتغير صفحته: رصيد 50 دولارا ينتهي بعد 7 أيام وبلا نقطة REST موثقة لتشغيل وكيل)، وPangea AI Guard (مستبعد أصلا في الجولات السابقة؛ توثيقه يثبت حسابا مجانيا لكن فوترته بالدفع حسب الاستخدام بلا حد مجاني رقمي منشور)، وAporia (مصادر ثانوية متضاربة بعد استحواذ Coralogix وبلا خطة مجانية علنية مؤكدة)، وRelevance AI (خطته المجانية مغلقة أمام المشتركين الجدد حسب توثيقه)، وConfident AI (من فئة التقييم والمراقبة نفسها، فئة الجولة السابقة، لا فئة مختلفة)، وGiskard Hub (منتج مؤسسي بمبيعات مباشرة بلا طبقة سحابية مجانية علنية). حالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة.",
+  "verification_source": "https://composio.dev/pricing",
+  "website": "https://composio.dev"
  }
 ]
