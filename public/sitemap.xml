@@ -160,4 +160,5 @@
 <url><loc>/apis/chroma-cloud/</loc></url>
 <url><loc>/apis/mindstudio/</loc></url>
   <url><loc>/apis/guardrailx/</loc></url>
+  <url><loc>/apis/promptlayer/</loc></url>
 </urlset>
