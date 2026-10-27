@@ -5752,5 +5752,55 @@
     "verification_note": "صفحة الأسعار الرسمية تعرض بطاقة Starter بسعر 0 دولار شهريا + استخدام، وتصفها بأنها رصيد مجاني ثم أسعار استخدام، وتشمل 10 قواعد بيانات و10 أعضاء فريق ودعم مجتمع Slack؛ وملخص الصفحة نفسه يذكر 5 دولارات رصيدا مجانيا، وتوثيق الأسعار الرسمي يوضح أن الرصيد 5 دولارات للمستخدمين الجدد، دون نص على تجدده شهريا فلم يُدعَ تجدد شهري؛ وأسعار الاستخدام في الصفحة نفسها: 2.50 دولار لكل غيغابايت مكتوب، و0.33 دولار لكل غيغابايت تخزين شهريا، و0.0075 دولار لكل تيرابايت مستعلَم، و0.09 دولار لكل غيغابايت مرتجع عبر الشبكة؛ وشرط البطاقة والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير معلنة، وحالة CORS غير مؤكدة؛ وعملية إنشاء مجموعة (create_collection) وأسماء المجموعات الفريدة داخل قاعدة البيانات من التوثيق الرسمي نفسه، ورأس المصادقة x-chroma-token من توثيق عميل Chroma نفسه.",
     "verification_source": "https://www.trychroma.com/pricing",
     "website": "https://www.trychroma.com"
+  },
+  {
+    "auth": "مفتاح API من حساب MindStudio (رأس Authorization: Bearer) مع معرّف الوكيل الخاص بك (workerId)",
+    "card_required": "غير معلن",
+    "category": "agent-platforms",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "منصة بناء وكلاء ذكاء اصطناعي بلا كود: محرر مرئي لسلاسل متعددة الخطوات، وموصّل خدمة (Service Router) يصل إلى أكثر من 200 نموذج دون مفاتيح خاصة، وتشغيل للوكيل عبر واجهة برمجة؛ خطتها المجانية Free تشمل وكيلا واحدا و1000 تشغيل شهريا، مع تكاليف استخدام نماذج مفوترة على حدة بسعر التكلفة دون هامش.",
+    "docs": "https://university.mindstudio.ai/",
+    "example_curl": "# بعد بناء وكيلك في MindStudio، استبدل YOUR_KEY بمفتاح API من حسابك وYOUR_AGENT_ID بمعرّف وكيلك (workerId)؛ صيغة تشغيل الوكيل (POST /developer/v2/agents/run على https://api.mindstudio.ai بمصادقة Bearer) موثقة في صفحة تكامل Pipedream مع MindStudio، ولم تُعثر على صفحة توثيق رسمية مباشرة لها من رابط Documentation في صفحة الأسعار (الذي يؤدي إلى university.mindstudio.ai)، فراجع التوثيق الحالي قبل الاستخدام\ncurl -X POST \"https://api.mindstudio.ai/developer/v2/agents/run\" -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"workerId\": \"YOUR_AGENT_ID\", \"variables\": {\"key1\": \"value1\"}}'",
+    "example_fetch": "// بعد بناء وكيلك في MindStudio، استبدل YOUR_KEY بمفتاح API من حسابك وYOUR_AGENT_ID بمعرّف وكيلك (workerId)؛ الصيغة من صفحة تكامل Pipedream مع MindStudio، وراجع التوثيق الحالي قبل الاستخدام\nfetch('https://api.mindstudio.ai/developer/v2/agents/run', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ workerId: 'YOUR_AGENT_ID', variables: { key1: 'value1' } }) })",
+    "free_limit": "خطة Free: 0 دولار شهريا + تكاليف الاستخدام، وكيل واحد، 1000 تشغيل شهريا، وصول إلى أكثر من 200 نموذج عبر MindStudio Service Router دون مفاتيح خاصة، مع إمكانية إحضار مفاتيحك الخاصة",
+    "free_limit_scope": "لبطاقة Free في صفحة الأسعار الرسمية",
+    "free_type": "خطة مجانية",
+    "https": true,
+    "id": "mindstudio",
+    "key_url": "https://app.mindstudio.ai/signup",
+    "key_url_kind": "signup",
+    "key_url_note": "زر «Get Free» في بطاقة Free في صفحة الأسعار الرسمية ينقل إلى إنشاء حساب MindStudio؛ ولم تُثبت صفحة مفاتيح مستقلة، فالمفتاح يُدار من حساب MindStudio نفسه بعد التسجيل.",
+    "last_checked": "2026-10-27",
+    "last_price_checked": "2026-10-27",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "بناء وتشغيل وكلاء ذكاء اصطناعي عبر MindStudio",
+        "type": "text"
+      }
+    ],
+    "name": "MindStudio",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "منصة بناء وكلاء تعمل عبر وكيل مبني في محرر مرئي وموصّل خدمة وتشغيلات بمفاتيح ومعرّفات خاصة بكل وكيل، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط بعد بناء وكيل.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://www.mindstudio.ai/pricing",
+    "provider": "MindStudio",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "وكلاء",
+      "بناء وكلاء",
+      "بلا كود"
+    ],
+    "training_use": "لا — بطاقة Free في صفحة الأسعار الرسمية تنص على أن بياناتك لا تُستخدم أبدا للتدريب",
+    "verification_note": "صفحة الأسعار الرسمية تعرض بطاقة Free بسعر 0 دولار شهريا + تكاليف الاستخدام، وتشمل وكيلا واحدا و1000 تشغيل شهريا ووصولا إلى أكثر من 200 نموذج عبر MindStudio Service Router دون مفاتيح خاصة مع إمكانية إحضار مفاتيح خاصة، وتنص على أن بياناتك لا تُستخدم أبدا للتدريب؛ وأسئلة الصفحة نفسها توضح أن تكاليف الاستخدام مفوترة بسعر التكلفة دون هامش؛ وشرط البطاقة غير مذكور في صفحة الأسعار نفسها فبقي غير معلن، والاستخدام التجاري غير مذكور فيها فبقي غير معلن، وحالة CORS غير مؤكدة؛ ورابط التسجيل هو زر Get Free في البطاقة نفسها؛ ورابط Documentation في صفحة الأسعار يؤدي إلى university.mindstudio.ai ولم تُعثر فيه على صفحة توثيق رسمية مباشرة لتشغيل الوكيل عبر الواجهة، فصيغة التشغيل (POST /developer/v2/agents/run بمصادقة Bearer ومعرّف workerId) مأخوذة من صفحة تكامل Pipedream مع MindStudio (تتفق عليها صفحات تكامل متعددة) ومصرّح بمصدرها هنا صراحة، مع تحذير بمراجعة التوثيق الحالي قبل الاستخدام.",
+    "verification_source": "https://www.mindstudio.ai/pricing",
+    "website": "https://www.mindstudio.ai"
   }
 ]

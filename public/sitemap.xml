@@ -158,4 +158,5 @@
 <url><loc>/apis/langbase/</loc></url>
 <url><loc>/apis/agentmem/</loc></url>
 <url><loc>/apis/chroma-cloud/</loc></url>
+<url><loc>/apis/mindstudio/</loc></url>
 </urlset>
