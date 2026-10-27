@@ -173,4 +173,5 @@
   <url><loc>/apis/sim/</loc></url>
   <url><loc>/apis/firecrawl/</loc></url>
   <url><loc>/apis/agenta/</loc></url>
+  <url><loc>/apis/redis-cloud/</loc></url>
 </urlset>

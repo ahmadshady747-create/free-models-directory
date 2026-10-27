@@ -6511,5 +6511,56 @@
   "verification_note": "صفحة الأسعار الرسمية تعرض خطة Hobby بسعر 0 دولار للأبد، وتشمل 500 رصيد إضافي عند التسجيل و75 رصيدا مجانيا يوميا حتى 10 أيام شهريا ومهمتين متزامنتين ومشروعا واحدا وعضوي فريق، وواجهة REST عامة ومفاتيح API؛ وأسئلة الصفحة نفسها تنفي استخدام المطالبات أو البيانات لتدريب النماذج. مثال الطلب مأخوذ من دليل التتبع الرسمي نفسه (POST /simple/traces/ برأس Authorization: ApiKey لتسجيل تعليق تقييمي واحد)، ومضيفه https://cloud.agenta.ai من دليل البدء الرسمي نفسه، وصفحة المفاتيح هي صفحة الإعدادات المذكورة في الدليل نفسه. شرط البطاقة والاستخدام التجاري غير مذكورين في صفحة الأسعار المقروءة وحالة CORS غير مذكورة فيها، فبقيت غير معلنة وغير مؤكدة، ولم يُخترع أي رقم أو شرط، ولم يُعتمد في المثال على ملخصات ثانوية.",
   "verification_source": "https://agenta.ai/pricing",
   "website": "https://agenta.ai/"
- }
+ },
+ {
+  "auth": "مستخدم وكلمة مرور قاعدة البيانات من وحدة تحكم Redis Cloud (بروتوكول Redis، لا مفتاح API رأسي)",
+  "card_required": "غير معلن",
+  "category": "vector-databases",
+  "commercial": "غير معلن",
+  "cors": "غير مؤكد",
+  "description_ar": "قاعدة بيانات سحابية مُدارة في الذاكرة مع محرك بحث متجهي للاسترجاع الدلالي والتخزين المؤقت الدلالي وذاكرة الوكلاء؛ طبقتها المجانية قاعدة بيانات واحدة حتى 30 ميغابايت للتعلم وبناء النماذج الأولية.",
+  "docs": "https://redis.io/docs/latest/develop/ai/search-and-query/vectors/",
+  "example_curl": "# Redis لا يقدّم واجهة REST لعمليات البيانات؛ هذا مثال redis-cli (لا curl) يعمل على جهازك فقط: استبدل YOUR_HOST وYOUR_PORT وYOUR_PASSWORD بسلسلة اتصال قاعدة بياناتك من وحدة تحكم Redis Cloud، وأنشئ فهرس بحث متجهي ثم ابحث فيه بأقرب الجيران؛ والمتجهات نفسها ينتجها نموذج التضمين الذي تختاره، فهي ليست في هذا المثال\nredis-cli -h YOUR_HOST -p YOUR_PORT -a YOUR_PASSWORD --tls FT.CREATE vector_idx ON HASH PREFIX 1 doc: SCHEMA embedding VECTOR HNSW 6 TYPE FLOAT32 DIM 384 DISTANCE_METRIC COSINE\n# ثم للبحث: FT.SEARCH vector_idx \"*=>[KNN 5 @embedding $vec]\" PARAMS 2 vec YOUR_QUERY_VECTOR_BYTES DIALECT 2",
+  "example_fetch": "// لا واجهة REST لعمليات البيانات في Redis؛ الوصول يجري عبر عميل Redis (مثل redis-py أو node-redis) بسلسلة الاتصال من وحدة تحكم Redis Cloud، وهذا المثال يوضح أمر إنشاء الفهرس نفسه عبر العميل لا عبر fetch، وراجع التوثيق الحالي قبل الاستخدام\n// client.ft.create('vector_idx', { ON: 'HASH', PREFIX: 'doc:' }, { embedding: { type: 'VECTOR', ALGORITHM: 'HNSW', TYPE: 'FLOAT32', DIM: 384, DISTANCE_METRIC: 'COSINE' } })",
+  "free_limit": "الطبقة المجانية (Essentials 30 ميغابايت): قاعدة بيانات واحدة حتى 30 ميغابايت، 30 اتصالا متزامنا، قاعدة سماح CIDR واحدة، 5 غيغابايت نطاقا شهريا، حتى 100 عملية بالثانية (بافتراض طلب 1 كيلوبايت)",
+  "free_limit_scope": "للخطة المجانية 30 ميغابايت في توثيق خطط Essentials الرسمي",
+  "free_type": "طبقة مجانية",
+  "https": true,
+  "id": "redis-cloud",
+  "key_url": "https://redis.io/try-free/",
+  "key_url_kind": "signup",
+  "key_url_note": "صفحة البدء المجاني الرسمية في توثيق Redis Cloud؛ أنشئ قاعدة البيانات المجانية 30 ميغابايت من هناك، وسلسلة الاتصال وكلمة المرور في وحدة تحكم Redis Cloud.",
+  "last_checked": "2026-10-27",
+  "last_price_checked": "2026-10-27",
+  "live_try": null,
+  "media": [
+    "embeddings"
+  ],
+  "models": [
+    {
+      "name": "بحث متجهي وذاكرة وكلاء عبر Redis Cloud",
+      "type": "embeddings"
+    }
+  ],
+  "name": "Redis Cloud",
+  "offer_expires_at": null,
+  "offer_temporary": false,
+  "playground_block_reason": "قاعدة بيانات سحابية بقواعد خاصة بكل حساب: عملياتها (إنشاء فهرس متجهي، إدراج متجهات، بحث بأقرب الجيران) تجري عبر بروتوكول Redis وسلسلة اتصال خاصة بقاعدة المستخدم، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+  "playground_status": "not-suitable",
+  "playgrounds": [],
+  "pricing": "https://redis.io/docs/latest/operate/rc/subscriptions/view-essentials-subscription/essentials-plan-details/",
+  "provider": "Redis",
+  "signup": "حساب مجاني متاح",
+  "status": "موثق جزئيا",
+  "tags": [
+    "بحث متجهي",
+    "استرجاع",
+    "RAG",
+    "ذاكرة وكلاء"
+  ],
+  "training_use": "غير معلن",
+  "verification_note": "توثيق خطط Essentials الرسمي نفسه يقول إن خطة 30 ميغابايت مجانية ومخصصة للتعلم وبناء مشاريع تجريبية، وجدوله يحدد للطبقة المجانية 30 اتصالا متزامنا وقاعدة سماح CIDR واحدة و5 غيغابايت نطاقا شهريا و100 عملية بالثانية بافتراض طلب 1 كيلوبايت، والخطط المدفوعة تبدأ من 250 ميغابايت؛ وتوثيق Redis Cloud نفسه يقول إن قاعدة البيانات المجانية 30 ميغابايت تُنشأ من صفحة البدء، وإن البحث المتجهي يجري بأوامر FT.CREATE وFT.SEARCH. شرط البطاقة والاستخدام التجاري والتدريب غير مذكورة في صفحة الخطط المقروءة، وحالة CORS غير مذكورة فيها، فبقيت غير معلنة وغير مؤكدة، ولم يُخترع أي رقم أو شرط، ولم يُعتمد على ملخصات ثانوية في أي رقم.",
+  "verification_source": "https://redis.io/docs/latest/operate/rc/subscriptions/view-essentials-subscription/essentials-plan-details/",
+  "website": "https://redis.io/"
+}
 ]
