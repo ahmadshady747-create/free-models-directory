@@ -511,5 +511,14 @@
     "provider": "MindStudio",
     "source": "https://www.mindstudio.ai/pricing",
     "type": "إضافة"
+  },
+  {
+    "date": "2026-10-27",
+    "model": "تصحيح مثال طلب MindStudio إلى مرجع الواجهة الرسمي (حلقة التحسين العميق، تصحيح الجولة 47)",
+    "new_limit": "مثال الطلب صار POST /developer/v2/apps/run بمعرّف appId ومصادقة Bearer حسب مرجع واجهة MindStudio الرسمي (https://university.mindstudio.ai/developers/api-reference، قسم Run an app)، ورابط التوثيق في البطاقة صار صفحة مرجع الواجهة نفسها؛ لا تغيير في الحد المجاني ولا في عدد الإدخالات (101) ولا في خريطة الموقع (107 <loc>)",
+    "old_limit": "مثال الطلب كان POST /developer/v2/agents/run بمعرّف workerId مأخوذا من تكامل Pipedream مع تصريح بمصدره غير الرسمي، ورابط التوثيق كان university.mindstudio.ai العام",
+    "provider": "MindStudio",
+    "source": "https://university.mindstudio.ai/developers/api-reference",
+    "type": "تصحيح"
   }
 ]

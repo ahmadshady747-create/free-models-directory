@@ -5754,15 +5754,15 @@
     "website": "https://www.trychroma.com"
   },
   {
-    "auth": "مفتاح API من حساب MindStudio (رأس Authorization: Bearer) مع معرّف الوكيل الخاص بك (workerId)",
+    "auth": "مفتاح API من حساب MindStudio (رمز وصول Bearer) مع معرّف تطبيقك (appId)",
     "card_required": "غير معلن",
     "category": "agent-platforms",
     "commercial": "غير معلن",
     "cors": "غير مؤكد",
     "description_ar": "منصة بناء وكلاء ذكاء اصطناعي بلا كود: محرر مرئي لسلاسل متعددة الخطوات، وموصّل خدمة (Service Router) يصل إلى أكثر من 200 نموذج دون مفاتيح خاصة، وتشغيل للوكيل عبر واجهة برمجة؛ خطتها المجانية Free تشمل وكيلا واحدا و1000 تشغيل شهريا، مع تكاليف استخدام نماذج مفوترة على حدة بسعر التكلفة دون هامش.",
-    "docs": "https://university.mindstudio.ai/",
-    "example_curl": "# بعد بناء وكيلك في MindStudio، استبدل YOUR_KEY بمفتاح API من حسابك وYOUR_AGENT_ID بمعرّف وكيلك (workerId)؛ صيغة تشغيل الوكيل (POST /developer/v2/agents/run على https://api.mindstudio.ai بمصادقة Bearer) موثقة في صفحة تكامل Pipedream مع MindStudio، ولم تُعثر على صفحة توثيق رسمية مباشرة لها من رابط Documentation في صفحة الأسعار (الذي يؤدي إلى university.mindstudio.ai)، فراجع التوثيق الحالي قبل الاستخدام\ncurl -X POST \"https://api.mindstudio.ai/developer/v2/agents/run\" -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"workerId\": \"YOUR_AGENT_ID\", \"variables\": {\"key1\": \"value1\"}}'",
-    "example_fetch": "// بعد بناء وكيلك في MindStudio، استبدل YOUR_KEY بمفتاح API من حسابك وYOUR_AGENT_ID بمعرّف وكيلك (workerId)؛ الصيغة من صفحة تكامل Pipedream مع MindStudio، وراجع التوثيق الحالي قبل الاستخدام\nfetch('https://api.mindstudio.ai/developer/v2/agents/run', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ workerId: 'YOUR_AGENT_ID', variables: { key1: 'value1' } }) })",
+    "docs": "https://university.mindstudio.ai/developers/api-reference",
+    "example_curl": "# بعد بناء تطبيقك (وكيلك) في MindStudio، استبدل YOUR_KEY برمز الوصول من حسابك وYOUR_APP_ID بمعرّف تطبيقك؛ الصيغة من مرجع واجهة MindStudio الرسمي (قسم Run an app: POST /developer/v2/apps/run بمصادقة Bearer ومعرّف appId)، وراجع التوثيق الحالي قبل الاستخدام\ncurl -X POST \"https://api.mindstudio.ai/developer/v2/apps/run\" -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"appId\": \"YOUR_APP_ID\", \"variables\": {\"key1\": \"value1\"}}'",
+    "example_fetch": "// بعد بناء تطبيقك (وكيلك) في MindStudio، استبدل YOUR_KEY برمز الوصول من حسابك وYOUR_APP_ID بمعرّف تطبيقك؛ الصيغة من مرجع واجهة MindStudio الرسمي (قسم Run an app: POST /developer/v2/apps/run)\nfetch('https://api.mindstudio.ai/developer/v2/apps/run', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ appId: 'YOUR_APP_ID', variables: { key1: 'value1' } }) })",
     "free_limit": "خطة Free: 0 دولار شهريا + تكاليف الاستخدام، وكيل واحد، 1000 تشغيل شهريا، وصول إلى أكثر من 200 نموذج عبر MindStudio Service Router دون مفاتيح خاصة، مع إمكانية إحضار مفاتيحك الخاصة",
     "free_limit_scope": "لبطاقة Free في صفحة الأسعار الرسمية",
     "free_type": "خطة مجانية",
@@ -5799,7 +5799,7 @@
       "بلا كود"
     ],
     "training_use": "لا — بطاقة Free في صفحة الأسعار الرسمية تنص على أن بياناتك لا تُستخدم أبدا للتدريب",
-    "verification_note": "صفحة الأسعار الرسمية تعرض بطاقة Free بسعر 0 دولار شهريا + تكاليف الاستخدام، وتشمل وكيلا واحدا و1000 تشغيل شهريا ووصولا إلى أكثر من 200 نموذج عبر MindStudio Service Router دون مفاتيح خاصة مع إمكانية إحضار مفاتيح خاصة، وتنص على أن بياناتك لا تُستخدم أبدا للتدريب؛ وأسئلة الصفحة نفسها توضح أن تكاليف الاستخدام مفوترة بسعر التكلفة دون هامش؛ وشرط البطاقة غير مذكور في صفحة الأسعار نفسها فبقي غير معلن، والاستخدام التجاري غير مذكور فيها فبقي غير معلن، وحالة CORS غير مؤكدة؛ ورابط التسجيل هو زر Get Free في البطاقة نفسها؛ ورابط Documentation في صفحة الأسعار يؤدي إلى university.mindstudio.ai ولم تُعثر فيه على صفحة توثيق رسمية مباشرة لتشغيل الوكيل عبر الواجهة، فصيغة التشغيل (POST /developer/v2/agents/run بمصادقة Bearer ومعرّف workerId) مأخوذة من صفحة تكامل Pipedream مع MindStudio (تتفق عليها صفحات تكامل متعددة) ومصرّح بمصدرها هنا صراحة، مع تحذير بمراجعة التوثيق الحالي قبل الاستخدام.",
+    "verification_note": "صفحة الأسعار الرسمية تعرض بطاقة Free بسعر 0 دولار شهريا + تكاليف الاستخدام، وتشمل وكيلا واحدا و1000 تشغيل شهريا ووصولا إلى أكثر من 200 نموذج عبر MindStudio Service Router دون مفاتيح خاصة مع إمكانية إحضار مفاتيح خاصة، وتنص على أن بياناتك لا تُستخدم أبدا للتدريب؛ وأسئلة الصفحة نفسها توضح أن تكاليف الاستخدام مفوترة بسعر التكلفة دون هامش؛ وشرط البطاقة غير مذكور في صفحة الأسعار نفسها فبقي غير معلن، والاستخدام التجاري غير مذكور فيها فبقي غير معلن، وحالة CORS غير مؤكدة؛ ورابط التسجيل هو زر Get Free في البطاقة نفسها؛ وصيغة تشغيل التطبيق (POST /developer/v2/apps/run بمصادقة Bearer ومعرّف appId) من مرجع واجهة MindStudio الرسمي نفسه (https://university.mindstudio.ai/developers/api-reference، قسم Run an app)، وهي تصحيح لصيغة الجولة 47 الأولى (POST /developer/v2/agents/run بمعرّف workerId) التي كانت مأخوذة من تكامل Pipedream لا من توثيق رسمي.",
     "verification_source": "https://www.mindstudio.ai/pricing",
     "website": "https://www.mindstudio.ai"
   }
