@@ -592,5 +592,14 @@
   "provider": "Langtrace",
   "source": "https://docs.langtrace.ai/introduction#pricing",
   "type": "إضافة"
+ },
+ {
+  "date": "2026-10-27",
+  "model": "إضافة Astra DB — إدخال عاشر لفئة قواعد بيانات متجهة واسترجاع (حلقة التحسين العميق، الجولة 56)",
+  "new_limit": "إدخال جديد موثق جزئيا: خطة Free برصيد شهري ثابت لقواعد بيانات Serverless، حتى 5 قواعد بيانات Serverless، مع إسبات عند نفاد الرصيد حتى دورة الفوترة التالية؛ بلا بيئة تنفيذ في المتصفح لسبب مكتوب (قاعدة بيانات بقواعد خاصة بكل حساب عبر Data API) مع مثال بحث متجهي على جهاز الزائر فقط؛ الإدخالات صارت 110 والموثقة جزئيا 79 وخريطة الموقع 116 <loc>",
+  "old_limit": "فئة قواعد بيانات متجهة واسترجاع بتسعة إدخالات قبل هذه الإضافة",
+  "provider": "Astra DB",
+  "source": "https://docs.datastax.com/en/astra-db-serverless/administration/subscription-plans.html",
+  "type": "إضافة"
  }
 ]

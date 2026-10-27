@@ -6208,5 +6208,55 @@
   "verification_note": "قسم Pricing في الوثائق الرسمية يصف خطة Starter بأنها مجانية للأبد لمستخدم واحد وتشمل حتى 10 آلاف span شهريا وإدارة المطالبات والتقييمات؛ صفحة الأسعار المستقلة عرضت «Site not found» في الفحص الحي فلم تُعتمد، وصفحة أسعار التطبيق أعادت التوجيه إلى تسجيل الدخول فلم تُدخل؛ شرط البطاقة والاحتفاظ لخطة Starter غير مذكورين في قسم Pricing المقروء فبقيا غير معلن وغير مؤكد، ولم تُنسخ أي قيمة مثال من التوثيق بل استُبدلت كلها بعناصر نائبة.",
   "verification_source": "https://docs.langtrace.ai/introduction#pricing",
   "website": "https://www.langtrace.ai"
+ },
+ {
+  "auth": "رمز تطبيق Data API (رأس Token)",
+  "card_required": "غير معلن",
+  "category": "vector-databases",
+  "commercial": "غير معلن",
+  "cors": "غير مؤكد",
+  "description_ar": "قاعدة بيانات سحابية بلا خادم (Serverless) للبحث المتجهي واسترجاع RAG عبر Data API: مجموعات بمقاييس تشابه، وبحث تشابه بفرز $vector، وتضمين خادمي عبر $vectorize حسب توثيق Data API الرسمي.",
+  "docs": "https://docs.datastax.com/en/astra-db-serverless/api-reference/sort-documents.html",
+  "example_curl": "# استبدل API_ENDPOINT بنقطة Data API لقاعدة بياناتك من بوابة Astra وKEYSPACE_NAME بمساحة مفاتيحك وCOLLECTION_NAME بمجموعتك وYOUR_KEY برمز تطبيقك؛ مثال البحث المتجهي (find بفرز $vector) من توثيق فرز المستندات الرسمي نفسه، وبُعد المتجه في المثال يجب أن يطابق بُعد مجموعتك، على جهازك فقط\ncurl -sS -L -X POST \"API_ENDPOINT/api/json/v1/KEYSPACE_NAME/COLLECTION_NAME\" --header \"Token: YOUR_KEY\" --header \"Content-Type: application/json\" --data '{\"find\": {\"sort\": {\"$vector\": [0.08, -0.62, 0.39]}}}'",
+  "example_fetch": "// استبدل API_ENDPOINT بنقطة Data API لقاعدة بياناتك وKEYSPACE_NAME وCOLLECTION_NAME وYOUR_KEY كما في مثال curl؛ مثال البحث المتجهي من توثيق فرز المستندات الرسمي نفسه، على جهازك فقط\nfetch('API_ENDPOINT/api/json/v1/KEYSPACE_NAME/COLLECTION_NAME', { method: 'POST', headers: { 'Token': 'YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ find: { sort: { $vector: [0.08, -0.62, 0.39] } } }) })",
+  "free_limit": "خطة Free: رصيد شهري ثابت لقواعد بيانات Serverless، حتى 5 قواعد بيانات Serverless، وتُسبت قواعد البيانات عند نفاد الرصيد حتى تجديد الرصيد في دورة الفوترة التالية",
+  "free_limit_scope": "لخطة Free في توثيق إدارة الخطة الرسمي",
+  "free_type": "طبقة مجانية",
+  "https": true,
+  "id": "astra-db",
+  "key_url": "https://astra.datastax.com/",
+  "key_url_kind": "console",
+  "key_url_note": "يفتح بوابة Astra (Astra Portal) المرتبطة من توثيق إدارة الخطة الرسمي نفسه؛ أنشئ منظمة وخطة Free من هناك واحصل على رمز تطبيق Data API.",
+  "last_checked": "2026-10-27",
+  "last_price_checked": "2026-10-27",
+  "live_try": null,
+  "media": [
+   "embeddings"
+  ],
+  "models": [
+   {
+    "name": "بحث متجهي واسترجاع RAG عبر Astra DB",
+    "type": "embeddings"
+   }
+  ],
+  "name": "Astra DB",
+  "offer_expires_at": null,
+  "offer_temporary": false,
+  "playground_block_reason": "قاعدة بيانات سحابية بقواعد خاصة بكل حساب: عملياتها (إنشاء مجموعة، إدراج مستندات، بحث متجهي) تجري على نقطة Data API خاصة بقاعدة المستخدم ورمزه، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+  "playground_status": "not-suitable",
+  "playgrounds": [],
+  "pricing": "https://docs.datastax.com/en/astra-db-serverless/administration/subscription-plans.html",
+  "provider": "DataStax",
+  "signup": "حساب مجاني متاح",
+  "status": "موثق جزئيا",
+  "tags": [
+   "قاعدة بيانات متجهة",
+   "استرجاع",
+   "RAG"
+  ],
+  "training_use": "غير معلن",
+  "verification_note": "توثيق إدارة الخطة الرسمي نفسه يقول إن خطط منظمات Astra ثلاث هي Free وStandard وEnterprise، وإن منظمات خطة Free تحصل على مقدار ثابت من الرصيد كل شهر، وإن نفاد الرصيد يُسبت قواعد بيانات Serverless حتى تجديد الرصيد في دورة الفوترة التالية أو الترقية، وإن خطة Free محدودة بخمس قواعد بيانات Serverless كحد أقصى ولا تتيح تصدير المقاييس ولا النقاط الخاصة ولا قواعد البيانات متعددة المناطق؛ وتوثيق فرز المستندات الرسمي نفسه يثبت مثال البحث المتجهي find بفرز $vector عبر POST على API_ENDPOINT/api/json/v1/KEYSPACE_NAME/COLLECTION_NAME برأس Token؛ ومقدار الرصيد الشهري بالدولار أو بالعمليات غير مذكور في صفحة إدارة الخطة المقروءة فلم يُخترع أي رقم له، وشرط البطاقة وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فيها فبقيت غير معلنة وغير مؤكدة.",
+  "verification_source": "https://docs.datastax.com/en/astra-db-serverless/administration/subscription-plans.html",
+  "website": "https://astra.datastax.com/"
  }
 ]
