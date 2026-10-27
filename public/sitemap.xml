@@ -155,4 +155,5 @@
 <url><loc>/apis/membase/</loc></url>
 <url><loc>/apis/mistral-moderation/</loc></url>
 <url><loc>/apis/braintrust/</loc></url>
+<url><loc>/apis/langbase/</loc></url>
 </urlset>

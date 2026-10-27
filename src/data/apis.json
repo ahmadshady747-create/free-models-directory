@@ -5601,5 +5601,56 @@
     "verification_note": "صفحة الأسعار الرسمية تعرض خطة Starter برسم منصة 0 دولار شهريا وبعبارة «No credit card required» (لا حاجة إلى بطاقة ائتمانية) في زر التسجيل، وتشمل 1 غيغابايت بيانات معالجة شهريا (ثم 4 دولارات للغيغابايت) و10 آلاف نتيجة تقييم شهريا (ثم 2.50 دولار لكل ألف) واحتفاظا 14 يوما، ومستخدمين ومشروعات وملاعب تجربة وتجارب ومجموعات بيانات بلا حد، ونتيجة مراجعة بشرية واحدة لكل مشروع؛ وأسئلة الصفحة نفسها تؤكد أن خطة Starter لا تتطلب بطاقة للبدء وأن البيانات المعالجة تُحسب من أول الشهر إلى آخره وأن حذف البيانات بعد تجاوز الحصة لا يخفضها. ومرجع API الرسمي لإنشاء تجربة يوثق المصادقة برأس Authorization: Bearer وإنشاء المفتاح من صفحة إعدادات المنظمة، وحقل project_id المطلوب واسم التجربة الفريد داخل المشروع. وحالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة الأسعار نفسها فبقيت غير مؤكدة.",
     "verification_source": "https://www.braintrust.dev/pricing",
     "website": "https://www.braintrust.dev"
+  },
+  {
+    "auth": "مفتاح API الخاص بالـ Pipe (رأس Authorization: Bearer)",
+    "card_required": "غير معلن",
+    "category": "agent-platforms",
+    "commercial": "غير معلن",
+    "cors": "غير مؤكد",
+    "description_ar": "منصة تطوير خادمية (serverless) لبناء ونشر وكلاء ذكاء اصطناعي: Pipes لسلاسل النماذج والوكلاء، وذاكرة للاسترجاع المعزز، وأدوات وخيوط محادثة، مع واجهة برمجة موحدة عبر نماذج متعددة؛ خطتها المجانية Free تشمل 500 رصيد و500 تشغيل وكيل و5 Pipes عامة.",
+    "docs": "https://langbase.com/docs/api-reference/pipe/run",
+    "example_curl": "# بعد بناء Pipe في Langbase، استبدل YOUR_KEY بمفتاح API الخاص بالـ Pipe من داخل الـ Pipe نفسه حسب صفحة واجهات Langbase الرسمية؛ الصيغة من مرجع تشغيل الـ Pipe الرسمي (POST /v1/pipes/run بمصفوفة messages المطلوبة)، وراجع التوثيق الحالي قبل الاستخدام\ncurl -X POST \"https://api.langbase.com/v1/pipes/run\" -H \"Authorization: Bearer YOUR_KEY\" -H \"Content-Type: application/json\" -d '{\"messages\": [{\"role\": \"user\", \"content\": \"مرحبا، ما الذي يمكنك فعله؟\"}]}'",
+    "example_fetch": "// بعد بناء Pipe في Langbase، استبدل YOUR_KEY بمفتاح API الخاص بالـ Pipe من داخل الـ Pipe نفسه؛ الصيغة من مرجع تشغيل الـ Pipe الرسمي (POST /v1/pipes/run بمصفوفة messages المطلوبة)\nfetch('https://api.langbase.com/v1/pipes/run', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: [{ role: 'user', content: 'مرحبا، ما الذي يمكنك فعله؟' }] }) })",
+    "free_limit": "خطة Free المجانية: 0 دولار شهريا، 500 رصيد Langbase، 5 Pipes عامة، 0 Pipe خاصة، 500 تشغيل وكيل، 5 ميغابايت ذاكرة، ملفا ذاكرة اثنين، دعم مجتمع",
+    "free_limit_scope": "لخطة Free المجانية في صفحة الأسعار الرسمية",
+    "free_type": "خطة مجانية",
+    "https": true,
+    "id": "langbase",
+    "key_url": "https://langbase.com/",
+    "key_url_kind": "official_site",
+    "key_url_note": "يفتح الموقع الرسمي؛ مفتاح API الخاص بالـ Pipe يوجد داخل الـ Pipe نفسه حسب صفحة واجهات Langbase الرسمية، ولم يُثبت رابط عميق مباشر لصفحة المفاتيح، فلم يُخترع رابط مباشر.",
+    "last_checked": "2026-10-27",
+    "last_price_checked": "2026-10-27",
+    "live_try": null,
+    "media": [
+      "text"
+    ],
+    "models": [
+      {
+        "name": "بناء وتشغيل وكلاء ذكاء اصطناعي عبر Pipes في Langbase",
+        "type": "text"
+      }
+    ],
+    "name": "Langbase",
+    "offer_expires_at": null,
+    "offer_temporary": false,
+    "playground_block_reason": "منصة بناء وكلاء تعمل عبر Pipes وذاكرة وأدوات وخيوط محادثة بمفاتيح خاصة بكل Pipe، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط بعد بناء Pipe.",
+    "playground_status": "not-suitable",
+    "playgrounds": [],
+    "pricing": "https://langbase.com/pricing",
+    "provider": "Langbase",
+    "signup": "حساب مجاني متاح",
+    "status": "موثق جزئيا",
+    "tags": [
+      "وكلاء",
+      "بناء وكلاء",
+      "ذاكرة",
+      "استرجاع"
+    ],
+    "training_use": "غير معلن",
+    "verification_note": "صفحة الأسعار الرسمية تصف خطة Free بأنها 0 دولار شهريا وتشمل 500 رصيد Langbase و5 Pipes عامة و0 Pipe خاصة و500 تشغيل وكيل و5 ميغابايت ذاكرة وملفي ذاكرة ودعم مجتمع، مع خيوط وأدوات ومحلل (Parser)؛ ومرجع تشغيل الـ Pipe الرسمي يوثق نقطة POST /v1/pipes/run على القاعدة https://api.langbase.com/v1 ومصفوفة messages المطلوبة والمصادقة برأس Authorization بمفتاح API الخاص بالـ Pipe، وصفحة الواجهات الرسمية تقول إن مفتاح API الخاص بالـ Pipe وقاعدته داخل الـ Pipe نفسه. شرط البطاقة غير مذكور في صفحة الأسعار نفسها فبقي غير معلن، وحالة CORS والاستخدام التجاري والتدريب غير مذكورة فيها فبقيت غير مؤكدة.",
+    "verification_source": "https://langbase.com/pricing",
+    "website": "https://langbase.com"
   }
 ]
