@@ -6108,5 +6108,55 @@
   "verification_note": "صفحة المنتج الرسمية تعرض جدول الأسعار: الطبقة المجانية حتى مليوني رمز شهريا، وما فوقها 0.10 دولار لكل مليون رمز إضافي، بلا تاريخ انتهاء مذكور فيها؛ ومثال REST الرسمي لفحص المطالبات يستخدم نقطة modelarmor.rep.googleapis.com مع رمز وصول Bearer من gcloud وقالبا منشأ مسبقا؛ شرط البطاقة وحساب الفوترة وحالة CORS والاستخدام التجاري والتدريب غير مذكورة في صفحة المنتج نفسها فبقيت غير مؤكدة.",
   "verification_source": "https://cloud.google.com/security/products/model-armor",
   "website": "https://cloud.google.com/security/products/model-armor"
+ },
+ {
+  "auth": "مفتاح API (رأس Authorization: Bearer)",
+  "card_required": "لا — لا حاجة إلى بطاقة حسب صفحة الأسعار الرسمية",
+  "category": "agent-memory",
+  "commercial": "غير معلن",
+  "cors": "غير مؤكد",
+  "description_ar": "طبقة ذاكرة مُدارة لوكلاء الذكاء الاصطناعي: تستخرج الحقائق والدروس والتفضيلات من المحادثات والملاحظات، وتسترجعها ببحث هجين دلالي وبالكلمات المفتاحية مع درجات ثقة ونوافذ صلاحية للحقائق وإيصالات تدقيق لكل استرجاع، عبر واجهة REST وخادم MCP.",
+  "docs": "https://agentprizm.com/",
+  "example_curl": "# استبدل YOUR_KEY بمفتاحك من حساب AgentPrizm؛ مثال الاسترجاع من الصفحة الرسمية نفسها، والاستخدام العادي يبدأ بإدخال محادثة عبر POST /api/v1/agent/conversations ثم الاسترجاع\ncurl https://agentprizm.com/api/v1/agent/recall -H \"Authorization: Bearer <redacted>\" -H \"Content-Type: application/json\" -d '{\"query\": \"renewal blockers\", \"searchMode\": \"hybrid\"}'",
+  "example_fetch": "// استبدل YOUR_KEY بمفتاحك من حساب AgentPrizm؛ مثال الاسترجاع من الصفحة الرسمية نفسها\nfetch('https://agentprizm.com/api/v1/agent/recall', { method: 'POST', headers: { 'Authorization': 'Bearer <redacted>', 'Content-Type': 'application/json' }, body: JSON.stringify({ query: 'renewal blockers', searchMode: 'hybrid' }) })",
+  "free_limit": "خطة Hobby: 0 دولار للأبد، 10,000 ذاكرة و4,500 استرجاع شهريا، وكيلان/مفتاحا API، ووصول API وMCP، وجميع ميزات الاسترجاع",
+  "free_limit_scope": "لخطة Hobby المجانية في صفحة AgentPrizm الرسمية",
+  "free_type": "طبقة مجانية دائمة",
+  "https": true,
+  "id": "agentprizm",
+  "key_url": "https://agentprizm.com/signup",
+  "key_url_kind": "signup",
+  "key_url_note": "يفتح صفحة إنشاء الحساب في AgentPrizm (زر «Start free» في قسم الأسعار بالصفحة الرسمية)؛ أنشئ حسابا من هناك واحصل على مفتاح API.",
+  "last_checked": "2026-10-27",
+  "last_price_checked": "2026-10-27",
+  "live_try": null,
+  "media": [
+   "text"
+  ],
+  "models": [
+   {
+    "name": "ذاكرة وكلاء واسترجاع عبر AgentPrizm",
+    "type": "text"
+   }
+  ],
+  "name": "AgentPrizm",
+  "offer_expires_at": null,
+  "offer_temporary": false,
+  "playground_block_reason": "طبقة ذاكرة لوكلاء الذكاء الاصطناعي تعمل عبر واجهة REST وخادم MCP وحاويات ومفاتيح API واسترجاع عبر جلسات متعددة، وليست استدعاء توليد واحدا بصيغة موثقة في قائمة صيغ بيئة التنفيذ؛ لذلك لا زر توليد في المتصفح هنا، ومثال الطلب أدناه يعمل على جهازك فقط.",
+  "playground_status": "not-suitable",
+  "playgrounds": [],
+  "pricing": "https://agentprizm.com/",
+  "provider": "AgentPrizm",
+  "signup": "حساب مجاني متاح",
+  "status": "موثق جزئيا",
+  "tags": [
+   "ذاكرة",
+   "وكلاء",
+   "استرجاع"
+  ],
+  "training_use": "غير معلن",
+  "verification_note": "صفحة AgentPrizm الرسمية تصف خطة Hobby بأنها 0 دولار للأبد بلا بطاقة ائتمانية، وتشمل 10,000 ذاكرة و4,500 استرجاع شهريا ووكيلين/مفتاحي API ووصولا API وMCP وجميع ميزات الاسترجاع، وتذكر أن AgentSkills مشمول مجانا في كل خطة؛ ومثال الاسترجاع REST في الصفحة نفسها يستخدم POST /api/v1/agent/recall برأس Authorization: Bearer؛ ولم تُعثر على صفحة توثيق مستقلة مرتبطة من الصفحة نفسها فكان حقل التوثيق هو الصفحة الرسمية نفسها؛ حالة CORS والاستخدام التجاري والتدريب غير مذكورة في الصفحة نفسها فبقيت غير مؤكدة.",
+  "verification_source": "https://agentprizm.com/",
+  "website": "https://agentprizm.com/"
  }
 ]
