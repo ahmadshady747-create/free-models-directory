@@ -105,13 +105,21 @@ jobs:
           fi
 
       # Automatic deployment needs the two repo secrets (see the header
-      # comment). When they are absent this step is skipped and the
-      # workflow still succeeds — data + issue only, no live change.
-      # wrangler is fetched on the runner with npx; it is not a project
-      # dependency, so the repo stays dependency-light.
+      # comment). When they are absent this step prints a note and
+      # succeeds without deploying — data + issue only, no live change.
+      # The secrets are checked in the shell, NOT in an `if:` condition:
+      # GitHub's expression parser rejects the `secrets` context in
+      # `if:` (422 on dispatch), while an unset secret referenced in
+      # `env:` is simply an empty string. wrangler is fetched on the
+      # runner with npx; it is not a project dependency, so the repo
+      # stays dependency-light.
       - name: Deploy to Cloudflare Pages
-        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' }}
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        run: npx wrangler pages deploy dist --project-name=free-models-directory
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "Cloudflare secrets not set — skipping deploy (data + issue only)."
+          else
+            npx wrangler pages deploy dist --project-name=free-models-directory
+          fi
