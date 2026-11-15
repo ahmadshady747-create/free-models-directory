@@ -16,8 +16,45 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Arabic-first font stack. The site deliberately loads NO webfonts
+   (no @font-face, no Google Fonts): CSP font-src is 'self' only, and a
+   local-first stack means Arabic text can never be invisible (FOIT)
+   if a font CDN fails or is blocked. 'IBM Plex Sans Arabic' and 'Cairo'
+   resolve only when installed on the visitor's own system; otherwise
+   the stack falls through to the OS fonts, which always render. */
 body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Arabic", "Noto Sans", sans-serif;
+  font-family: 'IBM Plex Sans Arabic', 'Cairo', 'Noto Sans Arabic', system-ui, -apple-system, 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+
+/* The search input has its own custom × clear button (see index.astro),
+   so hide the browser-native one to avoid two overlapping buttons. */
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* The × clear button is a grid (centred glyph) when visible; .hidden
+   must still win when JS hides it, so the rule is ID-scoped. */
+#clear-search {
+  display: grid;
+}
+#clear-search.hidden {
+  display: none;
+}
+
+/* Mobile-only horizontally scrollable category pills (desktop keeps
+   the wrapping row). Symmetric edge fades hint that the row scrolls;
+   the scrollbar itself is hidden because the pills are the affordance. */
+@media (max-width: 639px) {
+  .chip-scroll {
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    mask-image: linear-gradient(to left, transparent, black 24px, black calc(100% - 24px), transparent);
+    -webkit-mask-image: linear-gradient(to left, transparent, black 24px, black calc(100% - 24px), transparent);
+  }
+  .chip-scroll::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* One primary style, one secondary style, used consistently everywhere.

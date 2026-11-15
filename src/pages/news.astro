@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+import { existsSync, readFileSync } from 'node:fs';
+import path from 'node:path';
+
+// Loaded from disk at build time (not a static import) so a missing or
+// malformed news.json never crashes the build — the page falls back to
+// an empty list with an honest "no news yet" message. The file is
+// refreshed daily by scripts/fetch-news.mjs (GitHub Actions).
+const newsPath = path.join(process.cwd(), 'src/data/news.json');
+let news = { updated_at: null, items: [] };
+try {
+  if (existsSync(newsPath)) news = JSON.parse(readFileSync(newsPath, 'utf8'));
+} catch {
+  news = { updated_at: null, items: [] };
+}
+const items = Array.isArray(news.items) ? news.items : [];
+const updatedAt = typeof news.updated_at === 'string' ? news.updated_at.slice(0, 10) : null;
+const title = 'أخبار الذكاء الاصطناعي — دليل النماذج المجانية';
+const description = 'قائمة يومية بسيطة بأحدث أخبار الذكاء الاصطناعي من مصادر عامة، تُحدَّث تلقائيا كل يوم، والروابط تذهب إلى المصدر الأصلي مباشرة.';
+---
+<Base title={title} description={description} canonical="/news/">
+<h1 class="text-3xl font-bold">أخبار الذكاء الاصطناعي</h1>
+<p class="mt-2 text-[#78716C]">قائمة يومية بسيطة بأحدث أخبار الذكاء الاصطناعي، تُجمع تلقائيا كل يوم من خلاصات عامة (أخبار Google، وMIT Technology Review، وHugging Face). العناوين روابط خارجية تفتح المصدر الأصلي مباشرة — لا يُنسخ أي نص هنا، ولا توجد سكربتات خارجية ولا تتبع في هذه الصفحة.</p>
+{updatedAt && <p class="mt-2 text-sm text-[#78716C]">آخر تحديث: {updatedAt}</p>}
+
+{items.length === 0 ? (
+<p class="mt-6 rounded-3xl border border-[#D6D3D1] bg-white p-4 dark:border-[#57534E] dark:bg-[#292524]">لا توجد أخبار بعد — تُحدَّث هذه الصفحة يوميا تلقائيا، فعُد لاحقا.</p>
+) : (
+<div class="mt-6 space-y-4">
+{items.map((item) => (
+<article class="rounded-3xl border border-[#D6D3D1] bg-white p-4 shadow-sm dark:border-[#57534E] dark:bg-[#292524]">
+<p class="text-sm text-[#78716C]">{item.source} · {typeof item.published_at === 'string' ? item.published_at.slice(0, 10) : ''}</p>
+<h2 class="mt-1 font-bold"><a dir="auto" class="text-[#1D4ED8] hover:underline" href={item.link} target="_blank" rel="noopener">{item.title}</a></h2>
+</article>
+))}
+</div>
+)}
+</Base>

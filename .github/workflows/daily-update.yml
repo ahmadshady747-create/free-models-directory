@@ -1,0 +1,117 @@
+# Daily automation for the free-models directory.
+#
+# WHAT IT DOES (every day at 06:00 UTC = 08:00 Tripoli, plus manual dispatch):
+#   1. Runs the health check in --network mode (link + content-hash check).
+#   2. Fetches the latest AI news from 3 public RSS feeds into src/data/news.json.
+#   3. Rebuilds the site to prove it still builds with the new data.
+#   4. Commits ONLY src/data/news.json when it changed.
+#   5. Opens ONE GitHub issue when the health check finds changed pages or
+#      pages needing review, so a human can verify them from official sources.
+#   6. Deploys to Cloudflare Pages — ONLY when the repo secrets
+#      CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID are set (see below).
+#
+# WHAT IT NEVER DOES:
+#   - Never edits src/data/apis.json, src/data/changelog.json, or
+#     src/data/content-hashes.json automatically. A changed content hash is
+#     reported in an issue for human review; --update-hashes is never used here.
+#   - Never deletes or wipes the news: if all RSS feeds fail, the fetch
+#     script keeps the previous news.json untouched.
+#
+# SETUP (repo owner, once) for automatic deployment:
+#   Settings → Secrets and variables → Actions → New repository secret:
+#     CLOUDFLARE_API_TOKEN    (a Cloudflare API token with Pages edit rights)
+#     CLOUDFLARE_ACCOUNT_ID   (the account ID shown in the Cloudflare dashboard)
+#   Without these two secrets the deploy step is skipped and the workflow
+#   still succeeds — data and the health issue are updated, but the live
+#   site only changes on the next manual deploy.
+
+name: Daily update
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  daily-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # The script exits 1 only on schema/sitemap/key problems. Changed
+      # hashes and blocked pages are warnings recorded in
+      # health-report.json, not failures — providers routinely block bots.
+      # NEVER add --update-hashes here: hashes are accepted only after a
+      # human verifies each changed page from its official source.
+      - name: Health check (network mode)
+        run: node scripts/health-check.mjs --network
+
+      - name: Fetch AI news
+        run: node scripts/fetch-news.mjs
+
+      - name: Build site
+        run: npm run build
+
+      # git status --porcelain (not git diff --quiet) so the very first
+      # run also commits news.json if it is still untracked. Only this
+      # one file is ever staged and pushed by this workflow.
+      - name: Commit news.json if changed
+        run: |
+          if [ -z "$(git status --porcelain -- src/data/news.json)" ]; then
+            echo "news.json unchanged — nothing to commit."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add src/data/news.json
+            git commit -m "Daily news update $(date -u +%F)"
+            git push
+          fi
+
+      # Reads health-report.json (written by the health-check step) and
+      # prepares the issue: outputs has_findings + issue_title, and writes
+      # the issue body to health-issue-body.md (gitignored workspace file,
+      # never committed).
+      - name: Summarize health findings
+        id: health-summary
+        run: |
+          node -e 'const fs = require("fs"); const r = JSON.parse(fs.readFileSync("health-report.json", "utf8")); const changed = r.entries.filter((e) => e.content_hash_changed); const needs = r.entries.filter((e) => e.needs_agent_search); const date = new Date().toISOString().slice(0, 10); const has = changed.length > 0 || needs.length > 0; fs.appendFileSync(process.env.GITHUB_OUTPUT, `has_findings=${has}\n`); fs.appendFileSync(process.env.GITHUB_OUTPUT, `issue_title=فحص يومي ${date}: صفحات تغيّرت أو تحتاج مراجعة\n`); if (!has) { console.log("no health findings — no issue needed."); process.exit(0); } let body = `# فحص يومي ${date}\n\nهذا البلاغ آلي من فحص الصحة اليومي. تغيّر بصمة المحتوى لا يعني تغيّر الحد المجاني بالضرورة — تحقّق من المصدر الرسمي لكل إدخال قبل تعديل apis.json أو changelog.json أو content-hashes.json.\n`; if (changed.length > 0) { body += `\n## صفحات تغيّر محتواها (${changed.length})\n`; for (const e of changed) body += `- \`${e.id}\` (${e.provider}) — ${e.checked_url}\n`; } if (needs.length > 0) { body += `\n## صفحات تحتاج مراجعة يدوية (${needs.length})\n`; for (const e of needs) body += `- \`${e.id}\` (${e.provider}) — ${e.checked_url} — ${e.needs_agent_search_reason || ""}\n`; } fs.writeFileSync("health-issue-body.md", body); console.log(`findings: ${changed.length} changed, ${needs.length} need review.`);'
+
+      # One issue per day at most: skip when an open issue with the same
+      # date-stamped title already exists.
+      - name: Open health issue if pages changed or need review
+        if: steps.health-summary.outputs.has_findings == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="${{ steps.health-summary.outputs.issue_title }}"
+          if gh issue list --limit 50 --json title --jq '.[].title' | grep -Fxq "$TITLE"; then
+            echo "An issue for today already exists — skipping."
+          else
+            gh issue create --title "$TITLE" --body-file health-issue-body.md
+          fi
+
+      # Automatic deployment needs the two repo secrets (see the header
+      # comment). When they are absent this step is skipped and the
+      # workflow still succeeds — data + issue only, no live change.
+      # wrangler is fetched on the runner with npx; it is not a project
+      # dependency, so the repo stays dependency-light.
+      - name: Deploy to Cloudflare Pages
+        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx wrangler pages deploy dist --project-name=free-models-directory

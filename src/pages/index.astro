@@ -14,36 +14,39 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebApplication', na
 ---
 <Base title={title} description={description} canonical="/">
 <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-<section class="rounded-3xl bg-[#EDE9E2] p-6 text-[#1C1917] sm:p-8 dark:bg-[#292524] dark:text-[#E7E5E4]">
+<section class="rounded-3xl bg-[#EDE9E2] p-4 text-[#1C1917] sm:p-5 dark:bg-[#292524] dark:text-[#E7E5E4]">
 <h1 class="text-2xl font-bold sm:text-3xl">ابحث عن API لنموذج ذكاء اصطناعي مجاني، دون أن تنخدع بالرصيد التجريبي</h1>
-<p class="mt-3 max-w-3xl">نماذج ذكاء اصطناعي فقط، لا APIs عامة. كل بطاقة تفرّق بين طبقة مجانية دائمة ورصيد تجريبي.</p>
-<p class="mt-3 text-sm font-bold">لا ننشر مفاتيح ولا نخزنها؛ مفتاحك من المزود الرسمي فقط.</p>
-<ul class="mt-4 space-y-1 text-sm">
+<p class="mt-2 max-w-3xl">نماذج ذكاء اصطناعي فقط، لا APIs عامة. كل بطاقة تفرّق بين طبقة مجانية دائمة ورصيد تجريبي.</p>
+<p class="mt-2 text-sm font-bold">لا ننشر مفاتيح ولا نخزنها؛ مفتاحك من المزود الرسمي فقط.</p>
+<ul class="mt-3 space-y-1 text-sm">
 <li>✓ حد مجاني مكتوب لكل مفتاح، مع نطاقه ونوعه — لا وعد عام بلا رقم.</li>
 <li>✓ جرّب من متصفحك بمفتاحك أنت: طلبك يذهب من المتصفح إلى المزود مباشرة.</li>
 <li>✓ كل حد موثق بمصدر رسمي؛ وما لم يثبت يبقى مكتوبا «غير مؤكد».</li>
 </ul>
-<dl class="mt-5 grid grid-cols-2 gap-3 text-center sm:grid-cols-4">
+<dl class="mt-4 grid grid-cols-2 gap-3 text-center sm:grid-cols-4">
 <div class="rounded-2xl bg-white/60 p-3 dark:bg-white/10"><dt class="text-xs">إدخال في الدليل</dt><dd class="mt-1 text-xl font-bold">{apis.length}</dd></div>
 <div class="rounded-2xl bg-white/60 p-3 dark:bg-white/10"><dt class="text-xs">موثق جزئيا رسميا</dt><dd class="mt-1 text-xl font-bold">{verifiedCount}</dd></div>
 <div class="rounded-2xl bg-white/60 p-3 dark:bg-white/10"><dt class="text-xs">بيئة تنفيذ من المتصفح</dt><dd class="mt-1 text-xl font-bold">{playgroundCount}</dd></div>
 <div class="rounded-2xl bg-white/60 p-3 dark:bg-white/10"><dt class="text-xs">عرض مؤقت</dt><dd class="mt-1 text-xl font-bold">{tempCount}</dd></div>
 </dl>
-<p class="mt-4"><a href="#search-section" class="inline-flex min-h-12 items-center rounded-full bg-[#1D4ED8] px-5 py-2 text-sm font-bold text-white">ابدأ البحث ↓</a></p>
+<p class="mt-3"><a href="#search-section" title="الانتقال إلى البحث" class="inline-flex min-h-12 items-center rounded-full bg-[#1D4ED8] px-5 py-2 text-sm font-bold text-white">ابدأ البحث ↓</a></p>
 </section>
 
-<section class="mt-6 rounded-3xl border border-[#E7E5E4] bg-[#F5F5F4] p-4 dark:border-[#44403C] dark:bg-[#292524]/40">
+<section class="mt-4 rounded-3xl border border-[#E7E5E4] bg-[#F5F5F4] p-3 dark:border-[#44403C] dark:bg-[#292524]/40">
 <h2 class="font-bold text-lg">وكيل الدليل — فوق بيئات التنفيذ، لا بدلاً منها</h2>
 <p class="mt-1 text-sm">اكتب ما تريد بناءه، فيحصل على توصيات محلية بلا مفتاح من فهرس الدليل، ثم — إن أدخلت مفتاحك ومعرّف نموذجك — يسأل نموذج محادثة تختاره، ثم يرسل مهمة إلى بيئة تنفيذ المزود دون إرسال تلقائي.</p>
-<a class="btn-primary mt-3" href="/agent/">افتح وكيل الدليل</a>
+<a class="btn-primary mt-2" href="/agent/">افتح وكيل الدليل</a>
 </section>
 
-<section id="search-section" class="mt-6 rounded-3xl border border-[#E7E5E4] bg-white p-4 dark:border-[#44403C] dark:bg-[#292524]">
+<section id="search-section" class="mt-4 rounded-3xl border border-[#E7E5E4] bg-white p-4 dark:border-[#44403C] dark:bg-[#292524]">
 <label for="search" class="block font-bold">ابحث أولاً باسم المزود أو النموذج</label>
-<input id="search" type="search" autocomplete="off" placeholder="مثال: OpenRouter، صورة، ترجمة…" class="mt-2 w-full rounded-full border border-[#D6D3D1] px-4 py-3 text-base dark:border-[#57534E] dark:bg-[#1C1917]" />
-<div class="mt-3 flex flex-wrap gap-2" role="group" aria-label="تصفية حسب الفئة">
-<button type="button" data-cat="" aria-pressed="true" class="cat-chip rounded-full bg-[#1D4ED8] px-4 py-2 text-sm text-white">الكل</button>
-{categories.categories.map((c) => <button type="button" data-cat={c.id} aria-pressed="false" class="cat-chip rounded-full border border-[#D6D3D1] px-4 py-2 text-sm dark:border-[#57534E]">{c.label}</button>)}
+<div class="relative mt-2">
+<input id="search" type="search" autocomplete="off" placeholder="مثال: OpenRouter، صورة، ترجمة…" class="w-full rounded-full border border-[#D6D3D1] px-4 py-3 pe-12 text-base dark:border-[#57534E] dark:bg-[#1C1917]" />
+<button id="clear-search" type="button" aria-label="مسح البحث" title="مسح البحث" class="absolute inset-y-0 left-0 hidden w-12 place-items-center rounded-full text-xl text-[#78716C] hover:text-[#1D4ED8]">×</button>
+</div>
+<div class="chip-scroll mt-3 flex gap-2 overflow-x-auto whitespace-nowrap sm:flex-wrap sm:overflow-visible sm:whitespace-normal" role="group" aria-label="تصفية حسب الفئة">
+<button type="button" data-cat="" aria-pressed="true" class="cat-chip shrink-0 snap-start rounded-full bg-[#1D4ED8] px-4 py-2 text-sm text-white">الكل</button>
+{categories.categories.map((c) => <button type="button" data-cat={c.id} aria-pressed="false" class="cat-chip shrink-0 snap-start rounded-full border border-[#D6D3D1] px-4 py-2 text-sm dark:border-[#57534E]">{c.label}</button>)}
 </div>
 <div class="mt-3 flex flex-wrap items-center gap-3">
 <label for="filter-free" class="sr-only">تصفية حسب نوع المجانية</label>
@@ -54,21 +57,40 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebApplication', na
 <option value="فترة تجريبية محدودة">فترة تجريبية محدودة</option>
 <option value="غير مؤكد">غير مؤكد</option>
 </select>
+<label for="sort" class="sr-only">ترتيب النتائج</label>
+<select id="sort" class="rounded-full border border-[#D6D3D1] px-3 py-3 text-sm dark:border-[#57534E] dark:bg-[#1C1917]">
+<option value="">الترتيب الافتراضي</option>
+<option value="name">الاسم أبجدياً</option>
+<option value="checked">الأحدث تحققاً</option>
+</select>
 <label class="flex min-h-12 items-center gap-2 rounded-full border border-amber-300 px-4 py-2 text-sm dark:border-amber-700"><input id="filter-temp" type="checkbox" /> عروض مؤقتة فقط</label>
+<button id="reset-filters-bar" type="button" class="hidden min-h-12 rounded-full border border-[#D6D3D1] px-4 py-2 text-sm font-bold dark:border-[#57534E]">إعادة ضبط الفلاتر</button>
 </div>
 <p id="result-count" aria-live="polite" class="mt-3 text-sm text-[#78716C]"></p>
 </section>
 
-<section class="mt-6">
+<div id="sticky-search" class="sticky z-20 -mx-4 border-b border-[#E7E5E4] bg-[#FAF9F6]/95 px-4 py-2 backdrop-blur transition-opacity duration-200 dark:border-[#44403C] dark:bg-[#1C1917]/95" style="display:none">
+<div class="mx-auto flex max-w-6xl flex-wrap items-center gap-2">
+<label for="sticky-search-input" class="sr-only">بحث سريع في الدليل</label>
+<input id="sticky-search-input" type="search" autocomplete="off" placeholder="ابحث في الدليل…" class="min-w-0 flex-1 rounded-full border border-[#D6D3D1] px-4 py-2 text-sm dark:border-[#57534E] dark:bg-[#1C1917]" />
+<span id="sticky-search-summary" aria-live="polite" class="max-w-full truncate text-xs text-[#78716C]"></span>
+<button id="sticky-reset" type="button" class="hidden min-h-10 shrink-0 rounded-full border border-[#D6D3D1] px-3 py-1 text-xs font-bold dark:border-[#57534E]">إعادة ضبط الفلاتر</button>
+</div>
+</div>
+
+<section class="mt-4">
 <div id="cards" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 {apis.map((api) => {
   const cat = categories.categories.find((c) => c.id === api.category);
   const searchText = [api.id, api.name, api.provider, api.description_ar, ...api.models.map((m) => m.name), ...api.tags].join(' ');
   const hasPlayground = api.playground_status === 'implemented';
+  const endpoint = api.playgrounds.length > 0 ? api.playgrounds[0].endpoint : null;
+  const copyValue = endpoint || `/apis/${api.id}/`;
+  const copyLabel = endpoint ? 'نسخ نقطة النهاية' : 'نسخ رابط التفاصيل';
   return (
   <article class="api-card rounded-3xl border border-[#E7E5E4] bg-white p-4 dark:border-[#44403C] dark:bg-[#292524]"
-    data-search={searchText} data-category={api.category} data-free={api.free_type} data-temp={api.offer_temporary ? 'true' : 'false'} data-expires={api.offer_expires_at || ''} data-name={api.name} data-href={`/apis/${api.id}/`}>
-    <h2 class="font-bold text-lg">{api.name}{api.offer_temporary && <span class="ms-2 text-sm font-bold text-amber-700 dark:text-amber-300">⏳ عرض مؤقت</span>}</h2>
+    data-search={searchText} data-category={api.category} data-free={api.free_type} data-temp={api.offer_temporary ? 'true' : 'false'} data-expires={api.offer_expires_at || ''} data-name={api.name} data-checked={api.last_checked} data-href={`/apis/${api.id}/`}>
+    <h2 class="font-bold text-lg">{api.name}{api.offer_temporary && <span title="عرض مؤقت ينتهي بتاريخ محدد" class="ms-2 text-sm font-bold text-amber-700 dark:text-amber-300">⏳ عرض مؤقت</span>}</h2>
     <p class="text-sm text-[#78716C]">{api.provider} · {cat?.label}</p>
     <p class="mt-2 text-sm">{api.description_ar}</p>
     <ul class="mt-3 space-y-1 text-sm">
@@ -78,10 +100,14 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebApplication', na
     </ul>
     <p class="mt-2 text-sm">{hasPlayground ? 'بيئة تنفيذ النماذج متاحة من المتصفح.' : 'بدون بيئة تنفيذ النماذج في المتصفح — صفحة التفاصيل تشرح السبب.'}</p>
     <a class="btn-primary mt-4 w-full" href={`/apis/${api.id}/`}>{hasPlayground ? 'فتح التفاصيل والتجربة' : 'فتح التفاصيل'}</a>
-    {api.key_url && <a class="mt-2 flex min-h-12 items-center justify-center text-sm font-bold text-[#1D4ED8]" href={api.key_url} rel="noopener" target="_blank">{api.key_url_kind === 'official_site' ? 'صفحة المزود الرسمية ↗' : 'احصل على المفتاح ↗'}</a>}
+    {api.key_url && <a class="mt-2 flex min-h-12 items-center justify-center text-sm font-bold text-[#1D4ED8]" href={api.key_url} rel="noopener" target="_blank" title="فتح في تبويب جديد">{api.key_url_kind === 'official_site' ? 'صفحة المزود الرسمية ↗' : 'احصل على المفتاح ↗'}</a>}
+    <button type="button" class="copy-btn mt-1 flex min-h-12 w-full items-center justify-center gap-1 text-sm font-bold text-[#1D4ED8]" data-copy={copyValue} aria-label={`${copyLabel} — ${api.name}`} title={copyLabel}>{copyLabel}</button>
   </article>
   );
 })}
+</div>
+<div class="mt-6 text-center">
+<button id="load-more" type="button" class="btn-primary hidden">عرض المزيد</button>
 </div>
 <div id="no-results" class="mt-4 hidden rounded-3xl border border-amber-300 bg-amber-50 p-4 dark:border-amber-700 dark:bg-amber-950/40" role="status">
 <p class="font-bold">لا نتائج مطابقة لهذه التصفية.</p>
@@ -93,4 +119,5 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebApplication', na
 </section>
 
 <script is:inline src="/filters.js" defer></script>
+<script is:inline src="/copy.js" defer></script>
 </Base>
