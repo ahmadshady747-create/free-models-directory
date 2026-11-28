@@ -736,5 +736,32 @@
     "provider": "دليل النماذج المجانية",
     "source": "src/pages/index.astro وsrc/pages/apis/[id].astro وpublic/filters.js وpublic/copy.js وpublic/back-to-top.js وsrc/styles/global.css",
     "type": "تحسين"
+  },
+  {
+    "date": "2026-11-28",
+    "model": "Clarifai",
+    "new_limit": "لا حد مجاني معلن: صفحة الأسعار الرسمية لا تعرض أي خطة Community ولا أي أرقام مجانية بعد انتقال الفريق إلى Nebius؛ الحالة صارت قيد التحقق.",
+    "old_limit": "خطة مجتمع محدودة، مع تجربة مجانية 14 يوما — طلبات شهرية محدودة دون رقم مذكور، بحد 1 طلب في الثانية.",
+    "provider": "Clarifai",
+    "source": "صفحة الأسعار الرسمية https://clarifai.com/pricing (تحقق 2026-11-28).",
+    "type": "تصحيح"
+  },
+  {
+    "date": "2026-11-28",
+    "model": "Tabnine",
+    "new_limit": "لا حد مجاني: الخطة الأساسية المجانية ألغيت، والخطط الحالية مدفوعة فقط (39 و59 دولارا للمستخدم شهريا، سنويا).",
+    "old_limit": "غير مؤكد — بانتظار التحقق من وجود عرض مجاني.",
+    "provider": "Tabnine",
+    "source": "صفحة التسعير الرسمية https://tabnine.com/pricing (صفحة تواصل Tricentis بلا تسعير) + مصادر مستقلة متفقة في 2026 (تحقق 2026-11-28).",
+    "type": "تصحيح"
+  },
+  {
+    "date": "2026-11-28",
+    "model": "ElevenLabs",
+    "new_limit": "خطة مجانية دائمة موثقة: 10,000 رصيد شهريا (نحو 10 دقائق كلام)، تشمل TTS وSTT والمؤثرات وتصميم الأصوات والموسيقى و3 مشاريع Studio؛ بلا استخدام تجاري (يبدأ من Starter).",
+    "old_limit": "غير مؤكد — بانتظار التحقق من الحد المجاني.",
+    "provider": "ElevenLabs",
+    "source": "صفحة الأسعار الرسمية https://elevenlabs.io/pricing (تحقق 2026-11-28).",
+    "type": "تصحيح"
   }
 ]

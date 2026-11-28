@@ -3,19 +3,26 @@
 # WHAT IT DOES (every day at 06:00 UTC = 08:00 Tripoli, plus manual dispatch):
 #   1. Runs the health check in --network mode (link + content-hash check).
 #   2. Fetches the latest AI news from 3 public RSS feeds into src/data/news.json.
-#   3. Rebuilds the site to prove it still builds with the new data.
-#   4. Commits ONLY src/data/news.json when it changed.
-#   5. Opens ONE GitHub issue when the health check finds changed pages or
-#      pages needing review, so a human can verify them from official sources.
-#   6. Deploys to Cloudflare Pages — ONLY when the repo secrets
+#   3. Applies deterministic model-list maintenance ONLY
+#      (scripts/update-models-daily.mjs): expires temporary offers whose
+#      recorded offer_expires_at date has passed, with a changelog entry.
+#      No limit, status, or entry is ever invented or changed by a script.
+#   4. Rebuilds the site to prove it still builds with the new data.
+#   5. Commits ONLY src/data/news.json, src/data/apis.json and
+#      src/data/changelog.json when they changed.
+#   6. Opens ONE GitHub issue when the health check finds changed pages or
+#      pages needing review, so they can be verified from official sources.
+#   7. Deploys to Cloudflare Pages — ONLY when the repo secrets
 #      CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID are set (see below).
 #
 # WHAT IT NEVER DOES:
-#   - Never edits src/data/apis.json, src/data/changelog.json, or
-#     src/data/content-hashes.json automatically. A changed content hash is
-#     reported in an issue for human review; --update-hashes is never used here.
-#   - Never deletes or wipes the news: if all RSS feeds fail, the fetch
-#     script keeps the previous news.json untouched.
+#   - Never edits free limits, statuses, or content-hashes automatically.
+#     A changed content hash is reported in an issue for verification from
+#     the official source; --update-hashes is never used here. Limit changes
+#     and genuinely new free offers are applied by the daily Muse agent run,
+#     only with official proof — never by this workflow alone.
+#   - Never deletes entries or wipes the news: if all RSS feeds fail, the
+#     fetch script keeps the previous news.json untouched.
 #
 # SETUP (repo owner, once) for automatic deployment:
 #   Settings → Secrets and variables → Actions → New repository secret:
@@ -63,21 +70,28 @@ jobs:
       - name: Fetch AI news
         run: node scripts/fetch-news.mjs
 
+      # Deterministic only: expires temporary offers whose recorded end date
+      # passed (with a changelog entry). Never invents or changes a limit.
+      - name: Update model list (deterministic only)
+        run: node scripts/update-models-daily.mjs
+
       - name: Build site
         run: npm run build
 
       # git status --porcelain (not git diff --quiet) so the very first
-      # run also commits news.json if it is still untracked. Only this
-      # one file is ever staged and pushed by this workflow.
-      - name: Commit news.json if changed
+      # run also commits a file if it is still untracked. Only these three
+      # files are ever staged and pushed by this workflow: the news the
+      # fetch script wrote, and the two files the deterministic model
+      # script may change (expired offers + their changelog entries).
+      - name: Commit daily data if changed
         run: |
-          if [ -z "$(git status --porcelain -- src/data/news.json)" ]; then
-            echo "news.json unchanged — nothing to commit."
+          if [ -z "$(git status --porcelain -- src/data/news.json src/data/apis.json src/data/changelog.json)" ]; then
+            echo "daily data unchanged — nothing to commit."
           else
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add src/data/news.json
-            git commit -m "Daily news update $(date -u +%F)"
+            git add src/data/news.json src/data/apis.json src/data/changelog.json
+            git commit -m "Daily update $(date -u +%F)"
             git push
           fi
 
